@@ -1,175 +1,94 @@
-# Dataset Sources — TechVenture-SFM Thesis
+# TechVenture-SFM Thesis
 
-This README documents where the datasets used in the thesis project came from, organized by region and folder. Each entry is labeled with how confident the sourcing is:
+## Topic
+Spatial Feature Transform Neural Network for Region-Aware Startup Success Prediction
 
-- ✅ Verified — confirmed by Claude via direct web search/fetch during this project
-- 📤 User-provided — uploaded directly as a file; the original source URL was supplied by the user or could not be independently re-confirmed by Claude
-- ⚠️ Inferred — Claude matched the file’s filename/schema/row-count to a likely public source, but this was not directly downloaded or confirmed by Claude itself
+## Thesis Overview
+This project investigates whether startup success prediction can be improved by making the model region-aware. Instead of treating all startup ecosystems as if they follow the same patterns, the study introduces a Spatial Feature Modulation (SFM) layer that adjusts feature processing according to the startup’s geographic context.
 
-Always double-check ⚠️ entries yourself before citing them in your methodology — they are Claude’s best inference, not a confirmed citation.
+The central hypothesis is that startup success is not shaped by the same feature dynamics in every region. A funding gap that is normal in one ecosystem may signal something very different in another. By allowing the network to adapt to regional context, the model is expected to produce better predictions for startups in less-represented or more heterogeneous regions.
 
----
+## The New Architecture: Spatial Feature Transform (SFT)
+Instead of building a gate that decides if a feature is “noisy,” the neural network uses a Spatial Feature Transform (SFT) layer.
 
-## Main Base Dataset (North America, Europe, East Asia + global baseline)
+The concept borrows from FiLM (Feature-wise Linear Modulation), a machine learning method used in computer vision and NLP, but rarely applied to tabular startup data.
 
-**File:** `FINAL DATASET/big_startup_secsees_dataset.csv` → folded into `FINAL DATASET/final_master_dataset.csv` as `data_source = main_dataset`
+The core idea is simple:
 
-⚠️ Inferred source:
-`https://www.kaggle.com/datasets/yanmaksi/big-startup-secsees-fail-dataset-from-crunchbase`
+- a region embedding learns contextual information
+- that embedding generates a scaling factor $\gamma$ and a shifting factor $\beta$
+- the network applies these values to the tabular features dynamically
 
-Matched on exact filename (`big_startup_secsees_dataset.csv`), exact column count (14), and exact column names. Original data sourced from Crunchbase, covering company foundings, fundings, and outcomes through ~2017.
+This yields:
 
-**Enrichment file:** `FINAL DATASET/investments_VC.csv` (round-type funding breakdown: seed, venture, round_A–H, debt, etc. — joined onto the main dataset by `permalink`)
+$$y = \gamma_{region} \odot x + \beta_{region}$$
 
-⚠️ Inferred source:
-`https://www.kaggle.com/datasets/arindam235/startup-investments-crunchbase`
+where $x$ is the input feature representation and the modulation parameters adapt it for the given region.
 
-Matched on schema (39 columns including `permalink`, `round_A`–`round_H`, `seed`, `venture`) and the same Crunchbase lineage as the main dataset. Approximately 98.5% of its companies overlap with the main dataset; 730 were net-new.
+## Why This Fits the Thesis Goal
+This approach is closely related to prior work while remaining conceptually distinct:
 
----
+1. It uses the same family of deep learning methods as related studies, giving it a rigorous and professional foundation.
+2. The research question is different: previous work focuses on filtering noisy features, while this thesis asks whether regional context should adapt feature interpretation.
+3. It creates a strong baseline comparison: a standard MLP can be used as the baseline, and the SFM-enhanced model can be shown to improve performance in regions outside major Western hubs.
 
-## South Asia
+## Thesis Overview: TechVenture-SFM
+### The Core Idea
+We are building a machine learning model that predicts whether a tech startup will succeed or fail using startup data such as funding history, investor information, round patterns, and geographic location.
 
-**File:** `FINAL DATASET/india_startups_cleaned.csv` (cleaned/consolidated version derived from the year-based funding scrape folders)
+Existing studies treat all global startups the same. This thesis adds a custom layer—Spatial Feature Modulation (SFM)—that acts like a localized volume knob. It automatically amplifies or dampens the importance of startup features depending on where the startup is located.
 
-✅ Verified — GitHub mirror (no login wall):
-`https://github.com/DeepakKumarGS/Indian-Startup-Funding-/blob/gh-pages/startup_funding.csv`
+### How It Works
+1. The model takes standard startup data such as total funding, number of rounds, time between rounds, category, and location.
+2. A global neural network processes the startup features to find universal success patterns.
+3. The SFM layer uses the startup’s location to generate modulating factors $\gamma$ and $\beta$.
+4. These factors adjust the feature representation before the final success/failure prediction is made.
 
-⚠️ Likely original Kaggle source(s):
-`https://www.kaggle.com/datasets/sudalairajkumar/indian-startup-funding` (most likely candidate — could not be directly confirmed by Claude due to Kaggle’s anti-bot wall)
+### Why It Is Different from Existing Studies
+- The baseline study focuses on feature gating to suppress noisy or missing data globally.
+- This thesis focuses on spatial modulation, where regional context is treated as a meaningful signal rather than something to be filtered out.
 
----
+## The Core Justification: Binary Shutoff vs. Contextual Scaling
+Feature gating works like an on/off switch. Spatial Feature Modulation works like a volume knob or equalizer. It does not delete information; it recontextualizes it.
 
-## Africa
+This is especially important for startup ecosystems because the same feature can carry different meaning in different regions.
 
-**File:** `AFRICA/FINAL AFRICA/africa_supplement_2022_2025_clean.csv` (cleaned and consolidated supplement used for African startup coverage)
+## Why SFM Is Better for This Topic
+### 1. Regional Dynamics Are Not Noise
+A variable like time between funding rounds can mean something very different in Silicon Valley than in Southeast Asia. SFM allows the model to adapt to that context instead of suppressing the feature globally.
 
-✅ Verified — Disrupt Africa’s annual “African Tech Startups Funding Report” series
-(row counts in the user’s file match Disrupt Africa’s own published figures exactly: 633 startups in 2022, 406 in 2023):
+### 2. Preserving Weak Signals in Sparse Regions
+In smaller or less-represented regions, the data may be sparse. A gating strategy may erase these signals entirely, while SFM can adjust how they are interpreted without discarding them.
 
-- 2022 report: `https://old.disruptafrica.com/wp-content/uploads/2023/02/The-African-Tech-Startups-Funding-Report-2022.pdf`
-- 2023 report: `https://disruptafrica.com/wp-content/uploads/2024/01/The-African-Tech-Startups-Funding-Report-2023.pdf`
-- 2025 report: `https://disruptafrica.com/wp-content/uploads/2026/02/The-African-Tech-Startups-Funding-Report-2025.pdf`
-- Report index / “Full Startup List” downloads: `https://disruptafrica.com/research/` and `https://disruptafrica.com/funding-report/`
+### 3. Clearer Architectural Interpretation
+A SHAP analysis of an SFM-based model is more informative than a simple gating model because it can show how the modulation parameters change feature importance across regions.
 
-📤 Note: no 2024 report/data exists in this lineage — confirmed gap year, not a download error.
+## The 30-Second Panel Pitch
+“Existing approaches rely on feature gating, which treats regional variance as noise to be filtered out. Our approach, Spatial Feature Modulation (SFM), argues that regional context is a critical signal. By using linear modulation with $\gamma$ and $\beta$, we dynamically recalibrate feature importance for each region, preserving predictive accuracy in data-scarce and geographically diverse startup ecosystems.”
 
-**Other relevant files in the folder:**
-- `AFRICA/AFRICA_2022.xlsx` — earlier single-year Africa dataset snapshot
-- `AFRICA/Funded African tech startups 2022.xlsx` — raw 2022 funding file
-- `AFRICA/Funded African Tech Startups 2023 (by country and by sector).xlsx` — raw 2023 funding file
-- `AFRICA/Funded_african_2024/` — folder for 2024 materials
-- `AFRICA/Funded_African_tech_startups_2025_(by_country-sector)/` — folder for 2025 materials
-- `AFRICA/merge_and_clean_africa_data.py` — cleaning/merge script used for the African dataset preparation
+## Research Phases
+### Phase 1: Problem Identification and Research Conceptualization
+This phase establishes the foundation of the study by identifying the limitations of existing startup success prediction models and defining the research problem. The researcher examines how current approaches often assume that startup success factors are universally applicable across regions, despite substantial differences in entrepreneurial ecosystems worldwide.
 
----
+### Phase 2: Data Collection and Preparation
+This phase focuses on acquiring and preparing the startup dataset. Raw data is collected, cleaned, normalized, merged, and enriched with regional labels so it is suitable for machine learning.
 
-## Latin America
+### Phase 3: Development of the TechVenture-SFM Model
+This phase introduces the baseline MLP and the proposed SFM architecture. Regional embeddings are used to generate modulation parameters that dynamically adjust feature representations inside the neural network.
 
-**Files:**
-- `LATIN AMERICA/brazil_startups.csv`
-- `LATIN AMERICA/mexico_startups.csv`
-- `LATIN AMERICA/LatinAm_brazil_columbia.xlsx`
-- `LATIN AMERICA/yc_latam_companies.csv`
+### Phase 4: Model Training, Optimization, and Validation
+Both the baseline model and the proposed model are trained under comparable conditions. Performance is evaluated using accuracy, precision, recall, F1-score, and ROC-AUC.
 
-📤 User-provided / scraper-derived sources:
+### Phase 5: Model Interpretation and Knowledge Discovery
+This phase uses explainability methods such as SHAP and examines the modulation behavior to understand how feature importance shifts across regions.
 
-- GrowthList Mexico: `https://growthlist.co/mexico-startups/#recently-funded-startups-in-mexico`
-- GrowthList Brazil: `https://growthlist.co/brazil-startups/#recently-funded-startups-in-brazil`
-- YC directory: `https://www.ycombinator.com/companies/?regions=Latin%20America`
-- Individual YC company profile pattern: `https://www.ycombinator.com/companies/<slug>`
+### Phase 6: Research Documentation, Defense, and Dissemination
+This phase covers the formal thesis writing, presentation, defense, and submission of the research outputs.
 
-These files were used for regional startup coverage and for status-label enrichment where relevant. The YC list was not treated as a standalone training-row source for the core model pipeline.
-
----
-
-## Southeast Asia
-
-No supplementary dataset was found in the local workspace. Coverage comes entirely from the main base dataset’s existing Southeast Asia rows (Singapore, Indonesia, Malaysia, Thailand, Vietnam, Philippines, Cambodia).
-
-This remains the thinnest region in the final dataset — flagged in the regional summary files for k-fold cross-validation / wide-interval reporting rather than a single train/test split.
-
-Multiple searches were run for Southeast Asia-specific sources during this project (Tech in Asia, e27, KrASIA, DealStreetAsia archives) — none yielded a free, bulk-downloadable, row-level dataset. Paid platforms (Crunchbase Pro, Tracxn, DealStreetAsia) were the only sources with meaningful SEA coverage found.
-
----
-
-## Datasets Evaluated and Rejected (for reference / avoiding re-checking)
-
-| Dataset | Reason rejected |
-| --- | --- |
-| `EXTRA DATASETS/companies.csv` | 2013 vintage, 85.8% missing funding data, worse regional skew than the main dataset |
-| `EXTRA DATASETS/startup_success_dataset.csv` / `startup_valuation_dataset.csv` | Synthetic/fabricated — region-country pairings randomly assigned, zero missingness across 100K rows |
-| Tech Companies Global Dataset (rashmikakr) | No funding/outcome fields at all — directory data, not funding data |
-| `Acquiring_Tech_Companies.csv` | Wrong unit of analysis (36 mega-acquirers, not startups); 86% USA |
-| `Startups.csv` (general YC list) | 66% USA, single-digit counts elsewhere |
-| Trending Startup Data by City/Country (HackerNoon TCNP) | Self-nomination voting platform — no funding/outcome data exists at the source, not scrapeable |
-| AngelList scrape (`iamtodor/angel.co-companies-list-scraping`) | 96%+ San Francisco/Bay Area |
-
----
-
-## Folder-by-folder dataset guide
-
-### Root project files
-
-- `scrape_growthlist.py` — scraper used to collect GrowthList-based startup data for Brazil and Mexico
-- `scrape_yc_latam.py` — scraper used to collect YC Latin America company listings and profiles
-
-### `AFRICA/`
-
-Purpose: African startup funding and company coverage, with yearly supplements and cleaned merged outputs.
-
-Files:
-- `AFRICA_2022.xlsx` — earlier African startup snapshot for 2022
-- `Africa_Startups_Merged_Cleaned_20260624_225559.xlsx` — cleaned merged African dataset snapshot
-- `Africa_Startups_Merged_Cleaned_20260624_225953.xlsx` — cleaned merged African dataset snapshot
-- `Funded African tech startups 2022.xlsx` — raw 2022 data source snapshot
-- `Funded African Tech Startups 2023 (by country and by sector).xlsx` — raw 2023 data source snapshot
-- `FINAL AFRICA/` — cleaned final Africa supplement folder
-- `Funded_african_2024/` — 2024 materials folder
-- `Funded_African_tech_startups_2025_(by_country-sector)/` — 2025 materials folder
-- `merge_and_clean_africa_data.py` — cleaning/merge script
-
-### `EXTRA DATASETS/`
-
-Purpose: auxiliary datasets evaluated during the project, mostly for comparison or feature enrichment testing.
-
-Files:
-- `companies.csv` — general company list dataset, later rejected for poor funding coverage and regional skew
-- `startup_success_dataset.csv` — rejected as synthetic / not suitable for the thesis labeling task
-- `startup_valuation_dataset.csv` — rejected for the same reason
-
-### `FINAL DATASET/`
-
-Purpose: the main modeling-ready datasets and the final master dataset used for training and analysis.
-
-Files:
-- `big_startup_secsees_dataset.csv` — main base dataset used as the backbone of the thesis dataset
-- `final_master_dataset.csv` — final merged master dataset used for analysis
-- `final_master_dataset_updated.csv` — updated version of the final master dataset
-- `india_startups_cleaned.csv` — cleaned India startup dataset
-- `investments_VC.csv` — round-level investment enrichment file
-- `regional_distribution_summary (1).xlsx` — regional distribution summary workbook
-- `regional_distribution_summary_FINAL.xlsx` — final regional distribution summary workbook
-
-### `LATIN AMERICA/`
-
-Purpose: Latin America startup records, mostly scraped or assembled for Brazil, Mexico, and YC-linked Latin American companies.
-
-Files:
-- `brazil_startups.csv` — Brazil startup list / funding records
-- `mexico_startups.csv` — Mexico startup list / funding records
-- `LatinAm_brazil_columbia.xlsx` — consolidated Latin America workbook for Brazil/Colombia-style regional coverage
-- `yc_latam_companies.csv` — YC Latin America company list used for enrichment/status labeling
-
-### `StartUp_FundingScrappingData/`
-
-Purpose: yearly startup funding data pulled from the funding scrape pipeline, stored by year and then merged into consolidated outputs.
-
-Files and folders:
-- `2015/` to `2021/` — yearly CSV folders containing raw funding records by year
-- `merged_output/` — merged yearly outputs for the funding scrape collection
-- `merge_csvs.py` — script that combines yearly CSVs into consolidated outputs
-
----
-
-*Compiled from project conversation history. ⚠️-flagged sources should be independently re-verified before being cited in the final thesis manuscript.*
+## Project Documentation
+- Dataset documentation: [DATASET.md](DATASET.md)
+- Africa folder guide: [AFRICA/README.md](AFRICA/README.md)
+- Extra datasets guide: [EXTRA DATASETS/README.md](EXTRA%20DATASETS/README.md)
+- Final dataset guide: [FINAL DATASET/README.md](FINAL%20DATASET/README.md)
+- Latin America folder guide: [LATIN AMERICA/README.md](LATIN%20AMERICA/README.md)
+- Scraping pipeline guide: [StartUp_FundingScrappingData/README.md](StartUp_FundingScrappingData/README.md)
