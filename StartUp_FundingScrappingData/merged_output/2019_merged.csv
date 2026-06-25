@@ -1,0 +1,115 @@
+Sr. No.,Date,Startup Name,Industry/Vertical,Sub-Vertical,City,Investor Name,Investment Type,Amount(in USD),Year,Source_File
+1.0,16/04/2019,Kuvera,Finance,Wealth Management,Bengaluru,Eight Roads,Series A,"45,000,000",2019,Apr_2019.csv
+2.0,12/04/2019,Medlife,E-commerce,Online Medicine,Bengaluru,Prasid Uno Family Trust,Private Equity,"17,000,000",2019,Apr_2019.csv
+3.0,10/04/2019,Kabadiwala,E-commerce,Waste Management,Bhopal,"Unilever, Beehive Capital Advisor, ABCOM Investments, Parekh Marine Transport,",Private Equity,"430,665",2019,Apr_2019.csv
+4.0,13/04/2019,Tripoto,Social Media,Travel,New Delhi,"Orchid India, Hornbill Orchid India Fund, Chiratae Ventures (formerly IDG Ventures), 3one4 Capital, Lasmer NV",Series B,"3,591,375",2019,Apr_2019.csv
+5.0,12/04/2019,Azah,Health and Wellness,Organic wellness,Gurugram,Unnamed angel investors,Seed Funding,"200,000",2019,Apr_2019.csv
+6.0,11/04/2019,Setu,Fintech,Banking,Bengaluru,Lightspeed India Partners,Seed Funding,"3,500,000",2019,Apr_2019.csv
+7.0,10/04/2019,Toppr,Edtech,E-learning,Mumbai,Milestone,Debt and Preference capital,"6,320,820",2019,Apr_2019.csv
+8.0,10/04/2019,Craftsvilla,E-commerce,Fashion and Apparel,Mumbai,Supera Pte Ltd,Inhouse Funding,"2,443,495",2019,Apr_2019.csv
+9.0,10/04/2019,Unacademy,Edtech,E-learning,Bengaluru,Kalyan Krishnamurthy,Seed/ Angel Funding,"307,000",2019,Apr_2019.csv
+10.0,11/04/2019,CleverTap,SaaS,Mobile analytics and marketing,Mumbai,"Sequoia India, Tiger Global Management, Accel Partners",Series B,"26,000,000",2019,Apr_2019.csv
+11.0,19/04/2019,My Healthcare,E-commerce,Software Solutions,Bengaluru and Gurugram,Sixth Sense Ventures,Series A,"3,000,000",2019,Apr_2019.csv
+12.0,19/04/2019,KrazyBee,E-commerce,Lending Platform,Bengaluru,"BAC Acquisitions, Unifi AIF, BRD Securities, Northern R Capital",Debt,"14,342,000+",2019,Apr_2019.csv
+13.0,17/04/2019,Shuttl,Transportation,Bus Aggregation,Gurugram,New Atlantic Ventures,Venture Round,"5,000,000",2019,Apr_2019.csv
+14.0,17/04/2019,Increff,Technology,Supply-chain technology solutions,Bengaluru,"021 Capita, Binny Bansal",Series A,"3,000,000",2019,Apr_2019.csv
+1.0,01/08/2019,CarDekho,E-Commerce,Automotive,Gurgaon,SC GG India Mobility Holdings LLC,Series C,"20,000,000",2019,Aug_2019.csv
+2.0,01/08/2019,Progcap,Finance,Supply Chain Management,New Delhi,Sequoia India,Series A,"5,000,000",2019,Aug_2019.csv
+3.0,01/08/2019,MyPetrolPump,Retail,Fuel Delivery,Bengaluru,,Seed Funding Round,"1,600,000",2019,Aug_2019.csv
+4.0,01/08/2019,Alteria Capital,Finance,VC Funds,Mumbai,"Azim Premji, Binny Bansal",Single Venture,"140,000,000",2019,Aug_2019.csv
+5.0,01/08/2019,Pine Labs,Information Technology,Last-mile retail transaction technology,Noida,Pine Labs Pte Ltd,Corporate Round,"38,080,000",2019,Aug_2019.csv
+6.0,12/08/2019,Meesho,E-Commerce,Social Commerce,Bengaluru,Naspers,Series D,"125,000,000",2019,Aug_2019.csv
+7.0,13/08/2019,Cars24,E-Commerce,Car Retail,Gurugram,MS Dhoni,Series D,"11,000,000",2019,Aug_2019.csv
+8.0,13/08/2019,Uniphore,Customer Service Platform,Conversational AI,Palo Alto,March Capital Partners,Series C,"51,000,000",2019,Aug_2019.csv
+9.0,23/08/2019,Zendrive,Automotive,Road Safety Analytics,San Francisco,XL Innovate,Series B,"37,000,000",2019,Aug_2019.csv
+10.0,23/08/2019,Lo! Foods,Consumer Goods,Low carb food for Diabetics,Bengaluru,"Rashmi Daga (founder, FreshMenu), Raveen Sastry (co-founder, Myntra) and Mitesh Shah (finance chief, BookMyShow)",Seed Round,"500,000",2019,Aug_2019.csv
+11.0,23/08/2019,Tala,FinTech,Digital Lending Platform,Santa Monica,RPS Ventures,Series D,"110,000,000",2019,Aug_2019.csv
+12.0,22/08/2019,INDwealth,FinTech,Wealth Management,Gurgaon,Tiger Global Management,Venture Round,"15,000,000",2019,Aug_2019.csv
+13.0,21/08/2019,HungerBox,Food and Beverage,B2B Foodtech,Bengaluru,One97 Communications Ltd.,Series C,"6,590,000",2019,Aug_2019.csv
+14.0,23/08/2019,AdmitKard,EdTech,University Admissions,Noida,Growth DNA,Seed Round,"10,00,000",2019,Aug_2019.csv
+15.0,19/08/2019,Mishry Reviews,Services,Product Review,Gurgaon,Vir Sanghvi,Series A,Undisclosed,2019,Aug_2019.csv
+16.0,19/08/2019,Grofers,E-Commerce,Grocery Delivery,Gurgaon,Softbank Vision Fund,Series F,"70,000,000",2019,Aug_2019.csv
+17.0,27/08/2019,Rapido Bike Taxi,Transportation,Bike Taxi,Bengaluru,Westbridge Capital,Series B,"3,900,000,000",2019,Aug_2019.csv
+1.0,12/12/2019,Ecozen,Technology,Agritech,Pune,Sathguru Catalyzer Advisors,Series A,"6,000,000",2019,Dec_2019.csv
+2.0,06/12/2019,CarDekho,E-Commerce,Automobile,Gurgaon,Ping An Global Voyager Fund,Series D,"70,000,000",2019,Dec_2019.csv
+3.0,3/12/2019,Dhruva Space,Aerospace,Satellite Communication,Bengaluru,"Mumbai Angels, Ravikanth Reddy",Seed,"50,000,000",2019,Dec_2019.csv
+4.0,13/12/2019,Rivigo,Technology,Logistics Services and Solutions,Gurgaon,"SAIF Partners, Spring Canter Investment Ltd.",Series F,"20,000,000",2019,Dec_2019.csv
+5.0,17/12/2019,Healthians,B2B-focused foodtech startup,Food Solutions For Corporate,Bengaluru,"Paytm, NPTK, Sabre Partners and Neoplux",Series C,"12,000,000",2019,Dec_2019.csv
+6.0,16/12/2019,Licious,E-Commerce,Online Meat And Seafood Ordering Startup,Bengaluru,Vertex Growth Fund,Series E,"30,000,000",2019,Dec_2019.csv
+7.0,16/12/2019,InCred,Finance,Non-Banking Financial Company,Mumbai,,Debt Funding,"5,900,000",2019,Dec_2019.csv
+8.0,14/12/2019,Trell,Video,Experience Discovery Platform,Bengaluru,Ruizheng Investment,Seed Round,"2,000,000",2019,Dec_2019.csv
+9.0,11/12/2019,Rein Games,Gaming,Real money based gaming startup,Noida,Manipal Education and Medical Group (MEMG),Seed Round,"50,000,000",2019,Dec_2019.csv
+10.0,20/12/2019,Lenskart.com,E-Commerce,Online Eyewear Shopping Portal,Faridabad,SoftBank Vision Fund,Series G,"231,000,000",2019,Dec_2019.csv
+1.0,1/02/2019,FleetX,AI,Logistics,Gurgaon,India Quotient and LetsVenture’s Angel Fund,Pre Series A,Undisclosed,2019,Feb_2019.csv
+2.0,8/02/2019,Zilingo,Ecommerce,Fashion & Apparel,India/Singapore,"Sequoia Capital and Temasek Holdings, EDBI, Burda Principal Investments, and Sofina",Series D,"226,000,000",2019,Feb_2019.csv
+3.0,13/02/2019,NanoClean Global,Nanotechnology,Anti-Pollution,New Delhi,"LetsVenture, PitchRight Venture, 91SpringBoard, AL Nour International Holdings and Mark V Investments",Series A,"600,000",2019,Feb_2019.csv
+4.0,14/02/2018,OyoRooms,Hospitality,Budget Rooms,Gurgaon,DiDi Chuxing,Equity,"100,000,000",2019,Feb_2019.csv
+1.0,03/01/2019,CarDekho,Automobile,Online Marketplace,Jaipur,"Sequoia India, Hillhouse Capital, Alphabet’s growth investment arm Capital G and Axis Bank",Series C,"110,000,000",2019,Jan_2019.csv
+2.0,04/01/2019,Vyome Therapeutics Inc.,Health and Wellness,Specialty pharmaceutical,India/US,"Iron Pillar, Perceptive Advisors, Romulus Capital and Kalaari Capital",Series D,"22,000,000",2019,Jan_2019.csv
+3.0,04/01/2019,Samunnati Financial Intermediation & Services Pvt. Ltd,Finance,Non-banking financial company,Chennai,"MASSIF, a Dutch government fund",Debt-Funding,"5,000,000",2019,Jan_2019.csv
+4.0,04/12/2018,Manch,Social Media,Hyperlocal Content,Delhi,Stellaris Venture Partners,Seed Funding,"700,000",2019,Jan_2019.csv
+1.0,02/07/2019,RenewBuy,Finance,Auto Insurance,Gurgaon,"Lok Capital, IIFL Wealth",Series B,"19,000,000",2019,Jul_2019.csv
+2.0,02/07/2019,Atlan,Information Technology,Big Data,Singapore,WaterBridge Ventures,Pre-Series A,"2,500,000",2019,Jul_2019.csv
+3.0,01/07/2019,WizCounsel,Compliance,Consulting,New Delhi,Kapil Dev,Angel,"145,000",2019,Jul_2019.csv
+4.0,03/07/2019,Ola Cabs,Transport,Cabs,Kormangala,"DIG Investment Ab, Deshe Holdings, Samih Toukan and Hussam Khoury",Series J,"1,000,000",2019,Jul_2019.csv
+5.0,01/07/2019,Uniphore,Artificial Intelligence,Speech Recognition,Taramani,March Capital Partners,Series C,"38,080,000",2019,Jul_2019.csv
+6.0,04/07/2019,Daalchini Technologies,Food and Beverage,Digital Vending Machine,New Delhi,Artha Venture,Seed Round,"500,000",2019,Jul_2019.csv
+7.0,10/07/2019,BYJU'S,EdTech,Education,Bengaluru,Qatar Investment Authority,Private Equity Round,"150,000,000",2019,Jul_2019.csv
+8.0,11/07/2019,Moglix,E-Commerce,Industrial Tools and Equipments,Singapore,"Composite Capital Management, Sequoia Capital India, Tiger Global Management",Series D,"60,000,000",2019,Jul_2019.csv
+9.0,10/07/2019,Ezyhaul,Tech,Logistics,Singapore,Undisclosed,Series B,"16,000,000",2019,Jul_2019.csv
+10.0,10/07/2019,Indus OS,Tech,Smartphone Operating System,Andheri,Ventureast,Series B,"5,750,000",2019,Jul_2019.csv
+11.0,10/07/2019,HealthAssure,Health Care,Primary care medical network,Mumbai,Blume Ventures,Series A,"2,500,000",2019,Jul_2019.csv
+12.0,09/07/2019,House of Msasaba,Luxury Label,Clothes and Apparel,Mumbai,Binny Bansal,Series A,"1,000,000",2019,Jul_2019.csv
+13.0,08/07/2019,Board Infinity,EdTech,Full-stack career platform,Chembur,Multiple Angel Investors,Angel Round,"319,605",2019,Jul_2019.csv
+1.0,05/06/2019,NoBroker,E-Commerce,Real Estate,Bengaluru,General Atlantic,Series C,"5,10,00,000",2019,Jun_2019.csv
+2.0,04/06/2019,Bira91,Food and Beverage,Brewery,New Delhi,Anicut Capital,Debt Funding,"1,00,00,000",2019,Jun_2019.csv
+3.0,03/06/2019,FabHotels,E-Commerce,Hospitality,Gurgaon,"Goldman Sachs, Accel Partners and Qualcomm",,"48,89,975.54",2019,Jun_2019.csv
+4.0,03/06/2019,Avail Finance,Finance,FinTech,Bengaluru,Matrix Partners,Series A,"90,00,000",2019,Jun_2019.csv
+5.0,04/06/2019,BharatPe,Finance,FinTech,New Delhi,Insight Partners,Series B,"7,50,00,000",2019,Jun_2019.csv
+6.0,04/06/2019,Recykal,Waste Management Service,Optimization,Hyderabad,"Triton Investment Advisors, Pidilite Industries director Ajay Parekh",pre-Series A,"26,000,000",2019,Jun_2019.csv
+7.0,03/06/2019,Agara Labs,Deep-Tech,Artificial Intelligence,Bengaluru,Blume Ventures and RTP Global,pre-Series A,"25,00,000",2019,Jun_2019.csv
+8.0,06/06/2019,Sistema.bio,Agriculture,Hybrid Reactor Biodigestor,Nairobi,"Shell Foundation, DILA CAPITAL, Engie RDE Fund, EcoEnterprise Fund, EDFIMC (ElectriFI), Endeavor Catalyst Fund, CoCapital, Triodos, Alpha Mundi, and Lendahand",,"27,39,034.68",2019,Jun_2019.csv
+9.0,06/06/2019,Chakr Innovation,Energy,Renewable Energy,New Delhi,IAN Fund,Series A,"26,000,000",2019,Jun_2019.csv
+10.0,06/06/2019,Pratilipi,Digital Media,E-Books,Bengaluru,Qiming Venture Partners,Series B,"1,51,09,500.00",2019,Jun_2019.csv
+11.0,10/06/2019,Bolo App,Digital Media,Video Platform,Bengaluru,Nexus Venture Partners,Seed Funding,"4,30,200",2019,Jun_2019.csv
+12.0,10/06/2019,OkCredit,FinTech,Financial Services,Haryana,Tiger Global Management,Series A,"1,55,00,000",2019,Jun_2019.csv
+13.0,06/06/2019,Biz2Credit,FinTech,Online Lending Platform,New York,WestBridge Capital,Series B,"5,20,00,000",2019,Jun_2019.csv
+14.0,08/06/2019,Vogo Automotive Pvt. Ltd.,Transportation,Dockless Scooter Rental Company,Karnataka,Alteria Capital,Debt Funding,"35,84,000",2019,Jun_2019.csv
+15.0,04/06/2019,Leegality,Services,Digital Documentation,Mumbai/Bengaluru,Mumbai Angels,Series A,"3,400,000",2019,Jun_2019.csv
+1.0,06/05/2019,Ola Electric,Transport,Cabs,Bengaluru,Tata Sons,Series A,undisclosed,2019,May_2019.csv
+2.0,06/05/2019,Saahas Zero Waste,Waste Management Service,Optimization,Bengaluru,C4D Partners,Venture - Series Unknown,"868,600",2019,May_2019.csv
+3.0,05/05/2019,StyleDotMe,E-commerce,Fashion and Shopping,Delhi,"Indian Angel Network and other angel investors, Innov8 founder Ritesh Malik, Josh Talks founders Supriya Paul and Shobha Banga, and former Hero Corporate president Rohit Chanana",Bridge Round,undisclosed,2019,May_2019.csv
+4.0,01/05/2019,BlackBuck,Transport,Logistics,Bengaluru,"Goldman Sachs Investment Partners and Silicon Valley-based Accel, Wellington, Sequoia Capital, B Capital, LightStreet, Sands Capital and International Finance Corporation,",Series D,"150,000,000",2019,May_2019.csv
+5.0,02/05/2019,Zenoti,Saas,Beauty and Wellness Industry,Hyderabad,Tiger Global Management,Series C,"50,000,000",2019,May_2019.csv
+6.0,28/05/2019,Ather Energy,Automobile,Electric Vehicle,Bengaluru,Sachin Bansal,Series C,"5,10,00,000",2019,May_2019.csv
+7.0,28/05/2019,FreshVnF,Agtech,Fresh Agriculture Produces,Mumbai,Equanimity Ventures,Seed Round,"14,00,00,000",2019,May_2019.csv
+8.0,30/05/2019,GlowRoad,E-commerce,Retail,Bengaluru,"Korea Investment Partners, Vertex Ventures",Series B,"1,15,00,000",2019,May_2019.csv
+9.0,31/05/2019,Bira91,Food and Beverage,Brewery,New Delhi,Sixth Sense Ventures,Series B,"56,00,000",2019,May_2019.csv
+1.0,13/11/2019,Freshworks,Software,Business and customer engagement tools,San Francisco,"Sequoia, CapitalG, Accel",Series H,"15,000,0000",2019,Nov_2019.csv
+2.0,14/11/2019,Misters,Health and wellness,Men's Health and Wellness brand,Gurgaon,"Sauce.vc, Rainforest Ventures",Series B,"486,000",2019,Nov_2019.csv
+3.0,13/11/2019,Sunstone Eduversity Pvt. Ltd,Education,Elearning,Gurgaon,"Prime Venture Partners, LetsVenture, PS1 Venture and GlobalLogic co-founder Rajul Garg",Seed,"1,500,000",2019,Nov_2019.csv
+4.0,17/11/2019,Burger Singh,Food and Beverage,Indian Burger Brand,Gurgaon,RB Investments,Venture,undisclosed,2019,Nov_2019.csv
+5.0,18/11/2019,Healthians,Health and Wellness,Healthcare services,Gurgaon,"DG Daiwa Ventures, DG Incubation",Series B,"12,000,000",2019,Nov_2019.csv
+6.0,15/11/2019,Ninjacart,B2B Marketing,Agritech,Bengaluru,Trifecta Capital Advisors,Debt Funding,"26,000,000",2019,Nov_2019.csv
+7.0,20/11/2019,Aye Finance,FinTech,Financial Services To MSMEs,Gurgaon,FinTech,Debt Funding,"17,411,265",2019,Nov_2019.csv
+8.0,12/11/2019,SuperGaming,Video Games,Social gaming platform,Pune,Dream Incubator,Seed Funding,"1,300,000",2019,Nov_2019.csv
+9.0,20/11/2019,Clumio,SaaS,Recovery software,"San Jose,","Altimeter Capital, Sutter Hill Ventures",Series C,"135,000,000",2019,Nov_2019.csv
+10.0,11/11/2019,eBikeGo,Last Mile Transportation,Electric bike rental,Amritsar,Startup Buddy,Seed,"300,000",2019,Nov_2019.csv
+11.0,19/11/2019,Digital Mall Asia,E-Commerce,Virtual e-commerce platform,Delhi,Amour Infrastructure,Seed Funding,"220,000,000",2019,Nov_2019.csv
+12.0,18/11/2019,Medikabazaar,Healthcare,B2B platform for medical supplies,Mumbai,"Ackermans & van Haaren, HealthQuad, Rebright Partners, Toppan Printing",Series B,"15,800,000",2019,Nov_2019.csv
+13.0,15/11/2019,Vogo Automotive,Last Mile Transportation,Scooter sharing app,Kormangala,"Matrix Partners, Stellaris Venture Partners, Kalaari Capital",Series B,"283,000,000",2019,Nov_2019.csv
+14.0,19/11/2019,Furtados School of Music,Education,Music Education,Tulangan,IAN Fund and DSG Consumer Partners,,"200,000,000",2019,Nov_2019.csv
+15.0,25/11/2019,Paytm,FinTech,Mobile Wallet,Noida,Vijay Shekhar Sharma,Funding Round,"1,000,000,000",2019,Nov_2019.csv
+1.0,04/10/2019,Dunzo,Customer Service,Delivery Service,Bengaluru,Lightbox,Series D,"4,50,00,000",2019,Oct_2019.csv
+2.0,02/10/2019,Udaan,B2B,Business development,Bengaluru,"Altimeter Capital, DST Global",Series D,"58,50,00,000",2019,Oct_2019.csv
+3.0,21/10/2019,The Man Company,Consumer Goods,Beauty and Grooming,Gurgaon,Ayushmann Khurana,Corporate Round,unknown,2019,Oct_2019.csv
+1.0,05/09/2019,FPL Technologies,FinTech,Financial Services,Pune,"Matrix Partners India, Sequoia India",Maiden Round,"4,500,000",2019,Sep_2019.csv
+2.0,04/09/2019,Cashflo,FinTech,Invoice discounting platform and SME lending marketplace,Mumbai,SAIF Partners,Series A,"3,300,000",2019,Sep_2019.csv
+3.0,04/09/2019,Digital F5,"Advertising, Marketing",Digital marketing firm,Mumbai,TIW Private Equity,Private Equity Round,"6,000,000",2019,Sep_2019.csv
+4.0,04/09/2019,3rdFlix,SaaS,Education Technology,Hyderabad,Exfinity Venture Partners,pre-series A,"5,000,000",2019,Sep_2019.csv
+5.0,04/09/2019,75F,IoT,Building automation system,Burnsville,Breakthrough Energy Ventures,Series A,"18,000,000",2019,Sep_2019.csv
+6.0,04/09/2019,Myelin Foundry,Information Technology,Deep-technology,Bengaluru,Endiya Partners,Seed,"10,00,000",2019,Sep_2019.csv
+7.0,04/09/2019,Atomberg Technology,Consumer Technology,"Consumer Electronics, Home Appliances",Mumbai,A91 Partners,Series A,"10,000,000",2019,Sep_2019.csv
+8.0,04/09/2019,GOQii,Health and Wellness,Wearable Fitness Bands,Menlo Park,Bennett Coleman and Company Ltd (BCCL),Series C,"450,000,000",2019,Sep_2019.csv
+9.0,03/09/2019,Vyapar App,Accounting,Mobile-based Accounting Software,Bengaluru,"India Quotient, Axilor Ventures",Series A,"5,000,000",2019,Sep_2019.csv
+,,,,,,,,,2019,Sep_2019.csv
