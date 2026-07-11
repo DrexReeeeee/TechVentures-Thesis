@@ -1,0 +1,50 @@
+{
+  "feature_cols": [
+    "funding_total_usd_clean_log1p",
+    "capital_velocity_log1p",
+    "funding_round_A_usd_log1p",
+    "funding_round_B_usd_log1p",
+    "funding_round_C_usd_log1p",
+    "funding_round_D_usd_log1p",
+    "funding_round_E_usd_log1p",
+    "funding_round_F_usd_log1p",
+    "funding_round_G_usd_log1p",
+    "funding_round_H_usd_log1p",
+    "funding_seed_usd_log1p",
+    "funding_equity_crowdfunding_usd_log1p",
+    "funding_undisclosed_usd_log1p",
+    "funding_convertible_note_usd_log1p",
+    "funding_debt_financing_usd_log1p",
+    "funding_angel_usd_log1p",
+    "funding_grant_usd_log1p",
+    "funding_private_equity_usd_log1p",
+    "funding_post_ipo_equity_usd_log1p",
+    "funding_post_ipo_debt_usd_log1p",
+    "funding_secondary_market_usd_log1p",
+    "funding_product_crowdfunding_usd_log1p",
+    "funding_venture_unclassified_usd_log1p",
+    "industry_target_enc"
+  ],
+  "n_features": 24,
+  "regions": [
+    "Africa",
+    "East Asia",
+    "Europe",
+    "Latin America",
+    "North America",
+    "South Asia",
+    "Southeast Asia"
+  ],
+  "n_regions": 7,
+  "excluded_label_construction_cols": [
+    "status",
+    "status_norm",
+    "success_fail_status",
+    "company_age_years",
+    "funding_rounds",
+    "funding_rounds_clean",
+    "founded_at",
+    "first_funding_at",
+    "last_funding_at"
+  ]
+}
