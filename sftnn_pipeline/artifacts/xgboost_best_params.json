@@ -1,0 +1,6 @@
+{
+  "max_depth": 8,
+  "learning_rate": 0.08019328983201614,
+  "n_estimators": 400,
+  "subsample": 1.0
+}
