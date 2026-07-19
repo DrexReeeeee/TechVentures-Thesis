@@ -1,0 +1,244 @@
+/* 
+   GOOGLE FONTS
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+
+/* 
+   DESIGN TOKENS
+ */
+
+:root {
+    /*  Brand Colors */
+    --primary-green: #3ACC9F;
+    --dark-green: #254D3E;
+
+    --accent-purple: #CB4BE1;
+    --dark-purple: #590B7D;
+
+    /* Semantic Colors  */
+    --color-success: #3ACC9F;
+    --color-warning: #F5B301;
+    --color-danger: #E5484D;
+    --color-info: #3B82F6;
+
+    /* Layout  */
+    --sidebar-width: 240px;
+    --page-max-width: 1600px;
+    --page-padding: 2rem;
+    --section-gap: 2rem;
+    --content-gap: 1.5rem;
+    --card-padding: 1.25rem;
+
+    /* Border Radius */
+    --radius-xs: 6px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-pill: 999px;
+
+    /* Borders */
+    --border-width: 1px;
+
+    /* Shadows */
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.05);
+    --shadow-md:
+        0 8px 24px rgba(0,0,0,.08);
+    --shadow-lg:
+        0 12px 36px rgba(0,0,0,.12);
+
+    /*  Animation */
+    --transition-fast:
+        .15s ease;
+    --transition-normal:
+        .25s ease;
+    --transition-slow:
+        .35s ease;
+
+    /*  Typography */
+    --font-display:
+        "Yeseva One",
+        serif;
+    --font-heading:
+        "Josefin Sans",
+        sans-serif;
+    --font-body:
+        "Josefin Sans",
+        sans-serif;
+    --font-size-display: 2rem;
+    --font-size-h1: 1.65rem;
+    --font-size-h2: 1.35rem;
+    --font-size-h3: 1.10rem;
+    --font-size-body: .95rem;
+    --font-size-small: .85rem;
+}
+
+
+/* 
+   GLOBAL TYPOGRAPHY
+ */
+
+html,
+body {
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    margin-top: 0;
+}
+
+p,
+label,
+button,
+input,
+textarea,
+select {
+
+    font-family: var(--font-body);
+
+}
+
+
+/* 
+   MATERIAL SYMBOLS
+ */
+
+.material-symbols-outlined {
+    color: inherit;
+    vertical-align: middle;
+    user-select: none;
+
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+}
+
+
+/* Filled variant */
+
+.material-filled {
+    font-variation-settings:
+        "FILL" 1,
+        "wght" 500,
+        "GRAD" 0,
+        "opsz" 24;
+
+}
+
+
+/* 
+   UTILITIES
+ */
+
+/* Text */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    opacity: .70;
+}
+
+
+/* Display */
+
+.hidden {
+    display: none;
+}
+
+
+/* Margin */
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+
+/* Width */
+
+.w-full {
+    width: 100%;
+}
+
+
+/* Flex */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-sm {
+    gap: .5rem;
+}
+
+.gap-md {
+    gap: 1rem;
+}
+
+.gap-lg {
+    gap: 1.5rem;
+}
+
+
+/* ==========================================================
+   FRAMEWORK OVERRIDES
+========================================================== */
+
+/*
+Keep this section intentionally small.
+
+Only override Streamlit when:
+
+• the framework cannot achieve the layout
+• a reusable design improvement is needed
+
+Avoid styling Streamlit internal classes unless
+there is no other clean solution.
+*/

@@ -1,0 +1,68 @@
+/* 
+   PAGE HEADER
+ */
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 2rem;
+
+}
+
+.page-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--font-size-display);
+
+    line-height: 1.1;
+}
+
+.page-subtitle {
+    margin: 0;
+    font-size: var(--font-size-body);
+    opacity: .75;
+}
+
+
+/*
+   SECTION
+ */
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: var(--section-gap);
+
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.section-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h2);
+}
+
+.section-subtitle {
+    margin-top: .35rem;
+    opacity: .7;
+    font-size: var(--font-size-small);
+}
+
+
+/* 
+   CONTENT GROUP
+ */
+
+.content-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-gap);
+}
