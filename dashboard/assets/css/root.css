@@ -82,19 +82,20 @@
    GLOBAL TYPOGRAPHY
  */
 
-html,
-body {
-    font-family: var(--font-body);
-}
+/* 
+   TYPOGRAPHY
+*/
 
 h1,
 h2,
-h3,
+h3 {
+    font-family: var(--font-display);
+}
+
 h4,
 h5,
 h6 {
-    font-family: var(--font-display);
-    margin-top: 0;
+    font-family: var(--font-heading);
 }
 
 p,

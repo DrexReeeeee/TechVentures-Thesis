@@ -1,29 +1,30 @@
-/* 
-   PAGE HEADER
- */
+/* PAGE HEADER */
 
-.page-header {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    margin-bottom: 2rem;
+.page-title{
+
+    margin:0;
+
+    font-family:var(--font-display);
+
+    font-size:3rem;
+
+    font-weight:400;
+
+    line-height:1.1;
 
 }
 
-.page-title {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: var(--font-size-display);
+.page-subtitle{
 
-    line-height: 1.1;
+    margin-top:.75rem;
+
+    margin-bottom:2rem;
+
+    font-size:1.05rem;
+
+    opacity:.72;
+
 }
-
-.page-subtitle {
-    margin: 0;
-    font-size: var(--font-size-body);
-    opacity: .75;
-}
-
 
 /*
    SECTION
@@ -65,4 +66,108 @@
     display: flex;
     flex-direction: column;
     gap: var(--content-gap);
+}
+
+/*
+   PAGE TITLE
+*/
+
+.page-title {
+
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(2.6rem, 4vw, 3.4rem);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+}
+
+.page-subtitle {
+
+    margin-top: .55rem;
+
+    margin-bottom: 2rem;
+
+    font-size: 1.08rem;
+
+    opacity: .72;
+
+}
+
+/* CARD HEADER */
+
+.card-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    margin-bottom:1.35rem;
+
+}
+
+.card-icon{
+
+    width:52px;
+
+    height:52px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.card-icon .material-symbols-outlined{
+
+    font-size:28px;
+
+    color:inherit;
+
+}
+
+.card-text{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.card-title{
+
+    font-family:var(--font-heading);
+
+    font-size:1.35rem;
+
+    font-weight:600;
+
+    line-height:1.25;
+
+}
+
+.card-subtitle{
+
+    margin-top:.3rem;
+
+    opacity:.72;
+
+    font-size:.95rem;
+
 }
