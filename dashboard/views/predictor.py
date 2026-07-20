@@ -3,6 +3,8 @@ import streamlit as st
 from components.layout.page_header import render_page_header
 from components.layout.section_header import render_section_header
 from components.display.preset_card import render_preset_card
+from components.common.startup_form import render_startup_form
+from components.common.upload_zone import render_upload_zone
 
 
 def render():
@@ -53,11 +55,27 @@ def render():
 
     render_section_header(
         title="Input Mode",
+        subtitle="Choose how you'd like to provide startup data.",
     )
 
-    st.container(border=True).info(
-        "Startup input form will be added here."
+    mode = st.segmented_control(
+        "",
+        options=[
+            "Single Startup",
+            "Bulk CSV Upload",
+        ],
+        default="Single Startup",
     )
+
+    st.write("")
+
+    if mode == "Single Startup":
+
+        form_data = render_startup_form()
+
+    else:
+
+        upload_data = render_upload_zone()
 
     st.divider()
 
