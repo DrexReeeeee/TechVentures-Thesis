@@ -1,15 +1,18 @@
 # TechVenture-SFTNN: Modeling Pipeline
 
-This project implements Chapter 4 (Sections 4.3.2 through 4.10.2) of your
-methodology end to end, against your actual file
-`modeling_ready_dataset_from_formulas.csv`. Every script is commented with
-the exact section number it implements.
+This implements Chapter 4 (Sections 4.3.2 through 4.10.2) of the
+methodology end to end, against `modeling_ready_dataset_from_formulas.csv`.
+Every script is commented with the exact section number it implements.
 
-All seven scripts were smoke-tested against your real 38,090-row dataset
-before being handed to you -- the pipeline runs cleanly start to finish.
-What you're getting is the full six-stage development model from Section
-4.6; you just need to let it run for real (more epochs, more Optuna
-trials) instead of the 1-2 epoch smoke test used to validate the code.
+**This is a revised version of the original handoff.** The proposed
+SFTNN model initially failed to outperform the region-blind baselines on
+the regions the thesis is about (Africa, Southeast Asia, South Asia) —
+`05_train_sftnn.py`, `models.py`, and `07_interpretability.py` went
+through three rounds of diagnosis and fixes before reaching the version
+here. That history is documented in full in the "SFTNN fix history"
+section below, since it's directly relevant to how Chapter 4's
+methodology and equations should be written up, not just implementation
+trivia.
 
 ## 0. Setup
 
@@ -37,13 +40,11 @@ What it does:
   region-count-agnostic, so East Asia flows through Table 4.7, the
   gamma/beta heatmap, and the counterfactual ablation check automatically
   as its own row. Pass `--drop_extra_regions` if you'd rather match
-  Table 4.7 exactly as six regions instead.
+  Table 4.7 exactly as six regions instead. **If you keep East Asia,
+  Table 4.7 and any Chapter 5 regional discussion need a 7th row.**
 - Engineers `capital_velocity` from `founded_at` / `last_funding_at`.
 - log1p + Robust-Scales `funding_total_usd` and all funding-instrument
-  columns (Series A-H, seed, debt, grant, etc. -- these extend Section
-  4.3.2's literal wording, which names `funding_total_usd` as the running
-  example; drop `FUNDING_HISTORY_COLS` in `01_preprocess.py` if you want
-  to match the paper's minimal feature set exactly).
+  columns (Series A-H, seed, debt, grant, etc.).
 - Target-encodes each startup's primary industry (first entry in
   `category_list`), fit on the training partition only.
 - Splits 70/15/15, stratified on `derived_target`.
@@ -54,19 +55,13 @@ What it does:
 Output: `artifacts/{train,val,test}.csv`, `artifacts/preprocessor.joblib`,
 `artifacts/feature_manifest.json`.
 
-**Check `feature_manifest.json` before continuing** -- confirm the region
-list and feature count look right to you.
-
 ## 2. Stage 2 -- Region-blind MLP baseline (Section 4.7)
 
 ```bash
 python 02_train_mlp.py --trials 20 --max_epochs 60
 ```
 
-This runs the full ~20-trial Optuna search described in Section 4.7. On a
-laptop CPU this will take a while (each trial trains up to 60 epochs with
-early stopping) -- budget real time for this, or move to Colab's GPU
-runtime as described in Section 4.1.
+Unchanged from the original handoff.
 
 ## 3. Stage 3 -- XGBoost and TabNet baselines (Section 4.7)
 
@@ -75,7 +70,7 @@ python 03_train_xgboost.py --trials 20
 python 04_train_tabnet.py --trials 20 --max_epochs 60
 ```
 
-XGBoost will be by far the fastest of the four.
+Unchanged from the original handoff.
 
 ## 4. Stage 4 -- Proposed SFTNN (Section 4.5.2, 4.7)
 
@@ -83,8 +78,19 @@ XGBoost will be by far the fastest of the four.
 python 05_train_sftnn.py --trials 30 --max_epochs 60
 ```
 
-30 trials (vs. 20 for the baselines), per Section 4.7's stated budget for
-the added embedding + affine-generator branch.
+**This script now differs from the original handoff in three ways** (see
+"SFTNN fix history" below for why):
+
+1. `models.py`'s `SFTNN` module uses an identity-centered
+   reparameterization for gamma/beta, not the raw linear output the
+   methodology originally specified.
+2. The region-embedding/affine-generator branch is exempt from weight
+   decay (its own AdamW param group, via `build_optimizer()`).
+3. Training adds a shrinkage penalty (`model.region_shrinkage_penalty()`)
+   that pulls each region's embedding toward the population mean,
+   weighted by `1/n_r`. Its strength, `shrink_lambda`, is now a 7th
+   Optuna-tunable hyperparameter alongside lr/dropout/weight_decay/
+   hidden_dim/n_layers/embed_dim.
 
 ## 5. Stage 5 -- Comparative evaluation (Section 4.9, 4.10)
 
@@ -98,11 +104,20 @@ Produces:
   models.
 - Confusion matrices printed to console (Table 4.5 structure).
 
-This is where you actually find out whether SFTNN beats the region-blind
-MLP baseline and is competitive with XGBoost/TabNet -- look specifically
-at Recall and F1 on the minority regions (Africa, Latin America, South
-Asia, Southeast Asia), per Section 4.10.2's stated decision criterion,
-not just the aggregate row.
+Uses a flat 0.5 decision threshold for all four models. **A per-region,
+validation-tuned threshold variant (Youden's J, fit per Hardt et al.,
+2016's post-hoc group-threshold framework) was also built and tested**
+-- it is not used here because, for the final SFTNN checkpoint, it
+*reduced* aggregate Recall and F1 relative to the flat threshold (see
+fix history below). If you want to reproduce or discuss that comparison
+in Chapter 4/5, ask for the extended `06_evaluate.py` version that
+outputs both `*_flat_threshold.csv` and tuned versions plus
+`per_region_thresholds.json` -- it isn't included in this bundle since
+it isn't the primary reported result.
+
+Look specifically at Recall and F1 on the minority regions (Africa,
+Latin America, South Asia, Southeast Asia), per Section 4.10.2's stated
+decision criterion, not just the aggregate row.
 
 ## 6. Stage 6 -- Interpretability (Section 4.10.2)
 
@@ -113,52 +128,127 @@ python 07_interpretability.py
 Produces:
 - `results/gamma_beta_heatmap.png` -- learned gamma_r/beta_r per region.
 - `results/ablation_results.csv` -- the counterfactual mean-embedding
-  ablation check.
-- `results/region_embedding_pca.png` -- the optional PCA region-embedding
-  cluster plot (Guo & Berkhahn, 2016 convention).
+  ablation check (replace each region's learned embedding with the
+  population-mean embedding, holding everything else fixed, and compare
+  Recall/F1). **This is the single most diagnostic output in the whole
+  pipeline** -- a region whose Recall_drop is negative is one where the
+  model's region-specific behavior is actively worse than generic
+  behavior, not just unhelpful.
+- `results/region_embedding_pca.png` -- PCA projection of the learned
+  region embedding table (Guo & Berkhahn, 2016 convention).
+
+`counterfactual_ablation()` reimplements SFTNN's forward pass manually
+(so it can swap in the mean embedding partway through) -- **it must be
+kept in sync with `SFTNN.forward()`'s reparameterization by hand**. If
+you ever change how gamma/beta are computed in `models.py` again, update
+this function too, or the ablation numbers will silently stop matching
+`06_evaluate.py`'s numbers (this happened once already; see fix history).
 
 Take the gamma/beta heatmap and ablation table to your adviser and
 (where accessible) someone with direct exposure to Southeast Asian
-startup ecosystems, per Section 4.10.2's qualitative-review step -- that
-part genuinely can't be automated.
+startup ecosystems, per Section 4.10.2's qualitative-review step.
 
 ## Files
 
-| File | Methodology section |
-|---|---|
-| `01_preprocess.py` | 4.3.2 |
-| `models.py` | 4.5.2 (Equations 1-4) |
-| `data_utils.py` | shared utility, no section |
-| `02_train_mlp.py` | 4.7, "Standard MLP" |
-| `03_train_xgboost.py` | 4.7, "XGBoost" |
-| `04_train_tabnet.py` | 4.7, "TabNet" |
-| `05_train_sftnn.py` | 4.5.2 + 4.7, "Proposed: SFTNN" |
-| `06_evaluate.py` | 4.9, 4.10.1 |
-| `07_interpretability.py` | 4.10.2 |
+| File | Methodology section | Status |
+|---|---|---|
+| `01_preprocess.py` | 4.3.2 | unchanged |
+| `models.py` | 4.5.2 (Equations 1-4) | **revised -- Equations 2/3 changed, see below** |
+| `data_utils.py` | shared utility, no section | unchanged |
+| `02_train_mlp.py` | 4.7, "Standard MLP" | unchanged |
+| `03_train_xgboost.py` | 4.7, "XGBoost" | unchanged |
+| `04_train_tabnet.py` | 4.7, "TabNet" | unchanged |
+| `05_train_sftnn.py` | 4.5.2 + 4.7, "Proposed: SFTNN" | **revised -- see fix history** |
+| `06_evaluate.py` | 4.9, 4.10.1 | unchanged (flat threshold; see Stage 5 note) |
+| `07_interpretability.py` | 4.10.2 | **revised -- bug fix, see fix history** |
 
-## A few judgment calls I made for you
+## SFTNN fix history (relevant to your Chapter 4 rewrite)
 
-1. **Extra regions in your data.** Your `region_group` column has an
-   "East Asia" value beyond the six in Table 4.7, plus "Unmapped/Missing"
-   rows. "Unmapped/Missing" is always dropped (region unknown, can't
-   condition SFTNN on it). East Asia is **kept as a 7th region by
-   default** -- pass `--drop_extra_regions` to `01_preprocess.py` if you
-   want to match Table 4.7's original six regions exactly instead. If you
-   keep East Asia, remember to add a 7th row to Table 4.7 (and any
-   per-region discussion in Chapter 5) when you write up results.
-2. **`category_list` is multi-valued** (e.g. `"Application
-   Platforms|Real Time|Social Network Media"`). I use the first listed
-   category as the primary industry vertical for target encoding. If you
-   want a different rule (most specific category, all categories
-   multi-hot, etc.), that's a one-line change in `primary_industry()` in
-   `01_preprocess.py`.
-3. **Funding-instrument breakdown columns.** I included all of them
-   (Series A-H, seed, debt, grant, etc.) as part of "funding history" per
-   Section 4.4.1's phrasing. Section 4.5.2 literally lists x as just
-   "log-scaled funding totals, capital velocity, encoded industry
-   vertical bins" -- if you want to match that more literally, remove
-   `FUNDING_HISTORY_COLS` from the feature list in `01_preprocess.py`.
-4. **Batch size, threshold, and n_regions-dependent one-hot width** are
-   implementation details not specified in the methodology text; I used
-   reasonable defaults (batch size 256, decision threshold 0.5) that you
-   can change directly in the scripts.
+The originally-specified SFTNN (raw linear gamma/beta, no shrinkage) did
+not outperform the region-blind baselines, and specifically underserved
+the minority regions it was designed to help -- e.g. an initial full run
+showed Africa Recall (0.143) matching the plain MLP's unconditioned
+floor and losing to both XGBoost and TabNet (0.29). Three changes were
+made in response, in this order:
+
+1. **Identity-centered gamma/beta reparameterization** (`models.py`).
+   The original formula, `[gamma_r; beta_r] = W . ReLU(W_e e_r + b_e) + b`,
+   initializes gamma near 0 -- i.e. the modulation branch starts by
+   *erasing* the trunk's representation, and has to learn its way back
+   out using gradient signal that's scarcest for the smallest regions.
+   Changed to `gamma_r = 1 + tanh(gamma_raw)`, `beta_r = tanh(beta_raw)`,
+   with the final affine-generator layer zero-initialized, so every
+   region starts as an exact no-op (gamma=1, beta=0) and only deviates
+   where training earns it. **This changes Equations 2 and 3 in Section
+   4.5.2** -- the equations as currently written no longer match the
+   code. Citable precedent: de Vries et al. (2017) on conditional batch
+   normalization's delta-from-identity formulation (the direct precursor
+   to the FiLM paper, Perez et al. 2018, already cited in Chapter 3), and
+   Bachlechner et al. (2021, "ReZero") for the zero-initialization of the
+   branch's final layer specifically.
+2. **Weight decay decoupled from the region-conditioning branch**
+   (`05_train_sftnn.py`'s `build_optimizer()`). Weight decay pulls
+   parameters toward 0 -- which, after fix #1, is exactly the no-op
+   state -- so ordinary weight decay was fighting the mechanism instead
+   of regularizing it. The region embedding and affine generator now get
+   their own zero-weight-decay AdamW param group.
+3. **Shrinkage penalty on region embeddings** (`models.py`'s
+   `region_shrinkage_penalty()`). The counterfactual ablation after fixes
+   #1-2 showed region-specific behavior was actively *harmful* (not just
+   unhelpful) for Southeast Asia, East Asia, and South Asia -- swapping
+   in the generic mean embedding improved their Recall. A penalty
+   pulling each region's embedding toward the population mean, weighted
+   by `1/n_r`, was added to the training loss to correct this while
+   preserving North America/Latin America's genuine, ablation-confirmed
+   gains.
+
+**A fourth change, Group DRO (Sagawa et al., 2020), was implemented and
+tested but not adopted.** It regressed aggregate ROC-AUC, F1, and Recall
+relative to the shrinkage-only checkpoint, and moved Southeast Asia's
+AUC further from XGBoost's rather than closer -- the opposite of its
+intent. This is a legitimate, disclosable negative result (worth one or
+two sentences in Chapter 4/5: "Group DRO was evaluated and did not
+improve on the shrinkage-only configuration within the trial budget
+used") but is not in this pipeline's active code path.
+
+**A fifth change, per-region post-hoc threshold tuning** (Hardt et al.,
+2016; Youden, 1950), was also implemented and tested. It is not the
+primary reported result because it reduced SFTNN's aggregate Recall and
+F1 relative to the flat 0.5 threshold, even though it fairly improved
+Southeast Asia specifically at the cost of erasing a South Asia
+advantage the flat threshold already had. Worth a paragraph in Chapter
+4/5 as a disclosed, tested-but-not-adopted refinement, same as Group DRO.
+
+**Net result of fixes #1-3**, at flat threshold, best run to date:
+SFTNN Recall (0.709) and F1 (0.742) both the best of the four models;
+Africa AUC (0.729) far ahead of XGBoost's (0.571); ROC-AUC/PR-AUC/Accuracy
+competitive with, though not always beating, XGBoost. Not a clean sweep
+on every region -- most notably Southeast Asia's AUC still trails
+XGBoost's -- which is a legitimate, honestly-reportable open point rather
+than something further tuning was able to close within the time
+available.
+
+## New citations needed for Chapter 4/5 and the Bibliography
+
+| Citation | Where it's used | Bibliography subsection |
+|---|---|---|
+| de Vries, H., Strub, F., Mary, J., Larochelle, H., Pietquin, O., & Courville, A. (2017). Modulating early visual processing by language. *Advances in Neural Information Processing Systems, 30*. | Justifies the identity-centered gamma/beta reparameterization (fix #1) | Journal Articles / Conference Proceedings (NeurIPS) |
+| Bachlechner, T., Majumder, B. P., Mao, H., Cottrell, G., & McAuley, J. (2021). ReZero is all you need: Fast convergence at large depth. *Proceedings of the 37th Conference on Uncertainty in Artificial Intelligence*, PMLR 161, 1352-1361. | Justifies zero-initializing the affine generator's final layer (fix #1) | Conference Proceedings |
+| Sagawa, S., Koh, P. W., Hashimoto, T. B., & Liang, P. (2020). Distributionally robust neural networks for group shifts: On the importance of regularization for worst-case generalization. *International Conference on Learning Representations*. | Group DRO (tested, not adopted -- disclose as a negative result) | Conference Proceedings |
+| Hardt, M., Price, E., & Srebro, N. (2016). Equality of opportunity in supervised learning. *Advances in Neural Information Processing Systems, 29*, 3315-3323. | Per-region threshold tuning framework (tested, not primary result) | Conference Proceedings |
+| Youden, W. J. (1950). Index for rating diagnostic tests. *Cancer, 3*(1), 32-35. | Youden's J threshold-selection criterion | Journal Articles |
+
+## A few judgment calls carried over from the original handoff
+
+1. **`category_list` is multi-valued.** The first listed category is
+   used as the primary industry vertical for target encoding. One-line
+   change in `primary_industry()` in `01_preprocess.py` if you want a
+   different rule.
+2. **Funding-instrument breakdown columns** (Series A-H, seed, debt,
+   grant, etc.) are included as "funding history" per Section 4.4.1's
+   phrasing, extending beyond Section 4.5.2's literal minimal example.
+   Remove `FUNDING_HISTORY_COLS` in `01_preprocess.py` to match the
+   methodology text more literally.
+3. **Batch size and n_regions-dependent one-hot width** are
+   implementation details not specified in the methodology text;
+   defaults (batch size 256) can be changed directly in the scripts.

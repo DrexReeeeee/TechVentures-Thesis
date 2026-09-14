@@ -1,0 +1,168 @@
+/* 
+   SIDEBAR NAVIGATION
+ */
+
+.st-key-sidebar_nav{
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+}
+
+
+/* remove Streamlit spacing */
+
+.st-key-sidebar_nav [data-testid="stElementContainer"]{
+    margin:0;
+}
+
+
+/*
+   NAV BUTTON
+ */
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+.stButton>button{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:.58rem .95rem;
+
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:inherit;
+
+    text-align:left;
+    transition:
+        background .18s ease,
+        color .18s ease,
+        transform .15s ease;
+
+}
+
+
+/* inner wrapper */
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+.stButton>button>div{
+    width:100%;
+}
+
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+.stButton>button>div>span{
+    width:100%;
+
+    display:flex;
+    align-items:center;
+}
+
+
+/* 
+   ICON
+ */
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+[data-testid="stIconMaterial"]{
+    width:28px;
+    min-width:28px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    margin-right:.9rem;
+
+    font-size:20px;
+
+    color:inherit;
+    opacity:.88;
+    transition:
+        color .18s ease,
+        opacity .18s ease;
+}
+
+
+/* 
+   LABEL
+ */
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+.stButton p{
+    margin:0;
+    font-family:var(--font-heading);
+    font-size:var(--font-size-body);
+    font-weight:500;
+    line-height:1;
+}
+
+
+/* 
+   HOVER
+*/
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button[kind="secondary"]:hover{
+    background:rgba(255,255,255,.05);
+}
+
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button[kind="secondary"]:hover
+[data-testid="stIconMaterial"]{
+    opacity:1;
+}
+
+
+/* 
+   ACTIVE
+ */
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button[kind="primary"]{
+    background:rgba(58,204,159,.14);
+    color:var(--primary-green);
+}
+
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button[kind="primary"]
+[data-testid="stIconMaterial"]{
+    color:var(--primary-green);
+    opacity:1;
+}
+
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button[kind="primary"]:hover{
+    background:rgba(58,204,159,.20);
+}
+
+
+/*
+   FOCUS
+ */
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button:focus{
+    box-shadow:none;
+}
+
+
+section[data-testid="stSidebar"]
+.st-key-sidebar_nav
+button:focus-visible{
+    outline:2px solid rgba(58,204,159,.35);
+    outline-offset:2px;
+
+}

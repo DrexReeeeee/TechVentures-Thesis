@@ -1,0 +1,61 @@
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+section[data-testid="stSidebar"] {
+
+    width: 250px !important;
+
+}
+
+.sidebar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .8rem;
+
+    margin-bottom: 1rem;
+
+}
+
+.sidebar-brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.sidebar-title {
+
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: 1.45rem;
+
+    line-height: 1.1;
+
+}
+
+.sidebar-subtitle {
+
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: .95rem;
+
+    opacity: .7;
+
+}
+
+.sidebar-divider {
+
+    margin: .5rem 0 1rem;
+
+}

@@ -1,0 +1,32 @@
+# Core Data Science
+numpy
+pandas
+scikit-learn
+joblib
+openpyxl
+
+# Deep Learning
+torch
+torchvision
+torchaudio
+
+# Machine Learning
+xgboost
+pytorch-tabnet
+optuna
+
+# Explainable AI
+captum
+
+# Dashboard
+streamlit
+streamlit-option-menu
+streamlit-extras
+
+# Visualization
+plotly
+matplotlib
+seaborn
+
+# Images
+pillow
