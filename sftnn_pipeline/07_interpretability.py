@@ -85,13 +85,20 @@ def counterfactual_ablation(model, test_df, feature_cols, region_to_id, results_
         h = model.trunk(x)
         e_r_true = model.region_embedding(r_true)
         gb_true = model.affine_generator(e_r_true)
-        gamma_true, beta_true = gb_true.chunk(2, dim=-1)
+        gamma_true_raw, beta_true_raw = gb_true.chunk(2, dim=-1)
+        # Must match SFTNN.forward()'s reparameterization exactly, or this
+        # function scores a different computation than the trained model
+        # actually runs at inference time (see models.py).
+        gamma_true = 1.0 + model.gamma_scale * torch.tanh(gamma_true_raw)
+        beta_true = model.beta_scale * torch.tanh(beta_true_raw)
         probs_true = torch.sigmoid(model.head(gamma_true * h + beta_true).squeeze(-1)).cpu().numpy()
 
         # Counterfactual (mean-embedding) predictions
         e_r_mean = mean_embedding.expand(x.shape[0], -1)
         gb_mean = model.affine_generator(e_r_mean)
-        gamma_mean, beta_mean = gb_mean.chunk(2, dim=-1)
+        gamma_mean_raw, beta_mean_raw = gb_mean.chunk(2, dim=-1)
+        gamma_mean = 1.0 + model.gamma_scale * torch.tanh(gamma_mean_raw)
+        beta_mean = model.beta_scale * torch.tanh(beta_mean_raw)
         probs_mean = torch.sigmoid(model.head(gamma_mean * h + beta_mean).squeeze(-1)).cpu().numpy()
 
     rows = []

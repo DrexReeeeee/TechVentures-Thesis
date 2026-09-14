@@ -32,14 +32,45 @@ from models import SFTNN
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
+def build_optimizer(model, lr, weight_decay):
+    """
+    Fix #2: weight decay pulls parameters toward 0. After fix #1's
+    identity-centered reparameterization, gamma_raw/beta_raw = 0 is exactly
+    the no-op state (gamma=1, beta=0) -- so applying weight decay to the
+    region-embedding/affine-generator branch actively pushes SFTNN's
+    region-conditioning mechanism toward doing nothing, rather than
+    regularizing it the way weight decay regularizes an ordinary layer.
+    This matters most for minority regions, which already have the least
+    data/gradient signal to fight that shrinkage pressure.
+
+    Solution: give the region-conditioning branch its own AdamW param
+    group with weight_decay=0, and keep weight decay only on the shared
+    trunk + classifier head, where it's doing its normal job.
+    """
+    no_decay_params = (
+        list(model.region_embedding.parameters())
+        + list(model.affine_generator.parameters())
+        + [model.gamma_scale, model.beta_scale]
+    )
+    no_decay_ids = {id(p) for p in no_decay_params}
+    decay_params = [p for p in model.parameters() if id(p) not in no_decay_ids]
+    return torch.optim.AdamW(
+        [
+            {"params": decay_params, "weight_decay": weight_decay},
+            {"params": no_decay_params, "weight_decay": 0.0},
+        ],
+        lr=lr,
+    )
+
+
 def train_one_config(params, train_ds, val_ds, n_features, n_regions,
-                      max_epochs, patience=5, verbose=False):
+                      region_counts, max_epochs, patience=5, verbose=False):
     model = SFTNN(n_features, n_regions, hidden_dim=params["hidden_dim"],
                   n_layers=params["n_layers"], embed_dim=params["embed_dim"],
                   dropout=params["dropout"]).to(DEVICE)
-    opt = torch.optim.AdamW(model.parameters(), lr=params["lr"],
-                             weight_decay=params["weight_decay"])
+    opt = build_optimizer(model, lr=params["lr"], weight_decay=params["weight_decay"])
     loss_fn = nn.BCEWithLogitsLoss()
+    shrink_lambda = params["shrink_lambda"]
 
     train_loader = DataLoader(train_ds, batch_size=256, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=1024, shuffle=False)
@@ -51,7 +82,12 @@ def train_one_config(params, train_ds, val_ds, n_features, n_regions,
             x, r, y = x.to(DEVICE), r.to(DEVICE), y.to(DEVICE)
             opt.zero_grad()
             logits = model(x, r)
-            loss = loss_fn(logits, y)
+            # Fix #3: pull each region's embedding toward the population
+            # mean, weighted by 1/n_r, so small-n regions (South/Southeast
+            # Asia, Africa) can't drift as far from the pack as large-n
+            # regions (North America, which has earned the right to, per
+            # the ablation results) can.
+            loss = loss_fn(logits, y) + shrink_lambda * model.region_shrinkage_penalty(region_counts)
             loss.backward()
             opt.step()
 
@@ -86,6 +122,16 @@ def main(args):
     train_ds = StartupDataset(train_df, feature_cols)
     val_ds = StartupDataset(val_df, feature_cols)
 
+    # Fix #3: how much training data each region actually has, in
+    # region-id order (0..n_regions-1) so it lines up with
+    # region_embedding.weight's row order. Regions with fewer training
+    # rows get shrunk harder toward the population-mean embedding.
+    region_counts = torch.tensor(
+        [ (train_df["region_id"] == r).sum() for r in range(n_regions) ],
+        dtype=torch.float32,
+    ).to(DEVICE)
+    print(f"Region training counts (id order): {region_counts.cpu().tolist()}")
+
     def objective(trial):
         params = {
             "lr": trial.suggest_float("lr", 1e-4, 1e-2, log=True),
@@ -94,9 +140,17 @@ def main(args):
             "hidden_dim": trial.suggest_categorical("hidden_dim", [32, 64, 128]),
             "n_layers": trial.suggest_categorical("n_layers", [1, 2, 3]),
             "embed_dim": trial.suggest_categorical("embed_dim", [4, 8, 16]),
+            # Fix #3: strength of the shrinkage penalty. Let Optuna find
+            # the right amount rather than hand-picking one value -- too
+            # weak and small-n regions keep drifting to bad places, too
+            # strong and every region gets flattened toward the mean
+            # (which would also erase Latin America/North America's
+            # genuine, ablation-confirmed gains).
+            "shrink_lambda": trial.suggest_float("shrink_lambda", 1e-3, 1e1, log=True),
         }
         _, val_auc = train_one_config(params, train_ds, val_ds, n_features,
-                                       n_regions, max_epochs=args.max_epochs)
+                                       n_regions, region_counts,
+                                       max_epochs=args.max_epochs)
         return val_auc
 
     study = optuna.create_study(direction="maximize",
@@ -108,7 +162,7 @@ def main(args):
 
     final_model, final_val_auc = train_one_config(
         study.best_params, train_ds, val_ds, n_features, n_regions,
-        max_epochs=args.max_epochs, verbose=True,
+        region_counts, max_epochs=args.max_epochs, verbose=True,
     )
     torch.save(final_model.state_dict(), f"{args.artifacts}/sftnn_model.pt")
     with open(f"{args.artifacts}/sftnn_best_params.json", "w") as f:

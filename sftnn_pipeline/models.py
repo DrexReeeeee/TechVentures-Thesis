@@ -66,8 +66,29 @@ class SFTNN(nn.Module):
         self.region_embedding = nn.Embedding(n_regions, embed_dim)
         self.affine_generator = nn.Sequential(
             nn.Linear(embed_dim, hidden_dim), nn.ReLU(),
-            nn.Linear(hidden_dim, 2 * hidden_dim),  # outputs [gamma ; beta]
+            nn.Linear(hidden_dim, 2 * hidden_dim),  # outputs [gamma_raw ; beta_raw]
         )
+        # --- Identity-centered FiLM init (fix #1) ---
+        # Zero-init the final affine_generator layer so gamma_raw = beta_raw = 0
+        # for every region at the start of training. Combined with the
+        # reparameterization in forward() below (gamma = 1 + tanh(gamma_raw),
+        # beta = tanh(beta_raw)), this means every region starts as an exact
+        # no-op on the trunk (gamma=1, beta=0) instead of the old raw-gamma
+        # parameterization, which started near gamma=0 -- i.e. near-erasing
+        # the trunk's representation before any modulation was learned. That
+        # previously disadvantaged minority regions most, since they have the
+        # least gradient signal available to climb back out of a collapsed
+        # state. Now the network only adds region-specific modulation where
+        # the gradient actually earns it.
+        nn.init.zeros_(self.affine_generator[-1].weight)
+        nn.init.zeros_(self.affine_generator[-1].bias)
+
+        # Learnable global scale so the model can still express large
+        # modulation if the data calls for it, while every region still
+        # starts bounded around the identity transform.
+        self.gamma_scale = nn.Parameter(torch.tensor(1.0))
+        self.beta_scale = nn.Parameter(torch.tensor(1.0))
+
         self.hidden_dim = hidden_dim
 
         # --- Classifier Head (Equation 4) ---
@@ -77,7 +98,13 @@ class SFTNN(nn.Module):
         h = self.trunk(x)                                  # Equation 1
         e_r = self.region_embedding(region_id)              # lookup e_r = E[r]
         gamma_beta = self.affine_generator(e_r)              # Equation 2
-        gamma, beta = gamma_beta.chunk(2, dim=-1)
+        gamma_raw, beta_raw = gamma_beta.chunk(2, dim=-1)
+        # Identity-centered reparameterization (fix #1): gamma starts at 1
+        # (no-op scale) and beta starts at 0 (no-op shift) for every region,
+        # bounded via tanh so training stays stable, but scaled by a
+        # learnable factor so the model can still express strong modulation.
+        gamma = 1.0 + self.gamma_scale * torch.tanh(gamma_raw)
+        beta = self.beta_scale * torch.tanh(beta_raw)
         y_modulated = gamma * h + beta                       # Equation 3
         logits = self.head(y_modulated).squeeze(-1)          # Equation 4
         if return_affine:
@@ -91,5 +118,44 @@ class SFTNN(nn.Module):
             all_ids = torch.arange(self.region_embedding.num_embeddings, device=device)
             e_r = self.region_embedding(all_ids)
             gamma_beta = self.affine_generator(e_r)
-            gamma, beta = gamma_beta.chunk(2, dim=-1)
+            gamma_raw, beta_raw = gamma_beta.chunk(2, dim=-1)
+            gamma = 1.0 + self.gamma_scale * torch.tanh(gamma_raw)
+            beta = self.beta_scale * torch.tanh(beta_raw)
         return gamma.cpu().numpy(), beta.cpu().numpy()
+
+    def region_shrinkage_penalty(self, region_counts):
+        """
+        Fix #3: partial pooling / shrinkage on region embeddings.
+
+        Every region currently gets a fully free embedding vector, with no
+        relationship enforced between regions -- so a small-n region (e.g.
+        Southeast Asia, South Asia) can move just as far from the pack as a
+        large-n region (North America), even though it doesn't have enough
+        data to reliably tell a *good* move from a *bad* one. The
+        counterfactual ablation confirmed this concretely: swapping in the
+        generic mean embedding improved Recall for Southeast Asia, East
+        Asia, and South Asia, and left Africa unchanged -- only North
+        America and Latin America were genuinely better off with their own
+        specific embedding.
+
+        This adds a penalty term (added to the training loss, NOT applied
+        inside forward()) that pulls each region's embedding toward the
+        population-mean embedding, weighted by 1/n_r -- so regions with
+        less training data are pulled harder toward "behave like the
+        average region," while regions with abundant data (which have
+        earned the right to look different, per the ablation) are pulled
+        only lightly.
+
+        region_counts: LongTensor/FloatTensor of shape [n_regions], the
+        number of TRAINING rows for each region id (0-indexed, matching
+        region_embedding's row order).
+        """
+        emb = self.region_embedding.weight              # [n_regions, embed_dim]
+        mean_emb = emb.mean(dim=0, keepdim=True)          # unweighted population mean
+        sq_dist = ((emb - mean_emb) ** 2).sum(dim=1)       # [n_regions]
+
+        weights = 1.0 / region_counts.float().clamp(min=1.0)
+        weights = weights / weights.sum()                 # normalize: penalty scale
+                                                            # doesn't grow/shrink with
+                                                            # n_regions or dataset size
+        return (weights * sq_dist).sum()

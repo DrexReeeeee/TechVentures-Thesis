@@ -79,14 +79,96 @@ PRESET_MODELS = [
 
 # SAMPLE PREDICTION
 
-PREDICTION_RESULT = {
+PREDICTION_RESULTS = {
 
-    "probability": 86.7,
+    "sftnn": {
 
-    "confidence": 92.3,
+        "model": "SFTNN",
 
-    "label": "Likely Successful",
+        "badge": "Champion Model",
 
+        "probability": 86.7,
+
+        "prediction": "Likely Successful",
+
+        "confidence": 92.3,
+
+        "highlight": True,
+
+    },
+
+    "baseline": {
+
+        "model": "XGBoost",
+
+        "badge": "Strongest Baseline",
+
+        "probability": 74.1,
+
+        "prediction": "Likely Successful",
+
+        "confidence": 80.6,
+
+        "highlight": False,
+
+    },
+
+    "comparison": {
+
+        "winner": "SFTNN",
+
+        "probability_gain": 12.6,
+
+        "confidence_gain": 11.7,
+
+        "summary": (
+            "SFTNN achieved a higher success probability and confidence "
+            "than the strongest baseline while better capturing regional "
+            "startup characteristics."
+        ),
+
+    },
+
+}
+
+# EXPLAINABILITY
+
+EXPLAINABILITY = {
+    "regional": {
+        "selected_region": "Philippines",
+        "gamma": 1.23,
+        "beta": -0.41,
+        "heatmap": [
+            ("Philippines", 1.23),
+            ("Singapore", 0.91),
+            ("Indonesia", 0.82),
+            ("Vietnam", 0.79),
+            ("Malaysia", 0.74),
+            ("Thailand", 0.68),
+        ],
+    },
+    "integrated_gradients": [
+        {
+            "feature": "Total Funding (USD)",
+            "importance": 0.34,
+        },
+        {
+            "feature": "Funding Stage",
+            "importance": 0.27,
+        },
+        {
+            "feature": "Industry Sector",
+            "importance": 0.18,
+        },
+        {
+            "feature": "Country Baseline",
+            "importance": -0.08,
+        },
+        {
+            "feature": "Regional Risk Offset",
+            "importance": -0.14,
+        },
+    ],
 }
 
 
@@ -136,49 +218,35 @@ SYSTEM_STATUS = {
 
 }
 
-
 # GETTERS
 
 def get_dropdown_options():
-
     return DROPDOWN_OPTIONS
 
-
 def get_countries():
-
     return DROPDOWN_OPTIONS["countries"]
 
-
 def get_regions():
-
     return DROPDOWN_OPTIONS["regions"]
 
-
 def get_industries():
-
     return DROPDOWN_OPTIONS["industries"]
 
-
 def get_funding_stages():
-
     return DROPDOWN_OPTIONS["funding_stages"]
 
-
 def get_preset_models():
-
     return PRESET_MODELS
 
-
 def get_prediction_result():
+    return PREDICTION_RESULTS
 
-    return PREDICTION_RESULT
-
+def get_explainability():
+    return EXPLAINABILITY
 
 def get_feature_importance():
-
     return FEATURE_IMPORTANCE
 
-
 def get_system_status():
-
     return SYSTEM_STATUS
+

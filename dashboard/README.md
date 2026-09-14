@@ -32,27 +32,51 @@ It is built using **Streamlit** and serves as the visualization layer for the ma
 ```text
 dashboard/
 │
-├── app.py                  # Dashboard entry point
-├── fake_data.py            # Centralized placeholder data
+├── app.py                       # Dashboard entry point
 ├── README.md
 │
 ├── assets/
 │   ├── css/
-│   │   └── root.css        # Global reusable styles
-│   ├── fonts/
-│   ├── icons/
-│   └── images/
+│   │   ├── components.css       # Component-specific styles
+│   │   ├── navigation.css       # Navigation styles
+│   │   ├── root.css             # Global reusable styles
+│   │   └── sidebar.css          # Sidebar styles
+│   └── icons/
+│       └── default_telp.png     # Default placeholder icon
 │
-├── components/             # Reusable UI components
+├── components/                  # Reusable UI components
+│   ├── common/
+│   │   ├── icon.py              # Icon component
+│   │   ├── startup_form.py      # Startup input form
+│   │   └── upload_zone.py       # File upload zone
+│   │
+│   ├── display/
+│   │   ├── card_header.py       # Card header component
+│   │   ├── comparison_card.py   # Side-by-side comparison card
+│   │   ├── model_result_card.py # Model prediction result card
+│   │   ├── preset_card.py       # Preset scenario card
+│   │   ├── explainability/
+│   │   └── insights/            # (reserved for future insights)
+│   │
+│   ├── feedback/
+│   │   ├── empty_state.py       # Empty state placeholder
+│   │   └── loading_state.py     # Loading spinner / skeleton
+│   │
 │   ├── layout/
-│   ├── cards/
-│   ├── charts/
-│   ├── forms/
-│   └── common/
+│   │   ├── page_header.py       # Page header component
+│   │   ├── section_header.py    # Section header component
+│   │   └── sidebar.py           # Sidebar navigation
+│   │
+│   └── navigation/
+│       └── nav_item.py          # Single navigation item
 │
-├── pages/                  # Individual dashboard pages
+├── data/
+│   └── fake_data.py             # Centralized placeholder data
 │
-└── utils/                  # Helper functions
+└── views/                       # Dashboard page views
+    ├── about.py                 # About / project info page
+    ├── predictor.py             # Startup prediction page
+    └── research.py              # Research findings page
 
 ```
 
