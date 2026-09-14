@@ -83,11 +83,23 @@ class SFTNN(nn.Module):
         nn.init.zeros_(self.affine_generator[-1].weight)
         nn.init.zeros_(self.affine_generator[-1].bias)
 
-        # Learnable global scale so the model can still express large
-        # modulation if the data calls for it, while every region still
-        # starts bounded around the identity transform.
-        self.gamma_scale = nn.Parameter(torch.tensor(1.0))
-        self.beta_scale = nn.Parameter(torch.tensor(1.0))
+        # --- Per-region modulation ceiling (fix #4) ---
+        # gamma_scale/beta_scale used to be single global scalars shared by
+        # every region, meaning every region modulated around the same
+        # identity point with the same *maximum possible* deviation. Since
+        # North America supplies ~63% of training gradient signal, that
+        # shared ceiling risked being set by what's optimal for North
+        # America, leaving minority regions unable to express a genuinely
+        # different calibration shift even where the FiLM mechanism would
+        # otherwise support it (a validation-threshold diagnostic showed
+        # Southeast Asia specifically needs a different operating point
+        # than every other region, in the opposite direction). Making these
+        # per-region (indexed by region_id at forward time, one scalar per
+        # region instead of one scalar total) lets each region find its own
+        # ceiling, while still starting every region at the same
+        # identity-safe value of 1.0.
+        self.gamma_scale = nn.Parameter(torch.ones(n_regions))
+        self.beta_scale = nn.Parameter(torch.ones(n_regions))
 
         self.hidden_dim = hidden_dim
 
@@ -102,9 +114,12 @@ class SFTNN(nn.Module):
         # Identity-centered reparameterization (fix #1): gamma starts at 1
         # (no-op scale) and beta starts at 0 (no-op shift) for every region,
         # bounded via tanh so training stays stable, but scaled by a
-        # learnable factor so the model can still express strong modulation.
-        gamma = 1.0 + self.gamma_scale * torch.tanh(gamma_raw)
-        beta = self.beta_scale * torch.tanh(beta_raw)
+        # learnable, per-region factor (fix #4) so each region can express
+        # its own modulation ceiling rather than sharing one global ceiling.
+        gamma_scale_r = self.gamma_scale[region_id].unsqueeze(-1)   # [batch, 1]
+        beta_scale_r = self.beta_scale[region_id].unsqueeze(-1)
+        gamma = 1.0 + gamma_scale_r * torch.tanh(gamma_raw)
+        beta = beta_scale_r * torch.tanh(beta_raw)
         y_modulated = gamma * h + beta                       # Equation 3
         logits = self.head(y_modulated).squeeze(-1)          # Equation 4
         if return_affine:
@@ -119,8 +134,11 @@ class SFTNN(nn.Module):
             e_r = self.region_embedding(all_ids)
             gamma_beta = self.affine_generator(e_r)
             gamma_raw, beta_raw = gamma_beta.chunk(2, dim=-1)
-            gamma = 1.0 + self.gamma_scale * torch.tanh(gamma_raw)
-            beta = self.beta_scale * torch.tanh(beta_raw)
+            # all_ids is 0..n_regions-1 in order, so gamma_scale/beta_scale
+            # (shape [n_regions]) already line up row-for-row; just add the
+            # hidden_dim broadcast axis.
+            gamma = 1.0 + self.gamma_scale.unsqueeze(-1) * torch.tanh(gamma_raw)
+            beta = self.beta_scale.unsqueeze(-1) * torch.tanh(beta_raw)
         return gamma.cpu().numpy(), beta.cpu().numpy()
 
     def region_shrinkage_penalty(self, region_counts):
@@ -159,3 +177,28 @@ class SFTNN(nn.Module):
                                                             # doesn't grow/shrink with
                                                             # n_regions or dataset size
         return (weights * sq_dist).sum()
+
+    def scale_shrinkage_penalty(self, region_counts):
+        """
+        Fix #4: partial-pooling shrinkage for the per-region gamma_scale/
+        beta_scale ceiling parameters, same 1/n_r-weighted idea as
+        region_shrinkage_penalty above but applied to the modulation
+        ceiling instead of the embedding direction.
+
+        Kept as a separate penalty with its own lambda (shrink_lambda_scale)
+        rather than folded into shrink_lambda, because these two things can
+        need different amounts of shrinkage independently: a region might
+        need very little freedom in *which direction* it deviates (small
+        embedding shrink_lambda... large, i.e. shrink it hard) while still
+        needing freedom in *how far* it's allowed to deviate along that
+        direction (scale shrink_lambda_scale small, i.e. don't shrink it).
+        Tying both to one shared lambda would prevent the search from
+        finding that combination.
+        """
+        weights = 1.0 / region_counts.float().clamp(min=1.0)
+        weights = weights / weights.sum()
+        gamma_mean = self.gamma_scale.mean()
+        beta_mean = self.beta_scale.mean()
+        gamma_pen = (weights * (self.gamma_scale - gamma_mean) ** 2).sum()
+        beta_pen = (weights * (self.beta_scale - beta_mean) ** 2).sum()
+        return gamma_pen + beta_pen

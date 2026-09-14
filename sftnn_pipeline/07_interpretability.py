@@ -81,24 +81,33 @@ def counterfactual_ablation(model, test_df, feature_cols, region_to_id, results_
     with torch.no_grad():
         mean_embedding = model.region_embedding.weight.mean(dim=0, keepdim=True)  # [1, embed_dim]
 
+        # Must match SFTNN.forward()'s reparameterization exactly, or this
+        # function scores a different computation than the trained model
+        # actually runs at inference time (see models.py). Fix #4 made
+        # gamma_scale/beta_scale per-region; both branches below index by
+        # r_true (each row's OWN region) so this ablation isolates the
+        # marginal effect of the learned EMBEDDING direction specifically,
+        # holding that region's own modulation ceiling fixed -- the
+        # ceiling itself is a separate mechanism from the embedding being
+        # tested here, not part of what this ablation asks about.
+        gamma_scale_r = model.gamma_scale[r_true].unsqueeze(-1)
+        beta_scale_r = model.beta_scale[r_true].unsqueeze(-1)
+
         # True (region-specific) predictions
         h = model.trunk(x)
         e_r_true = model.region_embedding(r_true)
         gb_true = model.affine_generator(e_r_true)
         gamma_true_raw, beta_true_raw = gb_true.chunk(2, dim=-1)
-        # Must match SFTNN.forward()'s reparameterization exactly, or this
-        # function scores a different computation than the trained model
-        # actually runs at inference time (see models.py).
-        gamma_true = 1.0 + model.gamma_scale * torch.tanh(gamma_true_raw)
-        beta_true = model.beta_scale * torch.tanh(beta_true_raw)
+        gamma_true = 1.0 + gamma_scale_r * torch.tanh(gamma_true_raw)
+        beta_true = beta_scale_r * torch.tanh(beta_true_raw)
         probs_true = torch.sigmoid(model.head(gamma_true * h + beta_true).squeeze(-1)).cpu().numpy()
 
         # Counterfactual (mean-embedding) predictions
         e_r_mean = mean_embedding.expand(x.shape[0], -1)
         gb_mean = model.affine_generator(e_r_mean)
         gamma_mean_raw, beta_mean_raw = gb_mean.chunk(2, dim=-1)
-        gamma_mean = 1.0 + model.gamma_scale * torch.tanh(gamma_mean_raw)
-        beta_mean = model.beta_scale * torch.tanh(beta_mean_raw)
+        gamma_mean = 1.0 + gamma_scale_r * torch.tanh(gamma_mean_raw)
+        beta_mean = beta_scale_r * torch.tanh(beta_mean_raw)
         probs_mean = torch.sigmoid(model.head(gamma_mean * h + beta_mean).squeeze(-1)).cpu().numpy()
 
     rows = []

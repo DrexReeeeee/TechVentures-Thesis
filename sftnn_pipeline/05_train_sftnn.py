@@ -71,6 +71,7 @@ def train_one_config(params, train_ds, val_ds, n_features, n_regions,
     opt = build_optimizer(model, lr=params["lr"], weight_decay=params["weight_decay"])
     loss_fn = nn.BCEWithLogitsLoss()
     shrink_lambda = params["shrink_lambda"]
+    shrink_lambda_scale = params["shrink_lambda_scale"]
 
     train_loader = DataLoader(train_ds, batch_size=256, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=1024, shuffle=False)
@@ -87,7 +88,16 @@ def train_one_config(params, train_ds, val_ds, n_features, n_regions,
             # Asia, Africa) can't drift as far from the pack as large-n
             # regions (North America, which has earned the right to, per
             # the ablation results) can.
-            loss = loss_fn(logits, y) + shrink_lambda * model.region_shrinkage_penalty(region_counts)
+            # Fix #4: independently pull each region's gamma_scale/beta_scale
+            # modulation ceiling toward the population mean, same 1/n_r
+            # weighting, but with its own lambda -- see
+            # model.scale_shrinkage_penalty for why this needs to be a
+            # separate term rather than reusing shrink_lambda.
+            loss = (
+                loss_fn(logits, y)
+                + shrink_lambda * model.region_shrinkage_penalty(region_counts)
+                + shrink_lambda_scale * model.scale_shrinkage_penalty(region_counts)
+            )
             loss.backward()
             opt.step()
 
@@ -147,6 +157,12 @@ def main(args):
             # (which would also erase Latin America/North America's
             # genuine, ablation-confirmed gains).
             "shrink_lambda": trial.suggest_float("shrink_lambda", 1e-3, 1e1, log=True),
+            # Fix #4: strength of the analogous shrinkage on gamma_scale/
+            # beta_scale (the per-region modulation ceiling). Searched
+            # independently of shrink_lambda -- see
+            # model.scale_shrinkage_penalty's docstring for why the two
+            # shouldn't be tied together.
+            "shrink_lambda_scale": trial.suggest_float("shrink_lambda_scale", 1e-3, 1e1, log=True),
         }
         _, val_auc = train_one_config(params, train_ds, val_ds, n_features,
                                        n_regions, region_counts,

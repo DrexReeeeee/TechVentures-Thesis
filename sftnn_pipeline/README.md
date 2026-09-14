@@ -78,7 +78,7 @@ Unchanged from the original handoff.
 python 05_train_sftnn.py --trials 30 --max_epochs 60
 ```
 
-**This script now differs from the original handoff in three ways** (see
+**This script now differs from the original handoff in four ways** (see
 "SFTNN fix history" below for why):
 
 1. `models.py`'s `SFTNN` module uses an identity-centered
@@ -88,9 +88,13 @@ python 05_train_sftnn.py --trials 30 --max_epochs 60
    decay (its own AdamW param group, via `build_optimizer()`).
 3. Training adds a shrinkage penalty (`model.region_shrinkage_penalty()`)
    that pulls each region's embedding toward the population mean,
-   weighted by `1/n_r`. Its strength, `shrink_lambda`, is now a 7th
+   weighted by `1/n_r`. Its strength, `shrink_lambda`, is an
    Optuna-tunable hyperparameter alongside lr/dropout/weight_decay/
    hidden_dim/n_layers/embed_dim.
+4. `gamma_scale`/`beta_scale` (the modulation ceiling) are now per-region
+   parameters instead of single global scalars, with their own analogous
+   shrinkage penalty (`model.scale_shrinkage_penalty()`) and independently
+   Optuna-tunable `shrink_lambda_scale` -- 8 tunable hyperparameters total.
 
 ## 5. Stage 5 -- Comparative evaluation (Section 4.9, 4.10)
 
@@ -202,7 +206,35 @@ made in response, in this order:
    preserving North America/Latin America's genuine, ablation-confirmed
    gains.
 
-**A fourth change, Group DRO (Sagawa et al., 2020), was implemented and
+**A fourth change, per-region gamma_scale/beta_scale (`models.py`), was
+made after a validation-threshold diagnostic on the fixes-#1-3 checkpoint
+showed something fixes #1-3 didn't address:** recalibrating the decision
+threshold using each model's own validation-optimal cutoff helped the
+aggregate and 5 of 7 regions, but made Southeast Asia *worse* for both
+SFTNN and XGBoost -- the only region where the globally-optimal threshold
+moves in the wrong direction for it specifically. That's exactly the kind
+of per-region calibration difference gamma_r/beta_r should be able to
+express -- but gamma_scale/beta_scale were single global scalars shared by
+every region, capping every region's modulation ceiling at whatever value
+was optimal in aggregate (implicitly dominated by North America's 63%
+share of training rows). Promoted both to per-region parameters
+(`nn.Parameter(torch.ones(n_regions))`, indexed by `region_id` in
+`forward()`), each still starting at the identity-safe value of 1.0. Added
+`scale_shrinkage_penalty()`, the same 1/n_r-weighted partial-pooling idea
+as fix #3's `region_shrinkage_penalty()`, applied to the new per-region
+scale parameters instead of the embedding, with its own independently
+Optuna-searched `shrink_lambda_scale` -- kept separate from `shrink_lambda`
+because a region may need little freedom in *which direction* it deviates
+(embedding shrunk hard) while still needing freedom in *how far* it's
+allowed to deviate (scale left unshrunk), and tying both to one lambda
+would prevent the search from finding that combination.
+`07_interpretability.py`'s `counterfactual_ablation()` was updated to
+match (indexes `gamma_scale`/`beta_scale` by each row's own true region in
+both the true and mean-embedding-counterfactual branches, so the ablation
+still isolates the embedding's marginal effect specifically rather than
+conflating it with the new ceiling mechanism).
+
+**A fifth change, Group DRO (Sagawa et al., 2020), was implemented and
 tested but not adopted.** It regressed aggregate ROC-AUC, F1, and Recall
 relative to the shrinkage-only checkpoint, and moved Southeast Asia's
 AUC further from XGBoost's rather than closer -- the opposite of its
@@ -211,15 +243,23 @@ two sentences in Chapter 4/5: "Group DRO was evaluated and did not
 improve on the shrinkage-only configuration within the trial budget
 used") but is not in this pipeline's active code path.
 
-**A fifth change, per-region post-hoc threshold tuning** (Hardt et al.,
+**A sixth change, per-region post-hoc threshold tuning** (Hardt et al.,
 2016; Youden, 1950), was also implemented and tested. It is not the
 primary reported result because it reduced SFTNN's aggregate Recall and
 F1 relative to the flat 0.5 threshold, even though it fairly improved
 Southeast Asia specifically at the cost of erasing a South Asia
 advantage the flat threshold already had. Worth a paragraph in Chapter
 4/5 as a disclosed, tested-but-not-adopted refinement, same as Group DRO.
+A related but distinct diagnostic -- a single *global* (not per-region)
+threshold, re-derived from the validation set for each model separately
+and applied fairly to both SFTNN and XGBoost -- was also checked. It
+recovers roughly half of SFTNN's aggregate F1 gap with XGBoost (both
+models improve, since both were running below their own optimum at flat
+0.5), but Southeast Asia is the one region that gets *worse* for both
+models at each model's own global-optimal threshold -- the diagnostic
+that motivated fix #4 above.
 
-**Net result of fixes #1-3**, at flat threshold, best run to date:
+**Net result of fixes #1-4**, at flat threshold, best run prior to fix #4:
 SFTNN Recall (0.709) and F1 (0.742) both the best of the four models;
 Africa AUC (0.729) far ahead of XGBoost's (0.571); ROC-AUC/PR-AUC/Accuracy
 competitive with, though not always beating, XGBoost. Not a clean sweep
