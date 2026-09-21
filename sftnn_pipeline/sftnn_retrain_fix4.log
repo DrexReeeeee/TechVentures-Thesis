@@ -1,0 +1,81 @@
+[I 2026-09-14 22:59:56,805] A new study created in memory with name: no-name-eea9c1ea-6eda-467c-bcc6-23f8dea23890
+[I 2026-09-14 23:01:08,937] Trial 0 finished with value: 0.8431298946314739 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.016480446427978974, 'shrink_lambda_scale': 0.12561043700013558}. Best is trial 0 with value: 0.8431298946314739.
+[I 2026-09-14 23:02:27,955] Trial 1 finished with value: 0.8476066604742974 and parameters: {'lr': 0.0007309539835912913, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 32, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 7.2866537374910445, 'shrink_lambda_scale': 1.7123375973163988}. Best is trial 1 with value: 0.8476066604742974.
+[I 2026-09-14 23:03:15,866] Trial 2 finished with value: 0.8395853526604872 and parameters: {'lr': 0.0004066563313514797, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 32, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 5.727904470799623, 'shrink_lambda_scale': 3.7958531426706403}. Best is trial 1 with value: 0.8476066604742974.
+[I 2026-09-14 23:03:35,508] Trial 3 finished with value: 0.8428559959735563 and parameters: {'lr': 0.0015696396388661157, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 1.2273800987852967, 'shrink_lambda_scale': 0.0062353771356731605}. Best is trial 1 with value: 0.8476066604742974.
+[I 2026-09-14 23:04:53,347] Trial 4 finished with value: 0.8333831586080249 and parameters: {'lr': 0.00010257563974185662, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 1, 'embed_dim': 8, 'shrink_lambda': 3.53875886477924, 'shrink_lambda_scale': 0.0774211647399625}. Best is trial 1 with value: 0.8476066604742974.
+[I 2026-09-14 23:06:28,446] Trial 5 finished with value: 0.8372748634436591 and parameters: {'lr': 0.00017345566642360953, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 0.04380580767905655, 'shrink_lambda_scale': 1.0524574681335637}. Best is trial 1 with value: 0.8476066604742974.
+[I 2026-09-14 23:07:17,258] Trial 6 finished with value: 0.8367635578783021 and parameters: {'lr': 0.00028681134821030097, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 1, 'embed_dim': 4, 'shrink_lambda': 0.008160948743089917, 'shrink_lambda_scale': 0.05110120656497164}. Best is trial 1 with value: 0.8476066604742974.
+[I 2026-09-14 23:07:46,318] Trial 7 finished with value: 0.8492812107625961 and parameters: {'lr': 0.00432543242796456, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.09749762207436122, 'shrink_lambda_scale': 0.015977662354833867}. Best is trial 7 with value: 0.8492812107625961.
+[I 2026-09-14 23:09:12,462] Trial 8 finished with value: 0.8386832344827955 and parameters: {'lr': 0.00037126241790405324, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 1, 'embed_dim': 4, 'shrink_lambda': 0.029589152820953094, 'shrink_lambda_scale': 0.3382387201936217}. Best is trial 7 with value: 0.8492812107625961.
+[I 2026-09-14 23:09:52,144] Trial 9 finished with value: 0.8448782003616052 and parameters: {'lr': 0.0018495216589727262, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 5.583672722754823, 'shrink_lambda_scale': 0.003548818403010949}. Best is trial 7 with value: 0.8492812107625961.
+[I 2026-09-14 23:10:45,927] Trial 10 finished with value: 0.8483412674820046 and parameters: {'lr': 0.008673882891220756, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.001154460820484616, 'shrink_lambda_scale': 0.0011770285571148721}. Best is trial 7 with value: 0.8492812107625961.
+[I 2026-09-14 23:11:33,682] Trial 11 finished with value: 0.8497915338577479 and parameters: {'lr': 0.008710508696092429, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.0013281950810400272, 'shrink_lambda_scale': 0.0011220102575762194}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:12:29,118] Trial 12 finished with value: 0.8437006396442448 and parameters: {'lr': 0.009761852337140492, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.2730834958148276, 'shrink_lambda_scale': 0.01252967750721644}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:13:08,122] Trial 13 finished with value: 0.844552651841472 and parameters: {'lr': 0.0040386548953026055, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.0010320334424439974, 'shrink_lambda_scale': 0.0010263924537872147}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:14:17,887] Trial 14 finished with value: 0.8477552941810536 and parameters: {'lr': 0.0042615485251909216, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.1400241522996085, 'shrink_lambda_scale': 0.019125966434667976}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:15:37,882] Trial 15 finished with value: 0.8478206986261418 and parameters: {'lr': 0.0038789860803506567, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.005927567417927272, 'shrink_lambda_scale': 0.0033049779324083386}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:17:18,929] Trial 16 finished with value: 0.8489067492615333 and parameters: {'lr': 0.002113655465531594, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 0.4308126293954137, 'shrink_lambda_scale': 0.01789031431638771}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:18:03,533] Trial 17 finished with value: 0.846585101990232 and parameters: {'lr': 0.006092572600960351, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.0049135065100241165, 'shrink_lambda_scale': 0.0025140388528688113}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:19:42,508] Trial 18 finished with value: 0.8475126942168154 and parameters: {'lr': 0.005577411247801377, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 0.12132896119537608, 'shrink_lambda_scale': 0.22811287575472036}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:20:32,255] Trial 19 finished with value: 0.8368116989183565 and parameters: {'lr': 0.0028827413730968528, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 1, 'embed_dim': 16, 'shrink_lambda': 0.0027726410695743456, 'shrink_lambda_scale': 0.03408131107043389}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:21:28,099] Trial 20 finished with value: 0.8480890533450445 and parameters: {'lr': 0.001136455990721545, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.06099412898103847, 'shrink_lambda_scale': 0.008619776843807493}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:22:16,440] Trial 21 finished with value: 0.8473780256222616 and parameters: {'lr': 0.002417572655948495, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 0.6507822265439338, 'shrink_lambda_scale': 0.026247330241557735}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:23:25,975] Trial 22 finished with value: 0.8495817764689402 and parameters: {'lr': 0.0011064827457136501, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 0.8117245004446929, 'shrink_lambda_scale': 0.006343210683766258}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:24:21,169] Trial 23 finished with value: 0.8437188855194839 and parameters: {'lr': 0.001154368654855264, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 0.18164533390385654, 'shrink_lambda_scale': 0.0020278012243498678}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:24:52,359] Trial 24 finished with value: 0.8476036428872386 and parameters: {'lr': 0.006651896328242612, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 0.9735323727668419, 'shrink_lambda_scale': 0.005879427510140953}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:25:12,443] Trial 25 finished with value: 0.8411015848928645 and parameters: {'lr': 0.0033318587709153043, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 2.9612847024770477, 'shrink_lambda_scale': 0.005640675886341085}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:26:12,628] Trial 26 finished with value: 0.8471134604312931 and parameters: {'lr': 0.0009144167130116031, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 2.1371150135930925, 'shrink_lambda_scale': 0.001766715129701331}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:26:34,855] Trial 27 finished with value: 0.8448325856735072 and parameters: {'lr': 0.00556646808445482, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 0.013491343196041297, 'shrink_lambda_scale': 0.011411891281374546}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:27:01,196] Trial 28 finished with value: 0.8461994824346959 and parameters: {'lr': 0.007837525839205797, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 0.08057074704068468, 'shrink_lambda_scale': 0.003542896968001209}. Best is trial 11 with value: 0.8497915338577479.
+[I 2026-09-14 23:27:31,285] Trial 29 finished with value: 0.837003280608368 and parameters: {'lr': 0.0014953254032601354, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 1, 'embed_dim': 4, 'shrink_lambda': 0.32079538281610726, 'shrink_lambda_scale': 0.13827507190420246}. Best is trial 11 with value: 0.8497915338577479.
+Region training counts (id order): [102.0, 1087.0, 5351.0, 537.0, 16796.0, 564.0, 476.0]
+
+Best val AUC: 0.8498
+Best params: {'lr': 0.008710508696092429, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 0.0013281950810400272, 'shrink_lambda_scale': 0.0011220102575762194}
+  epoch 00  val_auc=0.8153
+  epoch 01  val_auc=0.8297
+  epoch 02  val_auc=0.8315
+  epoch 03  val_auc=0.8340
+  epoch 04  val_auc=0.8348
+  epoch 05  val_auc=0.8359
+  epoch 06  val_auc=0.8389
+  epoch 07  val_auc=0.8401
+  epoch 08  val_auc=0.8362
+  epoch 09  val_auc=0.8403
+  epoch 10  val_auc=0.8393
+  epoch 11  val_auc=0.8400
+  epoch 12  val_auc=0.8417
+  epoch 13  val_auc=0.8423
+  epoch 14  val_auc=0.8413
+  epoch 15  val_auc=0.8397
+  epoch 16  val_auc=0.8414
+  epoch 17  val_auc=0.8390
+  epoch 18  val_auc=0.8450
+  epoch 19  val_auc=0.8423
+  epoch 20  val_auc=0.8457
+  epoch 21  val_auc=0.8418
+  epoch 22  val_auc=0.8444
+  epoch 23  val_auc=0.8464
+  epoch 24  val_auc=0.8447
+  epoch 25  val_auc=0.8465
+  epoch 26  val_auc=0.8459
+  epoch 27  val_auc=0.8443
+  epoch 28  val_auc=0.8463
+  epoch 29  val_auc=0.8467
+  epoch 30  val_auc=0.8446
+  epoch 31  val_auc=0.8457
+  epoch 32  val_auc=0.8471
+  epoch 33  val_auc=0.8486
+  epoch 34  val_auc=0.8476
+  epoch 35  val_auc=0.8481
+  epoch 36  val_auc=0.8492
+  epoch 37  val_auc=0.8471
+  epoch 38  val_auc=0.8492
+  epoch 39  val_auc=0.8489
+  epoch 40  val_auc=0.8484
+  epoch 41  val_auc=0.8481
+  epoch 42  val_auc=0.8485
+  epoch 43  val_auc=0.8485
+
+Saved trained SFTNN to artifacts/sftnn_model.pt

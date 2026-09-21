@@ -23,9 +23,8 @@ import joblib
 import numpy as np
 import optuna
 import xgboost as xgb
-from sklearn.metrics import roc_auc_score
 
-from data_utils import load_splits, xy_for_sklearn
+from data_utils import load_splits, xy_for_sklearn, composite_validation_score
 
 
 def main(args):
@@ -35,6 +34,7 @@ def main(args):
 
     X_train, y_train = xy_for_sklearn(train_df, feature_cols, n_regions=n_regions)
     X_val, y_val = xy_for_sklearn(val_df, feature_cols, n_regions=n_regions)
+    val_region_ids = val_df["region_id"].values
 
     def objective(trial):
         params = {
@@ -44,22 +44,33 @@ def main(args):
             "subsample": trial.suggest_categorical("subsample", [0.7, 0.85, 1.0]),
             "eval_metric": "auc",
             "early_stopping_rounds": 5,
+            # Seeded alongside the neural models so all four vary together
+            # under 09_multiseed.py -- otherwise XGBoost would stay fixed
+            # while MLP/SFTNN moved, making the comparison asymmetric.
+            "random_state": args.seed,
         }
         model = xgb.XGBClassifier(**params)
         model.fit(X_train, y_train, eval_set=[(X_val, y_val)], verbose=False)
         preds = model.predict_proba(X_val)[:, 1]
-        return roc_auc_score(y_val, preds)
+        # Composite selection score (Section 4.7) -- see
+        # data_utils.composite_validation_score; applied identically across
+        # all four training scripts (MLP/XGBoost/TabNet/SFTNN) so switching
+        # from pooled validation AUC alone doesn't introduce a new,
+        # undisclosed asymmetry favoring any one model.
+        score, _ = composite_validation_score(y_val, preds, val_region_ids)
+        return score
 
     study = optuna.create_study(direction="maximize",
-                                 sampler=optuna.samplers.TPESampler(seed=42))
+                                 sampler=optuna.samplers.TPESampler(seed=args.seed))
     study.optimize(objective, n_trials=args.trials, show_progress_bar=False)
 
-    print(f"\nBest val AUC: {study.best_value:.4f}")
+    print(f"\nBest val composite score: {study.best_value:.4f}")
     print(f"Best params: {study.best_params}")
 
     best_params = dict(study.best_params)
     best_params["eval_metric"] = "auc"
     best_params["early_stopping_rounds"] = 5
+    best_params["random_state"] = args.seed
     final_model = xgb.XGBClassifier(**best_params)
     final_model.fit(X_train, y_train, eval_set=[(X_val, y_val)], verbose=False)
 
@@ -73,4 +84,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--artifacts", default="artifacts")
     p.add_argument("--trials", type=int, default=20)
+    p.add_argument("--seed", type=int, default=42,
+                    help="Seeds the Optuna sampler and XGBoost's random_state. "
+                         "Vary via 09_multiseed.py; do not hand-pick.")
     main(p.parse_args())

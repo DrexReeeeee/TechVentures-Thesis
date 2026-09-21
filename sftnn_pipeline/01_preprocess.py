@@ -118,6 +118,35 @@ def main(args):
     df = pd.read_csv(args.input, low_memory=False)
     print(f"Loaded {len(df):,} rows.")
 
+    # ---- Label-completeness fix: Southeast Asia Failory supplement -----
+    # The Failory-scraped Southeast Asia supplement (data_source ==
+    # "sea_failory_supplement") never captured round-level funding
+    # history: every one of its "Operating" rows has funding_rounds_clean
+    # == 0.0 with zero variance across all 210 rows, despite substantial
+    # disclosed funding (median $18M) and ages of 7-105 years. Under the
+    # heuristic label rule (age >= 7 AND funding_rounds >= 2 -> Success),
+    # these rows are forced to Failure purely because the source never
+    # recorded a round count -- not because of any observed or inferred
+    # outcome. Verified against every other region and data source: this
+    # exact pattern (Operating, age>=7, funding_rounds_clean==0, nonzero
+    # disclosed funding) occurs in 0% of rows anywhere else in the
+    # dataset, so this is a targeted correction, not a general rule that
+    # happens to fire elsewhere. These rows are treated the same as the
+    # existing "insufficient data to evaluate trajectory" exclusion
+    # already used elsewhere in Section 4.3.2.6's heuristic (unknown
+    # founding year, 3-6 year age band) rather than defaulted to a hard
+    # Failure label.
+    if "data_source" in df.columns and "status_norm" in df.columns:
+        unmeasurable_mask = (
+            (df["data_source"] == "sea_failory_supplement")
+            & (df["status_norm"] == "operating")
+        )
+        n_excluded = int(df.loc[unmeasurable_mask, "derived_target"].notna().sum())
+        df.loc[unmeasurable_mask, "derived_target"] = np.nan
+        print(f"Excluded {n_excluded:,} Southeast Asia rows with unmeasurable "
+              f"funding-round history (data_source=sea_failory_supplement, "
+              f"status=Operating) from label-based training/evaluation.")
+
     # ---- Basic row filtering -------------------------------------------
     df = df.dropna(subset=["derived_target"]).copy()
     df["derived_target"] = df["derived_target"].astype(int)
@@ -144,10 +173,23 @@ def main(args):
     # ---- Feature engineering (Section 4.3.2) ---------------------------
     df["capital_velocity"] = engineer_capital_velocity(df)
     df["primary_industry"] = primary_industry(df)
-    df["funding_total_usd_clean"] = pd.to_numeric(
+    funding_total_usd_numeric = pd.to_numeric(
         df["funding_total_usd"].astype(str).str.strip().replace("-", np.nan),
         errors="coerce",
-    ).fillna(0.0)
+    )
+    # Missingness indicator: "not disclosed" and "genuinely zero" are
+    # different facts, but collapsing both into 0.0 below (as the
+    # unconditional fillna does) erases that distinction, telling the
+    # model "this company raised nothing" when the truth may just be
+    # "unrecorded." This missingness is not uniform across regions --
+    # Africa (27.6%) and South Asia (23.5%) have notably higher rates of
+    # missing funding_total_usd than North America (11.6%), so leaving it
+    # unflagged silently penalizes exactly the regions with the least
+    # complete registries. This flag lets the trunk learn to distinguish
+    # the two rather than have the difference erased before it ever sees
+    # the data.
+    df["funding_total_usd_disclosed"] = funding_total_usd_numeric.notna().astype(int)
+    df["funding_total_usd_clean"] = funding_total_usd_numeric.fillna(0.0)
 
     for col in FUNDING_HISTORY_COLS:
         if col in df.columns:
@@ -198,7 +240,7 @@ def main(args):
     test_df = test_df[test_df["region_id"].notna()].copy()
 
     # ---- Final feature column list (== x in Section 4.5.2) -------------
-    feature_cols = scale_cols + ["industry_target_enc"]
+    feature_cols = scale_cols + ["industry_target_enc", "funding_total_usd_disclosed"]
 
     keep_cols = feature_cols + ["region_id", "region_group", "derived_target"]
     train_out = train_df[keep_cols].reset_index(drop=True)

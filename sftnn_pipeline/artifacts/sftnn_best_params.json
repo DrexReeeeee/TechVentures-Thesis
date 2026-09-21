@@ -1,10 +1,9 @@
 {
-  "lr": 0.0007309539835912913,
-  "dropout": 0.2,
+  "lr": 0.002735291523625609,
+  "dropout": 0.1,
   "weight_decay": 0.001,
-  "hidden_dim": 32,
+  "hidden_dim": 128,
   "n_layers": 3,
-  "embed_dim": 16,
-  "shrink_lambda": 7.2866537374910445,
-  "shrink_lambda_scale": 1.7123375973163988
+  "embed_dim": 4,
+  "shrink_lambda": 4.880017438989142
 }

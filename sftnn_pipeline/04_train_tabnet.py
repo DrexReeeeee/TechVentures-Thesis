@@ -22,7 +22,7 @@ import optuna
 from pytorch_tabnet.tab_model import TabNetClassifier
 import torch
 
-from data_utils import load_splits, xy_for_sklearn
+from data_utils import load_splits, xy_for_sklearn, composite_validation_score
 
 
 def main(args):
@@ -34,6 +34,7 @@ def main(args):
     X_val, y_val = xy_for_sklearn(val_df, feature_cols, n_regions=n_regions)
     X_train = X_train.astype(np.float32)
     X_val = X_val.astype(np.float32)
+    val_region_ids = val_df["region_id"].values
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -43,7 +44,7 @@ def main(args):
             n_d=nd_na, n_a=nd_na,
             n_steps=trial.suggest_categorical("n_steps", [3, 5, 7]),
             gamma=trial.suggest_categorical("gamma", [1.0, 1.3, 1.5]),
-            seed=42, device_name=device, verbose=0,
+            seed=args.seed, device_name=device, verbose=0,
         )
         model = TabNetClassifier(**params)
         model.fit(
@@ -51,14 +52,18 @@ def main(args):
             max_epochs=args.max_epochs, patience=5, batch_size=1024,
         )
         preds = model.predict_proba(X_val)[:, 1]
-        from sklearn.metrics import roc_auc_score
-        return roc_auc_score(y_val, preds)
+        # Composite selection score (Section 4.7) -- see
+        # data_utils.composite_validation_score; applied identically across
+        # all four training scripts so switching from pooled validation AUC
+        # alone doesn't introduce a new, undisclosed asymmetry.
+        score, _ = composite_validation_score(y_val, preds, val_region_ids)
+        return score
 
     study = optuna.create_study(direction="maximize",
-                                 sampler=optuna.samplers.TPESampler(seed=42))
+                                 sampler=optuna.samplers.TPESampler(seed=args.seed))
     study.optimize(objective, n_trials=args.trials, show_progress_bar=False)
 
-    print(f"\nBest val AUC: {study.best_value:.4f}")
+    print(f"\nBest val composite score: {study.best_value:.4f}")
     print(f"Best params: {study.best_params}")
 
     nd_na = study.best_params["n_d_n_a"]
@@ -66,7 +71,7 @@ def main(args):
         n_d=nd_na, n_a=nd_na,
         n_steps=study.best_params["n_steps"],
         gamma=study.best_params["gamma"],
-        seed=42, device_name=device, verbose=0,
+        seed=args.seed, device_name=device, verbose=0,
     )
     final_model = TabNetClassifier(**final_params)
     final_model.fit(
@@ -84,4 +89,7 @@ if __name__ == "__main__":
     p.add_argument("--artifacts", default="artifacts")
     p.add_argument("--trials", type=int, default=20)
     p.add_argument("--max_epochs", type=int, default=60)
+    p.add_argument("--seed", type=int, default=42,
+                    help="Seeds the Optuna sampler and TabNet's internal seed. "
+                         "Vary via 09_multiseed.py; do not hand-pick.")
     main(p.parse_args())
