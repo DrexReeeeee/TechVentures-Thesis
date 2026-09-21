@@ -1,0 +1,66 @@
+[I 2026-09-21 16:09:20,849] A new study created in memory with name: no-name-d90f7b92-90b9-401a-b44a-887beb338f09
+[I 2026-09-21 16:10:02,158] Trial 0 finished with value: 0.7585858236081625 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 2.03664420268309, 'cluster_shrink_lambda': 2.0492680115417348}. Best is trial 0 with value: 0.7585858236081625.
+[I 2026-09-21 16:10:28,932] Trial 1 finished with value: 0.751098426386945 and parameters: {'lr': 0.0004059611610484307, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 10.769622478263129, 'cluster_shrink_lambda': 1.948567125127257}. Best is trial 0 with value: 0.7585858236081625.
+[I 2026-09-21 16:10:44,497] Trial 2 finished with value: 0.7239293436523657 and parameters: {'lr': 0.00013492834268013249, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 3.3852267834519774, 'cluster_shrink_lambda': 7.648565112369945}. Best is trial 0 with value: 0.7585858236081625.
+[I 2026-09-21 16:11:23,369] Trial 3 finished with value: 0.7592648527727545 and parameters: {'lr': 0.0012399967836846098, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 25.58586885593424, 'cluster_shrink_lambda': 4.037506188440754}. Best is trial 3 with value: 0.7592648527727545.
+[I 2026-09-21 16:11:45,113] Trial 4 finished with value: 0.7500882127495487 and parameters: {'lr': 0.0003646439558980723, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 4.064644058668375, 'cluster_shrink_lambda': 1.5734685129393668}. Best is trial 3 with value: 0.7592648527727545.
+[I 2026-09-21 16:11:59,911] Trial 5 finished with value: 0.7629018794885176 and parameters: {'lr': 0.005323617594751502, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 20.41033406525705, 'cluster_shrink_lambda': 6.901506581791921}. Best is trial 5 with value: 0.7629018794885176.
+[I 2026-09-21 16:12:39,128] Trial 6 finished with value: 0.7769384257237621 and parameters: {'lr': 0.0011103647313054626, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.106554858581908, 'cluster_shrink_lambda': 1.8789279685460507}. Best is trial 6 with value: 0.7769384257237621.
+[I 2026-09-21 16:13:10,805] Trial 7 finished with value: 0.7566377162079785 and parameters: {'lr': 0.007234279845665418, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 24.534801599183357, 'cluster_shrink_lambda': 28.99715852166588}. Best is trial 6 with value: 0.7769384257237621.
+[I 2026-09-21 16:13:49,039] Trial 8 finished with value: 0.7479141676126771 and parameters: {'lr': 0.00010325337616482048, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 6.995363653959079, 'cluster_shrink_lambda': 3.2447648098898547}. Best is trial 6 with value: 0.7769384257237621.
+[I 2026-09-21 16:14:11,622] Trial 9 finished with value: 0.7479487504088886 and parameters: {'lr': 0.00037126241790405324, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.5336058850767755, 'cluster_shrink_lambda': 17.26703355444434}. Best is trial 6 with value: 0.7769384257237621.
+[I 2026-09-21 16:14:56,743] Trial 10 finished with value: 0.7826800365191815 and parameters: {'lr': 0.002185362633116951, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0629065830612703, 'cluster_shrink_lambda': 1.0657016278742406}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:15:33,497] Trial 11 finished with value: 0.7800317084383239 and parameters: {'lr': 0.0023660620781758134, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0755483741778042, 'cluster_shrink_lambda': 1.044224584290679}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:16:10,770] Trial 12 finished with value: 0.7758732325408552 and parameters: {'lr': 0.002687182078485712, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0780679722297184, 'cluster_shrink_lambda': 1.1031863017633567}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:16:32,195] Trial 13 finished with value: 0.7704979760189962 and parameters: {'lr': 0.0026339195883188222, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.007523936488077, 'cluster_shrink_lambda': 1.009650382537444}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:17:01,556] Trial 14 finished with value: 0.7755559627516684 and parameters: {'lr': 0.0031509778883824944, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.4522425125652019, 'cluster_shrink_lambda': 1.006663593142578}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:18:17,378] Trial 15 finished with value: 0.7731175631782862 and parameters: {'lr': 0.001403732145268511, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.3901026297423345, 'cluster_shrink_lambda': 3.084247800975551}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:18:39,695] Trial 16 finished with value: 0.7643233260909574 and parameters: {'lr': 0.0037690594624015484, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 1.7892478119423083, 'cluster_shrink_lambda': 5.110878139041239}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:19:28,982] Trial 17 finished with value: 0.7768662309772144 and parameters: {'lr': 0.008734640423368915, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.052909610884599, 'cluster_shrink_lambda': 1.4681763671183006}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:19:53,729] Trial 18 finished with value: 0.7526497944721657 and parameters: {'lr': 0.0016516444441349277, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 5.211315224900377, 'cluster_shrink_lambda': 2.5423696454536406}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:20:57,322] Trial 19 finished with value: 0.7750290401893207 and parameters: {'lr': 0.0007123498417990458, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.14510463532156, 'cluster_shrink_lambda': 1.4229938106967581}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:21:08,443] Trial 20 finished with value: 0.7474110071688939 and parameters: {'lr': 0.002053424183416087, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.6007912741325792, 'cluster_shrink_lambda': 11.880099037851453}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:21:28,991] Trial 21 finished with value: 0.755283339164249 and parameters: {'lr': 0.0009203925777414052, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 2.8110428172874626, 'cluster_shrink_lambda': 2.1084815014986287}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:22:15,427] Trial 22 finished with value: 0.7747505548317506 and parameters: {'lr': 0.0048188016220365795, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 9.413188054813517, 'cluster_shrink_lambda': 1.3348214443802935}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:22:56,216] Trial 23 finished with value: 0.7803542768823333 and parameters: {'lr': 0.001154368654855264, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 46.29915285495652, 'cluster_shrink_lambda': 47.980524770200866}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:24:01,241] Trial 24 finished with value: 0.7788924102460827 and parameters: {'lr': 0.0020326668501311576, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 46.74058114450028, 'cluster_shrink_lambda': 47.73180656484322}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:24:50,757] Trial 25 finished with value: 0.7730177498696518 and parameters: {'lr': 0.0007926200717023367, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 15.544545733966041, 'cluster_shrink_lambda': 49.88541027792047}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:25:29,419] Trial 26 finished with value: 0.7821100749133607 and parameters: {'lr': 0.0018836929731922672, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 45.073724435411215, 'cluster_shrink_lambda': 18.02491145626987}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:25:54,229] Trial 27 finished with value: 0.750583946700706 and parameters: {'lr': 0.00018997415463768507, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 45.428771690700195, 'cluster_shrink_lambda': 27.164892767581353}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:26:08,094] Trial 28 finished with value: 0.7514040405144253 and parameters: {'lr': 0.001607089003192516, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 32.858367237121016, 'cluster_shrink_lambda': 30.498281545176006}. Best is trial 10 with value: 0.7826800365191815.
+[I 2026-09-21 16:26:29,944] Trial 29 finished with value: 0.7428543609447193 and parameters: {'lr': 0.0005591436380634079, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 34.5568455790776, 'cluster_shrink_lambda': 16.91084037870401}. Best is trial 10 with value: 0.7826800365191815.
+Region training counts (id order): [106.0, 1086.0, 5342.0, 532.0, 16799.0, 566.0, 335.0]
+Region clusters (id order, ['Africa', 'East Asia', 'Europe', 'Latin America', 'North America', 'South Asia', 'Southeast Asia']): [2, 1, 2, 0, 0, 1, 1] -> ['Americas', 'Asia-Pacific', 'Europe & Africa']
+
+Best val composite score: 0.7827
+Best params: {'lr': 0.002185362633116951, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0629065830612703, 'cluster_shrink_lambda': 1.0657016278742406}
+  epoch 00  score=0.7119  (auc=0.7980 pr_auc=0.8136 f1=0.6882 macro_recall=0.3813)
+  epoch 01  score=0.7391  (auc=0.8253 pr_auc=0.8352 f1=0.7228 macro_recall=0.4051)
+  epoch 02  score=0.7474  (auc=0.8297 pr_auc=0.8409 f1=0.7315 macro_recall=0.4257)
+  epoch 03  score=0.7461  (auc=0.8296 pr_auc=0.8412 f1=0.7318 macro_recall=0.4169)
+  epoch 04  score=0.7356  (auc=0.8316 pr_auc=0.8422 f1=0.7127 macro_recall=0.3719)
+  epoch 05  score=0.7409  (auc=0.8346 pr_auc=0.8439 f1=0.7185 macro_recall=0.3877)
+  epoch 06  score=0.7469  (auc=0.8344 pr_auc=0.8458 f1=0.7360 macro_recall=0.3965)
+  epoch 07  score=0.7484  (auc=0.8372 pr_auc=0.8464 f1=0.7305 macro_recall=0.4077)
+  epoch 08  score=0.7600  (auc=0.8414 pr_auc=0.8498 f1=0.7481 macro_recall=0.4400)
+  epoch 09  score=0.7593  (auc=0.8437 pr_auc=0.8520 f1=0.7437 macro_recall=0.4341)
+  epoch 10  score=0.7570  (auc=0.8405 pr_auc=0.8502 f1=0.7450 macro_recall=0.4270)
+  epoch 11  score=0.7662  (auc=0.8437 pr_auc=0.8540 f1=0.7528 macro_recall=0.4615)
+  epoch 12  score=0.7605  (auc=0.8410 pr_auc=0.8508 f1=0.7442 macro_recall=0.4493)
+  epoch 13  score=0.7658  (auc=0.8451 pr_auc=0.8527 f1=0.7506 macro_recall=0.4610)
+  epoch 14  score=0.7616  (auc=0.8447 pr_auc=0.8532 f1=0.7383 macro_recall=0.4538)
+  epoch 15  score=0.7661  (auc=0.8440 pr_auc=0.8532 f1=0.7477 macro_recall=0.4697)
+  epoch 16  score=0.7685  (auc=0.8465 pr_auc=0.8540 f1=0.7495 macro_recall=0.4759)
+  epoch 17  score=0.7618  (auc=0.8446 pr_auc=0.8538 f1=0.7402 macro_recall=0.4513)
+  epoch 18  score=0.7693  (auc=0.8453 pr_auc=0.8524 f1=0.7486 macro_recall=0.4882)
+  epoch 19  score=0.7714  (auc=0.8476 pr_auc=0.8556 f1=0.7523 macro_recall=0.4851)
+  epoch 20  score=0.7723  (auc=0.8470 pr_auc=0.8564 f1=0.7527 macro_recall=0.4903)
+  epoch 21  score=0.7722  (auc=0.8495 pr_auc=0.8573 f1=0.7529 macro_recall=0.4819)
+  epoch 22  score=0.7827  (auc=0.8473 pr_auc=0.8564 f1=0.7673 macro_recall=0.5346)
+  epoch 23  score=0.7679  (auc=0.8494 pr_auc=0.8572 f1=0.7502 macro_recall=0.4581)
+  epoch 24  score=0.7669  (auc=0.8487 pr_auc=0.8562 f1=0.7512 macro_recall=0.4537)
+  epoch 25  score=0.7761  (auc=0.8482 pr_auc=0.8572 f1=0.7590 macro_recall=0.5011)
+  epoch 26  score=0.7600  (auc=0.8479 pr_auc=0.8559 f1=0.7339 macro_recall=0.4385)
+  epoch 27  score=0.7708  (auc=0.8487 pr_auc=0.8576 f1=0.7536 macro_recall=0.4728)
+
+Saved trained SFTNN to artifacts_exp13/sftnn_model.pt

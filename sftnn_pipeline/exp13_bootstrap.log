@@ -1,0 +1,41 @@
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+Bootstrapped AGGREGATE (n=5308)
+Bootstrapped Africa (n=24)
+Bootstrapped East Asia (n=244)
+Bootstrapped Europe (n=1159)
+Bootstrapped Latin America (n=105)
+Bootstrapped North America (n=3589)
+Bootstrapped South Asia (n=111)
+Bootstrapped Southeast Asia (n=76)
+
+Saved results_exp13/bootstrap_ci_per_region.csv
+Saved results_exp13/bootstrap_win_probability.csv
+
+=== SFTNN vs each baseline: P(SFTNN better) on Recall/F1/ROC-AUC/PR-AUC, by region ===
+Metric                                      F1    PR-AUC   ROC-AUC  Recall
+Region         Baseline                                                   
+AGGREGATE      Standard MLP (baseline)  0.6690  0.687500  0.740000  0.4025
+               TabNet (baseline)        0.8475  0.086500  0.806500  1.0000
+               XGBoost (baseline)       0.7665  0.000000  0.002000  1.0000
+Africa         Standard MLP (baseline)  0.8375  0.871936  0.963982  0.8760
+               TabNet (baseline)        0.8760  0.898449  0.978989  0.8760
+               XGBoost (baseline)       0.5705  0.495748  0.796898  0.6365
+East Asia      Standard MLP (baseline)  0.0730  0.108000  0.032000  0.0205
+               TabNet (baseline)        0.5070  0.084000  0.287500  0.5745
+               XGBoost (baseline)       0.4245  0.118000  0.027000  0.8590
+Europe         Standard MLP (baseline)  0.3420  0.433500  0.818500  0.1920
+               TabNet (baseline)        0.2365  0.036000  0.430000  0.1840
+               XGBoost (baseline)       0.2590  0.002500  0.076000  0.9870
+Latin America  Standard MLP (baseline)  0.6325  0.054000  0.080000  0.0000
+               TabNet (baseline)        0.5790  0.284000  0.464000  0.6060
+               XGBoost (baseline)       0.4975  0.005500  0.034500  0.1860
+North America  Standard MLP (baseline)  0.8545  0.756500  0.388000  0.7105
+               TabNet (baseline)        0.9510  0.407000  0.739000  1.0000
+               XGBoost (baseline)       0.9460  0.027500  0.031000  1.0000
+South Asia     Standard MLP (baseline)  0.9385  1.000000  1.000000  0.9545
+               TabNet (baseline)        0.7850  0.981500  0.985500  0.9800
+               XGBoost (baseline)       0.3640  0.367500  0.316500  0.9585
+Southeast Asia Standard MLP (baseline)  0.1215  0.367000  0.358500  0.3535
+               TabNet (baseline)        0.2410  0.252000  0.237500  0.6090
+               XGBoost (baseline)       0.4945  0.255000  0.192000  0.8335

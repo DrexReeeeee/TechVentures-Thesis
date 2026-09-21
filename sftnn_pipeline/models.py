@@ -105,6 +105,7 @@ class SFTNN(nn.Module):
         # learnable factor so the model can still express strong modulation.
         gamma = 1.0 + self.gamma_scale * torch.tanh(gamma_raw)
         beta = self.beta_scale * torch.tanh(beta_raw)
+        beta = beta_val
         y_modulated = gamma * h + beta                       # Equation 3
         logits = self.head(y_modulated).squeeze(-1)          # Equation 4
         if return_affine:

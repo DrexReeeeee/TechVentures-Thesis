@@ -60,7 +60,12 @@ def get_sftnn_probs(test_df, feature_cols, n_features, n_regions, artifacts_dir)
     model = SFTNN(n_features, n_regions, hidden_dim=p["hidden_dim"],
                   n_layers=p["n_layers"], embed_dim=p["embed_dim"],
                   dropout=p["dropout"]).to(DEVICE)
-    model.load_state_dict(torch.load(f"{artifacts_dir}/sftnn_model.pt", map_location=DEVICE))
+    state_dict = torch.load(f"{artifacts_dir}/sftnn_model.pt", map_location=DEVICE)
+    if "region_alpha" in state_dict:
+        # Experiment #13: restore the fixed per-region dampening buffer
+        # so strict loading succeeds and alpha actually affects inference.
+        model.register_buffer("region_alpha", state_dict["region_alpha"].clone())
+    model.load_state_dict(state_dict)
     model.eval()
     x = torch.tensor(test_df[feature_cols].values, dtype=torch.float32).to(DEVICE)
     r = torch.tensor(test_df["region_id"].values, dtype=torch.long).to(DEVICE)
