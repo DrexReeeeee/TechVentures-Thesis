@@ -1,0 +1,529 @@
+<title>SFTNN Final Model — Experiment #7</title>
+<style>
+  :root {
+    --ground: #FAFBFC;
+    --surface: #FFFFFF;
+    --surface-sunk: #F1F4F7;
+    --ink: #151A21;
+    --ink-muted: #5B6673;
+    --ink-faint: #8B94A1;
+    --rule: #DFE4EA;
+    --rule-strong: #C3CBD4;
+    --accent: #2F4B7C;
+    --accent-soft: #E8EDF5;
+    --win: #2D6A4E;
+    --win-bg: #E6F0EA;
+    --tie: #8A7C63;
+    --tie-bg: #F1EEE7;
+    --loss: #9C3F3F;
+    --loss-bg: #F5E8E8;
+    --final: #6B4A9E;
+    --final-bg: #EFE9F7;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0F1319; --surface: #161B23; --surface-sunk: #1B222C;
+      --ink: #E4E8EF; --ink-muted: #9AA5B4; --ink-faint: #6C7685;
+      --rule: #29313C; --rule-strong: #3A4552; --accent: #8FADDB; --accent-soft: #1C2637;
+      --win: #74BC95; --win-bg: #17271F; --tie: #BCAC8C; --tie-bg: #26221A;
+      --loss: #DE9292; --loss-bg: #2B1C1C; --final: #B79EDC; --final-bg: #241C31;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0F1319; --surface: #161B23; --surface-sunk: #1B222C;
+    --ink: #E4E8EF; --ink-muted: #9AA5B4; --ink-faint: #6C7685;
+    --rule: #29313C; --rule-strong: #3A4552; --accent: #8FADDB; --accent-soft: #1C2637;
+    --win: #74BC95; --win-bg: #17271F; --tie: #BCAC8C; --tie-bg: #26221A;
+    --loss: #DE9292; --loss-bg: #2B1C1C; --final: #B79EDC; --final-bg: #241C31;
+  }
+
+  body { background: var(--ground); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; margin: 0; padding: 0 5vw 6rem; }
+  .wrap { max-width: 62rem; margin: 0 auto; }
+  .col { max-width: 40rem; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; line-height: 1.25; }
+  h1 { font-size: 2.1rem; margin: 0 0 .5rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.45rem; margin: 3.5rem 0 .25rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule); }
+  h3 { font-size: 1.1rem; margin: 2rem 0 .25rem; }
+  p { margin: .85rem 0; }
+  a { color: var(--accent); }
+
+  .eyebrow { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; color: var(--ink-faint); margin: 0 0 .75rem; }
+  header.masthead { padding: 3.5rem 0 0; }
+  .standfirst { font-size: 1.1rem; color: var(--ink-muted); max-width: 44rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: .4rem 1.75rem; font-family: var(--mono); font-size: .78rem; color: var(--ink-faint); margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  .meta b { color: var(--ink-muted); font-weight: 500; }
+
+  .finding { border-left: 3px solid var(--rule-strong); background: var(--surface); padding: 1.1rem 1.35rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+  .finding.confirmed { border-left-color: var(--win); background: var(--win-bg); }
+  .finding.falsified { border-left-color: var(--loss); background: var(--loss-bg); }
+  .finding.caution   { border-left-color: var(--tie); background: var(--tie-bg); }
+  .finding.decision  { border-left-color: var(--final); background: var(--final-bg); }
+  .finding p:first-child { margin-top: 0; }
+  .finding p:last-child { margin-bottom: 0; }
+  .finding .status { font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; display: block; margin-bottom: .4rem; }
+  .confirmed .status { color: var(--win); }
+  .falsified .status { color: var(--loss); }
+  .caution .status   { color: var(--tie); }
+  .decision .status  { color: var(--final); }
+
+  .scroll { overflow-x: auto; margin: 1.25rem 0; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+  caption { caption-side: top; text-align: left; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); padding: .75rem 1rem .5rem; }
+  th, td { padding: .5rem .8rem; text-align: left; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  thead th { font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-muted); font-weight: 500; background: var(--surface-sunk); border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; }
+  td.best { color: var(--accent); font-weight: 600; }
+  tbody th { font-weight: 500; font-size: .85rem; position: sticky; left: 0; background: var(--surface); }
+  tr.group-start td, tr.group-start th { border-top: 1px solid var(--rule-strong); }
+  .rowlabel { color: var(--ink-muted); font-size: .78rem; }
+
+  .chip { font-family: var(--mono); font-size: .66rem; font-weight: 600; letter-spacing: .06em; padding: .16rem .45rem; border-radius: 3px; display: inline-block; min-width: 3.1rem; text-align: center; }
+  .chip.w { color: var(--win); background: var(--win-bg); }
+  .chip.t { color: var(--tie); background: var(--tie-bg); }
+  .chip.l { color: var(--loss); background: var(--loss-bg); }
+  .chip.f { color: var(--final); background: var(--final-bg); }
+
+  /* Experiment arc timeline */
+  .arc { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+  .arc-step { display: grid; grid-template-columns: 7rem 1fr; gap: 1.25rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+  .arc-step:last-child { border-bottom: none; }
+  .arc-tag { font-family: var(--mono); font-size: .72rem; font-weight: 600; color: var(--ink-faint); padding-top: .15rem; }
+  .arc-step.final .arc-tag { color: var(--final); }
+  .arc-title { font-weight: 600; margin: 0 0 .3rem; }
+  .arc-body { color: var(--ink-muted); font-size: .92rem; }
+  .arc-body .why { margin-top: .4rem; font-size: .85rem; }
+  .arc-body .why b { color: var(--loss); font-weight: 600; }
+  .arc-step.final .why b { color: var(--win); }
+
+  ul, ol { padding-left: 1.2rem; }
+  li { margin: .45rem 0; }
+  code { font-family: var(--mono); font-size: .86em; background: var(--surface-sunk); padding: .1rem .35rem; border-radius: 3px; }
+  strong { font-weight: 600; }
+  .footnote { font-size: .82rem; color: var(--ink-muted); }
+  hr { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+  .quote { font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; font-style: italic; color: var(--ink); border-left: 3px solid var(--final); padding-left: 1.25rem; margin: 1.5rem 0; }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">TechVenture · SFTNN · Final Model Decision</p>
+  <h1>Experiment #7 is the final SFTNN — thesis and live demo</h1>
+  <p class="standfirst">
+    Five SFTNN configurations and three rejected mechanisms were tested against a fixed, bootstrap-verified
+    protocol before this decision was made. This page documents the full experimental arc, why each prior
+    configuration was set aside, and the complete result set for the one that was kept.
+  </p>
+  <div class="meta">
+    <span><b>Decision</b> LOCKED — Exp #7</span>
+    <span><b>Test set</b> n = 5,308</span>
+    <span><b>Bootstrap</b> B = 2,000</span>
+    <span><b>Threshold</b> flat 0.50</span>
+    <span><b>Baselines</b> frozen since Exp #4</span>
+  </div>
+</header>
+
+<div class="finding decision">
+  <span class="status">Final decision</span>
+  <p><strong>Thesis and live demo both use the Experiment #7 checkpoint.</strong> No separate model for the
+  demonstration — the same weights evaluated in the results chapter are the ones presented live.</p>
+</div>
+
+<h2>The experimental arc</h2>
+<div class="col">
+<p>
+  Two data corrections came first and are adopted throughout everything below. Three region-aware training
+  mechanisms were then tried and rejected before the numbered experiment sequence began. Five numbered SFTNN
+  configurations followed, each changing exactly one thing from the last.
+</p>
+</div>
+
+<div class="arc">
+  <div class="arc-step">
+    <div class="arc-tag">DATA FIXES</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Southeast Asia label-completeness fix + funding-disclosure indicator</p>
+      SEA success rate 26.6% → 38.0% after excluding 210 rows with a source-side missing-data artifact;
+      added a binary flag distinguishing "not disclosed" from "raised $0," concentrated in Africa/South Asia.
+      <div class="why"><b>Adopted</b> — both are corrective, not tuned, and precede every experiment below.</div>
+    </div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-tag">REJECTED<br>MECHANISMS</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Group DRO · per-region threshold tuning · per-region γ/β modulation ceiling</p>
+      Three different ways of giving minority regions more explicit weight in training or inference.
+      <div class="why"><b>All reverted</b> — Group DRO regressed aggregate ROC-AUC/F1/Recall; per-region
+      thresholds reduced aggregate Recall/F1 and erased a South Asia advantage; the γ/β ceiling collapsed
+      shrinkage to ~0.001 and dropped SEA's ROC-AUC from 0.814 to 0.710.</div>
+    </div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-tag">ORIGINAL</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Plain validation ROC-AUC as the Optuna objective</p>
+      <code>embed_dim=4, shrink_lambda=6.245</code>. Genuine, ablation-confirmed region-specific differentiation
+      for North America and Latin America — the one configuration where that mechanism visibly worked as designed.
+      <div class="why"><b>Not final</b> — wins zero aggregate metrics and zero raw per-region metrics in either
+      of the two regions where it shows genuine differentiation; South Asia is its only real per-region win.</div>
+    </div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-tag">EXP #4</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Composite validation objective introduced</p>
+      <code>0.35·AUC + 0.25·PR-AUC + 0.25·F1 + 0.15·macro-Recall</code>, applied identically to all four models.
+      First aggregate win (Recall, 0.757). But <code>shrink_lambda</code> collapsed to 0.00625 (~1000× down),
+      and Southeast Asia (F1 −0.062) and Latin America (F1 −0.049) both regressed.
+      <div class="why"><b>Not final</b> — the aggregate win was bought at the cost of the two regions the
+      thesis prioritizes most.</div>
+    </div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-tag">EXP #5</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Shrinkage floor raised (0.3–10), formula unchanged</p>
+      A direct attempt to undo #4's collapse by constraining the search range.
+      <code>shrink_lambda=1.914</code> landed well clear of the floor — but Southeast Asia stayed fully
+      flattened and Latin America's genuine Original-era differentiation was <em>destroyed</em>, not restored.
+      <div class="why"><b>Not final</b> — the intervention worked exactly as designed and still didn't fix
+      the regions it targeted. Diagnosed, not just observed: a confound was found in how the penalty scales
+      with <code>embed_dim</code>.</div>
+    </div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-tag">EXP #6</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Shrinkage penalty corrected: mean, not sum, over embedding dimensions</p>
+      Fixed the confound found in #5 (penalty scaled ~4× between <code>embed_dim=4</code> and
+      <code>16</code>); rescaled the search range to 1.0–50.0 as the mandatory companion change.
+      Latin America's F1 numerically recovered to 0.645 — but the ablation showed this was <em>illusory</em>,
+      still fully flattened, not genuine. Southeast Asia's mechanism became <em>actively harmful</em>
+      (−0.031 Recall drop) for the first time.
+      <div class="why"><b>Not final</b> — the mathematically correct fix, tested honestly, made Southeast
+      Asia mechanistically worse, not better.</div>
+    </div>
+  </div>
+  <div class="arc-step final">
+    <div class="arc-tag">EXP #7 →<br>FINAL</div>
+    <div class="arc-body">
+      <p class="arc-title" style="color:var(--ink); font-family:var(--serif); font-size:1rem;">Capacity search restricted to #4's larger configurations, #6's fixes kept</p>
+      <code>hidden_dim∈{64,128}, n_layers∈{2,3}</code> (32 and 1 dropped), mean-based shrinkage,
+      composite objective, all unchanged otherwise. Result below.
+      <div class="why"><b>Selected</b> — bootstrap-robust aggregate F1 win (vs. TabNet 82.5%, XGBoost
+      74.3%); South Asia's mechanism upgraded from mildly harmful to neutral with a decisive bootstrap
+      improvement (3W–2T–1L → 5W–1T–0L); Southeast Asia and Latin America performed identically to #5 —
+      equal, not worse.</div>
+    </div>
+  </div>
+</div>
+
+<h2>Experiment #7 — complete results</h2>
+<div class="col">
+<p class="footnote">Hyperparameters: <code>lr=0.00274, dropout=0.1, weight_decay=0.001, hidden_dim=128,
+n_layers=3, embed_dim=4, shrink_lambda=4.88</code>. None pinned at a search boundary.</p>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 1 — Aggregate evaluation, blind test set (n = 5,308)</caption>
+    <thead><tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>Standard MLP <span class="rowlabel">(one-hot region)</span></th>
+        <td class="num">0.7545</td><td class="num">0.7527</td><td class="num best">0.7524</td><td class="num">0.7525</td><td class="num">0.8355</td><td class="num">0.8441</td></tr>
+      <tr><th>XGBoost</th>
+        <td class="num best">0.7668</td><td class="num best">0.7992</td><td class="num">0.7076</td><td class="num">0.7506</td><td class="num best">0.8438</td><td class="num best">0.8548</td></tr>
+      <tr><th>TabNet</th>
+        <td class="num">0.7575</td><td class="num">0.7681</td><td class="num">0.7322</td><td class="num">0.7498</td><td class="num">0.8345</td><td class="num">0.8493</td></tr>
+      <tr><th>Proposed SFTNN <span class="rowlabel">(Exp #7)</span></th>
+        <td class="num">0.7600</td><td class="num">0.7676</td><td class="num">0.7402</td><td class="num best">0.7537</td><td class="num">0.8369</td><td class="num">0.8441</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="finding confirmed">
+  <span class="status">Bootstrap-confirmed aggregate win</span>
+  <p>Aggregate F1: P(SFTNN better) = <strong>64.9% vs. MLP, 82.5% vs. TabNet, 74.3% vs. XGBoost</strong>
+  (B=2,000). Robust against TabNet and XGBoost; a strong lean, not quite a certainty, against MLP.</p>
+</div>
+
+<div class="col">
+<p class="footnote">All four models, side by side, per region — best value per column in blue. Values are point
+estimates on the samples shown; Table 2i below confirms which of these differences the paired bootstrap
+supports as real rather than noise.</p>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2a — Africa (n=24, excluded from verdict — see limitations)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num">0.3333</td><td class="num">0.5000</td><td class="num">0.6296</td><td class="num">0.5606</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.5000</td><td class="num">0.6667</td><td class="num">0.8148</td><td class="num best">0.7394</td></tr>
+      <tr><th>TabNet</th><td class="num">0.3333</td><td class="num">0.4444</td><td class="num">0.5463</td><td class="num">0.5389</td></tr>
+      <tr><th>SFTNN</th><td class="num best">0.6667</td><td class="num best">0.7273</td><td class="num best">0.8241</td><td class="num">0.7369</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2b — East Asia (n=244, supplementary 7th region)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num best">0.6095</td><td class="num best">0.6124</td><td class="num">0.7206</td><td class="num">0.7059</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.5333</td><td class="num">0.5926</td><td class="num best">0.7312</td><td class="num best">0.7151</td></tr>
+      <tr><th>TabNet</th><td class="num">0.5619</td><td class="num">0.5871</td><td class="num">0.7118</td><td class="num">0.7141</td></tr>
+      <tr><th>SFTNN</th><td class="num">0.5714</td><td class="num">0.5911</td><td class="num">0.7095</td><td class="num">0.7036</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2c — Europe (n=1,159)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num">0.6443</td><td class="num">0.6789</td><td class="num">0.8226</td><td class="num">0.7879</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.5922</td><td class="num best">0.6842</td><td class="num best">0.8359</td><td class="num best">0.8117</td></tr>
+      <tr><th>TabNet</th><td class="num best">0.6464</td><td class="num">0.6835</td><td class="num">0.8272</td><td class="num">0.8030</td></tr>
+      <tr><th>SFTNN</th><td class="num">0.6161</td><td class="num">0.6819</td><td class="num">0.8253</td><td class="num">0.7865</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2d — Latin America (n=105, focal region)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num best">0.6053</td><td class="num">0.6667</td><td class="num">0.8425</td><td class="num">0.8037</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.5789</td><td class="num best">0.6769</td><td class="num best">0.8610</td><td class="num best">0.8393</td></tr>
+      <tr><th>TabNet</th><td class="num">0.5263</td><td class="num">0.6667</td><td class="num">0.8060</td><td class="num">0.7905</td></tr>
+      <tr><th>SFTNN</th><td class="num">0.5000</td><td class="num">0.6230</td><td class="num">0.8095</td><td class="num">0.7711</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2e — North America (n=3,589)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num best">0.7952</td><td class="num">0.7816</td><td class="num">0.8422</td><td class="num">0.8659</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.7527</td><td class="num">0.7768</td><td class="num best">0.8467</td><td class="num best">0.8734</td></tr>
+      <tr><th>TabNet</th><td class="num">0.7727</td><td class="num">0.7782</td><td class="num">0.8402</td><td class="num">0.8684</td></tr>
+      <tr><th>SFTNN</th><td class="num">0.7885</td><td class="num best">0.7833</td><td class="num">0.8417</td><td class="num">0.8655</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2f — South Asia (n=111, focal region)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num">0.5263</td><td class="num">0.5882</td><td class="num">0.7556</td><td class="num">0.7092</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.5263</td><td class="num best">0.6557</td><td class="num">0.8335</td><td class="num">0.7742</td></tr>
+      <tr><th>TabNet</th><td class="num">0.5000</td><td class="num">0.6032</td><td class="num">0.7751</td><td class="num">0.6918</td></tr>
+      <tr><th>SFTNN</th><td class="num best">0.5789</td><td class="num">0.6471</td><td class="num best">0.8374</td><td class="num best">0.7787</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2g — Southeast Asia (n=76, focal region)</caption>
+    <thead><tr><th>Model</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>MLP</th><td class="num best">0.6875</td><td class="num best">0.7097</td><td class="num">0.7642</td><td class="num">0.7519</td></tr>
+      <tr><th>XGBoost</th><td class="num">0.5938</td><td class="num">0.6667</td><td class="num best">0.7812</td><td class="num best">0.7678</td></tr>
+      <tr><th>TabNet</th><td class="num">0.6562</td><td class="num">0.7000</td><td class="num">0.7798</td><td class="num">0.7661</td></tr>
+      <tr><th>SFTNN</th><td class="num">0.6250</td><td class="num">0.6250</td><td class="num">0.7393</td><td class="num">0.7260</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Winner per region, per metric</h3>
+<div class="scroll">
+  <table>
+    <caption>Table 2h — Which model wins each metric, by region</caption>
+    <thead><tr><th>Region (n)</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+    <tbody>
+      <tr><th>Africa (24)</th><td><span class="chip f">SFTNN</span></td><td><span class="chip f">SFTNN</span></td><td><span class="chip f">SFTNN</span></td><td>XGBoost</td></tr>
+      <tr><th>East Asia (244)</th><td>MLP</td><td>MLP</td><td>XGBoost</td><td>XGBoost</td></tr>
+      <tr><th>Europe (1,159)</th><td>TabNet</td><td>XGBoost</td><td>XGBoost</td><td>XGBoost</td></tr>
+      <tr><th>Latin America (105)</th><td>MLP</td><td>XGBoost</td><td>XGBoost</td><td>XGBoost</td></tr>
+      <tr><th>North America (3,589)</th><td>MLP</td><td><span class="chip f">SFTNN</span></td><td>XGBoost</td><td>XGBoost</td></tr>
+      <tr><th>South Asia (111)</th><td><span class="chip f">SFTNN</span></td><td>XGBoost</td><td><span class="chip f">SFTNN</span></td><td><span class="chip f">SFTNN</span></td></tr>
+      <tr><th>Southeast Asia (76)</th><td>MLP</td><td>MLP</td><td>XGBoost</td><td>XGBoost</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="col">
+<p class="footnote">
+  SFTNN wins outright in Africa (n=24, excluded) and South Asia (3 of 4 metrics), plus North America's F1.
+  It wins nothing in East Asia, Europe, Latin America, or Southeast Asia — XGBoost or MLP takes those.
+  This is the same picture the ablation gives from a different angle: South Asia and North America are
+  where the model does real work; the other regions are carried by the baselines.
+</p>
+</div>
+
+<h3>Are these wins real, or sampling noise?</h3>
+<div class="col">
+<p>Paired bootstrap (B=2,000, same resampled rows scored by all four models per iteration) — the standard
+this whole investigation holds every claim to. P(SFTNN better) shown; <span class="chip w">WIN</span> ≥65%,
+<span class="chip t">TIE</span> 35–65%, <span class="chip l">LOSS</span> ≤35%.</p>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 2i — SFTNN (Exp #7) vs. each baseline, Recall &amp; F1, paired bootstrap</caption>
+    <thead><tr><th>Region</th><th>vs.</th><th>Recall</th><th>F1</th></tr></thead>
+    <tbody>
+      <tr class="group-start"><th rowspan="3">Africa</th><td class="rowlabel">MLP</td><td><span class="chip w">WIN</span> 87.6%</td><td><span class="chip w">WIN</span> 83.8%</td></tr>
+      <tr><td class="rowlabel">TabNet</td><td><span class="chip w">WIN</span> 87.6%</td><td><span class="chip w">WIN</span> 87.6%</td></tr>
+      <tr><td class="rowlabel">XGBoost</td><td><span class="chip t">TIE</span> 63.7%</td><td><span class="chip t">TIE</span> 57.1%</td></tr>
+
+      <tr class="group-start"><th rowspan="3">East Asia</th><td class="rowlabel">MLP</td><td><span class="chip l">LOSS</span> 2.6%</td><td><span class="chip l">LOSS</span> 12.3%</td></tr>
+      <tr><td class="rowlabel">TabNet</td><td><span class="chip t">TIE</span> 58.9%</td><td><span class="chip t">TIE</span> 57.7%</td></tr>
+      <tr><td class="rowlabel">XGBoost</td><td><span class="chip w">WIN</span> 87.0%</td><td><span class="chip t">TIE</span> 48.4%</td></tr>
+
+      <tr class="group-start"><th rowspan="3">Latin America</th><td class="rowlabel">MLP</td><td><span class="chip l">LOSS</span> 0.0%</td><td><span class="chip l">LOSS</span> 18.2%</td></tr>
+      <tr><td class="rowlabel">TabNet</td><td><span class="chip l">LOSS</span> 24.7%</td><td><span class="chip l">LOSS</span> 21.6%</td></tr>
+      <tr><td class="rowlabel">XGBoost</td><td><span class="chip l">LOSS</span> 4.5%</td><td><span class="chip l">LOSS</span> 13.2%</td></tr>
+
+      <tr class="group-start"><th rowspan="3">North America</th><td class="rowlabel">MLP</td><td><span class="chip l">LOSS</span> 5.5%</td><td><span class="chip t">TIE</span> 71.4%</td></tr>
+      <tr><td class="rowlabel">TabNet</td><td><span class="chip w">WIN</span> 99.9%</td><td><span class="chip w">WIN</span> 90.1%</td></tr>
+      <tr><td class="rowlabel">XGBoost</td><td><span class="chip w">WIN</span> 100%</td><td><span class="chip w">WIN</span> 92.0%</td></tr>
+
+      <tr class="group-start"><th rowspan="3">South Asia</th><td class="rowlabel">MLP</td><td><span class="chip w">WIN</span> 87.3%</td><td><span class="chip w">WIN</span> 98.1%</td></tr>
+      <tr><td class="rowlabel">TabNet</td><td><span class="chip w">WIN</span> 87.4%</td><td><span class="chip w">WIN</span> 78.6%</td></tr>
+      <tr><td class="rowlabel">XGBoost</td><td><span class="chip w">WIN</span> 87.5%</td><td><span class="chip t">TIE</span> 40.3%</td></tr>
+
+      <tr class="group-start"><th rowspan="3">Southeast Asia</th><td class="rowlabel">MLP</td><td><span class="chip l">LOSS</span> 9.1%</td><td><span class="chip l">LOSS</span> 2.9%</td></tr>
+      <tr><td class="rowlabel">TabNet</td><td><span class="chip l">LOSS</span> 18.3%</td><td><span class="chip l">LOSS</span> 4.6%</td></tr>
+      <tr><td class="rowlabel">XGBoost</td><td><span class="chip t">TIE</span> 56.9%</td><td><span class="chip t">TIE</span> 25.2%</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="col">
+<p class="footnote">
+  South Asia is the cleanest story: 5 of 6 comparisons are wins, the sixth a tie. Africa's apparent sweep
+  softens under the bootstrap — the XGBoost comparisons are ties, not wins, once resampling variance is
+  accounted for (n=24). Southeast Asia and Latin America show no wins against any baseline on either metric.
+</p>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 3 — Mean-embedding ablation (Exp #7): does the region-specific embedding earn its keep?</caption>
+    <thead><tr><th>Region</th><th>Recall_drop</th><th>F1_drop</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><th>North America</th><td class="num">+0.050</td><td class="num">+0.018</td><td><span class="chip w">GENUINE</span> — the only region where conditioning is consistently earned</td></tr>
+      <tr><th>Africa</th><td class="num">0.000</td><td class="num">0.000</td><td><span class="chip t">FLATTENED</span> (n=24, excluded from verdict)</td></tr>
+      <tr><th>East Asia</th><td class="num">−0.010</td><td class="num">−0.007</td><td><span class="chip l">MILDLY HARMFUL</span>, roughly half the magnitude seen in Exp #5</td></tr>
+      <tr><th>Europe</th><td class="num">−0.022</td><td class="num">+0.001</td><td><span class="chip t">MIXED</span>, consistent with every prior experiment</td></tr>
+      <tr><th>Latin America</th><td class="num">0.000</td><td class="num">0.000</td><td><span class="chip t">FLATTENED</span> — identical to Exp #5, not genuinely differentiated</td></tr>
+      <tr><th>South Asia</th><td class="num">0.000</td><td class="num">0.000</td><td><span class="chip w">IMPROVED</span> — was −0.026/−0.011 (harmful) in Exp #5, now neutral</td></tr>
+      <tr><th>Southeast Asia</th><td class="num">0.000</td><td class="num">0.000</td><td><span class="chip t">FLATTENED</span> — identical to Exp #5, no worse</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Why #7 over #5, specifically</h2>
+<div class="col">
+<p>
+  #5 and #7 share the same architecture, objective, and shrinkage formula, differing only in the capacity
+  search space. The decision came down to a direct, region-by-region comparison on the thesis's actual
+  regions of interest — not aggregate F1, which was deliberately set aside as the deciding factor.
+</p>
+</div>
+
+<div class="scroll">
+  <table>
+    <caption>Table 4 — Bootstrap win/tie/loss, Recall+F1 vs. all 3 baselines (65/35 threshold), Africa excluded</caption>
+    <thead><tr><th>Region</th><th>Exp #5</th><th>Exp #7</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><th>Southeast Asia</th><td class="num">0W–1T–5L</td><td class="num">0W–1T–5L</td><td>Identical</td></tr>
+      <tr><th>South Asia</th><td class="num">3W–2T–1L</td><td class="num best">5W–1T–0L</td><td><strong>#7 decisively better</strong></td></tr>
+      <tr><th>Latin America</th><td class="num">0W–0T–6L</td><td class="num">0W–0T–6L</td><td>Identical</td></tr>
+      <tr><th>East Asia</th><td class="num best">2W–2T–2L</td><td class="num">1W–3T–2L</td><td>#5 slightly better (non-core 7th region)</td></tr>
+      <tr class="group-start"><th>Total (24 slots)</th><td class="num">5W–5T–14L</td><td class="num best">6W–5T–13L</td><td>#7 ahead, driven entirely by South Asia</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="finding decision">
+  <span class="status">Deciding logic</span>
+  <p>
+    On the three regions the thesis is actually built around — Southeast Asia, South Asia, Latin America —
+    #7 is <strong>equal to #5 in two and clearly better in the third</strong>. The only region where #5 leads
+    is East Asia, a supplementary 7th region outside the original six the methodology's Table 4.7 is
+    structured around. #5 does not provide materially stronger evidence for underrepresented regions; by the
+    pre-agreed decision rule, that makes #7 the correct choice independent of its aggregate F1 win.
+  </p>
+</div>
+
+<h2>The claim this evidence actually supports</h2>
+<div class="col">
+<p>What to write:</p>
+</div>
+<div class="quote">
+  “The final SFTNN demonstrated competitive overall startup success prediction while providing explicit
+  region-aware modeling. Its regional conditioning was particularly beneficial in South Asia, while its
+  effects were neutral or varied across other underrepresented regions.”
+</div>
+<div class="col">
+<p>What not to write: <strong>“SFTNN outperforms all other models in underrepresented regions.”</strong>
+It doesn't — Southeast Asia and Latin America show flattened, not genuine, conditioning in every
+configuration tested, including the final one. The claim above is narrower, and it is the one the ablation
+and bootstrap tables actually back.</p>
+</div>
+
+<h2>Standing limitations, still true for Exp #7</h2>
+<div class="col">
+<ul>
+  <li><strong>Small per-region test sets.</strong> Africa n=24, Southeast Asia n=76, Latin America n=105, South Asia n=111 — report bootstrap intervals, not bare point estimates.</li>
+  <li><strong>Proxy labels.</strong> Minority regions rely more heavily on the age/funding-round heuristic than North America does, tracking their lower base success rates.</li>
+  <li><strong>Region composition.</strong> Singapore is ~48% of the Southeast Asia bucket.</li>
+  <li><strong>Inert-to-mixed conditioning.</strong> Only North America shows genuine, ablation-confirmed differentiation in every one of the five SFTNN configurations tested this session.</li>
+  <li><strong>Single split.</strong> Bootstrap quantifies test-set sampling variance only, not train/val/test partition variance.</li>
+</ul>
+</div>
+
+<h2>Outstanding manuscript edits</h2>
+<div class="scroll">
+  <table>
+    <caption>Table 5 — Identified, not yet applied</caption>
+    <thead><tr><th>Location</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><th>Figure 6</th><td>Add decision node: source-level funding-history availability → Dropped</td></tr>
+      <tr><th>§4.3.2.6</th><td>Paragraph on the SEA exclusion, styled as the existing "Rejected Alternative (v1)" callout</td></tr>
+      <tr><th>Table 1 (thesis)</th><td>SEA row: 699 → 489 records; success rate 26.6% → 38.0%</td></tr>
+      <tr><th>Table 3 (thesis)</th><td>Total 38,090 → 37,880; Failure composition −210</td></tr>
+      <tr><th>§4.3.2.2</th><td>Paragraph on the funding-disclosure missingness indicator</td></tr>
+      <tr><th>§4.5.2, Eq. 2–3</th><td>Update to the identity-centred γ=1+tanh(·) form actually used</td></tr>
+      <tr><th>§4.7</th><td>Document the composite validation objective and the mean-based, dimension-normalized shrinkage penalty</td></tr>
+      <tr><th>§4.10 / Tables 10–11</th><td>Metric columns as point estimate + bootstrap CI; footnote B=2,000 and the 65/35 rule</td></tr>
+      <tr><th>§4.10.2 discussion</th><td>State plainly: only North America shows genuine region-specific differentiation across every tested configuration</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+<div class="col">
+<p class="footnote">
+  Final checkpoint: <code>artifacts/sftnn_model.pt</code> (Exp #7). Prior configurations archived at
+  <code>results_pre_composite_objective/</code>, <code>results_exp4/</code>, <code>results_exp5/</code>,
+  <code>results_exp6/</code>. Reproduce via <code>01_preprocess.py</code> →
+  <code>02</code>–<code>05_train_sftnn.py</code> → <code>06_evaluate.py</code> →
+  <code>07_interpretability.py</code> → <code>08_bootstrap_ci.py --n_boot 2000</code>.
+</p>
+</div>
+
+</div>

@@ -1,0 +1,8 @@
+
+==================================================================
+  SEED 1
+==================================================================
+    $ C:\Users\Nacu\AppData\Local\Programs\Python\Python312\python.exe 02_train_mlp.py --trials 10 --max_epochs 60 --seed 1 --artifacts artifacts
+    $ C:\Users\Nacu\AppData\Local\Programs\Python\Python312\python.exe 03_train_xgboost.py --trials 10 --seed 1 --artifacts artifacts
+    $ C:\Users\Nacu\AppData\Local\Programs\Python\Python312\python.exe 04_train_tabnet.py --trials 10 --max_epochs 60 --seed 1 --artifacts artifacts
+    $ C:\Users\Nacu\AppData\Local\Programs\Python\Python312\python.exe 05_train_sftnn.py --trials 15 --max_epochs 60 --seed 1 --artifacts artifacts

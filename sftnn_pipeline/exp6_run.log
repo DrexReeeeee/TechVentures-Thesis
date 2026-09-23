@@ -1,0 +1,181 @@
+[I 2026-09-15 18:46:22,664] A new study created in memory with name: no-name-09865dfc-aaa0-42b2-a016-9e841704a3c7
+[I 2026-09-15 18:46:45,794] Trial 0 finished with value: 0.750251945088212 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 3.2877474139911183}. Best is trial 0 with value: 0.750251945088212.
+[I 2026-09-15 18:47:05,636] Trial 1 finished with value: 0.7567092075268256 and parameters: {'lr': 0.0011207606211860567, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 40.938136085987814}. Best is trial 1 with value: 0.7567092075268256.
+[I 2026-09-15 18:47:44,771] Trial 2 finished with value: 0.7755179440029079 and parameters: {'lr': 0.00853618986286683, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 44.39102767051397}. Best is trial 2 with value: 0.7755179440029079.
+[I 2026-09-15 18:48:43,241] Trial 3 finished with value: 0.780401078456971 and parameters: {'lr': 0.0035503048581283078, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 23.062618121677932}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:49:18,694] Trial 4 finished with value: 0.7457116722584233 and parameters: {'lr': 0.00014096175149815865, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.375589571206082}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:49:44,985] Trial 5 finished with value: 0.7468711144019022 and parameters: {'lr': 0.0004470608546778491, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 12.057081573389116}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:50:11,795] Trial 6 finished with value: 0.7467215227398788 and parameters: {'lr': 0.0004253162363790873, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 1, 'embed_dim': 4, 'shrink_lambda': 32.84210350911731}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:50:30,440] Trial 7 finished with value: 0.7527377442562176 and parameters: {'lr': 0.0011986281799901185, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 1, 'embed_dim': 16, 'shrink_lambda': 3.5408871584750528}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:50:45,490] Trial 8 finished with value: 0.7498600128127463 and parameters: {'lr': 0.0010903884523201113, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 1, 'embed_dim': 8, 'shrink_lambda': 1.7626741740706338}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:51:48,856] Trial 9 finished with value: 0.7797943512571954 and parameters: {'lr': 0.0009525889086580769, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 10.090423315981846}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:52:24,872] Trial 10 finished with value: 0.7644971378622095 and parameters: {'lr': 0.008647935064988071, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 1.0629065830612703}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:52:51,073] Trial 11 finished with value: 0.7689449192146957 and parameters: {'lr': 0.003182133686478331, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 11.287316764348423}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:53:16,933] Trial 12 finished with value: 0.772961264449314 and parameters: {'lr': 0.0032003454892085507, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 15.852680893431373}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:53:52,815] Trial 13 finished with value: 0.7766163430345245 and parameters: {'lr': 0.0033717980126542276, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 19.6020943676304}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:54:18,287] Trial 14 finished with value: 0.74961086575803 and parameters: {'lr': 0.00014352407941995758, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 6.990901343271467}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:54:33,569] Trial 15 finished with value: 0.7575081213222875 and parameters: {'lr': 0.0019469167007567754, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 6.837484974444242}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:54:41,745] Trial 16 finished with value: 0.7530922657472343 and parameters: {'lr': 0.005078516654170432, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 21.669420082369466}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:55:08,324] Trial 17 finished with value: 0.7508462995369413 and parameters: {'lr': 0.0003100699767609112, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 7.207788627706247}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:55:52,591] Trial 18 finished with value: 0.7740742267534515 and parameters: {'lr': 0.0007046668327103236, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 25.36078994442072}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:56:13,803] Trial 19 finished with value: 0.7522026054170815 and parameters: {'lr': 0.0018760457261379501, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 32, 'n_layers': 1, 'embed_dim': 16, 'shrink_lambda': 11.640388240937526}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:56:44,479] Trial 20 finished with value: 0.7719615134058974 and parameters: {'lr': 0.005853214479753592, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 4.889769776658129}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:57:16,870] Trial 21 finished with value: 0.7770855604261885 and parameters: {'lr': 0.0031065376368041827, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 23.6408623409993}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:57:37,206] Trial 22 finished with value: 0.7707848812941795 and parameters: {'lr': 0.0022501939407350447, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 31.53382870370322}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:57:55,420] Trial 23 finished with value: 0.7710373670626817 and parameters: {'lr': 0.004431091220106224, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 15.189184057598135}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:58:31,408] Trial 24 finished with value: 0.7803961240301613 and parameters: {'lr': 0.001448321202447988, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 9.346940030615675}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:58:53,977] Trial 25 finished with value: 0.7617002545479701 and parameters: {'lr': 0.0009193748670769692, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 8.943424150230786}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:59:14,698] Trial 26 finished with value: 0.7715756952400372 and parameters: {'lr': 0.001508136478630202, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 5.254021843101121}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:59:31,636] Trial 27 finished with value: 0.7456033664763896 and parameters: {'lr': 0.0002890626594393088, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 15.863245487270193}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 18:59:46,199] Trial 28 finished with value: 0.7487065902664163 and parameters: {'lr': 0.0007925827741804698, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 32, 'n_layers': 1, 'embed_dim': 16, 'shrink_lambda': 9.262553516382646}. Best is trial 3 with value: 0.780401078456971.
+[I 2026-09-15 19:00:00,575] Trial 29 finished with value: 0.7574825915642083 and parameters: {'lr': 0.0006023532759623047, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 5.225575469289975}. Best is trial 3 with value: 0.780401078456971.
+Region training counts (id order): [106.0, 1086.0, 5342.0, 532.0, 16799.0, 566.0, 335.0]
+
+Best val composite score: 0.7804
+Best params: {'lr': 0.0035503048581283078, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 23.062618121677932}
+  epoch 00  score=0.7193  (auc=0.8074 pr_auc=0.8205 f1=0.6991 macro_recall=0.3789)
+  epoch 01  score=0.7390  (auc=0.8302 pr_auc=0.8369 f1=0.7242 macro_recall=0.3877)
+  epoch 02  score=0.7503  (auc=0.8318 pr_auc=0.8419 f1=0.7384 macro_recall=0.4275)
+  epoch 03  score=0.7506  (auc=0.8318 pr_auc=0.8417 f1=0.7379 macro_recall=0.4302)
+  epoch 04  score=0.7373  (auc=0.8325 pr_auc=0.8437 f1=0.7191 macro_recall=0.3680)
+  epoch 05  score=0.7451  (auc=0.8348 pr_auc=0.8423 f1=0.7265 macro_recall=0.4049)
+  epoch 06  score=0.7501  (auc=0.8342 pr_auc=0.8447 f1=0.7414 macro_recall=0.4108)
+  epoch 07  score=0.7471  (auc=0.8336 pr_auc=0.8444 f1=0.7363 macro_recall=0.4014)
+  epoch 08  score=0.7570  (auc=0.8369 pr_auc=0.8464 f1=0.7454 macro_recall=0.4411)
+  epoch 09  score=0.7500  (auc=0.8374 pr_auc=0.8471 f1=0.7356 macro_recall=0.4084)
+  epoch 10  score=0.7488  (auc=0.8361 pr_auc=0.8465 f1=0.7370 macro_recall=0.4020)
+  epoch 11  score=0.7577  (auc=0.8388 pr_auc=0.8493 f1=0.7466 macro_recall=0.4346)
+  epoch 12  score=0.7474  (auc=0.8391 pr_auc=0.8492 f1=0.7270 macro_recall=0.3976)
+  epoch 13  score=0.7620  (auc=0.8398 pr_auc=0.8488 f1=0.7464 macro_recall=0.4622)
+  epoch 14  score=0.7562  (auc=0.8413 pr_auc=0.8498 f1=0.7410 macro_recall=0.4268)
+  epoch 15  score=0.7596  (auc=0.8418 pr_auc=0.8498 f1=0.7454 macro_recall=0.4407)
+  epoch 16  score=0.7671  (auc=0.8453 pr_auc=0.8514 f1=0.7534 macro_recall=0.4673)
+  epoch 17  score=0.7633  (auc=0.8443 pr_auc=0.8521 f1=0.7433 macro_recall=0.4599)
+  epoch 18  score=0.7658  (auc=0.8439 pr_auc=0.8506 f1=0.7454 macro_recall=0.4759)
+  epoch 19  score=0.7698  (auc=0.8471 pr_auc=0.8539 f1=0.7510 macro_recall=0.4807)
+  epoch 20  score=0.7664  (auc=0.8457 pr_auc=0.8532 f1=0.7512 macro_recall=0.4617)
+  epoch 21  score=0.7755  (auc=0.8495 pr_auc=0.8561 f1=0.7616 macro_recall=0.4918)
+  epoch 22  score=0.7804  (auc=0.8479 pr_auc=0.8557 f1=0.7618 macro_recall=0.5284)
+  epoch 23  score=0.7690  (auc=0.8499 pr_auc=0.8575 f1=0.7508 macro_recall=0.4628)
+  epoch 24  score=0.7652  (auc=0.8435 pr_auc=0.8514 f1=0.7507 macro_recall=0.4628)
+  epoch 25  score=0.7751  (auc=0.8462 pr_auc=0.8563 f1=0.7586 macro_recall=0.5012)
+  epoch 26  score=0.7563  (auc=0.8454 pr_auc=0.8535 f1=0.7375 macro_recall=0.4177)
+  epoch 27  score=0.7689  (auc=0.8451 pr_auc=0.8542 f1=0.7512 macro_recall=0.4786)
+
+Saved trained SFTNN to artifacts/sftnn_model.pt
+=== SFTNN DONE ===
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+=== Table 4.6: Aggregate Evaluation ===
+                  Model  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)  0.754521   0.752660 0.752374 0.752517 0.835536 0.844052
+     XGBoost (baseline)  0.766767   0.799228 0.707558 0.750604 0.843757 0.854792
+      TabNet (baseline)  0.757536   0.768127 0.732245 0.749757 0.834454 0.849310
+         Proposed SFTNN  0.757347   0.764451 0.738321 0.751159 0.837774 0.843773
+
+=== Table 4.7: Per-Region Evaluation ===
+                  Model         Region    n  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)         Africa   24  0.833333   1.000000 0.333333 0.500000 0.629630 0.560582
+Standard MLP (baseline)      East Asia  244  0.668033   0.615385 0.609524 0.612440 0.720555 0.705869
+Standard MLP (baseline)         Europe 1159  0.757550   0.717391 0.644252 0.678857 0.822612 0.787914
+Standard MLP (baseline)  Latin America  105  0.780952   0.741935 0.605263 0.666667 0.842498 0.803671
+Standard MLP (baseline)  North America 3589  0.758150   0.768431 0.795187 0.781580 0.842191 0.865916
+Standard MLP (baseline)     South Asia  111  0.747748   0.666667 0.526316 0.588235 0.755588 0.709191
+Standard MLP (baseline) Southeast Asia   76  0.763158   0.733333 0.687500 0.709677 0.764205 0.751914
+     XGBoost (baseline)         Africa   24  0.875000   1.000000 0.500000 0.666667 0.814815 0.739379
+     XGBoost (baseline)      East Asia  244  0.684426   0.666667 0.533333 0.592593 0.731175 0.715062
+     XGBoost (baseline)         Europe 1159  0.782571   0.810089 0.592191 0.684211 0.835933 0.811692
+     XGBoost (baseline)  Latin America  105  0.800000   0.814815 0.578947 0.676923 0.860958 0.839344
+     XGBoost (baseline)  North America 3589  0.764558   0.802402 0.752688 0.776750 0.846704 0.873363
+     XGBoost (baseline)     South Asia  111  0.810811   0.869565 0.526316 0.655738 0.833453 0.774177
+     XGBoost (baseline) Southeast Asia   76  0.750000   0.760000 0.593750 0.666667 0.781250 0.767761
+      TabNet (baseline)         Africa   24  0.791667   0.666667 0.333333 0.444444 0.546296 0.538876
+      TabNet (baseline)      East Asia  244  0.659836   0.614583 0.561905 0.587065 0.711819 0.714096
+      TabNet (baseline)         Europe 1159  0.761864   0.725061 0.646421 0.683486 0.827249 0.802980
+      TabNet (baseline)  Latin America  105  0.809524   0.909091 0.526316 0.666667 0.805970 0.790542
+      TabNet (baseline)  North America 3589  0.760379   0.783896 0.772657 0.778236 0.840248 0.868377
+      TabNet (baseline)     South Asia  111  0.774775   0.760000 0.500000 0.603175 0.775054 0.691773
+      TabNet (baseline) Southeast Asia   76  0.763158   0.750000 0.656250 0.700000 0.779830 0.766115
+         Proposed SFTNN         Africa   24  0.833333   0.666667 0.666667 0.666667 0.842593 0.775490
+         Proposed SFTNN      East Asia  244  0.647541   0.595960 0.561905 0.578431 0.712059 0.685372
+         Proposed SFTNN         Europe 1159  0.764452   0.735000 0.637744 0.682927 0.828222 0.788851
+         Proposed SFTNN  Latin America  105  0.790476   0.833333 0.526316 0.645161 0.800864 0.767062
+         Proposed SFTNN  North America 3589  0.761772   0.781250 0.780850 0.781050 0.843081 0.865835
+         Proposed SFTNN     South Asia  111  0.774775   0.709677 0.578947 0.637681 0.828407 0.772637
+         Proposed SFTNN Southeast Asia   76  0.697368   0.645161 0.625000 0.634921 0.749290 0.734840
+
+Confusion matrix -- Standard MLP (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1981  652]
+ [ 651 2024]]
+
+Confusion matrix -- XGBoost (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1863  770]
+ [ 468 2207]]
+
+Confusion matrix -- TabNet (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1928  705]
+ [ 582 2093]]
+
+Confusion matrix -- Proposed SFTNN (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1944  689]
+ [ 599 2076]]
+
+Saved: results/table_4_6_aggregate.csv, results/table_4_7_per_region.csv
+=== EVALUATE DONE ===
+Saved results/gamma_beta_heatmap.png
+
+=== Counterfactual Region-Embedding Ablation (Section 4.10.2) ===
+        Region    n  Recall (region-specific)  Recall (mean embedding)  F1 (region-specific)  F1 (mean embedding)  Recall_drop   F1_drop
+        Africa   24                  0.666667                 0.666667              0.666667             0.666667     0.000000  0.000000
+     East Asia  244                  0.561905                 0.571429              0.578431             0.582524    -0.009524 -0.004093
+        Europe 1159                  0.637744                 0.659436              0.682927             0.682379    -0.021692  0.000547
+ Latin America  105                  0.526316                 0.526316              0.645161             0.645161     0.000000  0.000000
+ North America 3589                  0.780850                 0.755248              0.781050             0.773263     0.025602  0.007787
+    South Asia  111                  0.578947                 0.578947              0.637681             0.637681     0.000000  0.000000
+Southeast Asia   76                  0.625000                 0.656250              0.634921             0.656250    -0.031250 -0.021329
+
+Saved results/ablation_results.csv
+Saved results/region_embedding_pca.png
+=== INTERPRETABILITY DONE ===
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+Bootstrapped AGGREGATE (n=5308)
+Bootstrapped Africa (n=24)
+Bootstrapped East Asia (n=244)
+Bootstrapped Europe (n=1159)
+Bootstrapped Latin America (n=105)
+Bootstrapped North America (n=3589)
+Bootstrapped South Asia (n=111)
+Bootstrapped Southeast Asia (n=76)
+
+Saved results/bootstrap_ci_per_region.csv
+Saved results/bootstrap_win_probability.csv
+
+=== SFTNN vs each baseline: P(SFTNN better) on Recall/F1/ROC-AUC/PR-AUC, by region ===
+Metric                                      F1    PR-AUC   ROC-AUC  Recall
+Region         Baseline                                                   
+AGGREGATE      Standard MLP (baseline)  0.3120  0.403000  0.963500  0.0000
+               TabNet (baseline)        0.6525  0.037500  0.927000  0.8945
+               XGBoost (baseline)       0.5495  0.000000  0.008000  1.0000
+Africa         Standard MLP (baseline)  0.7615  0.959480  0.941471  0.8760
+               TabNet (baseline)        0.8400  0.985993  0.986493  0.8760
+               XGBoost (baseline)       0.4570  0.795898  0.755378  0.6365
+East Asia      Standard MLP (baseline)  0.0150  0.049000  0.139000  0.0000
+               TabNet (baseline)        0.3440  0.049000  0.504500  0.4205
+               XGBoost (baseline)       0.2930  0.050000  0.090500  0.8180
+Europe         Standard MLP (baseline)  0.6730  0.604500  0.946500  0.2510
+               TabNet (baseline)        0.4675  0.065000  0.563000  0.2350
+               XGBoost (baseline)       0.4615  0.005500  0.127000  0.9955
+Latin America  Standard MLP (baseline)  0.3365  0.019500  0.036000  0.0000
+               TabNet (baseline)        0.2635  0.209500  0.437000  0.3675
+               XGBoost (baseline)       0.1250  0.002000  0.021000  0.0000
+North America  Standard MLP (baseline)  0.4205  0.486000  0.798000  0.0000
+               TabNet (baseline)        0.7795  0.235000  0.881500  0.9440
+               XGBoost (baseline)       0.8365  0.005500  0.071500  1.0000
+South Asia     Standard MLP (baseline)  0.9430  1.000000  1.000000  0.8680
+               TabNet (baseline)        0.8065  0.994500  0.992000  0.9495
+               XGBoost (baseline)       0.3265  0.465500  0.410000  0.8735
+Southeast Asia Standard MLP (baseline)  0.0375  0.193500  0.230000  0.0960
+               TabNet (baseline)        0.0740  0.145500  0.159000  0.1885
+               XGBoost (baseline)       0.2790  0.135000  0.115000  0.5870
+=== BOOTSTRAP DONE ===
