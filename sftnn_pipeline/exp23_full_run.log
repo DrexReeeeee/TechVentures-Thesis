@@ -1,0 +1,464 @@
+=== Experiment 23 (SFTNN + XGBoost stacking feature) full pipeline started Tue Oct 13 09:53:29 MPST 2026 ===
+--- 05_train_sftnn_exp23.py (real Optuna search, 30 trials) ---
+[I 2026-10-13 09:53:39,156] A new study created in memory with name: no-name-66f62abf-1917-4bd2-8f95-2db420aa1a7b
+[I 2026-10-13 09:54:16,451] Trial 0 finished with value: 0.7861123864960481 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 2.03664420268309, 'cluster_shrink_lambda': 2.0492680115417348}. Best is trial 0 with value: 0.7861123864960481.
+[I 2026-10-13 09:54:41,545] Trial 1 finished with value: 0.7809788396981793 and parameters: {'lr': 0.0004059611610484307, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 10.769622478263129, 'cluster_shrink_lambda': 1.948567125127257}. Best is trial 0 with value: 0.7861123864960481.
+[I 2026-10-13 09:55:15,458] Trial 2 finished with value: 0.7567133117699303 and parameters: {'lr': 0.00013492834268013249, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 3.3852267834519774, 'cluster_shrink_lambda': 7.648565112369945}. Best is trial 0 with value: 0.7861123864960481.
+[I 2026-10-13 09:55:37,981] Trial 3 finished with value: 0.7870749698305255 and parameters: {'lr': 0.0012399967836846098, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 25.58586885593424, 'cluster_shrink_lambda': 4.037506188440754}. Best is trial 3 with value: 0.7870749698305255.
+[I 2026-10-13 09:56:11,701] Trial 4 finished with value: 0.7767634078287862 and parameters: {'lr': 0.0003646439558980723, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 4.064644058668375, 'cluster_shrink_lambda': 1.5734685129393668}. Best is trial 3 with value: 0.7870749698305255.
+[I 2026-10-13 09:56:40,076] Trial 5 finished with value: 0.7888358910552051 and parameters: {'lr': 0.005323617594751502, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 20.41033406525705, 'cluster_shrink_lambda': 6.901506581791921}. Best is trial 5 with value: 0.7888358910552051.
+[I 2026-10-13 09:57:11,008] Trial 6 finished with value: 0.7850170740201953 and parameters: {'lr': 0.0011103647313054626, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.106554858581908, 'cluster_shrink_lambda': 1.8789279685460507}. Best is trial 5 with value: 0.7888358910552051.
+[I 2026-10-13 09:57:42,847] Trial 7 finished with value: 0.7877746282269812 and parameters: {'lr': 0.007234279845665418, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 24.534801599183357, 'cluster_shrink_lambda': 28.99715852166588}. Best is trial 5 with value: 0.7888358910552051.
+[I 2026-10-13 09:58:01,344] Trial 8 finished with value: 0.7741662905586303 and parameters: {'lr': 0.00010325337616482048, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 6.995363653959079, 'cluster_shrink_lambda': 3.2447648098898547}. Best is trial 5 with value: 0.7888358910552051.
+[I 2026-10-13 09:58:25,153] Trial 9 finished with value: 0.7794935354171884 and parameters: {'lr': 0.00037126241790405324, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.5336058850767755, 'cluster_shrink_lambda': 17.26703355444434}. Best is trial 5 with value: 0.7888358910552051.
+[I 2026-10-13 09:58:50,405] Trial 10 finished with value: 0.7925437166190585 and parameters: {'lr': 0.008694902026988065, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 1.0629065830612703, 'cluster_shrink_lambda': 11.489448766068968}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 09:59:03,221] Trial 11 finished with value: 0.781305959792617 and parameters: {'lr': 0.008909526144352678, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 1.1713631492305818, 'cluster_shrink_lambda': 9.382131069091342}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 09:59:31,602] Trial 12 finished with value: 0.7895443538033642 and parameters: {'lr': 0.004405662132720754, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 46.98725024120344, 'cluster_shrink_lambda': 10.21021750748428}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 09:59:59,232] Trial 13 finished with value: 0.7884398434178095 and parameters: {'lr': 0.0031605049471619905, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 49.87544765589413, 'cluster_shrink_lambda': 16.1890059134189}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:00:29,401] Trial 14 finished with value: 0.787640050285932 and parameters: {'lr': 0.003216097079940905, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 1.2640541971079993, 'cluster_shrink_lambda': 49.22695681401979}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:00:58,419] Trial 15 finished with value: 0.7848361310838918 and parameters: {'lr': 0.0035927186383067837, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 7.3159479353137815, 'cluster_shrink_lambda': 12.51207176592312}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:01:27,809] Trial 16 finished with value: 0.7848389224139989 and parameters: {'lr': 0.0018281475050971282, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 41.535144030673614, 'cluster_shrink_lambda': 5.110878139041239}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:01:52,299] Trial 17 finished with value: 0.7876798653772813 and parameters: {'lr': 0.009351173147265239, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 13.565133057006356, 'cluster_shrink_lambda': 37.85705775925468}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:02:21,056] Trial 18 finished with value: 0.7853653884474425 and parameters: {'lr': 0.005004631619007133, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 6.926583957925765, 'cluster_shrink_lambda': 22.552433017507962}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:02:50,792] Trial 19 finished with value: 0.7893261916530683 and parameters: {'lr': 0.00218098200034039, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 1.7341452383531566, 'cluster_shrink_lambda': 9.187608264331994}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:03:11,499] Trial 20 finished with value: 0.7902686191810664 and parameters: {'lr': 0.0055526551722069745, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 13.144170299741962, 'cluster_shrink_lambda': 13.83607677317673}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:03:33,360] Trial 21 finished with value: 0.789618313488841 and parameters: {'lr': 0.005390789473341951, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 35.757292538681284, 'cluster_shrink_lambda': 11.5711207361356}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:03:49,636] Trial 22 finished with value: 0.7901591825532547 and parameters: {'lr': 0.006422622448538812, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 16.625651349637685, 'cluster_shrink_lambda': 15.326114551118646}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:04:08,498] Trial 23 finished with value: 0.7898606369896664 and parameters: {'lr': 0.0070129737966907295, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 4.660894572954738, 'cluster_shrink_lambda': 19.882483110638464}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:04:17,738] Trial 24 finished with value: 0.7810130132458846 and parameters: {'lr': 0.00949742221864761, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 13.980811469858834, 'cluster_shrink_lambda': 27.162657717964116}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:04:34,116] Trial 25 finished with value: 0.7875201926731903 and parameters: {'lr': 0.002421236968834298, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 10.604433700316493, 'cluster_shrink_lambda': 13.511591377562937}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:04:57,515] Trial 26 finished with value: 0.7909682153368511 and parameters: {'lr': 0.006892880209665495, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 16.473901803085106, 'cluster_shrink_lambda': 6.049289281639117}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:05:20,736] Trial 27 finished with value: 0.7861318576631249 and parameters: {'lr': 0.0015309322852312109, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 29.371466261653847, 'cluster_shrink_lambda': 5.852363799278478}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:05:38,580] Trial 28 finished with value: 0.78959693302951 and parameters: {'lr': 0.004026551532468722, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 8.337971387003352, 'cluster_shrink_lambda': 1.1041613057098225}. Best is trial 10 with value: 0.7925437166190585.
+[I 2026-10-13 10:05:56,173] Trial 29 finished with value: 0.7911850511301591 and parameters: {'lr': 0.0026928509183054617, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.905613300894408, 'cluster_shrink_lambda': 3.412965901496357}. Best is trial 10 with value: 0.7925437166190585.
+n_features=26 (includes xgb_stack_prob)
+
+Best val composite score: 0.7925
+Best params: {'lr': 0.008694902026988065, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 1.0629065830612703, 'cluster_shrink_lambda': 11.489448766068968}
+  epoch 00  score=0.7589  (auc=0.8475 pr_auc=0.8527 f1=0.7369 macro_recall=0.4326)
+  epoch 01  score=0.7786  (auc=0.8538 pr_auc=0.8584 f1=0.7610 macro_recall=0.4992)
+  epoch 02  score=0.7750  (auc=0.8482 pr_auc=0.8588 f1=0.7567 macro_recall=0.4948)
+  epoch 03  score=0.7835  (auc=0.8530 pr_auc=0.8582 f1=0.7643 macro_recall=0.5287)
+  epoch 04  score=0.7717  (auc=0.8520 pr_auc=0.8580 f1=0.7497 macro_recall=0.4768)
+  epoch 05  score=0.7781  (auc=0.8574 pr_auc=0.8619 f1=0.7548 macro_recall=0.4924)
+  epoch 06  score=0.7736  (auc=0.8520 pr_auc=0.8605 f1=0.7534 macro_recall=0.4792)
+  epoch 07  score=0.7845  (auc=0.8548 pr_auc=0.8617 f1=0.7651 macro_recall=0.5238)
+  epoch 08  score=0.7925  (auc=0.8570 pr_auc=0.8630 f1=0.7736 macro_recall=0.5561)
+  epoch 09  score=0.7776  (auc=0.8551 pr_auc=0.8624 f1=0.7556 macro_recall=0.4921)
+  epoch 10  score=0.7828  (auc=0.8576 pr_auc=0.8639 f1=0.7628 macro_recall=0.5064)
+  epoch 11  score=0.7814  (auc=0.8557 pr_auc=0.8656 f1=0.7621 macro_recall=0.4999)
+  epoch 12  score=0.7734  (auc=0.8585 pr_auc=0.8655 f1=0.7460 macro_recall=0.4668)
+  epoch 13  score=0.7839  (auc=0.8566 pr_auc=0.8600 f1=0.7654 macro_recall=0.5184)
+
+Saved trained SFTNN to artifacts_exp23/sftnn_model.pt
+--- 06_evaluate_exp23.py ---
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+=== Table 4.6: Aggregate Evaluation ===
+                  Model  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)  0.754521   0.752660 0.752374 0.752517 0.835536 0.844052
+     XGBoost (baseline)  0.766767   0.799228 0.707558 0.750604 0.843757 0.854792
+      TabNet (baseline)  0.757536   0.768127 0.732245 0.749757 0.834454 0.849310
+         Proposed SFTNN  0.761869   0.762562 0.755032 0.758779 0.845305 0.854253
+
+=== Table 4.7: Per-Region Evaluation ===
+                  Model         Region    n  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)         Africa   24  0.833333   1.000000 0.333333 0.500000 0.629630 0.560582
+Standard MLP (baseline)      East Asia  244  0.668033   0.615385 0.609524 0.612440 0.720555 0.705869
+Standard MLP (baseline)         Europe 1159  0.757550   0.717391 0.644252 0.678857 0.822612 0.787914
+Standard MLP (baseline)  Latin America  105  0.780952   0.741935 0.605263 0.666667 0.842498 0.803671
+Standard MLP (baseline)  North America 3589  0.758150   0.768431 0.795187 0.781580 0.842191 0.865916
+Standard MLP (baseline)     South Asia  111  0.747748   0.666667 0.526316 0.588235 0.755588 0.709191
+Standard MLP (baseline) Southeast Asia   76  0.763158   0.733333 0.687500 0.709677 0.764205 0.751914
+     XGBoost (baseline)         Africa   24  0.875000   1.000000 0.500000 0.666667 0.814815 0.739379
+     XGBoost (baseline)      East Asia  244  0.684426   0.666667 0.533333 0.592593 0.731175 0.715062
+     XGBoost (baseline)         Europe 1159  0.782571   0.810089 0.592191 0.684211 0.835933 0.811692
+     XGBoost (baseline)  Latin America  105  0.800000   0.814815 0.578947 0.676923 0.860958 0.839344
+     XGBoost (baseline)  North America 3589  0.764558   0.802402 0.752688 0.776750 0.846704 0.873363
+     XGBoost (baseline)     South Asia  111  0.810811   0.869565 0.526316 0.655738 0.833453 0.774177
+     XGBoost (baseline) Southeast Asia   76  0.750000   0.760000 0.593750 0.666667 0.781250 0.767761
+      TabNet (baseline)         Africa   24  0.791667   0.666667 0.333333 0.444444 0.546296 0.538876
+      TabNet (baseline)      East Asia  244  0.659836   0.614583 0.561905 0.587065 0.711819 0.714096
+      TabNet (baseline)         Europe 1159  0.761864   0.725061 0.646421 0.683486 0.827249 0.802980
+      TabNet (baseline)  Latin America  105  0.809524   0.909091 0.526316 0.666667 0.805970 0.790542
+      TabNet (baseline)  North America 3589  0.760379   0.783896 0.772657 0.778236 0.840248 0.868377
+      TabNet (baseline)     South Asia  111  0.774775   0.760000 0.500000 0.603175 0.775054 0.691773
+      TabNet (baseline) Southeast Asia   76  0.763158   0.750000 0.656250 0.700000 0.779830 0.766115
+         Proposed SFTNN         Africa   24  0.875000   0.800000 0.666667 0.727273 0.833333 0.809259
+         Proposed SFTNN      East Asia  244  0.688525   0.643564 0.619048 0.631068 0.743919 0.728217
+         Proposed SFTNN         Europe 1159  0.770492   0.729412 0.672451 0.699774 0.834204 0.804290
+         Proposed SFTNN  Latin America  105  0.819048   0.787879 0.684211 0.732394 0.841320 0.820352
+         Proposed SFTNN  North America 3589  0.762329   0.777497 0.789042 0.783227 0.848665 0.872967
+         Proposed SFTNN     South Asia  111  0.801802   0.833333 0.526316 0.645161 0.856164 0.803267
+         Proposed SFTNN Southeast Asia   76  0.671053   0.594595 0.687500 0.637681 0.781250 0.763713
+
+Saved: results_exp23/table_4_6_aggregate.csv, results_exp23/table_4_7_per_region.csv
+--- multiseed_check_exp23.py smoke test (1 seed) ---
+
+============================================================
+SEED 1
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.42
+    Southeast Asia  F1 default=0.6333 calibrated=0.6389
+    South Asia      F1 default=0.6061 calibrated=0.6400
+    Africa          F1 default=0.6667 calibrated=0.6667
+  training Exp23-config ...
+    ap_threshold=0.29
+    Southeast Asia  F1 default=0.6774 calibrated=0.6410
+    South Asia      F1 default=0.6129 calibrated=0.6667
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+======================================================================
+SUMMARY: mean +/- std across 1 seeds
+======================================================================
+
+--- AGGREGATE ---
+  Exp13-config   default               Accuracy=0.7555+/-nan  Precision=0.7673+/-nan  Recall=0.7277+/-nan  F1=0.7470+/-nan  ROC-AUC=0.8357+/-nan  PR-AUC=0.8411+/-nan
+  Exp13-config   cluster_calibrated    Accuracy=0.7545+/-nan  Precision=0.7614+/-nan  Recall=0.7357+/-nan  F1=0.7483+/-nan  ROC-AUC=0.8357+/-nan  PR-AUC=0.8411+/-nan
+  Exp23-config   default               Accuracy=0.7626+/-nan  Precision=0.7743+/-nan  Recall=0.7360+/-nan  F1=0.7547+/-nan  ROC-AUC=0.8403+/-nan  PR-AUC=0.8472+/-nan
+  Exp23-config   cluster_calibrated    Accuracy=0.7564+/-nan  Precision=0.7577+/-nan  Recall=0.7482+/-nan  F1=0.7529+/-nan  ROC-AUC=0.8403+/-nan  PR-AUC=0.8472+/-nan
+
+--- Africa ---
+  Exp13-config   default               Accuracy=0.8333+/-nan  Precision=0.6667+/-nan  Recall=0.6667+/-nan  F1=0.6667+/-nan  ROC-AUC=0.8333+/-nan  PR-AUC=0.6958+/-nan
+  Exp13-config   cluster_calibrated    Accuracy=0.8333+/-nan  Precision=0.6667+/-nan  Recall=0.6667+/-nan  F1=0.6667+/-nan  ROC-AUC=0.8333+/-nan  PR-AUC=0.6958+/-nan
+  Exp23-config   default               Accuracy=0.8750+/-nan  Precision=1.0000+/-nan  Recall=0.5000+/-nan  F1=0.6667+/-nan  ROC-AUC=0.8148+/-nan  PR-AUC=0.7924+/-nan
+  Exp23-config   cluster_calibrated    Accuracy=0.8750+/-nan  Precision=1.0000+/-nan  Recall=0.5000+/-nan  F1=0.6667+/-nan  ROC-AUC=0.8148+/-nan  PR-AUC=0.7924+/-nan
+
+--- Southeast Asia ---
+  Exp13-config   default               Accuracy=0.7105+/-nan  Precision=0.6786+/-nan  Recall=0.5938+/-nan  F1=0.6333+/-nan  ROC-AUC=0.7621+/-nan  PR-AUC=0.7649+/-nan
+  Exp13-config   cluster_calibrated    Accuracy=0.6579+/-nan  Precision=0.5750+/-nan  Recall=0.7188+/-nan  F1=0.6389+/-nan  ROC-AUC=0.7621+/-nan  PR-AUC=0.7649+/-nan
+  Exp23-config   default               Accuracy=0.7368+/-nan  Precision=0.7000+/-nan  Recall=0.6562+/-nan  F1=0.6774+/-nan  ROC-AUC=0.7812+/-nan  PR-AUC=0.7750+/-nan
+  Exp23-config   cluster_calibrated    Accuracy=0.6316+/-nan  Precision=0.5435+/-nan  Recall=0.7812+/-nan  F1=0.6410+/-nan  ROC-AUC=0.7812+/-nan  PR-AUC=0.7750+/-nan
+
+--- South Asia ---
+  Exp13-config   default               Accuracy=0.7658+/-nan  Precision=0.7143+/-nan  Recall=0.5263+/-nan  F1=0.6061+/-nan  ROC-AUC=0.8345+/-nan  PR-AUC=0.7754+/-nan
+  Exp13-config   cluster_calibrated    Accuracy=0.7568+/-nan  Precision=0.6486+/-nan  Recall=0.6316+/-nan  F1=0.6400+/-nan  ROC-AUC=0.8345+/-nan  PR-AUC=0.7754+/-nan
+  Exp23-config   default               Accuracy=0.7838+/-nan  Precision=0.7917+/-nan  Recall=0.5000+/-nan  F1=0.6129+/-nan  ROC-AUC=0.8273+/-nan  PR-AUC=0.7638+/-nan
+  Exp23-config   cluster_calibrated    Accuracy=0.7387+/-nan  Precision=0.5918+/-nan  Recall=0.7632+/-nan  F1=0.6667+/-nan  ROC-AUC=0.8273+/-nan  PR-AUC=0.7638+/-nan
+
+--- Latin America ---
+  Exp13-config   default               Accuracy=0.7905+/-nan  Precision=0.8077+/-nan  Recall=0.5526+/-nan  F1=0.6562+/-nan  ROC-AUC=0.8150+/-nan  PR-AUC=0.7768+/-nan
+  Exp13-config   cluster_calibrated    Accuracy=0.7905+/-nan  Precision=0.8077+/-nan  Recall=0.5526+/-nan  F1=0.6562+/-nan  ROC-AUC=0.8150+/-nan  PR-AUC=0.7768+/-nan
+  Exp23-config   default               Accuracy=0.8095+/-nan  Precision=0.8000+/-nan  Recall=0.6316+/-nan  F1=0.7059+/-nan  ROC-AUC=0.8519+/-nan  PR-AUC=0.8301+/-nan
+  Exp23-config   cluster_calibrated    Accuracy=0.8095+/-nan  Precision=0.8000+/-nan  Recall=0.6316+/-nan  F1=0.7059+/-nan  ROC-AUC=0.8519+/-nan  PR-AUC=0.8301+/-nan
+
+Saved: multiseed_exp23_smoketest.csv
+--- multiseed_check_exp23.py (full 20 seeds) ---
+
+============================================================
+SEED 1
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.42
+    Southeast Asia  F1 default=0.6333 calibrated=0.6389
+    South Asia      F1 default=0.6061 calibrated=0.6400
+    Africa          F1 default=0.6667 calibrated=0.6667
+  training Exp23-config ...
+    ap_threshold=0.29
+    Southeast Asia  F1 default=0.6774 calibrated=0.6410
+    South Asia      F1 default=0.6129 calibrated=0.6667
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 7
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.48
+    Southeast Asia  F1 default=0.6774 calibrated=0.6774
+    South Asia      F1 default=0.5714 calibrated=0.6111
+    Africa          F1 default=0.4444 calibrated=0.4444
+  training Exp23-config ...
+    ap_threshold=0.48
+    Southeast Asia  F1 default=0.6774 calibrated=0.6875
+    South Asia      F1 default=0.6250 calibrated=0.6250
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 123
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.44
+    Southeast Asia  F1 default=0.6557 calibrated=0.6111
+    South Asia      F1 default=0.6364 calibrated=0.6571
+    Africa          F1 default=0.5455 calibrated=0.5455
+  training Exp23-config ...
+    ap_threshold=0.55
+    Southeast Asia  F1 default=0.5902 calibrated=0.6316
+    South Asia      F1 default=0.6061 calibrated=0.6129
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 2024
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.40
+    Southeast Asia  F1 default=0.6333 calibrated=0.6389
+    South Asia      F1 default=0.6154 calibrated=0.6400
+    Africa          F1 default=0.6000 calibrated=0.6000
+  training Exp23-config ...
+    ap_threshold=0.40
+    Southeast Asia  F1 default=0.6462 calibrated=0.6494
+    South Asia      F1 default=0.6349 calibrated=0.6410
+    Africa          F1 default=0.8000 calibrated=0.8000
+
+============================================================
+SEED 777
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.53
+    Southeast Asia  F1 default=0.6667 calibrated=0.6452
+    South Asia      F1 default=0.6667 calibrated=0.6857
+    Africa          F1 default=0.4000 calibrated=0.4000
+  training Exp23-config ...
+    ap_threshold=0.41
+    Southeast Asia  F1 default=0.6780 calibrated=0.6571
+    South Asia      F1 default=0.6087 calibrated=0.6486
+    Africa          F1 default=0.6000 calibrated=0.6000
+
+============================================================
+SEED 999
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.47
+    Southeast Asia  F1 default=0.6441 calibrated=0.6667
+    South Asia      F1 default=0.6154 calibrated=0.6364
+    Africa          F1 default=0.4444 calibrated=0.4444
+  training Exp23-config ...
+    ap_threshold=0.32
+    Southeast Asia  F1 default=0.6441 calibrated=0.6316
+    South Asia      F1 default=0.6230 calibrated=0.6933
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 55
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.39
+    Southeast Asia  F1 default=0.6667 calibrated=0.6400
+    South Asia      F1 default=0.6269 calibrated=0.6750
+    Africa          F1 default=0.7273 calibrated=0.7273
+  training Exp23-config ...
+    ap_threshold=0.50
+    Southeast Asia  F1 default=0.6769 calibrated=0.6769
+    South Asia      F1 default=0.6349 calibrated=0.6349
+    Africa          F1 default=0.8000 calibrated=0.8000
+
+============================================================
+SEED 314
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.44
+    Southeast Asia  F1 default=0.6562 calibrated=0.6486
+    South Asia      F1 default=0.6286 calibrated=0.6753
+    Africa          F1 default=0.6000 calibrated=0.6000
+  training Exp23-config ...
+    ap_threshold=0.35
+    Southeast Asia  F1 default=0.6333 calibrated=0.6316
+    South Asia      F1 default=0.6154 calibrated=0.6410
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 2718
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.52
+    Southeast Asia  F1 default=0.6441 calibrated=0.6441
+    South Asia      F1 default=0.6000 calibrated=0.5970
+    Africa          F1 default=0.4000 calibrated=0.4000
+  training Exp23-config ...
+    ap_threshold=0.42
+    Southeast Asia  F1 default=0.6333 calibrated=0.6575
+    South Asia      F1 default=0.6129 calibrated=0.6571
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 31
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.31
+    Southeast Asia  F1 default=0.6061 calibrated=0.6512
+    South Asia      F1 default=0.6087 calibrated=0.6957
+    Africa          F1 default=0.6000 calibrated=0.6000
+  training Exp23-config ...
+    ap_threshold=0.34
+    Southeast Asia  F1 default=0.6557 calibrated=0.6667
+    South Asia      F1 default=0.6129 calibrated=0.6933
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 2
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.46
+    Southeast Asia  F1 default=0.6207 calibrated=0.6557
+    South Asia      F1 default=0.6364 calibrated=0.6567
+    Africa          F1 default=0.4444 calibrated=0.4444
+  training Exp23-config ...
+    ap_threshold=0.45
+    Southeast Asia  F1 default=0.6984 calibrated=0.6571
+    South Asia      F1 default=0.6032 calibrated=0.6269
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 3
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.41
+    Southeast Asia  F1 default=0.6479 calibrated=0.6154
+    South Asia      F1 default=0.6286 calibrated=0.6585
+    Africa          F1 default=0.6667 calibrated=0.6667
+  training Exp23-config ...
+    ap_threshold=0.39
+    Southeast Asia  F1 default=0.6667 calibrated=0.6571
+    South Asia      F1 default=0.6349 calibrated=0.6849
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 4
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.46
+    Southeast Asia  F1 default=0.5667 calibrated=0.6250
+    South Asia      F1 default=0.6032 calibrated=0.6377
+    Africa          F1 default=0.6000 calibrated=0.6000
+  training Exp23-config ...
+    ap_threshold=0.41
+    Southeast Asia  F1 default=0.6032 calibrated=0.6301
+    South Asia      F1 default=0.6349 calibrated=0.6933
+    Africa          F1 default=0.8000 calibrated=0.8000
+
+============================================================
+SEED 5
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.42
+    Southeast Asia  F1 default=0.6557 calibrated=0.6957
+    South Asia      F1 default=0.6667 calibrated=0.6250
+    Africa          F1 default=0.4444 calibrated=0.4444
+  training Exp23-config ...
+    ap_threshold=0.38
+    Southeast Asia  F1 default=0.6774 calibrated=0.6575
+    South Asia      F1 default=0.6032 calibrated=0.6579
+    Africa          F1 default=0.6667 calibrated=0.6667
+
+============================================================
+SEED 6
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.55
+    Southeast Asia  F1 default=0.6774 calibrated=0.6333
+    South Asia      F1 default=0.5867 calibrated=0.6286
+    Africa          F1 default=0.4444 calibrated=0.4444
+  training Exp23-config ...
+    ap_threshold=0.35
+    Southeast Asia  F1 default=0.5806 calibrated=0.6579
+    South Asia      F1 default=0.6032 calibrated=0.6849
+    Africa          F1 default=0.8000 calibrated=0.8000
+
+============================================================
+SEED 8
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.43
+    Southeast Asia  F1 default=0.6333 calibrated=0.7077
+    South Asia      F1 default=0.6567 calibrated=0.6479
+    Africa          F1 default=0.5000 calibrated=0.5000
+  training Exp23-config ...
+    ap_threshold=0.35
+    Southeast Asia  F1 default=0.6316 calibrated=0.6579
+    South Asia      F1 default=0.5938 calibrated=0.6750
+    Africa          F1 default=0.8000 calibrated=0.8000
+
+============================================================
+SEED 9
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.45
+    Southeast Asia  F1 default=0.5758 calibrated=0.6579
+    South Asia      F1 default=0.6269 calibrated=0.7222
+    Africa          F1 default=0.7273 calibrated=0.7273
+  training Exp23-config ...
+    ap_threshold=0.39
+    Southeast Asia  F1 default=0.6667 calibrated=0.6400
+    South Asia      F1 default=0.6562 calibrated=0.6849
+    Africa          F1 default=0.7273 calibrated=0.7273
+
+============================================================
+SEED 10
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.44
+    Southeast Asia  F1 default=0.5902 calibrated=0.6462
+    South Asia      F1 default=0.5455 calibrated=0.5507
+    Africa          F1 default=0.6667 calibrated=0.6667
+  training Exp23-config ...
+    ap_threshold=0.39
+    Southeast Asia  F1 default=0.6429 calibrated=0.6571
+    South Asia      F1 default=0.5333 calibrated=0.6479
+    Africa          F1 default=0.6000 calibrated=0.6000
+
+============================================================
+SEED 11
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.41
+    Southeast Asia  F1 default=0.6441 calibrated=0.6774
+    South Asia      F1 default=0.5161 calibrated=0.6197
+    Africa          F1 default=0.4000 calibrated=0.4000
+  training Exp23-config ...
+    ap_threshold=0.41
+    Southeast Asia  F1 default=0.6349 calibrated=0.6479
+    South Asia      F1 default=0.6129 calibrated=0.6571
+    Africa          F1 default=0.8000 calibrated=0.8000
+
+============================================================
+SEED 12
+============================================================
+  training Exp13-config ...
+    ap_threshold=0.40
+    Southeast Asia  F1 default=0.6667 calibrated=0.7164
+    South Asia      F1 default=0.6154 calibrated=0.6133
+    Africa          F1 default=0.4444 calibrated=0.4444
+  training Exp23-config ...
+    ap_threshold=0.41
+    Southeast Asia  F1 default=0.6269 calibrated=0.6301
+    South Asia      F1 default=0.6032 calibrated=0.6486
+    Africa          F1 default=0.6000 calibrated=0.6000
+
+======================================================================
+SUMMARY: mean +/- std across 20 seeds
+======================================================================
+
+--- AGGREGATE ---
+  Exp13-config   default               Accuracy=0.7495+/-0.0079  Precision=0.7579+/-0.0171  Recall=0.7285+/-0.0178  F1=0.7426+/-0.0069  ROC-AUC=0.8266+/-0.0099  PR-AUC=0.8368+/-0.0079
+  Exp13-config   cluster_calibrated    Accuracy=0.7483+/-0.0071  Precision=0.7533+/-0.0153  Recall=0.7334+/-0.0180  F1=0.7430+/-0.0067  ROC-AUC=0.8266+/-0.0099  PR-AUC=0.8368+/-0.0079
+  Exp23-config   default               Accuracy=0.7638+/-0.0035  Precision=0.7764+/-0.0128  Recall=0.7363+/-0.0155  F1=0.7556+/-0.0034  ROC-AUC=0.8431+/-0.0019  PR-AUC=0.8512+/-0.0023
+  Exp23-config   cluster_calibrated    Accuracy=0.7608+/-0.0038  Precision=0.7676+/-0.0114  Recall=0.7433+/-0.0138  F1=0.7551+/-0.0035  ROC-AUC=0.8431+/-0.0019  PR-AUC=0.8512+/-0.0023
+
+--- Africa ---
+  Exp13-config   default               Accuracy=0.8125+/-0.0394  Precision=0.7017+/-0.1355  Recall=0.4500+/-0.1336  F1=0.5383+/-0.1142  ROC-AUC=0.7782+/-0.0842  PR-AUC=0.6792+/-0.1071
+  Exp13-config   cluster_calibrated    Accuracy=0.8125+/-0.0394  Precision=0.7017+/-0.1355  Recall=0.4500+/-0.1336  F1=0.5383+/-0.1142  ROC-AUC=0.7782+/-0.0842  PR-AUC=0.6792+/-0.1071
+  Exp23-config   default               Accuracy=0.8812+/-0.0280  Precision=0.9525+/-0.0980  Recall=0.5583+/-0.0816  F1=0.6997+/-0.0732  ROC-AUC=0.8356+/-0.0153  PR-AUC=0.7971+/-0.0199
+  Exp23-config   cluster_calibrated    Accuracy=0.8812+/-0.0280  Precision=0.9525+/-0.0980  Recall=0.5583+/-0.0816  F1=0.6997+/-0.0732  ROC-AUC=0.8356+/-0.0153  PR-AUC=0.7971+/-0.0199
+
+--- Southeast Asia ---
+  Exp13-config   default               Accuracy=0.7059+/-0.0306  Precision=0.6654+/-0.0461  Recall=0.6156+/-0.0431  F1=0.6381+/-0.0319  ROC-AUC=0.7577+/-0.0216  PR-AUC=0.7471+/-0.0177
+  Exp13-config   cluster_calibrated    Accuracy=0.6901+/-0.0471  Precision=0.6292+/-0.0675  Recall=0.6953+/-0.0730  F1=0.6546+/-0.0284  ROC-AUC=0.7577+/-0.0216  PR-AUC=0.7471+/-0.0177
+  Exp23-config   default               Accuracy=0.7138+/-0.0280  Precision=0.6757+/-0.0453  Recall=0.6234+/-0.0436  F1=0.6471+/-0.0315  ROC-AUC=0.7827+/-0.0084  PR-AUC=0.7764+/-0.0140
+  Exp23-config   cluster_calibrated    Accuracy=0.6704+/-0.0312  Precision=0.5931+/-0.0482  Recall=0.7297+/-0.0489  F1=0.6512+/-0.0159  ROC-AUC=0.7827+/-0.0084  PR-AUC=0.7764+/-0.0140
+
+--- South Asia ---
+  Exp13-config   default               Accuracy=0.7649+/-0.0220  Precision=0.7045+/-0.0479  Recall=0.5447+/-0.0461  F1=0.6129+/-0.0372  ROC-AUC=0.8090+/-0.0228  PR-AUC=0.7457+/-0.0198
+  Exp13-config   cluster_calibrated    Accuracy=0.7649+/-0.0243  Precision=0.6741+/-0.0549  Recall=0.6237+/-0.0769  F1=0.6437+/-0.0379  ROC-AUC=0.8090+/-0.0228  PR-AUC=0.7457+/-0.0198
+  Exp23-config   default               Accuracy=0.7797+/-0.0135  Precision=0.7700+/-0.0372  Recall=0.5105+/-0.0275  F1=0.6133+/-0.0243  ROC-AUC=0.8358+/-0.0090  PR-AUC=0.7776+/-0.0099
+  Exp23-config   cluster_calibrated    Accuracy=0.7766+/-0.0172  Precision=0.6973+/-0.0539  Recall=0.6329+/-0.0664  F1=0.6588+/-0.0249  ROC-AUC=0.8358+/-0.0090  PR-AUC=0.7776+/-0.0099
+
+--- Latin America ---
+  Exp13-config   default               Accuracy=0.7519+/-0.0279  Precision=0.7497+/-0.0624  Recall=0.4776+/-0.0755  F1=0.5796+/-0.0611  ROC-AUC=0.7923+/-0.0311  PR-AUC=0.7472+/-0.0345
+  Exp13-config   cluster_calibrated    Accuracy=0.7519+/-0.0279  Precision=0.7497+/-0.0624  Recall=0.4776+/-0.0755  F1=0.5796+/-0.0611  ROC-AUC=0.7923+/-0.0311  PR-AUC=0.7472+/-0.0345
+  Exp23-config   default               Accuracy=0.7971+/-0.0131  Precision=0.7684+/-0.0256  Recall=0.6303+/-0.0347  F1=0.6919+/-0.0232  ROC-AUC=0.8487+/-0.0065  PR-AUC=0.8222+/-0.0080
+  Exp23-config   cluster_calibrated    Accuracy=0.7971+/-0.0131  Precision=0.7684+/-0.0256  Recall=0.6303+/-0.0347  F1=0.6919+/-0.0232  ROC-AUC=0.8487+/-0.0065  PR-AUC=0.8222+/-0.0080
+
+Saved: multiseed_exp23_raw.csv
+=== Experiment 23 full pipeline finished Tue Oct 13 10:18:41 MPST 2026 ===

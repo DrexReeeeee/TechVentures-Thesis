@@ -1,0 +1,145 @@
+Region,Baseline,Metric,P(SFTNN_better),P(SFTNN_worse),P(tie),n_paired_boot
+AGGREGATE,Standard MLP (baseline),Accuracy,0.372,0.611,0.017000000000000015,2000
+AGGREGATE,Standard MLP (baseline),Precision,0.9915,0.0085,-4.85722573273506e-17,2000
+AGGREGATE,Standard MLP (baseline),Recall,0.0,1.0,0.0,2000
+AGGREGATE,Standard MLP (baseline),F1,0.038,0.962,0.0,2000
+AGGREGATE,Standard MLP (baseline),ROC-AUC,0.2735,0.7265,-1.1102230246251565e-16,2000
+AGGREGATE,Standard MLP (baseline),PR-AUC,0.3855,0.6145,0.0,2000
+AGGREGATE,XGBoost (baseline),Accuracy,0.0,1.0,0.0,2000
+AGGREGATE,XGBoost (baseline),Precision,0.0,1.0,0.0,2000
+AGGREGATE,XGBoost (baseline),Recall,0.9995,0.0,0.0004999999999999449,2000
+AGGREGATE,XGBoost (baseline),F1,0.109,0.891,0.0,2000
+AGGREGATE,XGBoost (baseline),ROC-AUC,0.0,1.0,0.0,2000
+AGGREGATE,XGBoost (baseline),PR-AUC,0.0,1.0,0.0,2000
+AGGREGATE,TabNet (baseline),Accuracy,0.1415,0.8465,0.01200000000000001,2000
+AGGREGATE,TabNet (baseline),Precision,0.22,0.78,0.0,2000
+AGGREGATE,TabNet (baseline),Recall,0.1535,0.8305,0.016000000000000014,2000
+AGGREGATE,TabNet (baseline),F1,0.132,0.868,0.0,2000
+AGGREGATE,TabNet (baseline),ROC-AUC,0.499,0.501,0.0,2000
+AGGREGATE,TabNet (baseline),PR-AUC,0.0365,0.9635,0.0,2000
+Africa,Standard MLP (baseline),Accuracy,0.6025,0.19,0.20749999999999996,2000
+Africa,Standard MLP (baseline),Precision,0.106,0.572,0.32200000000000006,2000
+Africa,Standard MLP (baseline),Recall,0.876,0.0,0.124,2000
+Africa,Standard MLP (baseline),F1,0.8375,0.1065,0.05599999999999998,2000
+Africa,Standard MLP (baseline),ROC-AUC,0.9219609804902451,0.061530765382691345,0.016508254127063547,1999
+Africa,Standard MLP (baseline),PR-AUC,0.9564782391195598,0.029514757378689346,0.014007003501750895,1999
+Africa,XGBoost (baseline),Accuracy,0.3395,0.351,0.3095,2000
+Africa,XGBoost (baseline),Precision,0.0245,0.6265,0.3490000000000001,2000
+Africa,XGBoost (baseline),Recall,0.6365,0.0,0.36350000000000005,2000
+Africa,XGBoost (baseline),F1,0.5705,0.2875,0.14200000000000002,2000
+Africa,XGBoost (baseline),ROC-AUC,0.6843421710855427,0.2221110555277639,0.09354677338669337,1999
+Africa,XGBoost (baseline),PR-AUC,0.7903951975987994,0.12756378189094547,0.08204102051025514,1999
+Africa,TabNet (baseline),Accuracy,0.876,0.0,0.124,2000
+Africa,TabNet (baseline),Precision,0.599,0.0,0.401,2000
+Africa,TabNet (baseline),Recall,0.876,0.0,0.124,2000
+Africa,TabNet (baseline),F1,0.876,0.0,0.124,2000
+Africa,TabNet (baseline),ROC-AUC,0.984992496248124,0.002001000500250125,0.013006503251625858,1999
+Africa,TabNet (baseline),PR-AUC,0.984992496248124,0.0005002501250625312,0.014507253626813453,1999
+East Asia,Standard MLP (baseline),Accuracy,0.133,0.8105,0.056499999999999995,2000
+East Asia,Standard MLP (baseline),Precision,0.2585,0.7355,0.006000000000000005,2000
+East Asia,Standard MLP (baseline),Recall,0.005,0.9855,0.009499999999999953,2000
+East Asia,Standard MLP (baseline),F1,0.0405,0.957,0.0025000000000000577,2000
+East Asia,Standard MLP (baseline),ROC-AUC,0.167,0.8325,0.0004999999999999449,2000
+East Asia,Standard MLP (baseline),PR-AUC,0.0705,0.9295,0.0,2000
+East Asia,XGBoost (baseline),Accuracy,0.034,0.946,0.020000000000000018,2000
+East Asia,XGBoost (baseline),Precision,0.014,0.986,0.0,2000
+East Asia,XGBoost (baseline),Recall,0.6945,0.191,0.11449999999999999,2000
+East Asia,XGBoost (baseline),F1,0.251,0.7485,0.0004999999999999449,2000
+East Asia,XGBoost (baseline),ROC-AUC,0.0835,0.916,0.0004999999999999449,2000
+East Asia,XGBoost (baseline),PR-AUC,0.049,0.951,0.0,2000
+East Asia,TabNet (baseline),Accuracy,0.249,0.686,0.06499999999999995,2000
+East Asia,TabNet (baseline),Precision,0.276,0.713,0.01100000000000001,2000
+East Asia,TabNet (baseline),Recall,0.3175,0.555,0.12749999999999995,2000
+East Asia,TabNet (baseline),F1,0.3025,0.6875,0.010000000000000009,2000
+East Asia,TabNet (baseline),ROC-AUC,0.382,0.618,0.0,2000
+East Asia,TabNet (baseline),PR-AUC,0.047,0.953,0.0,2000
+Europe,Standard MLP (baseline),Accuracy,0.763,0.2115,0.025499999999999995,2000
+Europe,Standard MLP (baseline),Precision,0.9145,0.0855,1.3877787807814457e-17,2000
+Europe,Standard MLP (baseline),Recall,0.1725,0.7985,0.029000000000000026,2000
+Europe,Standard MLP (baseline),F1,0.556,0.444,-5.551115123125783e-17,2000
+Europe,Standard MLP (baseline),ROC-AUC,0.725,0.275,0.0,2000
+Europe,Standard MLP (baseline),PR-AUC,0.803,0.197,-5.551115123125783e-17,2000
+Europe,XGBoost (baseline),Accuracy,0.0475,0.9435,0.009000000000000008,2000
+Europe,XGBoost (baseline),Precision,0.0,1.0,0.0,2000
+Europe,XGBoost (baseline),Recall,0.976,0.019,0.005000000000000022,2000
+Europe,XGBoost (baseline),F1,0.406,0.594,0.0,2000
+Europe,XGBoost (baseline),ROC-AUC,0.109,0.891,0.0,2000
+Europe,XGBoost (baseline),PR-AUC,0.046,0.954,0.0,2000
+Europe,TabNet (baseline),Accuracy,0.607,0.36,0.03300000000000003,2000
+Europe,TabNet (baseline),Precision,0.821,0.1785,0.000500000000000056,2000
+Europe,TabNet (baseline),Recall,0.1325,0.8405,0.026999999999999913,2000
+Europe,TabNet (baseline),F1,0.4115,0.5875,0.0010000000000000009,2000
+Europe,TabNet (baseline),ROC-AUC,0.432,0.568,1.1102230246251565e-16,2000
+Europe,TabNet (baseline),PR-AUC,0.2005,0.7995,0.0,2000
+Latin America,Standard MLP (baseline),Accuracy,0.717,0.185,0.09800000000000003,2000
+Latin America,Standard MLP (baseline),Precision,0.985,0.013,0.002000000000000014,2000
+Latin America,Standard MLP (baseline),Recall,0.0,0.96,0.040000000000000036,2000
+Latin America,Standard MLP (baseline),F1,0.426,0.5655,0.008500000000000063,2000
+Latin America,Standard MLP (baseline),ROC-AUC,0.2875,0.7095,0.0030000000000000027,2000
+Latin America,Standard MLP (baseline),PR-AUC,0.22,0.78,0.0,2000
+Latin America,XGBoost (baseline),Accuracy,0.424,0.4055,0.17050000000000004,2000
+Latin America,XGBoost (baseline),Precision,0.763,0.211,0.025999999999999995,2000
+Latin America,XGBoost (baseline),Recall,0.0,0.861,0.139,2000
+Latin America,XGBoost (baseline),F1,0.2865,0.686,0.02749999999999997,2000
+Latin America,XGBoost (baseline),ROC-AUC,0.134,0.8645,0.0014999999999999458,2000
+Latin America,XGBoost (baseline),PR-AUC,0.0215,0.9785,0.0,2000
+Latin America,TabNet (baseline),Accuracy,0.2905,0.5655,0.14400000000000002,2000
+Latin America,TabNet (baseline),Precision,0.3005,0.6445,0.05500000000000005,2000
+Latin America,TabNet (baseline),Recall,0.3675,0.328,0.30450000000000005,2000
+Latin America,TabNet (baseline),F1,0.3845,0.5605,0.05499999999999994,2000
+Latin America,TabNet (baseline),ROC-AUC,0.7225,0.2755,0.0019999999999999463,2000
+Latin America,TabNet (baseline),PR-AUC,0.473,0.527,0.0,2000
+North America,Standard MLP (baseline),Accuracy,0.501,0.468,0.030999999999999972,2000
+North America,Standard MLP (baseline),Precision,0.999,0.001,8.673617379884035e-19,2000
+North America,Standard MLP (baseline),Recall,0.0,1.0,0.0,2000
+North America,Standard MLP (baseline),F1,0.086,0.914,0.0,2000
+North America,Standard MLP (baseline),ROC-AUC,0.254,0.746,0.0,2000
+North America,Standard MLP (baseline),PR-AUC,0.5435,0.4565,0.0,2000
+North America,XGBoost (baseline),Accuracy,0.087,0.9005,0.012500000000000067,2000
+North America,XGBoost (baseline),Precision,0.0,1.0,0.0,2000
+North America,XGBoost (baseline),Recall,1.0,0.0,0.0,2000
+North America,XGBoost (baseline),F1,0.4615,0.5385,0.0,2000
+North America,XGBoost (baseline),ROC-AUC,0.0145,0.9855,0.0,2000
+North America,XGBoost (baseline),PR-AUC,0.013,0.987,0.0,2000
+North America,TabNet (baseline),Accuracy,0.309,0.663,0.028000000000000025,2000
+North America,TabNet (baseline),Precision,0.364,0.634,0.0020000000000000018,2000
+North America,TabNet (baseline),Recall,0.3425,0.6205,0.03699999999999992,2000
+North America,TabNet (baseline),F1,0.3265,0.672,0.0014999999999999458,2000
+North America,TabNet (baseline),ROC-AUC,0.6055,0.3945,-5.551115123125783e-17,2000
+North America,TabNet (baseline),PR-AUC,0.25,0.75,0.0,2000
+South Asia,Standard MLP (baseline),Accuracy,0.041,0.8845,0.07450000000000001,2000
+South Asia,Standard MLP (baseline),Precision,0.1135,0.8535,0.03299999999999992,2000
+South Asia,Standard MLP (baseline),Recall,0.0,0.874,0.126,2000
+South Asia,Standard MLP (baseline),F1,0.0235,0.949,0.02750000000000008,2000
+South Asia,Standard MLP (baseline),ROC-AUC,0.997,0.003,2.6020852139652106e-18,2000
+South Asia,Standard MLP (baseline),PR-AUC,0.964,0.036,3.469446951953614e-17,2000
+South Asia,XGBoost (baseline),Accuracy,0.0,1.0,0.0,2000
+South Asia,XGBoost (baseline),Precision,0.0,1.0,0.0,2000
+South Asia,XGBoost (baseline),Recall,0.0,0.8655,0.13449999999999995,2000
+South Asia,XGBoost (baseline),F1,0.0,1.0,0.0,2000
+South Asia,XGBoost (baseline),ROC-AUC,0.3365,0.6575,0.006000000000000005,2000
+South Asia,XGBoost (baseline),PR-AUC,0.1295,0.8705,0.0,2000
+South Asia,TabNet (baseline),Accuracy,0.024,0.954,0.02200000000000002,2000
+South Asia,TabNet (baseline),Precision,0.016,0.98,0.0040000000000000036,2000
+South Asia,TabNet (baseline),Recall,0.24,0.5955,0.16449999999999998,2000
+South Asia,TabNet (baseline),F1,0.105,0.8885,0.006500000000000061,2000
+South Asia,TabNet (baseline),ROC-AUC,0.9305,0.0695,0.0,2000
+South Asia,TabNet (baseline),PR-AUC,0.9225,0.0775,1.3877787807814457e-17,2000
+Southeast Asia,Standard MLP (baseline),Accuracy,0.0,0.9995,0.0004999999999999449,2000
+Southeast Asia,Standard MLP (baseline),Precision,0.0,1.0,0.0,2000
+Southeast Asia,Standard MLP (baseline),Recall,0.0475,0.8775,0.07500000000000007,2000
+Southeast Asia,Standard MLP (baseline),F1,0.0025,0.9975,0.0,2000
+Southeast Asia,Standard MLP (baseline),ROC-AUC,0.124,0.8725,0.0034999999999999476,2000
+Southeast Asia,Standard MLP (baseline),PR-AUC,0.1775,0.8225,0.0,2000
+Southeast Asia,XGBoost (baseline),Accuracy,0.0025,0.9905,0.007000000000000006,2000
+Southeast Asia,XGBoost (baseline),Precision,0.0005,0.999,0.000500000000000056,2000
+Southeast Asia,XGBoost (baseline),Recall,0.407,0.4205,0.1725,2000
+Southeast Asia,XGBoost (baseline),F1,0.0575,0.94,0.0025000000000000577,2000
+Southeast Asia,XGBoost (baseline),ROC-AUC,0.0415,0.9565,0.0020000000000000018,2000
+Southeast Asia,XGBoost (baseline),PR-AUC,0.0945,0.9055,0.0,2000
+Southeast Asia,TabNet (baseline),Accuracy,0.001,0.996,0.0030000000000000027,2000
+Southeast Asia,TabNet (baseline),Precision,0.0025,0.9965,0.0010000000000000009,2000
+Southeast Asia,TabNet (baseline),Recall,0.0965,0.7745,0.129,2000
+Southeast Asia,TabNet (baseline),F1,0.005,0.994,0.0010000000000000009,2000
+Southeast Asia,TabNet (baseline),ROC-AUC,0.104,0.8955,0.000500000000000056,2000
+Southeast Asia,TabNet (baseline),PR-AUC,0.126,0.874,0.0,2000

@@ -1,0 +1,806 @@
+=== Experiment 21 (per-cluster lambda + target-region score) + 4-way multiseed started Mon Oct 12 13:47:18 MPST 2026 ===
+--- 05_train_sftnn_exp21.py (real Optuna search) ---
+[I 2026-10-12 13:47:21,492] A new study created in memory with name: no-name-24d9c930-b866-43fc-9b99-0f698d07c390
+[I 2026-10-12 13:47:33,101] Trial 0 finished with value: 0.6607756462766794 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 2.03664420268309, 'lambda_americas': 2.0492680115417348, 'lambda_asia_pacific': 3.2877474139911183, 'lambda_europe_africa': 7.790143126276236}. Best is trial 0 with value: 0.6607756462766794.
+[I 2026-10-12 13:47:45,763] Trial 1 finished with value: 0.6500873406266051 and parameters: {'lr': 0.0007309539835912913, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 1.2897950480855531, 'lambda_americas': 40.938136085987814, 'lambda_asia_pacific': 43.70990468130503, 'lambda_europe_africa': 23.628864184236406}. Best is trial 0 with value: 0.6607756462766794.
+[I 2026-10-12 13:48:08,837] Trial 2 finished with value: 0.6604991784105183 and parameters: {'lr': 0.0004066563313514797, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 44.39102767051397, 'lambda_americas': 20.74566765675251, 'lambda_asia_pacific': 39.46212980759094, 'lambda_europe_africa': 33.13483615508948}. Best is trial 0 with value: 0.6607756462766794.
+[I 2026-10-12 13:48:33,938] Trial 3 finished with value: 0.6646320300283496 and parameters: {'lr': 0.0015696396388661157, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 1.3386261584543908, 'lambda_americas': 47.49974771378395, 'lambda_asia_pacific': 20.51259942215136, 'lambda_europe_africa': 2.1757649801197556}. Best is trial 3 with value: 0.6646320300283496.
+[I 2026-10-12 13:48:48,998] Trial 4 finished with value: 0.6532454163557746 and parameters: {'lr': 0.00010257563974185662, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 17.361170890393293, 'lambda_americas': 12.111307195599325, 'lambda_asia_pacific': 32.162354692074196, 'lambda_europe_africa': 6.342770438858341}. Best is trial 3 with value: 0.6646320300283496.
+[I 2026-10-12 13:49:06,582] Trial 5 finished with value: 0.6608839489718012 and parameters: {'lr': 0.00017345566642360953, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 34.82797436617689, 'lambda_americas': 2.651795441046284, 'lambda_asia_pacific': 4.979987773685085, 'lambda_europe_africa': 19.215811115723024}. Best is trial 3 with value: 0.6646320300283496.
+[I 2026-10-12 13:49:20,419] Trial 6 finished with value: 0.6466534107354439 and parameters: {'lr': 0.00028681134821030097, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 3.46959166033029, 'lambda_americas': 1.5380658115982009, 'lambda_asia_pacific': 2.4392426447067805, 'lambda_europe_africa': 5.316714274124601}. Best is trial 3 with value: 0.6646320300283496.
+[I 2026-10-12 13:49:35,835] Trial 7 finished with value: 0.66719167622371 and parameters: {'lr': 0.00432543242796456, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 43.1687113842961, 'lambda_americas': 2.677753331031326, 'lambda_asia_pacific': 6.995363653959079, 'lambda_europe_africa': 3.2447648098898547}. Best is trial 7 with value: 0.66719167622371.
+[I 2026-10-12 13:49:45,078] Trial 8 finished with value: 0.6460445759236959 and parameters: {'lr': 0.00037126241790405324, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.5336058850767755, 'lambda_americas': 17.26703355444434, 'lambda_asia_pacific': 4.215533166949117, 'lambda_europe_africa': 11.86502451146262}. Best is trial 7 with value: 0.66719167622371.
+[I 2026-10-12 13:49:57,147] Trial 9 finished with value: 0.6492347556718342 and parameters: {'lr': 0.0018495216589727262, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 14.923905552517551, 'lambda_americas': 4.539957141179767, 'lambda_asia_pacific': 39.036974683835574, 'lambda_europe_africa': 1.7125527562127536}. Best is trial 7 with value: 0.66719167622371.
+[I 2026-10-12 13:50:12,104] Trial 10 finished with value: 0.6620970163049615 and parameters: {'lr': 0.008673882891220756, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 5.226871466099309, 'lambda_americas': 6.877622855172146, 'lambda_asia_pacific': 11.615997473737503, 'lambda_europe_africa': 1.0493401925064194}. Best is trial 7 with value: 0.66719167622371.
+[I 2026-10-12 13:50:31,137] Trial 11 finished with value: 0.6776599017157385 and parameters: {'lr': 0.003653561899695146, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 9.388806238030364, 'lambda_americas': 49.10394515853236, 'lambda_asia_pacific': 11.80850247566887, 'lambda_europe_africa': 2.4151108566720163}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:50:50,348] Trial 12 finished with value: 0.6732323646843118 and parameters: {'lr': 0.006764355753397626, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 8.255790434201884, 'lambda_americas': 6.144959741263578, 'lambda_asia_pacific': 9.628324217598227, 'lambda_europe_africa': 2.958865316882392}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:51:03,256] Trial 13 finished with value: 0.6638226623089006 and parameters: {'lr': 0.009970682275036448, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 7.863497647030153, 'lambda_americas': 1.1074520457699444, 'lambda_asia_pacific': 12.086835705538592, 'lambda_europe_africa': 3.6856158970340442}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:51:17,376] Trial 14 finished with value: 0.663423651979209 and parameters: {'lr': 0.003641984019882253, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 10.039455735539597, 'lambda_americas': 7.115028695607442, 'lambda_asia_pacific': 1.0439274149491538, 'lambda_europe_africa': 1.0992782153434222}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:51:32,853] Trial 15 finished with value: 0.6635463279618814 and parameters: {'lr': 0.004347525283911725, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 20.529288292503296, 'lambda_americas': 26.330713871588536, 'lambda_asia_pacific': 11.727637309464823, 'lambda_europe_africa': 2.297484598044003}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:52:01,590] Trial 16 finished with value: 0.6683058717720382 and parameters: {'lr': 0.002062009247601101, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 5.705399475556064, 'lambda_americas': 10.819893811504546, 'lambda_asia_pacific': 7.674366177884903, 'lambda_europe_africa': 3.7190853856232833}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:52:25,396] Trial 17 finished with value: 0.6762723246561781 and parameters: {'lr': 0.006024319852526546, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 10.627894960564598, 'lambda_americas': 4.353488681497394, 'lambda_asia_pacific': 22.564376905711477, 'lambda_europe_africa': 1.6748386744061905}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:52:33,127] Trial 18 finished with value: 0.6467958923437946 and parameters: {'lr': 0.0011120613481483597, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 24.55568801795573, 'lambda_americas': 29.424476248680783, 'lambda_asia_pacific': 20.619507235784305, 'lambda_europe_africa': 1.562587686912288}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:52:41,791] Trial 19 finished with value: 0.6535936595671685 and parameters: {'lr': 0.0029292692236427584, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 13.231900024241146, 'lambda_americas': 3.9289799930835287, 'lambda_asia_pacific': 22.655136781757992, 'lambda_europe_africa': 1.518548955703261}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:52:49,796] Trial 20 finished with value: 0.652210754490476 and parameters: {'lr': 0.005598562022336362, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 4.811222693294741, 'lambda_americas': 9.888454991673843, 'lambda_asia_pacific': 17.71600652887094, 'lambda_europe_africa': 5.237266996763027}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:53:03,449] Trial 21 finished with value: 0.6645975269840254 and parameters: {'lr': 0.007926059738272201, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 8.87257290741964, 'lambda_americas': 3.1978018302198423, 'lambda_asia_pacific': 7.8883134238480626, 'lambda_europe_africa': 2.6721873315987947}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:53:16,889] Trial 22 finished with value: 0.6634067623809705 and parameters: {'lr': 0.006037850918669365, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 10.471739584523734, 'lambda_americas': 5.0506834522101025, 'lambda_asia_pacific': 14.057917667748892, 'lambda_europe_africa': 1.8768788671464844}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:53:25,633] Trial 23 finished with value: 0.6548975561031293 and parameters: {'lr': 0.002807625171660285, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 6.560685733903889, 'lambda_americas': 6.6856203303898205, 'lambda_asia_pacific': 25.000019090508076, 'lambda_europe_africa': 3.0897836269367147}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:53:40,001] Trial 24 finished with value: 0.6711899091807493 and parameters: {'lr': 0.005680762791152637, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 25.555498476244303, 'lambda_americas': 17.033813469343503, 'lambda_asia_pacific': 8.492828209669145, 'lambda_europe_africa': 9.308589894919624}. Best is trial 11 with value: 0.6776599017157385.
+[I 2026-10-12 13:54:11,648] Trial 25 finished with value: 0.6830054298336938 and parameters: {'lr': 0.0026607728404196567, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 11.45572832909178, 'lambda_americas': 1.8376066277554692, 'lambda_asia_pacific': 15.300129851419147, 'lambda_europe_africa': 4.440509924085892}. Best is trial 25 with value: 0.6830054298336938.
+[I 2026-10-12 13:54:24,280] Trial 26 finished with value: 0.6585503603390502 and parameters: {'lr': 0.002484135369072129, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 11.831543049386564, 'lambda_americas': 1.136590421717492, 'lambda_asia_pacific': 15.950623305088175, 'lambda_europe_africa': 4.786399925843953}. Best is trial 25 with value: 0.6830054298336938.
+[I 2026-10-12 13:54:32,124] Trial 27 finished with value: 0.6486433813787004 and parameters: {'lr': 0.001284940079539028, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 3.885522838494556, 'lambda_americas': 1.7840358299129175, 'lambda_asia_pacific': 28.22282380451666, 'lambda_europe_africa': 1.3340182137708874}. Best is trial 25 with value: 0.6830054298336938.
+[I 2026-10-12 13:55:04,611] Trial 28 finished with value: 0.6712251883594315 and parameters: {'lr': 0.0038567159427326204, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 17.30469991784132, 'lambda_americas': 1.41840723345872, 'lambda_asia_pacific': 4.921687117703031, 'lambda_europe_africa': 4.235121756976175}. Best is trial 25 with value: 0.6830054298336938.
+[I 2026-10-12 13:55:13,898] Trial 29 finished with value: 0.6625750286988535 and parameters: {'lr': 0.0008882843497783296, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 7.304963349048933, 'lambda_americas': 2.250819879798985, 'lambda_asia_pacific': 1.8195875347415178, 'lambda_europe_africa': 7.5155881210706434}. Best is trial 25 with value: 0.6830054298336938.
+Region training counts (id order): [106.0, 1086.0, 5342.0, 532.0, 16799.0, 566.0, 335.0]
+Region clusters (id order, ['Africa', 'East Asia', 'Europe', 'Latin America', 'North America', 'South Asia', 'Southeast Asia']): [2, 1, 2, 0, 0, 1, 1] -> ['Americas', 'Asia-Pacific', 'Europe & Africa']
+
+Best val composite score: 0.6830
+Best params: {'lr': 0.0026607728404196567, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 11.45572832909178, 'lambda_americas': 1.8376066277554692, 'lambda_asia_pacific': 15.300129851419147, 'lambda_europe_africa': 4.440509924085892}
+  epoch 00  score=0.6198  (auc=0.8022 pr_auc=0.8168 f1=0.6928 target_f1=0.3351)
+  epoch 01  score=0.6412  (auc=0.8263 pr_auc=0.8360 f1=0.7181 target_f1=0.3538)
+  epoch 02  score=0.6481  (auc=0.8314 pr_auc=0.8414 f1=0.7325 target_f1=0.3586)
+  epoch 03  score=0.6524  (auc=0.8308 pr_auc=0.8413 f1=0.7366 target_f1=0.3688)
+  epoch 04  score=0.6396  (auc=0.8323 pr_auc=0.8424 f1=0.7125 target_f1=0.3445)
+  epoch 05  score=0.6513  (auc=0.8351 pr_auc=0.8427 f1=0.7317 target_f1=0.3646)
+  epoch 06  score=0.6523  (auc=0.8346 pr_auc=0.8454 f1=0.7379 target_f1=0.3627)
+  epoch 07  score=0.6592  (auc=0.8361 pr_auc=0.8461 f1=0.7380 target_f1=0.3810)
+  epoch 08  score=0.6617  (auc=0.8394 pr_auc=0.8488 f1=0.7486 target_f1=0.3781)
+  epoch 09  score=0.6557  (auc=0.8395 pr_auc=0.8484 f1=0.7373 target_f1=0.3677)
+  epoch 10  score=0.6517  (auc=0.8390 pr_auc=0.8493 f1=0.7401 target_f1=0.3544)
+  epoch 11  score=0.6630  (auc=0.8431 pr_auc=0.8526 f1=0.7521 target_f1=0.3751)
+  epoch 12  score=0.6581  (auc=0.8408 pr_auc=0.8502 f1=0.7246 target_f1=0.3800)
+  epoch 13  score=0.6562  (auc=0.8426 pr_auc=0.8500 f1=0.7477 target_f1=0.3601)
+  epoch 14  score=0.6614  (auc=0.8420 pr_auc=0.8500 f1=0.7380 target_f1=0.3810)
+  epoch 15  score=0.6705  (auc=0.8441 pr_auc=0.8527 f1=0.7451 target_f1=0.3998)
+  epoch 16  score=0.6652  (auc=0.8458 pr_auc=0.8526 f1=0.7484 target_f1=0.3816)
+  epoch 17  score=0.6590  (auc=0.8461 pr_auc=0.8545 f1=0.7445 target_f1=0.3647)
+  epoch 18  score=0.6746  (auc=0.8453 pr_auc=0.8526 f1=0.7529 target_f1=0.4063)
+  epoch 19  score=0.6687  (auc=0.8471 pr_auc=0.8535 f1=0.7483 target_f1=0.3901)
+  epoch 20  score=0.6719  (auc=0.8459 pr_auc=0.8538 f1=0.7522 target_f1=0.3977)
+  epoch 21  score=0.6728  (auc=0.8493 pr_auc=0.8564 f1=0.7563 target_f1=0.3941)
+  epoch 22  score=0.6827  (auc=0.8492 pr_auc=0.8574 f1=0.7675 target_f1=0.4155)
+  epoch 23  score=0.6768  (auc=0.8487 pr_auc=0.8568 f1=0.7570 target_f1=0.4054)
+  epoch 24  score=0.6756  (auc=0.8471 pr_auc=0.8553 f1=0.7538 target_f1=0.4057)
+  epoch 25  score=0.6830  (auc=0.8471 pr_auc=0.8562 f1=0.7643 target_f1=0.4204)
+  epoch 26  score=0.6657  (auc=0.8478 pr_auc=0.8548 f1=0.7426 target_f1=0.3836)
+  epoch 27  score=0.6735  (auc=0.8487 pr_auc=0.8575 f1=0.7561 target_f1=0.3961)
+  epoch 28  score=0.6738  (auc=0.8493 pr_auc=0.8564 f1=0.7496 target_f1=0.4008)
+  epoch 29  score=0.6762  (auc=0.8493 pr_auc=0.8570 f1=0.7571 target_f1=0.4029)
+  epoch 30  score=0.6727  (auc=0.8489 pr_auc=0.8573 f1=0.7593 target_f1=0.3919)
+
+Saved trained SFTNN to artifacts_exp21/sftnn_model.pt
+--- 06_evaluate.py (exp21) ---
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+=== Table 4.6: Aggregate Evaluation ===
+                  Model  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)  0.754521   0.752660 0.752374 0.752517 0.835536 0.844052
+     XGBoost (baseline)  0.766767   0.799228 0.707558 0.750604 0.843757 0.854792
+      TabNet (baseline)  0.757536   0.768127 0.732245 0.749757 0.834454 0.849310
+         Proposed SFTNN  0.753391   0.764377 0.726927 0.745182 0.834440 0.843253
+
+=== Table 4.7: Per-Region Evaluation ===
+                  Model         Region    n  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)         Africa   24  0.833333   1.000000 0.333333 0.500000 0.629630 0.560582
+Standard MLP (baseline)      East Asia  244  0.668033   0.615385 0.609524 0.612440 0.720555 0.705869
+Standard MLP (baseline)         Europe 1159  0.757550   0.717391 0.644252 0.678857 0.822612 0.787914
+Standard MLP (baseline)  Latin America  105  0.780952   0.741935 0.605263 0.666667 0.842498 0.803671
+Standard MLP (baseline)  North America 3589  0.758150   0.768431 0.795187 0.781580 0.842191 0.865916
+Standard MLP (baseline)     South Asia  111  0.747748   0.666667 0.526316 0.588235 0.755588 0.709191
+Standard MLP (baseline) Southeast Asia   76  0.763158   0.733333 0.687500 0.709677 0.764205 0.751914
+     XGBoost (baseline)         Africa   24  0.875000   1.000000 0.500000 0.666667 0.814815 0.739379
+     XGBoost (baseline)      East Asia  244  0.684426   0.666667 0.533333 0.592593 0.731175 0.715062
+     XGBoost (baseline)         Europe 1159  0.782571   0.810089 0.592191 0.684211 0.835933 0.811692
+     XGBoost (baseline)  Latin America  105  0.800000   0.814815 0.578947 0.676923 0.860958 0.839344
+     XGBoost (baseline)  North America 3589  0.764558   0.802402 0.752688 0.776750 0.846704 0.873363
+     XGBoost (baseline)     South Asia  111  0.810811   0.869565 0.526316 0.655738 0.833453 0.774177
+     XGBoost (baseline) Southeast Asia   76  0.750000   0.760000 0.593750 0.666667 0.781250 0.767761
+      TabNet (baseline)         Africa   24  0.791667   0.666667 0.333333 0.444444 0.546296 0.538876
+      TabNet (baseline)      East Asia  244  0.659836   0.614583 0.561905 0.587065 0.711819 0.714096
+      TabNet (baseline)         Europe 1159  0.761864   0.725061 0.646421 0.683486 0.827249 0.802980
+      TabNet (baseline)  Latin America  105  0.809524   0.909091 0.526316 0.666667 0.805970 0.790542
+      TabNet (baseline)  North America 3589  0.760379   0.783896 0.772657 0.778236 0.840248 0.868377
+      TabNet (baseline)     South Asia  111  0.774775   0.760000 0.500000 0.603175 0.775054 0.691773
+      TabNet (baseline) Southeast Asia   76  0.763158   0.750000 0.656250 0.700000 0.779830 0.766115
+         Proposed SFTNN         Africa   24  0.875000   0.800000 0.666667 0.727273 0.851852 0.805013
+         Proposed SFTNN      East Asia  244  0.647541   0.597938 0.552381 0.574257 0.706166 0.673348
+         Proposed SFTNN         Europe 1159  0.765315   0.741688 0.629067 0.680751 0.826143 0.793149
+         Proposed SFTNN  Latin America  105  0.800000   0.869565 0.526316 0.655738 0.827965 0.786042
+         Proposed SFTNN  North America 3589  0.758429   0.782225 0.770609 0.776373 0.840890 0.866247
+         Proposed SFTNN     South Asia  111  0.720721   0.620690 0.473684 0.537313 0.821918 0.745425
+         Proposed SFTNN Southeast Asia   76  0.618421   0.542857 0.593750 0.567164 0.732955 0.728192
+
+Confusion matrix -- Standard MLP (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1981  652]
+ [ 651 2024]]
+
+Confusion matrix -- XGBoost (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1863  770]
+ [ 468 2207]]
+
+Confusion matrix -- TabNet (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1928  705]
+ [ 582 2093]]
+
+Confusion matrix -- Proposed SFTNN (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1914  719]
+ [ 590 2085]]
+
+Saved: results_exp21/table_4_6_aggregate.csv, results_exp21/table_4_7_per_region.csv
+--- 08_bootstrap_ci.py (exp21) ---
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+Bootstrapped AGGREGATE (n=5308)
+Bootstrapped Africa (n=24)
+Bootstrapped East Asia (n=244)
+Bootstrapped Europe (n=1159)
+Bootstrapped Latin America (n=105)
+Bootstrapped North America (n=3589)
+Bootstrapped South Asia (n=111)
+Bootstrapped Southeast Asia (n=76)
+
+Saved results_exp21/bootstrap_ci_per_region.csv
+Saved results_exp21/bootstrap_win_probability.csv
+
+=== SFTNN vs each baseline: P(SFTNN better) on Recall/F1/ROC-AUC/PR-AUC, by region ===
+Metric                                      F1    PR-AUC   ROC-AUC  Recall
+Region         Baseline                                                   
+AGGREGATE      Standard MLP (baseline)  0.0380  0.385500  0.273500  0.0000
+               TabNet (baseline)        0.1320  0.036500  0.499000  0.1535
+               XGBoost (baseline)       0.1090  0.000000  0.000000  0.9995
+Africa         Standard MLP (baseline)  0.8375  0.956478  0.921961  0.8760
+               TabNet (baseline)        0.8760  0.984992  0.984992  0.8760
+               XGBoost (baseline)       0.5705  0.790395  0.684342  0.6365
+East Asia      Standard MLP (baseline)  0.0405  0.070500  0.167000  0.0050
+               TabNet (baseline)        0.3025  0.047000  0.382000  0.3175
+               XGBoost (baseline)       0.2510  0.049000  0.083500  0.6945
+Europe         Standard MLP (baseline)  0.5560  0.803000  0.725000  0.1725
+               TabNet (baseline)        0.4115  0.200500  0.432000  0.1325
+               XGBoost (baseline)       0.4060  0.046000  0.109000  0.9760
+Latin America  Standard MLP (baseline)  0.4260  0.220000  0.287500  0.0000
+               TabNet (baseline)        0.3845  0.473000  0.722500  0.3675
+               XGBoost (baseline)       0.2865  0.021500  0.134000  0.0000
+North America  Standard MLP (baseline)  0.0860  0.543500  0.254000  0.0000
+               TabNet (baseline)        0.3265  0.250000  0.605500  0.3425
+               XGBoost (baseline)       0.4615  0.013000  0.014500  1.0000
+South Asia     Standard MLP (baseline)  0.0235  0.964000  0.997000  0.0000
+               TabNet (baseline)        0.1050  0.922500  0.930500  0.2400
+               XGBoost (baseline)       0.0000  0.129500  0.336500  0.0000
+Southeast Asia Standard MLP (baseline)  0.0025  0.177500  0.124000  0.0475
+               TabNet (baseline)        0.0050  0.126000  0.104000  0.0965
+               XGBoost (baseline)       0.0575  0.094500  0.041500  0.4070
+--- multiseed_check_13_19_20_21.py (20 seeds, batch 1) ---
+
+============================================================
+SEED 1
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7424 Recall=0.7136 ROC-AUC=0.8347 PR-AUC=0.8416
+    Africa          F1=0.7273 Recall=0.6667 ROC-AUC=0.8796 PR-AUC=0.8149
+    Southeast Asia  F1=0.6000 Recall=0.5625 ROC-AUC=0.7386 PR-AUC=0.7326
+    South Asia      F1=0.5797 Recall=0.5263 ROC-AUC=0.8194 PR-AUC=0.7560
+    Latin America   F1=0.5758 Recall=0.5000 ROC-AUC=0.8099 PR-AUC=0.7606
+  training Exp19-config ...
+    AGGREGATE       F1=0.7470 Recall=0.7182 ROC-AUC=0.8365 PR-AUC=0.8447
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8611 PR-AUC=0.7200
+    Southeast Asia  F1=0.6780 Recall=0.6250 ROC-AUC=0.7607 PR-AUC=0.7508
+    South Asia      F1=0.6462 Recall=0.5526 ROC-AUC=0.8389 PR-AUC=0.7832
+    Latin America   F1=0.6000 Recall=0.4737 ROC-AUC=0.8095 PR-AUC=0.7774
+  training Exp20-config ...
+    AGGREGATE       F1=0.7470 Recall=0.7509 ROC-AUC=0.8324 PR-AUC=0.8405
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.7963 PR-AUC=0.6802
+    Southeast Asia  F1=0.6562 Recall=0.6562 ROC-AUC=0.7621 PR-AUC=0.7617
+    South Asia      F1=0.6286 Recall=0.5789 ROC-AUC=0.8248 PR-AUC=0.7649
+    Latin America   F1=0.5938 Recall=0.5000 ROC-AUC=0.7761 PR-AUC=0.7549
+  training Exp21-config ...
+    AGGREGATE       F1=0.7465 Recall=0.7254 ROC-AUC=0.8363 PR-AUC=0.8441
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8426 PR-AUC=0.6806
+    Southeast Asia  F1=0.6230 Recall=0.5938 ROC-AUC=0.7628 PR-AUC=0.7618
+    South Asia      F1=0.6269 Recall=0.5526 ROC-AUC=0.8086 PR-AUC=0.7402
+    Latin America   F1=0.6230 Recall=0.5000 ROC-AUC=0.8256 PR-AUC=0.7854
+
+============================================================
+SEED 7
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7388 Recall=0.7368 ROC-AUC=0.8187 PR-AUC=0.8314
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7407 PR-AUC=0.6151
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7479 PR-AUC=0.7594
+    South Asia      F1=0.5714 Recall=0.5263 ROC-AUC=0.7848 PR-AUC=0.7211
+    Latin America   F1=0.5333 Recall=0.4211 ROC-AUC=0.7667 PR-AUC=0.7155
+  training Exp19-config ...
+    AGGREGATE       F1=0.7378 Recall=0.7341 ROC-AUC=0.8176 PR-AUC=0.8297
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7130 PR-AUC=0.6280
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7571 PR-AUC=0.7629
+    South Asia      F1=0.5915 Recall=0.5526 ROC-AUC=0.7790 PR-AUC=0.7126
+    Latin America   F1=0.5758 Recall=0.5000 ROC-AUC=0.7903 PR-AUC=0.7332
+  training Exp20-config ...
+    AGGREGATE       F1=0.7403 Recall=0.7585 ROC-AUC=0.8182 PR-AUC=0.8300
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7870 PR-AUC=0.5927
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7706 PR-AUC=0.7680
+    South Asia      F1=0.5634 Recall=0.5263 ROC-AUC=0.7711 PR-AUC=0.7041
+    Latin America   F1=0.5333 Recall=0.4211 ROC-AUC=0.7726 PR-AUC=0.7240
+  training Exp21-config ...
+    AGGREGATE       F1=0.7381 Recall=0.7376 ROC-AUC=0.8180 PR-AUC=0.8307
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7593 PR-AUC=0.6447
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7443 PR-AUC=0.7619
+    South Asia      F1=0.5915 Recall=0.5526 ROC-AUC=0.7733 PR-AUC=0.7037
+    Latin America   F1=0.5714 Recall=0.4737 ROC-AUC=0.7879 PR-AUC=0.7262
+
+============================================================
+SEED 123
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7526 Recall=0.7649 ROC-AUC=0.8338 PR-AUC=0.8421
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8704 PR-AUC=0.7295
+    Southeast Asia  F1=0.6769 Recall=0.6875 ROC-AUC=0.7678 PR-AUC=0.7479
+    South Asia      F1=0.6389 Recall=0.6053 ROC-AUC=0.8226 PR-AUC=0.7475
+    Latin America   F1=0.6377 Recall=0.5789 ROC-AUC=0.7875 PR-AUC=0.7575
+  training Exp19-config ...
+    AGGREGATE       F1=0.7435 Recall=0.7239 ROC-AUC=0.8330 PR-AUC=0.8427
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8611 PR-AUC=0.7335
+    Southeast Asia  F1=0.6452 Recall=0.6250 ROC-AUC=0.7507 PR-AUC=0.7452
+    South Asia      F1=0.6471 Recall=0.5789 ROC-AUC=0.8313 PR-AUC=0.7703
+    Latin America   F1=0.6269 Recall=0.5526 ROC-AUC=0.8048 PR-AUC=0.7719
+  training Exp20-config ...
+    AGGREGATE       F1=0.7302 Recall=0.6852 ROC-AUC=0.8214 PR-AUC=0.8322
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6759 PR-AUC=0.5284
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7784 PR-AUC=0.7665
+    South Asia      F1=0.5846 Recall=0.5000 ROC-AUC=0.7981 PR-AUC=0.7372
+    Latin America   F1=0.4906 Recall=0.3421 ROC-AUC=0.7698 PR-AUC=0.7196
+  training Exp21-config ...
+    AGGREGATE       F1=0.7501 Recall=0.7474 ROC-AUC=0.8319 PR-AUC=0.8404
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8611 PR-AUC=0.6806
+    Southeast Asia  F1=0.6102 Recall=0.5625 ROC-AUC=0.7699 PR-AUC=0.7593
+    South Asia      F1=0.6087 Recall=0.5526 ROC-AUC=0.8100 PR-AUC=0.7438
+    Latin America   F1=0.6364 Recall=0.5526 ROC-AUC=0.7812 PR-AUC=0.7558
+
+============================================================
+SEED 2024
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7464 Recall=0.7167 ROC-AUC=0.8380 PR-AUC=0.8467
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8426 PR-AUC=0.7514
+    Southeast Asia  F1=0.6230 Recall=0.5938 ROC-AUC=0.7543 PR-AUC=0.7429
+    South Asia      F1=0.5846 Recall=0.5000 ROC-AUC=0.8338 PR-AUC=0.7627
+    Latin America   F1=0.6230 Recall=0.5000 ROC-AUC=0.8362 PR-AUC=0.7821
+  training Exp19-config ...
+    AGGREGATE       F1=0.7384 Recall=0.7102 ROC-AUC=0.8222 PR-AUC=0.8330
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.6944 PR-AUC=0.6234
+    Southeast Asia  F1=0.6885 Recall=0.6562 ROC-AUC=0.7621 PR-AUC=0.7479
+    South Asia      F1=0.5970 Recall=0.5263 ROC-AUC=0.7963 PR-AUC=0.7252
+    Latin America   F1=0.5667 Recall=0.4474 ROC-AUC=0.7785 PR-AUC=0.7235
+  training Exp20-config ...
+    AGGREGATE       F1=0.7443 Recall=0.7550 ROC-AUC=0.8260 PR-AUC=0.8353
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7778 PR-AUC=0.6545
+    Southeast Asia  F1=0.6885 Recall=0.6562 ROC-AUC=0.7727 PR-AUC=0.7521
+    South Asia      F1=0.6571 Recall=0.6053 ROC-AUC=0.8208 PR-AUC=0.7439
+    Latin America   F1=0.5574 Recall=0.4474 ROC-AUC=0.7887 PR-AUC=0.7364
+  training Exp21-config ...
+    AGGREGATE       F1=0.7487 Recall=0.7277 ROC-AUC=0.8371 PR-AUC=0.8451
+    Africa          F1=0.6667 Recall=0.6667 ROC-AUC=0.8796 PR-AUC=0.7014
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7713 PR-AUC=0.7645
+    South Asia      F1=0.6250 Recall=0.5263 ROC-AUC=0.8356 PR-AUC=0.7845
+    Latin America   F1=0.6984 Recall=0.5789 ROC-AUC=0.8213 PR-AUC=0.7962
+
+============================================================
+SEED 777
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7368 Recall=0.7569 ROC-AUC=0.8158 PR-AUC=0.8278
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7407 PR-AUC=0.5525
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7741 PR-AUC=0.7607
+    South Asia      F1=0.5507 Recall=0.5000 ROC-AUC=0.7747 PR-AUC=0.6994
+    Latin America   F1=0.4828 Recall=0.3684 ROC-AUC=0.7588 PR-AUC=0.7198
+  training Exp19-config ...
+    AGGREGATE       F1=0.7428 Recall=0.7816 ROC-AUC=0.8156 PR-AUC=0.8274
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6852 PR-AUC=0.5479
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7862 PR-AUC=0.7696
+    South Asia      F1=0.6301 Recall=0.6053 ROC-AUC=0.7859 PR-AUC=0.7187
+    Latin America   F1=0.5938 Recall=0.5000 ROC-AUC=0.7867 PR-AUC=0.7295
+  training Exp20-config ...
+    AGGREGATE       F1=0.7347 Recall=0.7258 ROC-AUC=0.8195 PR-AUC=0.8284
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7315 PR-AUC=0.5247
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7749 PR-AUC=0.7512
+    South Asia      F1=0.5634 Recall=0.5263 ROC-AUC=0.7963 PR-AUC=0.7237
+    Latin America   F1=0.5000 Recall=0.3684 ROC-AUC=0.7824 PR-AUC=0.7199
+  training Exp21-config ...
+    AGGREGATE       F1=0.7407 Recall=0.7752 ROC-AUC=0.8167 PR-AUC=0.8287
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6852 PR-AUC=0.5479
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7798 PR-AUC=0.7650
+    South Asia      F1=0.6111 Recall=0.5789 ROC-AUC=0.7880 PR-AUC=0.7277
+    Latin America   F1=0.5484 Recall=0.4474 ROC-AUC=0.7875 PR-AUC=0.7267
+
+============================================================
+SEED 999
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7395 Recall=0.7246 ROC-AUC=0.8194 PR-AUC=0.8324
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6389 PR-AUC=0.5806
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7720 PR-AUC=0.7483
+    South Asia      F1=0.6154 Recall=0.5263 ROC-AUC=0.7942 PR-AUC=0.7359
+    Latin America   F1=0.4828 Recall=0.3684 ROC-AUC=0.7840 PR-AUC=0.7257
+  training Exp19-config ...
+    AGGREGATE       F1=0.7406 Recall=0.7345 ROC-AUC=0.8174 PR-AUC=0.8308
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6019 PR-AUC=0.5574
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7848 PR-AUC=0.7655
+    South Asia      F1=0.6567 Recall=0.5789 ROC-AUC=0.7934 PR-AUC=0.7388
+    Latin America   F1=0.5714 Recall=0.4737 ROC-AUC=0.7722 PR-AUC=0.7192
+  training Exp20-config ...
+    AGGREGATE       F1=0.7478 Recall=0.7410 ROC-AUC=0.8298 PR-AUC=0.8385
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8704 PR-AUC=0.7121
+    Southeast Asia  F1=0.6885 Recall=0.6562 ROC-AUC=0.7770 PR-AUC=0.7497
+    South Asia      F1=0.6377 Recall=0.5789 ROC-AUC=0.8053 PR-AUC=0.7482
+    Latin America   F1=0.6000 Recall=0.4737 ROC-AUC=0.7879 PR-AUC=0.7520
+  training Exp21-config ...
+    AGGREGATE       F1=0.7409 Recall=0.7368 ROC-AUC=0.8196 PR-AUC=0.8328
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6204 PR-AUC=0.5760
+    Southeast Asia  F1=0.6667 Recall=0.6562 ROC-AUC=0.7820 PR-AUC=0.7612
+    South Asia      F1=0.6567 Recall=0.5789 ROC-AUC=0.7880 PR-AUC=0.7336
+    Latin America   F1=0.5714 Recall=0.4737 ROC-AUC=0.7698 PR-AUC=0.7147
+
+============================================================
+SEED 55
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7516 Recall=0.7307 ROC-AUC=0.8380 PR-AUC=0.8454
+    Africa          F1=0.7273 Recall=0.6667 ROC-AUC=0.8519 PR-AUC=0.8050
+    Southeast Asia  F1=0.6452 Recall=0.6250 ROC-AUC=0.7372 PR-AUC=0.7290
+    South Asia      F1=0.6061 Recall=0.5263 ROC-AUC=0.8349 PR-AUC=0.7630
+    Latin America   F1=0.6269 Recall=0.5526 ROC-AUC=0.8346 PR-AUC=0.7960
+  training Exp19-config ...
+    AGGREGATE       F1=0.7358 Recall=0.7197 ROC-AUC=0.8176 PR-AUC=0.8300
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6389 PR-AUC=0.5806
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7734 PR-AUC=0.7713
+    South Asia      F1=0.5970 Recall=0.5263 ROC-AUC=0.7985 PR-AUC=0.7378
+    Latin America   F1=0.5333 Recall=0.4211 ROC-AUC=0.7871 PR-AUC=0.7289
+  training Exp20-config ...
+    AGGREGATE       F1=0.7423 Recall=0.7543 ROC-AUC=0.8213 PR-AUC=0.8339
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.6111 PR-AUC=0.5593
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7884 PR-AUC=0.7619
+    South Asia      F1=0.6857 Recall=0.6316 ROC-AUC=0.8014 PR-AUC=0.7501
+    Latin America   F1=0.5763 Recall=0.4474 ROC-AUC=0.7714 PR-AUC=0.7275
+  training Exp21-config ...
+    AGGREGATE       F1=0.7385 Recall=0.7262 ROC-AUC=0.8195 PR-AUC=0.8321
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6389 PR-AUC=0.5806
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7763 PR-AUC=0.7754
+    South Asia      F1=0.6479 Recall=0.6053 ROC-AUC=0.7949 PR-AUC=0.7338
+    Latin America   F1=0.5574 Recall=0.4474 ROC-AUC=0.7848 PR-AUC=0.7321
+
+============================================================
+SEED 314
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7511 Recall=0.7452 ROC-AUC=0.8324 PR-AUC=0.8430
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.9074 PR-AUC=0.7867
+    Southeast Asia  F1=0.6562 Recall=0.6562 ROC-AUC=0.7493 PR-AUC=0.7466
+    South Asia      F1=0.6087 Recall=0.5526 ROC-AUC=0.8237 PR-AUC=0.7551
+    Latin America   F1=0.6032 Recall=0.5000 ROC-AUC=0.7836 PR-AUC=0.7410
+  training Exp19-config ...
+    AGGREGATE       F1=0.7466 Recall=0.7311 ROC-AUC=0.8296 PR-AUC=0.8415
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8796 PR-AUC=0.7437
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7678 PR-AUC=0.7598
+    South Asia      F1=0.6154 Recall=0.5263 ROC-AUC=0.8053 PR-AUC=0.7383
+    Latin America   F1=0.6269 Recall=0.5526 ROC-AUC=0.7502 PR-AUC=0.7132
+  training Exp20-config ...
+    AGGREGATE       F1=0.7451 Recall=0.7387 ROC-AUC=0.8306 PR-AUC=0.8409
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8333 PR-AUC=0.7593
+    Southeast Asia  F1=0.6562 Recall=0.6562 ROC-AUC=0.7493 PR-AUC=0.7464
+    South Asia      F1=0.6479 Recall=0.6053 ROC-AUC=0.8403 PR-AUC=0.7705
+    Latin America   F1=0.6154 Recall=0.5263 ROC-AUC=0.8020 PR-AUC=0.7600
+  training Exp21-config ...
+    AGGREGATE       F1=0.7373 Recall=0.7057 ROC-AUC=0.8218 PR-AUC=0.8345
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6944 PR-AUC=0.6234
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7635 PR-AUC=0.7602
+    South Asia      F1=0.6250 Recall=0.5263 ROC-AUC=0.7862 PR-AUC=0.7276
+    Latin America   F1=0.5091 Recall=0.3684 ROC-AUC=0.7797 PR-AUC=0.7274
+
+============================================================
+SEED 2718
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7427 Recall=0.7421 ROC-AUC=0.8240 PR-AUC=0.8348
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7222 PR-AUC=0.5678
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7749 PR-AUC=0.7746
+    South Asia      F1=0.6000 Recall=0.5526 ROC-AUC=0.8053 PR-AUC=0.7296
+    Latin America   F1=0.5846 Recall=0.5000 ROC-AUC=0.7742 PR-AUC=0.7282
+  training Exp19-config ...
+    AGGREGATE       F1=0.7405 Recall=0.7178 ROC-AUC=0.8252 PR-AUC=0.8349
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.5833 PR-AUC=0.5847
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7550 PR-AUC=0.7570
+    South Asia      F1=0.6111 Recall=0.5789 ROC-AUC=0.7924 PR-AUC=0.7167
+    Latin America   F1=0.5806 Recall=0.4737 ROC-AUC=0.7706 PR-AUC=0.7210
+  training Exp20-config ...
+    AGGREGATE       F1=0.7332 Recall=0.7125 ROC-AUC=0.8217 PR-AUC=0.8327
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7407 PR-AUC=0.5728
+    Southeast Asia  F1=0.6780 Recall=0.6250 ROC-AUC=0.7727 PR-AUC=0.7702
+    South Asia      F1=0.5714 Recall=0.5263 ROC-AUC=0.7945 PR-AUC=0.7191
+    Latin America   F1=0.5000 Recall=0.3684 ROC-AUC=0.7879 PR-AUC=0.7280
+  training Exp21-config ...
+    AGGREGATE       F1=0.7426 Recall=0.7182 ROC-AUC=0.8271 PR-AUC=0.8373
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7593 PR-AUC=0.5741
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7777 PR-AUC=0.7626
+    South Asia      F1=0.6462 Recall=0.5526 ROC-AUC=0.8277 PR-AUC=0.7657
+    Latin America   F1=0.5714 Recall=0.4737 ROC-AUC=0.7773 PR-AUC=0.7311
+
+============================================================
+SEED 31
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7486 Recall=0.7379 ROC-AUC=0.8351 PR-AUC=0.8422
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8611 PR-AUC=0.8079
+    Southeast Asia  F1=0.6154 Recall=0.6250 ROC-AUC=0.7443 PR-AUC=0.7357
+    South Asia      F1=0.6061 Recall=0.5263 ROC-AUC=0.8291 PR-AUC=0.7557
+    Latin America   F1=0.6129 Recall=0.5000 ROC-AUC=0.8052 PR-AUC=0.7698
+  training Exp19-config ...
+    AGGREGATE       F1=0.7221 Recall=0.6730 ROC-AUC=0.8145 PR-AUC=0.8283
+    Africa          F1=0.2500 Recall=0.1667 ROC-AUC=0.6759 PR-AUC=0.5429
+    Southeast Asia  F1=0.5965 Recall=0.5312 ROC-AUC=0.7798 PR-AUC=0.7533
+    South Asia      F1=0.5938 Recall=0.5000 ROC-AUC=0.7985 PR-AUC=0.7390
+    Latin America   F1=0.5172 Recall=0.3947 ROC-AUC=0.7549 PR-AUC=0.7038
+  training Exp20-config ...
+    AGGREGATE       F1=0.7451 Recall=0.7490 ROC-AUC=0.8258 PR-AUC=0.8370
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.7963 PR-AUC=0.7193
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7791 PR-AUC=0.7682
+    South Asia      F1=0.5915 Recall=0.5526 ROC-AUC=0.8107 PR-AUC=0.7357
+    Latin America   F1=0.5806 Recall=0.4737 ROC-AUC=0.7804 PR-AUC=0.7417
+  training Exp21-config ...
+    AGGREGATE       F1=0.7505 Recall=0.7471 ROC-AUC=0.8327 PR-AUC=0.8421
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8241 PR-AUC=0.7176
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7656 PR-AUC=0.7557
+    South Asia      F1=0.6286 Recall=0.5789 ROC-AUC=0.8313 PR-AUC=0.7561
+    Latin America   F1=0.6230 Recall=0.5000 ROC-AUC=0.7832 PR-AUC=0.7569
+
+======================================================================
+SUMMARY: mean +/- std across 10 seeds
+======================================================================
+
+--- AGGREGATE ---
+  Exp13-config    F1=0.7451+/-0.0058  Recall=0.7370+/-0.0164  ROC-AUC=0.8290+/-0.0086  PR-AUC=0.8387+/-0.0066
+  Exp19-config    F1=0.7395+/-0.0071  Recall=0.7244+/-0.0268  ROC-AUC=0.8229+/-0.0078  PR-AUC=0.8343+/-0.0064
+  Exp20-config    F1=0.7410+/-0.0062  Recall=0.7371+/-0.0232  ROC-AUC=0.8247+/-0.0050  PR-AUC=0.8349+/-0.0043
+  Exp21-config    F1=0.7434+/-0.0051  Recall=0.7347+/-0.0191  ROC-AUC=0.8261+/-0.0079  PR-AUC=0.8368+/-0.0059
+
+--- Africa ---
+  Exp13-config    F1=0.5489+/-0.1237  Recall=0.4667+/-0.1315  ROC-AUC=0.8056+/-0.0881  PR-AUC=0.7011+/-0.1093
+  Exp19-config    F1=0.4663+/-0.0947  Recall=0.3667+/-0.1054  ROC-AUC=0.7194+/-0.1097  PR-AUC=0.6262+/-0.0787
+  Exp20-config    F1=0.4681+/-0.0810  Recall=0.4000+/-0.0861  ROC-AUC=0.7620+/-0.0757  PR-AUC=0.6303+/-0.0854
+  Exp21-config    F1=0.5034+/-0.0914  Recall=0.4167+/-0.1179  ROC-AUC=0.7565+/-0.0939  PR-AUC=0.6327+/-0.0608
+
+--- Southeast Asia ---
+  Exp13-config    F1=0.6449+/-0.0259  Recall=0.6219+/-0.0374  ROC-AUC=0.7560+/-0.0148  PR-AUC=0.7478+/-0.0140
+  Exp19-config    F1=0.6640+/-0.0269  Recall=0.6312+/-0.0384  ROC-AUC=0.7678+/-0.0127  PR-AUC=0.7583+/-0.0090
+  Exp20-config    F1=0.6633+/-0.0198  Recall=0.6312+/-0.0287  ROC-AUC=0.7725+/-0.0106  PR-AUC=0.7596+/-0.0089
+  Exp21-config    F1=0.6473+/-0.0270  Recall=0.6125+/-0.0422  ROC-AUC=0.7693+/-0.0111  PR-AUC=0.7628+/-0.0052
+
+--- South Asia ---
+  Exp13-config    F1=0.5962+/-0.0250  Recall=0.5342+/-0.0305  ROC-AUC=0.8123+/-0.0213  PR-AUC=0.7426+/-0.0208
+  Exp19-config    F1=0.6186+/-0.0247  Recall=0.5526+/-0.0328  ROC-AUC=0.8019+/-0.0190  PR-AUC=0.7381+/-0.0229
+  Exp20-config    F1=0.6131+/-0.0437  Recall=0.5632+/-0.0433  ROC-AUC=0.8063+/-0.0191  PR-AUC=0.7397+/-0.0204
+  Exp21-config    F1=0.6268+/-0.0198  Recall=0.5605+/-0.0250  ROC-AUC=0.8044+/-0.0216  PR-AUC=0.7417+/-0.0226
+
+--- Latin America ---
+  Exp13-config    F1=0.5763+/-0.0577  Recall=0.4789+/-0.0710  ROC-AUC=0.7941+/-0.0267  PR-AUC=0.7496+/-0.0278
+  Exp19-config    F1=0.5793+/-0.0355  Recall=0.4789+/-0.0508  ROC-AUC=0.7805+/-0.0193  PR-AUC=0.7322+/-0.0240
+  Exp20-config    F1=0.5547+/-0.0459  Recall=0.4368+/-0.0610  ROC-AUC=0.7819+/-0.0100  PR-AUC=0.7364+/-0.0150
+  Exp21-config    F1=0.5910+/-0.0542  Recall=0.4816+/-0.0583  ROC-AUC=0.7898+/-0.0185  PR-AUC=0.7453+/-0.0275
+
+Saved: multiseed_13_19_20_21_batch1.csv
+--- multiseed_check_13_19_20_21.py (20 seeds, batch 2) ---
+
+============================================================
+SEED 2
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7406 Recall=0.7178 ROC-AUC=0.8235 PR-AUC=0.8343
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6852 PR-AUC=0.5984
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7827 PR-AUC=0.7668
+    South Asia      F1=0.6364 Recall=0.5526 ROC-AUC=0.7992 PR-AUC=0.7445
+    Latin America   F1=0.5172 Recall=0.3947 ROC-AUC=0.7706 PR-AUC=0.7159
+  training Exp19-config ...
+    AGGREGATE       F1=0.7361 Recall=0.7083 ROC-AUC=0.8212 PR-AUC=0.8311
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.6296 PR-AUC=0.6010
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7869 PR-AUC=0.7652
+    South Asia      F1=0.6364 Recall=0.5526 ROC-AUC=0.7934 PR-AUC=0.7393
+    Latin America   F1=0.5085 Recall=0.3947 ROC-AUC=0.7730 PR-AUC=0.7233
+  training Exp20-config ...
+    AGGREGATE       F1=0.7344 Recall=0.7205 ROC-AUC=0.8169 PR-AUC=0.8315
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7315 PR-AUC=0.5984
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7784 PR-AUC=0.7574
+    South Asia      F1=0.6286 Recall=0.5789 ROC-AUC=0.7891 PR-AUC=0.7223
+    Latin America   F1=0.4912 Recall=0.3684 ROC-AUC=0.7863 PR-AUC=0.7308
+  training Exp21-config ...
+    AGGREGATE       F1=0.7333 Recall=0.7133 ROC-AUC=0.8172 PR-AUC=0.8307
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6944 PR-AUC=0.6234
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7678 PR-AUC=0.7511
+    South Asia      F1=0.6129 Recall=0.5000 ROC-AUC=0.7906 PR-AUC=0.7310
+    Latin America   F1=0.5172 Recall=0.3947 ROC-AUC=0.7840 PR-AUC=0.7249
+
+============================================================
+SEED 3
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7440 Recall=0.7319 ROC-AUC=0.8292 PR-AUC=0.8365
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7870 PR-AUC=0.6340
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7642 PR-AUC=0.7648
+    South Asia      F1=0.6176 Recall=0.5526 ROC-AUC=0.8190 PR-AUC=0.7556
+    Latin America   F1=0.6032 Recall=0.5000 ROC-AUC=0.7918 PR-AUC=0.7539
+  training Exp19-config ...
+    AGGREGATE       F1=0.7261 Recall=0.6912 ROC-AUC=0.8166 PR-AUC=0.8286
+    Africa          F1=0.2500 Recall=0.1667 ROC-AUC=0.5926 PR-AUC=0.4760
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7912 PR-AUC=0.7766
+    South Asia      F1=0.6032 Recall=0.5000 ROC-AUC=0.8050 PR-AUC=0.7528
+    Latin America   F1=0.5625 Recall=0.4737 ROC-AUC=0.7502 PR-AUC=0.7082
+  training Exp20-config ...
+    AGGREGATE       F1=0.7395 Recall=0.7209 ROC-AUC=0.8266 PR-AUC=0.8351
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7778 PR-AUC=0.5776
+    Southeast Asia  F1=0.6780 Recall=0.6250 ROC-AUC=0.7536 PR-AUC=0.7563
+    South Asia      F1=0.6471 Recall=0.5789 ROC-AUC=0.8183 PR-AUC=0.7540
+    Latin America   F1=0.5263 Recall=0.3947 ROC-AUC=0.7671 PR-AUC=0.7141
+  training Exp21-config ...
+    AGGREGATE       F1=0.7295 Recall=0.7011 ROC-AUC=0.8161 PR-AUC=0.8287
+    Africa          F1=0.2222 Recall=0.1667 ROC-AUC=0.5556 PR-AUC=0.4621
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7947 PR-AUC=0.7763
+    South Asia      F1=0.6250 Recall=0.5263 ROC-AUC=0.8064 PR-AUC=0.7520
+    Latin America   F1=0.5574 Recall=0.4474 ROC-AUC=0.7459 PR-AUC=0.7029
+
+============================================================
+SEED 4
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7464 Recall=0.7064 ROC-AUC=0.8382 PR-AUC=0.8467
+    Africa          F1=0.7273 Recall=0.6667 ROC-AUC=0.9167 PR-AUC=0.8626
+    Southeast Asia  F1=0.5517 Recall=0.5000 ROC-AUC=0.7379 PR-AUC=0.7314
+    South Asia      F1=0.5846 Recall=0.5000 ROC-AUC=0.8248 PR-AUC=0.7623
+    Latin America   F1=0.6667 Recall=0.5263 ROC-AUC=0.8103 PR-AUC=0.7763
+  training Exp19-config ...
+    AGGREGATE       F1=0.7339 Recall=0.7064 ROC-AUC=0.8196 PR-AUC=0.8312
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6296 PR-AUC=0.5666
+    Southeast Asia  F1=0.6316 Recall=0.5625 ROC-AUC=0.7734 PR-AUC=0.7610
+    South Asia      F1=0.5625 Recall=0.4737 ROC-AUC=0.7870 PR-AUC=0.7130
+    Latin America   F1=0.4828 Recall=0.3684 ROC-AUC=0.7899 PR-AUC=0.7310
+  training Exp20-config ...
+    AGGREGATE       F1=0.7317 Recall=0.7140 ROC-AUC=0.8184 PR-AUC=0.8301
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7222 PR-AUC=0.5201
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7599 PR-AUC=0.7606
+    South Asia      F1=0.6176 Recall=0.5526 ROC-AUC=0.7844 PR-AUC=0.7210
+    Latin America   F1=0.4912 Recall=0.3684 ROC-AUC=0.7274 PR-AUC=0.6989
+  training Exp21-config ...
+    AGGREGATE       F1=0.7409 Recall=0.7079 ROC-AUC=0.8331 PR-AUC=0.8405
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8333 PR-AUC=0.7292
+    Southeast Asia  F1=0.6129 Recall=0.5938 ROC-AUC=0.7514 PR-AUC=0.7391
+    South Asia      F1=0.6269 Recall=0.5526 ROC-AUC=0.8378 PR-AUC=0.7739
+    Latin America   F1=0.6333 Recall=0.5000 ROC-AUC=0.8166 PR-AUC=0.7783
+
+============================================================
+SEED 5
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7435 Recall=0.7622 ROC-AUC=0.8209 PR-AUC=0.8333
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7593 PR-AUC=0.6447
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7621 PR-AUC=0.7465
+    South Asia      F1=0.6667 Recall=0.6053 ROC-AUC=0.7906 PR-AUC=0.7344
+    Latin America   F1=0.5797 Recall=0.5263 ROC-AUC=0.7643 PR-AUC=0.7113
+  training Exp19-config ...
+    AGGREGATE       F1=0.7399 Recall=0.7315 ROC-AUC=0.8202 PR-AUC=0.8314
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.6389 PR-AUC=0.6003
+    Southeast Asia  F1=0.6765 Recall=0.7188 ROC-AUC=0.7649 PR-AUC=0.7415
+    South Asia      F1=0.6197 Recall=0.5789 ROC-AUC=0.7981 PR-AUC=0.7368
+    Latin America   F1=0.5634 Recall=0.5263 ROC-AUC=0.7675 PR-AUC=0.7110
+  training Exp20-config ...
+    AGGREGATE       F1=0.7408 Recall=0.7334 ROC-AUC=0.8299 PR-AUC=0.8377
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8056 PR-AUC=0.6327
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7685 PR-AUC=0.7646
+    South Asia      F1=0.6087 Recall=0.5526 ROC-AUC=0.8302 PR-AUC=0.7619
+    Latin America   F1=0.5667 Recall=0.4474 ROC-AUC=0.8079 PR-AUC=0.7572
+  training Exp21-config ...
+    AGGREGATE       F1=0.7419 Recall=0.7129 ROC-AUC=0.8316 PR-AUC=0.8419
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8796 PR-AUC=0.7437
+    Southeast Asia  F1=0.5862 Recall=0.5312 ROC-AUC=0.7656 PR-AUC=0.7461
+    South Asia      F1=0.6032 Recall=0.5000 ROC-AUC=0.8158 PR-AUC=0.7509
+    Latin America   F1=0.5965 Recall=0.4474 ROC-AUC=0.7753 PR-AUC=0.7510
+
+============================================================
+SEED 6
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7423 Recall=0.7243 ROC-AUC=0.8247 PR-AUC=0.8364
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.7778 PR-AUC=0.6545
+    Southeast Asia  F1=0.5818 Recall=0.5000 ROC-AUC=0.7507 PR-AUC=0.7421
+    South Asia      F1=0.6250 Recall=0.5263 ROC-AUC=0.7942 PR-AUC=0.7335
+    Latin America   F1=0.5574 Recall=0.4474 ROC-AUC=0.7565 PR-AUC=0.7228
+  training Exp19-config ...
+    AGGREGATE       F1=0.7400 Recall=0.6992 ROC-AUC=0.8272 PR-AUC=0.8386
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8611 PR-AUC=0.7202
+    Southeast Asia  F1=0.5965 Recall=0.5312 ROC-AUC=0.7486 PR-AUC=0.7486
+    South Asia      F1=0.5625 Recall=0.4737 ROC-AUC=0.7855 PR-AUC=0.7205
+    Latin America   F1=0.5806 Recall=0.4737 ROC-AUC=0.7588 PR-AUC=0.7385
+  training Exp20-config ...
+    AGGREGATE       F1=0.7294 Recall=0.7144 ROC-AUC=0.8071 PR-AUC=0.8219
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7130 PR-AUC=0.5310
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7827 PR-AUC=0.7506
+    South Asia      F1=0.6301 Recall=0.6053 ROC-AUC=0.7696 PR-AUC=0.7317
+    Latin America   F1=0.5517 Recall=0.4211 ROC-AUC=0.7573 PR-AUC=0.7226
+  training Exp21-config ...
+    AGGREGATE       F1=0.7357 Recall=0.7003 ROC-AUC=0.8228 PR-AUC=0.8350
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.7130 PR-AUC=0.6338
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7599 PR-AUC=0.7456
+    South Asia      F1=0.5714 Recall=0.4737 ROC-AUC=0.7988 PR-AUC=0.7337
+    Latin America   F1=0.5357 Recall=0.3947 ROC-AUC=0.7726 PR-AUC=0.7264
+
+============================================================
+SEED 8
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7352 Recall=0.7011 ROC-AUC=0.8175 PR-AUC=0.8315
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.7500 PR-AUC=0.6401
+    Southeast Asia  F1=0.6333 Recall=0.5938 ROC-AUC=0.7834 PR-AUC=0.7564
+    South Asia      F1=0.6567 Recall=0.5789 ROC-AUC=0.7851 PR-AUC=0.7348
+    Latin America   F1=0.5574 Recall=0.4474 ROC-AUC=0.7510 PR-AUC=0.7151
+  training Exp19-config ...
+    AGGREGATE       F1=0.7357 Recall=0.7136 ROC-AUC=0.8162 PR-AUC=0.8297
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6852 PR-AUC=0.5984
+    Southeast Asia  F1=0.6875 Recall=0.6875 ROC-AUC=0.7919 PR-AUC=0.7623
+    South Asia      F1=0.6286 Recall=0.5789 ROC-AUC=0.7833 PR-AUC=0.7300
+    Latin America   F1=0.5484 Recall=0.4474 ROC-AUC=0.7675 PR-AUC=0.7176
+  training Exp20-config ...
+    AGGREGATE       F1=0.7387 Recall=0.7269 ROC-AUC=0.8278 PR-AUC=0.8379
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.9167 PR-AUC=0.8259
+    Southeast Asia  F1=0.5902 Recall=0.5625 ROC-AUC=0.7351 PR-AUC=0.7346
+    South Asia      F1=0.5672 Recall=0.5000 ROC-AUC=0.7956 PR-AUC=0.7234
+    Latin America   F1=0.6061 Recall=0.5263 ROC-AUC=0.7636 PR-AUC=0.7378
+  training Exp21-config ...
+    AGGREGATE       F1=0.7341 Recall=0.7072 ROC-AUC=0.8175 PR-AUC=0.8312
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.7037 PR-AUC=0.6256
+    Southeast Asia  F1=0.7077 Recall=0.7188 ROC-AUC=0.7869 PR-AUC=0.7607
+    South Asia      F1=0.6479 Recall=0.6053 ROC-AUC=0.7769 PR-AUC=0.7247
+    Latin America   F1=0.5574 Recall=0.4474 ROC-AUC=0.7612 PR-AUC=0.7194
+
+============================================================
+SEED 9
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7432 Recall=0.7243 ROC-AUC=0.8358 PR-AUC=0.8434
+    Africa          F1=0.7273 Recall=0.6667 ROC-AUC=0.8426 PR-AUC=0.7633
+    Southeast Asia  F1=0.6000 Recall=0.6562 ROC-AUC=0.7472 PR-AUC=0.7391
+    South Asia      F1=0.6061 Recall=0.5263 ROC-AUC=0.8378 PR-AUC=0.7769
+    Latin America   F1=0.6250 Recall=0.5263 ROC-AUC=0.8248 PR-AUC=0.7857
+  training Exp19-config ...
+    AGGREGATE       F1=0.7477 Recall=0.7372 ROC-AUC=0.8298 PR-AUC=0.8386
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7778 PR-AUC=0.6463
+    Southeast Asia  F1=0.6207 Recall=0.5625 ROC-AUC=0.7678 PR-AUC=0.7411
+    South Asia      F1=0.6364 Recall=0.5526 ROC-AUC=0.8280 PR-AUC=0.7661
+    Latin America   F1=0.5938 Recall=0.5000 ROC-AUC=0.7973 PR-AUC=0.7380
+  training Exp20-config ...
+    AGGREGATE       F1=0.7404 Recall=0.7300 ROC-AUC=0.8209 PR-AUC=0.8312
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7870 PR-AUC=0.6670
+    Southeast Asia  F1=0.6885 Recall=0.6562 ROC-AUC=0.7656 PR-AUC=0.7537
+    South Asia      F1=0.6087 Recall=0.5526 ROC-AUC=0.8003 PR-AUC=0.7226
+    Latin America   F1=0.4906 Recall=0.3421 ROC-AUC=0.7903 PR-AUC=0.7356
+  training Exp21-config ...
+    AGGREGATE       F1=0.7445 Recall=0.7167 ROC-AUC=0.8334 PR-AUC=0.8428
+    Africa          F1=0.7273 Recall=0.6667 ROC-AUC=0.8704 PR-AUC=0.7557
+    Southeast Asia  F1=0.5667 Recall=0.5312 ROC-AUC=0.7550 PR-AUC=0.7422
+    South Asia      F1=0.5588 Recall=0.5000 ROC-AUC=0.8089 PR-AUC=0.7324
+    Latin America   F1=0.6557 Recall=0.5263 ROC-AUC=0.7969 PR-AUC=0.7699
+
+============================================================
+SEED 10
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7345 Recall=0.7144 ROC-AUC=0.8146 PR-AUC=0.8277
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7407 PR-AUC=0.5641
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7543 PR-AUC=0.7257
+    South Asia      F1=0.5758 Recall=0.5000 ROC-AUC=0.7823 PR-AUC=0.6994
+    Latin America   F1=0.5424 Recall=0.4211 ROC-AUC=0.7785 PR-AUC=0.7174
+  training Exp19-config ...
+    AGGREGATE       F1=0.7375 Recall=0.7182 ROC-AUC=0.8168 PR-AUC=0.8286
+    Africa          F1=0.2857 Recall=0.1667 ROC-AUC=0.7037 PR-AUC=0.6256
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7550 PR-AUC=0.7204
+    South Asia      F1=0.5970 Recall=0.5263 ROC-AUC=0.7776 PR-AUC=0.6992
+    Latin America   F1=0.5172 Recall=0.3947 ROC-AUC=0.7859 PR-AUC=0.7209
+  training Exp20-config ...
+    AGGREGATE       F1=0.7500 Recall=0.7353 ROC-AUC=0.8362 PR-AUC=0.8458
+    Africa          F1=0.5455 Recall=0.5000 ROC-AUC=0.8241 PR-AUC=0.7133
+    Southeast Asia  F1=0.6667 Recall=0.6562 ROC-AUC=0.7571 PR-AUC=0.7533
+    South Asia      F1=0.6471 Recall=0.5789 ROC-AUC=0.8252 PR-AUC=0.7779
+    Latin America   F1=0.6462 Recall=0.5526 ROC-AUC=0.8189 PR-AUC=0.7839
+  training Exp21-config ...
+    AGGREGATE       F1=0.7367 Recall=0.7209 ROC-AUC=0.8183 PR-AUC=0.8303
+    Africa          F1=0.5000 Recall=0.3333 ROC-AUC=0.6944 PR-AUC=0.6234
+    Southeast Asia  F1=0.6885 Recall=0.6562 ROC-AUC=0.7656 PR-AUC=0.7231
+    South Asia      F1=0.5758 Recall=0.5000 ROC-AUC=0.7862 PR-AUC=0.7053
+    Latin America   F1=0.5424 Recall=0.4211 ROC-AUC=0.7879 PR-AUC=0.7231
+
+============================================================
+SEED 11
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7385 Recall=0.7277 ROC-AUC=0.8192 PR-AUC=0.8296
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.6574 PR-AUC=0.5216
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7940 PR-AUC=0.7787
+    South Asia      F1=0.5161 Recall=0.4211 ROC-AUC=0.7837 PR-AUC=0.7161
+    Latin America   F1=0.4828 Recall=0.3684 ROC-AUC=0.7981 PR-AUC=0.7367
+  training Exp19-config ...
+    AGGREGATE       F1=0.7351 Recall=0.6988 ROC-AUC=0.8268 PR-AUC=0.8367
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7222 PR-AUC=0.6306
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7685 PR-AUC=0.7607
+    South Asia      F1=0.5672 Recall=0.5000 ROC-AUC=0.7924 PR-AUC=0.7236
+    Latin America   F1=0.5172 Recall=0.3947 ROC-AUC=0.7718 PR-AUC=0.7211
+  training Exp20-config ...
+    AGGREGATE       F1=0.7362 Recall=0.7026 ROC-AUC=0.8310 PR-AUC=0.8412
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7222 PR-AUC=0.6302
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7628 PR-AUC=0.7553
+    South Asia      F1=0.6061 Recall=0.5263 ROC-AUC=0.8331 PR-AUC=0.7647
+    Latin America   F1=0.5667 Recall=0.4474 ROC-AUC=0.7726 PR-AUC=0.7435
+  training Exp21-config ...
+    AGGREGATE       F1=0.7331 Recall=0.6939 ROC-AUC=0.8241 PR-AUC=0.8365
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6852 PR-AUC=0.5935
+    Southeast Asia  F1=0.6102 Recall=0.5625 ROC-AUC=0.7940 PR-AUC=0.7750
+    South Asia      F1=0.6129 Recall=0.5000 ROC-AUC=0.7938 PR-AUC=0.7442
+    Latin America   F1=0.5455 Recall=0.3947 ROC-AUC=0.7368 PR-AUC=0.7140
+
+============================================================
+SEED 12
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7296 Recall=0.6924 ROC-AUC=0.8176 PR-AUC=0.8298
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6759 PR-AUC=0.5429
+    Southeast Asia  F1=0.6667 Recall=0.6250 ROC-AUC=0.7621 PR-AUC=0.7409
+    South Asia      F1=0.6154 Recall=0.5263 ROC-AUC=0.8021 PR-AUC=0.7358
+    Latin America   F1=0.4912 Recall=0.3684 ROC-AUC=0.7757 PR-AUC=0.7151
+  training Exp19-config ...
+    AGGREGATE       F1=0.7293 Recall=0.6927 ROC-AUC=0.8181 PR-AUC=0.8307
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6296 PR-AUC=0.5251
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7670 PR-AUC=0.7470
+    South Asia      F1=0.6154 Recall=0.5263 ROC-AUC=0.7967 PR-AUC=0.7404
+    Latin America   F1=0.5484 Recall=0.4474 ROC-AUC=0.7883 PR-AUC=0.7243
+  training Exp20-config ...
+    AGGREGATE       F1=0.7444 Recall=0.7649 ROC-AUC=0.8179 PR-AUC=0.8315
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7315 PR-AUC=0.5595
+    Southeast Asia  F1=0.6984 Recall=0.6875 ROC-AUC=0.7862 PR-AUC=0.7609
+    South Asia      F1=0.6316 Recall=0.6316 ROC-AUC=0.7931 PR-AUC=0.7334
+    Latin America   F1=0.5484 Recall=0.4474 ROC-AUC=0.7439 PR-AUC=0.7038
+  training Exp21-config ...
+    AGGREGATE       F1=0.7329 Recall=0.7383 ROC-AUC=0.8072 PR-AUC=0.8205
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.7315 PR-AUC=0.5911
+    Southeast Asia  F1=0.6333 Recall=0.5938 ROC-AUC=0.7741 PR-AUC=0.7474
+    South Asia      F1=0.6053 Recall=0.6053 ROC-AUC=0.7419 PR-AUC=0.6946
+    Latin America   F1=0.5970 Recall=0.5263 ROC-AUC=0.7526 PR-AUC=0.7100
+
+======================================================================
+SUMMARY: mean +/- std across 10 seeds
+======================================================================
+
+--- AGGREGATE ---
+  Exp13-config    F1=0.7398+/-0.0052  Recall=0.7202+/-0.0193  ROC-AUC=0.8241+/-0.0080  PR-AUC=0.8349+/-0.0061
+  Exp19-config    F1=0.7361+/-0.0059  Recall=0.7097+/-0.0156  ROC-AUC=0.8212+/-0.0049  PR-AUC=0.8325+/-0.0039
+  Exp20-config    F1=0.7385+/-0.0060  Recall=0.7263+/-0.0168  ROC-AUC=0.8233+/-0.0086  PR-AUC=0.8344+/-0.0067
+  Exp21-config    F1=0.7363+/-0.0047  Recall=0.7112+/-0.0125  ROC-AUC=0.8221+/-0.0086  PR-AUC=0.8338+/-0.0069
+
+--- Africa ---
+  Exp13-config    F1=0.5077+/-0.1193  Recall=0.4000+/-0.1405  ROC-AUC=0.7593+/-0.0789  PR-AUC=0.6426+/-0.1032
+  Exp19-config    F1=0.4313+/-0.1020  Recall=0.3167+/-0.0946  ROC-AUC=0.6870+/-0.0824  PR-AUC=0.5990+/-0.0669
+  Exp20-config    F1=0.4580+/-0.0765  Recall=0.3833+/-0.0805  ROC-AUC=0.7731+/-0.0639  PR-AUC=0.6256+/-0.0926
+  Exp21-config    F1=0.4983+/-0.1325  Recall=0.3833+/-0.1372  ROC-AUC=0.7361+/-0.0991  PR-AUC=0.6382+/-0.0876
+
+--- Southeast Asia ---
+  Exp13-config    F1=0.6242+/-0.0361  Recall=0.5844+/-0.0511  ROC-AUC=0.7638+/-0.0179  PR-AUC=0.7492+/-0.0169
+  Exp19-config    F1=0.6500+/-0.0305  Recall=0.6156+/-0.0608  ROC-AUC=0.7715+/-0.0146  PR-AUC=0.7524+/-0.0160
+  Exp20-config    F1=0.6621+/-0.0300  Recall=0.6312+/-0.0355  ROC-AUC=0.7650+/-0.0152  PR-AUC=0.7548+/-0.0082
+  Exp21-config    F1=0.6337+/-0.0442  Recall=0.5969+/-0.0579  ROC-AUC=0.7715+/-0.0156  PR-AUC=0.7507+/-0.0162
+
+--- South Asia ---
+  Exp13-config    F1=0.6100+/-0.0435  Recall=0.5289+/-0.0503  ROC-AUC=0.8019+/-0.0191  PR-AUC=0.7393+/-0.0223
+  Exp19-config    F1=0.6029+/-0.0297  Recall=0.5263+/-0.0392  ROC-AUC=0.7947+/-0.0142  PR-AUC=0.7322+/-0.0194
+  Exp20-config    F1=0.6193+/-0.0236  Recall=0.5658+/-0.0377  ROC-AUC=0.8039+/-0.0215  PR-AUC=0.7413+/-0.0213
+  Exp21-config    F1=0.6040+/-0.0278  Recall=0.5263+/-0.0464  ROC-AUC=0.7957+/-0.0255  PR-AUC=0.7343+/-0.0231
+
+--- Latin America ---
+  Exp13-config    F1=0.5623+/-0.0584  Recall=0.4526+/-0.0642  ROC-AUC=0.7822+/-0.0238  PR-AUC=0.7350+/-0.0275
+  Exp19-config    F1=0.5423+/-0.0349  Recall=0.4421+/-0.0523  ROC-AUC=0.7750+/-0.0150  PR-AUC=0.7234+/-0.0102
+  Exp20-config    F1=0.5485+/-0.0516  Recall=0.4316+/-0.0682  ROC-AUC=0.7735+/-0.0281  PR-AUC=0.7328+/-0.0254
+  Exp21-config    F1=0.5738+/-0.0451  Recall=0.4500+/-0.0518  ROC-AUC=0.7730+/-0.0245  PR-AUC=0.7320+/-0.0256
+
+Saved: multiseed_13_19_20_21_batch2.csv
+=== Experiment 21 + 4-way multiseed finished Mon Oct 12 14:21:19 MPST 2026 ===

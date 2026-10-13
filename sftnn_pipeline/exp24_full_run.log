@@ -1,0 +1,88 @@
+=== Experiment 24 (control check, retry) started Tue Oct 13 10:35:29 MPST 2026 ===
+--- generate_sftnn_stacking_feature.py ---
+  fold 0: trained on 19812, predicted 4954 held-out rows
+  fold 1: trained on 19813, predicted 4953 held-out rows
+  fold 2: trained on 19813, predicted 4953 held-out rows
+  fold 3: trained on 19813, predicted 4953 held-out rows
+  fold 4: trained on 19813, predicted 4953 held-out rows
+
+AUC check -- does the stacking feature itself look sane:
+  train (out-of-fold) AUC: 0.8466
+  val AUC: 0.8471
+  test AUC: 0.8365
+
+Saved to artifacts_exp24/ -- 26 features (was 25, +1: sftnn_stack_prob)
+--- 03_train_xgboost_exp24.py ---
+[I 2026-10-13 10:40:59,682] A new study created in memory with name: no-name-b25a82e5-f2d4-45ae-b46d-797f51c82606
+[I 2026-10-13 10:41:00,733] Trial 0 finished with value: 0.7860844253722994 and parameters: {'max_depth': 6, 'learning_rate': 0.030405325392865647, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:00,896] Trial 1 finished with value: 0.7608540130852578 and parameters: {'max_depth': 6, 'learning_rate': 0.0033572967053517922, 'n_estimators': 600, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:01,014] Trial 2 finished with value: 0.7603001952761448 and parameters: {'max_depth': 4, 'learning_rate': 0.008082071885709252, 'n_estimators': 400, 'subsample': 0.85}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:01,268] Trial 3 finished with value: 0.7834266211056592 and parameters: {'max_depth': 4, 'learning_rate': 0.22413234378101138, 'n_estimators': 200, 'subsample': 0.85}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:01,509] Trial 4 finished with value: 0.7818342992650257 and parameters: {'max_depth': 6, 'learning_rate': 0.1788532743297921, 'n_estimators': 400, 'subsample': 0.85}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:01,678] Trial 5 finished with value: 0.7845640357808366 and parameters: {'max_depth': 4, 'learning_rate': 0.16466293382966793, 'n_estimators': 400, 'subsample': 1.0}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:02,056] Trial 6 finished with value: 0.7773305115038155 and parameters: {'max_depth': 8, 'learning_rate': 0.0076510536667541975, 'n_estimators': 400, 'subsample': 1.0}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:02,320] Trial 7 finished with value: 0.7826260187416618 and parameters: {'max_depth': 4, 'learning_rate': 0.10471209213501693, 'n_estimators': 600, 'subsample': 0.85}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:02,511] Trial 8 finished with value: 0.7590765313811877 and parameters: {'max_depth': 4, 'learning_rate': 0.0014369502768990666, 'n_estimators': 600, 'subsample': 0.85}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:03,517] Trial 9 finished with value: 0.7834298874054734 and parameters: {'max_depth': 8, 'learning_rate': 0.024566974547738343, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:04,334] Trial 10 finished with value: 0.7849714732470614 and parameters: {'max_depth': 6, 'learning_rate': 0.04098546361964735, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:05,036] Trial 11 finished with value: 0.7832364495622581 and parameters: {'max_depth': 6, 'learning_rate': 0.04107349420082379, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:05,568] Trial 12 finished with value: 0.781511453569379 and parameters: {'max_depth': 6, 'learning_rate': 0.03853179393721044, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:05,792] Trial 13 finished with value: 0.7754577546049115 and parameters: {'max_depth': 6, 'learning_rate': 0.01666478939250108, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:06,189] Trial 14 finished with value: 0.7810605566462945 and parameters: {'max_depth': 6, 'learning_rate': 0.061289014382599795, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:06,382] Trial 15 finished with value: 0.7705023312557896 and parameters: {'max_depth': 6, 'learning_rate': 0.010302834190011413, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:06,968] Trial 16 finished with value: 0.7855046816038426 and parameters: {'max_depth': 8, 'learning_rate': 0.07342232892396496, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7860844253722994.
+[I 2026-10-13 10:41:07,696] Trial 17 finished with value: 0.7863251388052864 and parameters: {'max_depth': 8, 'learning_rate': 0.08357324453136267, 'n_estimators': 200, 'subsample': 1.0}. Best is trial 17 with value: 0.7863251388052864.
+[I 2026-10-13 10:41:08,361] Trial 18 finished with value: 0.7849437608129752 and parameters: {'max_depth': 8, 'learning_rate': 0.09329832473077511, 'n_estimators': 200, 'subsample': 1.0}. Best is trial 17 with value: 0.7863251388052864.
+[I 2026-10-13 10:41:09,292] Trial 19 finished with value: 0.780745222922414 and parameters: {'max_depth': 8, 'learning_rate': 0.018684779234621703, 'n_estimators': 600, 'subsample': 1.0}. Best is trial 17 with value: 0.7863251388052864.
+
+Best val composite score: 0.7863
+Best params: {'max_depth': 8, 'learning_rate': 0.08357324453136267, 'n_estimators': 200, 'subsample': 1.0}
+Saved trained XGBoost to artifacts_exp24/xgboost_model.json
+--- multiseed_check_exp24.py ---
+seed 1 done
+seed 7 done
+seed 123 done
+seed 2024 done
+seed 777 done
+seed 999 done
+seed 55 done
+seed 314 done
+seed 2718 done
+seed 31 done
+seed 2 done
+seed 3 done
+seed 4 done
+seed 5 done
+seed 6 done
+seed 8 done
+seed 9 done
+seed 10 done
+seed 11 done
+seed 12 done
+
+======================================================================
+SUMMARY: mean +/- std across 20 seeds
+======================================================================
+
+--- AGGREGATE ---
+  XGBoost-plain             Accuracy=0.7666+/-0.0012  Precision=0.7996+/-0.0020  Recall=0.7067+/-0.0015  F1=0.7503+/-0.0012  ROC-AUC=0.8440+/-0.0004  PR-AUC=0.8558+/-0.0006
+  XGBoost+SFTNN-feature     Accuracy=0.7585+/-0.0000  Precision=0.7761+/-0.0000  Recall=0.7212+/-0.0000  F1=0.7476+/-0.0000  ROC-AUC=0.8418+/-0.0000  PR-AUC=0.8517+/-0.0000
+
+--- Africa ---
+  XGBoost-plain             Accuracy=0.8604+/-0.0204  Precision=0.9125+/-0.1223  Recall=0.5000+/-0.0000  F1=0.6433+/-0.0326  ROC-AUC=0.8403+/-0.0104  PR-AUC=0.7679+/-0.0123
+  XGBoost+SFTNN-feature     Accuracy=0.8750+/-0.0000  Precision=1.0000+/-0.0000  Recall=0.5000+/-0.0000  F1=0.6667+/-0.0000  ROC-AUC=0.8333+/-0.0000  PR-AUC=0.7679+/-0.0000
+
+--- Southeast Asia ---
+  XGBoost-plain             Accuracy=0.7382+/-0.0059  Precision=0.7490+/-0.0090  Recall=0.5687+/-0.0128  F1=0.6465+/-0.0095  ROC-AUC=0.7775+/-0.0038  PR-AUC=0.7695+/-0.0036
+  XGBoost+SFTNN-feature     Accuracy=0.7105+/-0.0000  Precision=0.6471+/-0.0000  Recall=0.6875+/-0.0000  F1=0.6667+/-0.0000  ROC-AUC=0.7763+/-0.0000  PR-AUC=0.7768+/-0.0000
+
+--- South Asia ---
+  XGBoost-plain             Accuracy=0.8023+/-0.0054  Precision=0.8546+/-0.0170  Recall=0.5092+/-0.0129  F1=0.6380+/-0.0110  ROC-AUC=0.8290+/-0.0043  PR-AUC=0.7734+/-0.0043
+  XGBoost+SFTNN-feature     Accuracy=0.7838+/-0.0000  Precision=0.7917+/-0.0000  Recall=0.5000+/-0.0000  F1=0.6129+/-0.0000  ROC-AUC=0.8466+/-0.0000  PR-AUC=0.7850+/-0.0000
+
+--- Latin America ---
+  XGBoost-plain             Accuracy=0.8052+/-0.0136  Precision=0.8282+/-0.0370  Recall=0.5842+/-0.0183  F1=0.6847+/-0.0198  ROC-AUC=0.8646+/-0.0047  PR-AUC=0.8385+/-0.0041
+  XGBoost+SFTNN-feature     Accuracy=0.7905+/-0.0000  Precision=0.8077+/-0.0000  Recall=0.5526+/-0.0000  F1=0.6562+/-0.0000  ROC-AUC=0.8610+/-0.0000  PR-AUC=0.8133+/-0.0000
+
+Saved: multiseed_exp24_raw.csv
+=== Experiment 24 finished Tue Oct 13 10:42:10 MPST 2026 ===

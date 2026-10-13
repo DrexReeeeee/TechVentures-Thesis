@@ -1,0 +1,12 @@
+{
+  "lr": 0.0026607728404196567,
+  "dropout": 0.1,
+  "weight_decay": 0.0001,
+  "hidden_dim": 128,
+  "n_layers": 2,
+  "embed_dim": 16,
+  "shrink_lambda": 11.45572832909178,
+  "lambda_americas": 1.8376066277554692,
+  "lambda_asia_pacific": 15.300129851419147,
+  "lambda_europe_africa": 4.440509924085892
+}
