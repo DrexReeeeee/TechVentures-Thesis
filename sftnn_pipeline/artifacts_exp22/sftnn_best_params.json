@@ -1,0 +1,9 @@
+{
+  "lr": 0.009900949744322816,
+  "dropout": 0.1,
+  "weight_decay": 0.0001,
+  "hidden_dim": 64,
+  "n_layers": 3,
+  "embed_dim": 8,
+  "shrink_lambda": 5.03680173520757
+}

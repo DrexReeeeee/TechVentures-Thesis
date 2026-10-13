@@ -1,0 +1,12 @@
+{
+  "description": "Decision threshold for the final locked model (artifacts_exp23/sftnn_model.pt). Apply this threshold to predictions for East Asia, South Asia, and Southeast Asia. Use 0.5 for all other regions.",
+  "asia_pacific_regions": [
+    "East Asia",
+    "South Asia",
+    "Southeast Asia"
+  ],
+  "asia_pacific_threshold": 0.4600000000000001,
+  "default_threshold": 0.5,
+  "fit_on": "validation split only (never test) -- same leakage discipline as calibration elsewhere in this study",
+  "validation_f1_at_threshold": 0.6990291262135923
+}

@@ -1,0 +1,276 @@
+=== Experiment 18 RESUME (SFTNN onward) started Mon Oct 12 09:43:54 MPST 2026 ===
+--- 05_train_sftnn_exp17.py (weight_power=0.25) ---
+[I 2026-10-12 09:44:10,641] A new study created in memory with name: no-name-3f1d4c73-30b0-479a-8b3e-32957ee82780
+[I 2026-10-12 09:44:47,567] Trial 0 finished with value: 0.7570392936092961 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 2.03664420268309, 'cluster_shrink_lambda': 2.0492680115417348}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:45:20,305] Trial 1 finished with value: 0.7505036361461526 and parameters: {'lr': 0.0004059611610484307, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 10.769622478263129, 'cluster_shrink_lambda': 1.948567125127257}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:45:59,440] Trial 2 finished with value: 0.7447226617126452 and parameters: {'lr': 0.00013492834268013249, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 3.3852267834519774, 'cluster_shrink_lambda': 7.648565112369945}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:46:29,635] Trial 3 finished with value: 0.7540701530715015 and parameters: {'lr': 0.0012399967836846098, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 25.58586885593424, 'cluster_shrink_lambda': 4.037506188440754}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:47:43,477] Trial 4 finished with value: 0.7560241594529796 and parameters: {'lr': 0.0003646439558980723, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 4.064644058668375, 'cluster_shrink_lambda': 1.5734685129393668}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:48:08,223] Trial 5 finished with value: 0.7555860341632827 and parameters: {'lr': 0.005323617594751502, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 20.41033406525705, 'cluster_shrink_lambda': 6.901506581791921}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:49:20,982] Trial 6 finished with value: 0.7830052902702171 and parameters: {'lr': 0.0011103647313054626, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.106554858581908, 'cluster_shrink_lambda': 1.8789279685460507}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:49:58,255] Trial 7 finished with value: 0.7524402713793785 and parameters: {'lr': 0.007234279845665418, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 24.534801599183357, 'cluster_shrink_lambda': 28.99715852166588}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:50:53,474] Trial 8 finished with value: 0.7440155993977499 and parameters: {'lr': 0.00010325337616482048, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 6.995363653959079, 'cluster_shrink_lambda': 3.2447648098898547}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:51:28,534] Trial 9 finished with value: 0.7448302294939868 and parameters: {'lr': 0.00037126241790405324, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.5336058850767755, 'cluster_shrink_lambda': 17.26703355444434}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:52:55,018] Trial 10 finished with value: 0.782194321394096 and parameters: {'lr': 0.002185362633116951, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0629065830612703, 'cluster_shrink_lambda': 1.0657016278742406}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:54:17,706] Trial 11 finished with value: 0.7941528917017466 and parameters: {'lr': 0.0023660620781758134, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0755483741778042, 'cluster_shrink_lambda': 1.044224584290679}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:55:38,552] Trial 12 finished with value: 0.7821326942878334 and parameters: {'lr': 0.0023976227274240727, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.084520880139058, 'cluster_shrink_lambda': 1.1757380011162268}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:56:56,947] Trial 13 finished with value: 0.7806447093473092 and parameters: {'lr': 0.0012001629444458144, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.6943066963865112, 'cluster_shrink_lambda': 2.990172674995498}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:57:30,994] Trial 14 finished with value: 0.7683330612351673 and parameters: {'lr': 0.0031509778883824944, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 5.607265594584775, 'cluster_shrink_lambda': 1.006663593142578}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:59:11,699] Trial 15 finished with value: 0.7715888199370731 and parameters: {'lr': 0.0009120423947030985, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.3901026297423345, 'cluster_shrink_lambda': 2.210849156929999}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:00:18,273] Trial 16 finished with value: 0.7752114699220126 and parameters: {'lr': 0.004534858510551343, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 9.837916599420554, 'cluster_shrink_lambda': 5.110878139041239}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:01:06,505] Trial 17 finished with value: 0.7675331577615168 and parameters: {'lr': 0.0016507257406121459, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 2.745288410822343, 'cluster_shrink_lambda': 10.86945435389809}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:01:46,505] Trial 18 finished with value: 0.740698514559813 and parameters: {'lr': 0.000745439397478521, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 46.57006014310284, 'cluster_shrink_lambda': 46.158692286399585}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:02:55,736] Trial 19 finished with value: 0.7730261427561811 and parameters: {'lr': 0.009846854144262679, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 5.468808002899705, 'cluster_shrink_lambda': 1.520106431210825}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:03:40,317] Trial 20 finished with value: 0.7484572254184925 and parameters: {'lr': 0.00021320308042361002, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.746069749729691, 'cluster_shrink_lambda': 2.7522936708953485}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:04:04,881] Trial 21 finished with value: 0.7468043727772906 and parameters: {'lr': 0.0019298826820903952, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0605242119436797, 'cluster_shrink_lambda': 1.2842105240535382}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:05:05,533] Trial 22 finished with value: 0.7699694288648486 and parameters: {'lr': 0.0029429449148181243, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.3103210531263738, 'cluster_shrink_lambda': 1.0009887790013643}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:05:42,529] Trial 23 finished with value: 0.7731739652191544 and parameters: {'lr': 0.003931924909900055, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 2.2488613201753007, 'cluster_shrink_lambda': 1.5972519601934698}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:07:12,021] Trial 24 finished with value: 0.7782016378499534 and parameters: {'lr': 0.001468705440016609, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.5210272566173046, 'cluster_shrink_lambda': 2.247778857296077}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:08:31,606] Trial 25 finished with value: 0.7805997844866799 and parameters: {'lr': 0.002225308451944187, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0936110054802897, 'cluster_shrink_lambda': 1.3816712572349954}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:09:27,325] Trial 26 finished with value: 0.7668934443983415 and parameters: {'lr': 0.0008039190329041519, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.6752406329591376, 'cluster_shrink_lambda': 4.040517079993509}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:10:45,036] Trial 27 finished with value: 0.7818450314272904 and parameters: {'lr': 0.0011844932632921095, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.019829809365878, 'cluster_shrink_lambda': 1.7591779315402813}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:11:05,713] Trial 28 finished with value: 0.7495493857758339 and parameters: {'lr': 0.0032397833230975127, 'dropout': 0.2, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.0226840277985625, 'cluster_shrink_lambda': 2.585657356642219}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 10:11:37,661] Trial 29 finished with value: 0.7398586485906837 and parameters: {'lr': 0.0005918895439184273, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 8, 'shrink_lambda': 2.0751813530372933, 'cluster_shrink_lambda': 1.2513728238208468}. Best is trial 11 with value: 0.7941528917017466.
+Region training counts (id order): [106.0, 1086.0, 5342.0, 532.0, 16799.0, 566.0, 335.0]
+Experiment 17 region weights (train split, power=0.25):
+  Africa           n=   106  weight=2.937
+  East Asia        n=  1086  weight=1.642
+  Europe           n=  5342  weight=1.102
+  Latin America    n=   532  weight=1.962
+  North America    n= 16799  weight=0.828
+  South Asia       n=   566  weight=1.932
+  Southeast Asia   n=   335  weight=2.203
+Region clusters (id order, ['Africa', 'East Asia', 'Europe', 'Latin America', 'North America', 'South Asia', 'Southeast Asia']): [2, 1, 2, 0, 0, 1, 1] -> ['Americas', 'Asia-Pacific', 'Europe & Africa']
+
+Best val composite score: 0.7942
+Best params: {'lr': 0.0023660620781758134, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0755483741778042, 'cluster_shrink_lambda': 1.044224584290679}
+  epoch 00  score=0.7208  (auc=0.8023 pr_auc=0.8159 f1=0.7055 macro_recall=0.3974)
+  epoch 01  score=0.7348  (auc=0.8279 pr_auc=0.8363 f1=0.7193 macro_recall=0.3742)
+  epoch 02  score=0.7467  (auc=0.8321 pr_auc=0.8430 f1=0.7318 macro_recall=0.4118)
+  epoch 03  score=0.7483  (auc=0.8304 pr_auc=0.8425 f1=0.7329 macro_recall=0.4256)
+  epoch 04  score=0.7353  (auc=0.8345 pr_auc=0.8436 f1=0.7078 macro_recall=0.3691)
+  epoch 05  score=0.7484  (auc=0.8397 pr_auc=0.8474 f1=0.7237 macro_recall=0.4114)
+  epoch 06  score=0.7492  (auc=0.8389 pr_auc=0.8486 f1=0.7354 macro_recall=0.3972)
+  epoch 07  score=0.7523  (auc=0.8430 pr_auc=0.8506 f1=0.7327 macro_recall=0.4093)
+  epoch 08  score=0.7649  (auc=0.8454 pr_auc=0.8521 f1=0.7520 macro_recall=0.4534)
+  epoch 09  score=0.7625  (auc=0.8448 pr_auc=0.8527 f1=0.7426 macro_recall=0.4534)
+  epoch 10  score=0.7604  (auc=0.8434 pr_auc=0.8521 f1=0.7460 macro_recall=0.4383)
+  epoch 11  score=0.7669  (auc=0.8448 pr_auc=0.8545 f1=0.7499 macro_recall=0.4671)
+  epoch 12  score=0.7598  (auc=0.8447 pr_auc=0.8529 f1=0.7383 macro_recall=0.4421)
+  epoch 13  score=0.7659  (auc=0.8435 pr_auc=0.8506 f1=0.7482 macro_recall=0.4731)
+  epoch 14  score=0.7637  (auc=0.8458 pr_auc=0.8541 f1=0.7458 macro_recall=0.4513)
+  epoch 15  score=0.7695  (auc=0.8459 pr_auc=0.8542 f1=0.7499 macro_recall=0.4829)
+  epoch 16  score=0.7660  (auc=0.8474 pr_auc=0.8550 f1=0.7516 macro_recall=0.4517)
+  epoch 17  score=0.7633  (auc=0.8468 pr_auc=0.8534 f1=0.7373 macro_recall=0.4615)
+  epoch 18  score=0.7637  (auc=0.8431 pr_auc=0.8512 f1=0.7387 macro_recall=0.4746)
+  epoch 19  score=0.7698  (auc=0.8470 pr_auc=0.8542 f1=0.7482 macro_recall=0.4849)
+  epoch 20  score=0.7699  (auc=0.8477 pr_auc=0.8561 f1=0.7507 macro_recall=0.4766)
+  epoch 21  score=0.7749  (auc=0.8503 pr_auc=0.8576 f1=0.7595 macro_recall=0.4869)
+  epoch 22  score=0.7942  (auc=0.8460 pr_auc=0.8553 f1=0.7670 macro_recall=0.6167)
+  epoch 23  score=0.7696  (auc=0.8497 pr_auc=0.8574 f1=0.7518 macro_recall=0.4659)
+  epoch 24  score=0.7659  (auc=0.8487 pr_auc=0.8558 f1=0.7506 macro_recall=0.4485)
+  epoch 25  score=0.7734  (auc=0.8496 pr_auc=0.8583 f1=0.7557 macro_recall=0.4836)
+  epoch 26  score=0.7646  (auc=0.8505 pr_auc=0.8577 f1=0.7415 macro_recall=0.4472)
+  epoch 27  score=0.7730  (auc=0.8488 pr_auc=0.8580 f1=0.7541 macro_recall=0.4856)
+
+Saved trained SFTNN to artifacts_exp18/sftnn_model.pt
+--- 06_evaluate.py ---
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+=== Table 4.6: Aggregate Evaluation ===
+                  Model  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)  0.752072   0.750095 0.750095 0.750095 0.834842 0.842491
+     XGBoost (baseline)  0.767332   0.798208 0.710596 0.751859 0.843609 0.854975
+      TabNet (baseline)  0.750565   0.773506 0.703000 0.736570 0.827818 0.837871
+         Proposed SFTNN  0.749623   0.744012 0.755032 0.749482 0.834772 0.843836
+
+=== Table 4.7: Per-Region Evaluation ===
+                  Model         Region    n  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)         Africa   24  0.833333   0.750000 0.500000 0.600000 0.685185 0.616758
+Standard MLP (baseline)      East Asia  244  0.676230   0.647727 0.542857 0.590674 0.713087 0.704677
+Standard MLP (baseline)         Europe 1159  0.752373   0.711165 0.635575 0.671249 0.823740 0.783261
+Standard MLP (baseline)  Latin America  105  0.771429   0.694444 0.657895 0.675676 0.831500 0.792491
+Standard MLP (baseline)  North America 3589  0.757314   0.765717 0.798259 0.781650 0.841136 0.865034
+Standard MLP (baseline)     South Asia  111  0.729730   0.633333 0.500000 0.558824 0.765681 0.716771
+Standard MLP (baseline) Southeast Asia   76  0.723684   0.703704 0.593750 0.644068 0.732955 0.740618
+     XGBoost (baseline)         Africa   24  0.833333   0.750000 0.500000 0.600000 0.805556 0.739500
+     XGBoost (baseline)      East Asia  244  0.688525   0.670588 0.542857 0.600000 0.736656 0.720178
+     XGBoost (baseline)         Europe 1159  0.786022   0.812317 0.600868 0.690773 0.836296 0.810771
+     XGBoost (baseline)  Latin America  105  0.780952   0.758621 0.578947 0.656716 0.865672 0.838290
+     XGBoost (baseline)  North America 3589  0.765952   0.803270 0.754736 0.778247 0.846139 0.873175
+     XGBoost (baseline)     South Asia  111  0.801802   0.863636 0.500000 0.633333 0.824802 0.772088
+     XGBoost (baseline) Southeast Asia   76  0.710526   0.678571 0.593750 0.633333 0.786932 0.780478
+      TabNet (baseline)         Africa   24  0.791667   1.000000 0.166667 0.285714 0.546296 0.485269
+      TabNet (baseline)      East Asia  244  0.627049   0.559322 0.628571 0.591928 0.708085 0.693305
+      TabNet (baseline)         Europe 1159  0.757550   0.757143 0.574837 0.653514 0.810753 0.773570
+      TabNet (baseline)  Latin America  105  0.761905   0.809524 0.447368 0.576271 0.798900 0.745867
+      TabNet (baseline)  North America 3589  0.757314   0.790236 0.754224 0.771810 0.840160 0.865799
+      TabNet (baseline)     South Asia  111  0.738739   0.846154 0.289474 0.431373 0.585076 0.559675
+      TabNet (baseline) Southeast Asia   76  0.710526   0.692308 0.562500 0.620690 0.732955 0.694393
+         Proposed SFTNN         Africa   24  0.875000   0.800000 0.666667 0.727273 0.851852 0.823465
+         Proposed SFTNN      East Asia  244  0.680328   0.645161 0.571429 0.606061 0.699726 0.697912
+         Proposed SFTNN         Europe 1159  0.745470   0.700483 0.629067 0.662857 0.821754 0.783113
+         Proposed SFTNN  Latin America  105  0.752381   0.714286 0.526316 0.606061 0.818146 0.773806
+         Proposed SFTNN  North America 3589  0.756757   0.761375 0.805428 0.782782 0.841072 0.867153
+         Proposed SFTNN     South Asia  111  0.765766   0.700000 0.552632 0.617647 0.833093 0.765041
+         Proposed SFTNN Southeast Asia   76  0.631579   0.555556 0.625000 0.588235 0.718750 0.712424
+
+Confusion matrix -- Standard MLP (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1975  658]
+ [ 658 2017]]
+
+Confusion matrix -- XGBoost (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1871  762]
+ [ 473 2202]]
+
+Confusion matrix -- TabNet (baseline) (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1851  782]
+ [ 542 2133]]
+
+Confusion matrix -- Proposed SFTNN (rows=actual, cols=predicted, order=[Success, Failure]):
+[[1988  645]
+ [ 684 1991]]
+
+Saved: results_exp18/table_4_6_aggregate.csv, results_exp18/table_4_7_per_region.csv
+--- 08_bootstrap_ci.py ---
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+Bootstrapped AGGREGATE (n=5308)
+Bootstrapped Africa (n=24)
+Bootstrapped East Asia (n=244)
+Bootstrapped Europe (n=1159)
+Bootstrapped Latin America (n=105)
+Bootstrapped North America (n=3589)
+Bootstrapped South Asia (n=111)
+Bootstrapped Southeast Asia (n=76)
+
+Saved results_exp18/bootstrap_ci_per_region.csv
+Saved results_exp18/bootstrap_win_probability.csv
+
+=== SFTNN vs each baseline: P(SFTNN better) on Recall/F1/ROC-AUC/PR-AUC, by region ===
+Metric                                      F1    PR-AUC   ROC-AUC  Recall
+Region         Baseline                                                   
+AGGREGATE      Standard MLP (baseline)  0.4115  0.732000  0.461000  0.8195
+               TabNet (baseline)        0.9970  0.960000  0.998000  1.0000
+               XGBoost (baseline)       0.3015  0.000500  0.001500  1.0000
+Africa         Standard MLP (baseline)  0.7210  0.926463  0.860930  0.6365
+               TabNet (baseline)        0.9505  0.991996  0.990995  0.9625
+               XGBoost (baseline)       0.7380  0.839920  0.788394  0.6365
+East Asia      Standard MLP (baseline)  0.7630  0.278500  0.093000  0.8425
+               TabNet (baseline)        0.7125  0.602500  0.258500  0.0290
+               XGBoost (baseline)       0.5685  0.121500  0.019500  0.7340
+Europe         Standard MLP (baseline)  0.2160  0.493000  0.333000  0.2730
+               TabNet (baseline)        0.7055  0.802000  0.917500  0.9980
+               XGBoost (baseline)       0.0405  0.001000  0.034000  0.9195
+Latin America  Standard MLP (baseline)  0.0710  0.220000  0.342500  0.0000
+               TabNet (baseline)        0.6990  0.785500  0.694500  0.8905
+               XGBoost (baseline)       0.1315  0.010000  0.065500  0.0975
+North America  Standard MLP (baseline)  0.6110  0.877500  0.482000  0.9000
+               TabNet (baseline)        0.9930  0.670000  0.644500  1.0000
+               XGBoost (baseline)       0.8115  0.035500  0.041000  1.0000
+South Asia     Standard MLP (baseline)  0.9835  0.998500  1.000000  0.8640
+               TabNet (baseline)        0.9885  0.998500  0.999500  0.9980
+               XGBoost (baseline)       0.3405  0.409000  0.632000  0.8745
+Southeast Asia Standard MLP (baseline)  0.1100  0.122000  0.286000  0.5975
+               TabNet (baseline)        0.2785  0.588500  0.319500  0.7685
+               XGBoost (baseline)       0.2515  0.017500  0.019500  0.5770
+--- region_threshold_calibration.py ---
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+=== Region-calibrated vs default-threshold metrics (artifacts_exp18) ===
+                  Model                                            Region    n  Threshold    ValF1  Accuracy  Precision   Recall       F1  ROC-AUC   PR-AUC
+Standard MLP (baseline)                                         AGGREGATE 5308       0.50      NaN  0.752072   0.750095 0.750095 0.750095 0.834842 0.842491
+Standard MLP (baseline)                            AGGREGATE (calibrated) 5308       0.43 0.768090  0.737754   0.700226 0.824155 0.757153 0.834842 0.842491
+Standard MLP (baseline)                                            Africa   24       0.50      NaN  0.833333   0.750000 0.500000 0.600000 0.685185 0.616758
+Standard MLP (baseline)                        Africa (region-calibrated)   24       0.07 0.307692  0.333333   0.272727 1.000000 0.428571 0.685185 0.616758
+Standard MLP (baseline)      Africa (cluster-calibrated, Europe & Africa)   24       0.37 0.690843  0.833333   0.750000 0.500000 0.600000 0.685185 0.616758
+Standard MLP (baseline)                                         East Asia  244       0.50      NaN  0.676230   0.647727 0.542857 0.590674 0.713087 0.704677
+Standard MLP (baseline)                     East Asia (region-calibrated)  244       0.37 0.730594  0.614754   0.541985 0.676190 0.601695 0.713087 0.704677
+Standard MLP (baseline)      East Asia (cluster-calibrated, Asia-Pacific)  244       0.41 0.680233  0.631148   0.565217 0.619048 0.590909 0.713087 0.704677
+Standard MLP (baseline)                                            Europe 1159       0.50      NaN  0.752373   0.711165 0.635575 0.671249 0.823740 0.783261
+Standard MLP (baseline)                        Europe (region-calibrated) 1159       0.37 0.692098  0.716997   0.611390 0.791757 0.689981 0.823740 0.783261
+Standard MLP (baseline)      Europe (cluster-calibrated, Europe & Africa) 1159       0.37 0.690843  0.716997   0.611390 0.791757 0.689981 0.823740 0.783261
+Standard MLP (baseline)                                     Latin America  105       0.50      NaN  0.771429   0.694444 0.657895 0.675676 0.831500 0.792491
+Standard MLP (baseline)                 Latin America (region-calibrated)  105       0.43 0.722222  0.723810   0.600000 0.710526 0.650602 0.831500 0.792491
+Standard MLP (baseline)      Latin America (cluster-calibrated, Americas)  105       0.43 0.795370  0.723810   0.600000 0.710526 0.650602 0.831500 0.792491
+Standard MLP (baseline)                                     North America 3589       0.50      NaN  0.757314   0.765717 0.798259 0.781650 0.841136 0.865034
+Standard MLP (baseline)                 North America (region-calibrated) 3589       0.43 0.796610  0.748398   0.725709 0.864311 0.788969 0.841136 0.865034
+Standard MLP (baseline)      North America (cluster-calibrated, Americas) 3589       0.43 0.795370  0.748398   0.725709 0.864311 0.788969 0.841136 0.865034
+Standard MLP (baseline)                                        South Asia  111       0.50      NaN  0.729730   0.633333 0.500000 0.558824 0.765681 0.716771
+Standard MLP (baseline)                    South Asia (region-calibrated)  111       0.65 0.644068  0.783784   0.818182 0.473684 0.600000 0.765681 0.716771
+Standard MLP (baseline)     South Asia (cluster-calibrated, Asia-Pacific)  111       0.41 0.680233  0.729730   0.595238 0.657895 0.625000 0.765681 0.716771
+Standard MLP (baseline)                                    Southeast Asia   76       0.50      NaN  0.723684   0.703704 0.593750 0.644068 0.732955 0.740618
+Standard MLP (baseline)                Southeast Asia (region-calibrated)   76       0.50 0.604651  0.723684   0.703704 0.593750 0.644068 0.732955 0.740618
+Standard MLP (baseline) Southeast Asia (cluster-calibrated, Asia-Pacific)   76       0.41 0.680233  0.618421   0.534884 0.718750 0.613333 0.732955 0.740618
+     XGBoost (baseline)                                         AGGREGATE 5308       0.50      NaN  0.767332   0.798208 0.710596 0.751859 0.843609 0.854975
+     XGBoost (baseline)                            AGGREGATE (calibrated) 5308       0.34 0.777085  0.736812   0.694340 0.838587 0.759677 0.843609 0.854975
+     XGBoost (baseline)                                            Africa   24       0.50      NaN  0.833333   0.750000 0.500000 0.600000 0.805556 0.739500
+     XGBoost (baseline)                        Africa (region-calibrated)   24       0.24 0.571429  0.750000   0.500000 0.666667 0.571429 0.805556 0.739500
+     XGBoost (baseline)      Africa (cluster-calibrated, Europe & Africa)   24       0.36 0.707722  0.791667   0.600000 0.500000 0.545455 0.805556 0.739500
+     XGBoost (baseline)                                         East Asia  244       0.50      NaN  0.688525   0.670588 0.542857 0.600000 0.736656 0.720178
+     XGBoost (baseline)                     East Asia (region-calibrated)  244       0.39 0.745098  0.672131   0.605042 0.685714 0.642857 0.736656 0.720178
+     XGBoost (baseline)      East Asia (cluster-calibrated, Asia-Pacific)  244       0.33 0.695890  0.627049   0.550000 0.733333 0.628571 0.736656 0.720178
+     XGBoost (baseline)                                            Europe 1159       0.50      NaN  0.786022   0.812317 0.600868 0.690773 0.836296 0.810771
+     XGBoost (baseline)                        Europe (region-calibrated) 1159       0.36 0.709804  0.742019   0.653992 0.746204 0.697062 0.836296 0.810771
+     XGBoost (baseline)      Europe (cluster-calibrated, Europe & Africa) 1159       0.36 0.707722  0.742019   0.653992 0.746204 0.697062 0.836296 0.810771
+     XGBoost (baseline)                                     Latin America  105       0.50      NaN  0.780952   0.758621 0.578947 0.656716 0.865672 0.838290
+     XGBoost (baseline)                 Latin America (region-calibrated)  105       0.52 0.721311  0.800000   0.814815 0.578947 0.676923 0.865672 0.838290
+     XGBoost (baseline)      Latin America (cluster-calibrated, Americas)  105       0.34 0.801655  0.771429   0.634615 0.868421 0.733333 0.865672 0.838290
+     XGBoost (baseline)                                     North America 3589       0.50      NaN  0.765952   0.803270 0.754736 0.778247 0.846139 0.873175
+     XGBoost (baseline)                 North America (region-calibrated) 3589       0.34 0.803467  0.742825   0.719523 0.864311 0.785299 0.846139 0.873175
+     XGBoost (baseline)      North America (cluster-calibrated, Americas) 3589       0.34 0.801655  0.742825   0.719523 0.864311 0.785299 0.846139 0.873175
+     XGBoost (baseline)                                        South Asia  111       0.50      NaN  0.801802   0.863636 0.500000 0.633333 0.824802 0.772088
+     XGBoost (baseline)                    South Asia (region-calibrated)  111       0.71 0.654545  0.765766   0.928571 0.342105 0.500000 0.824802 0.772088
+     XGBoost (baseline)     South Asia (cluster-calibrated, Asia-Pacific)  111       0.33 0.695890  0.765766   0.657895 0.657895 0.657895 0.824802 0.772088
+     XGBoost (baseline)                                    Southeast Asia   76       0.50      NaN  0.710526   0.678571 0.593750 0.633333 0.786932 0.780478
+     XGBoost (baseline)                Southeast Asia (region-calibrated)   76       0.34 0.644068  0.657895   0.568182 0.781250 0.657895 0.786932 0.780478
+     XGBoost (baseline) Southeast Asia (cluster-calibrated, Asia-Pacific)   76       0.33 0.695890  0.657895   0.568182 0.781250 0.657895 0.786932 0.780478
+      TabNet (baseline)                                         AGGREGATE 5308       0.50      NaN  0.750565   0.773506 0.703000 0.736570 0.827818 0.837871
+      TabNet (baseline)                            AGGREGATE (calibrated) 5308       0.41 0.763922  0.734928   0.709358 0.788834 0.746988 0.827818 0.837871
+      TabNet (baseline)                                            Africa   24       0.50      NaN  0.791667   1.000000 0.166667 0.285714 0.546296 0.485269
+      TabNet (baseline)                        Africa (region-calibrated)   24       0.61 0.666667  0.791667   1.000000 0.166667 0.285714 0.546296 0.485269
+      TabNet (baseline)      Africa (cluster-calibrated, Europe & Africa)   24       0.31 0.683219  0.750000   0.500000 0.333333 0.400000 0.546296 0.485269
+      TabNet (baseline)                                         East Asia  244       0.50      NaN  0.627049   0.559322 0.628571 0.591928 0.708085 0.693305
+      TabNet (baseline)                     East Asia (region-calibrated)  244       0.30 0.727273  0.565574   0.497207 0.847619 0.626761 0.708085 0.693305
+      TabNet (baseline)      East Asia (cluster-calibrated, Asia-Pacific)  244       0.44 0.677632  0.606557   0.533333 0.685714 0.600000 0.708085 0.693305
+      TabNet (baseline)                                            Europe 1159       0.50      NaN  0.757550   0.757143 0.574837 0.653514 0.810753 0.773570
+      TabNet (baseline)                        Europe (region-calibrated) 1159       0.31 0.684437  0.672994   0.559767 0.832972 0.669573 0.810753 0.773570
+      TabNet (baseline)      Europe (cluster-calibrated, Europe & Africa) 1159       0.31 0.683219  0.672994   0.559767 0.832972 0.669573 0.810753 0.773570
+      TabNet (baseline)                                     Latin America  105       0.50      NaN  0.761905   0.809524 0.447368 0.576271 0.798900 0.745867
+      TabNet (baseline)                 Latin America (region-calibrated)  105       0.28 0.666667  0.666667   0.523810 0.868421 0.653465 0.798900 0.745867
+      TabNet (baseline)      Latin America (cluster-calibrated, Americas)  105       0.41 0.795652  0.742857   0.677419 0.552632 0.608696 0.798900 0.745867
+      TabNet (baseline)                                     North America 3589       0.50      NaN  0.757314   0.790236 0.754224 0.771810 0.840160 0.865799
+      TabNet (baseline)                 North America (region-calibrated) 3589       0.41 0.799608  0.747841   0.740588 0.825909 0.780925 0.840160 0.865799
+      TabNet (baseline)      North America (cluster-calibrated, Americas) 3589       0.41 0.795652  0.747841   0.740588 0.825909 0.780925 0.840160 0.865799
+      TabNet (baseline)                                        South Asia  111       0.50      NaN  0.738739   0.846154 0.289474 0.431373 0.585076 0.559675
+      TabNet (baseline)                    South Asia (region-calibrated)  111       0.39 0.603175  0.657658   0.500000 0.315789 0.387097 0.585076 0.559675
+      TabNet (baseline)     South Asia (cluster-calibrated, Asia-Pacific)  111       0.44 0.677632  0.738739   0.846154 0.289474 0.431373 0.585076 0.559675
+      TabNet (baseline)                                    Southeast Asia   76       0.50      NaN  0.710526   0.692308 0.562500 0.620690 0.732955 0.694393
+      TabNet (baseline)                Southeast Asia (region-calibrated)   76       0.44 0.590909  0.736842   0.700000 0.656250 0.677419 0.732955 0.694393
+      TabNet (baseline) Southeast Asia (cluster-calibrated, Asia-Pacific)   76       0.44 0.677632  0.736842   0.700000 0.656250 0.677419 0.732955 0.694393
+         Proposed SFTNN                                         AGGREGATE 5308       0.50      NaN  0.749623   0.744012 0.755032 0.749482 0.834772 0.843836
+         Proposed SFTNN                            AGGREGATE (calibrated) 5308       0.48 0.768858  0.746044   0.729219 0.776301 0.752024 0.834772 0.843836
+         Proposed SFTNN                                            Africa   24       0.50      NaN  0.875000   0.800000 0.666667 0.727273 0.851852 0.823465
+         Proposed SFTNN                        Africa (region-calibrated)   24       0.49 0.666667  0.875000   0.800000 0.666667 0.727273 0.851852 0.823465
+         Proposed SFTNN      Africa (cluster-calibrated, Europe & Africa)   24       0.30 0.693535  0.833333   0.625000 0.833333 0.714286 0.851852 0.823465
+         Proposed SFTNN                                         East Asia  244       0.50      NaN  0.680328   0.645161 0.571429 0.606061 0.699726 0.697912
+         Proposed SFTNN                     East Asia (region-calibrated)  244       0.40 0.736318  0.635246   0.568966 0.628571 0.597285 0.699726 0.697912
+         Proposed SFTNN      East Asia (cluster-calibrated, Asia-Pacific)  244       0.42 0.682353  0.639344   0.576577 0.609524 0.592593 0.699726 0.697912
+         Proposed SFTNN                                            Europe 1159       0.50      NaN  0.745470   0.700483 0.629067 0.662857 0.821754 0.783113
+         Proposed SFTNN                        Europe (region-calibrated) 1159       0.30 0.695359  0.682485   0.567294 0.850325 0.680556 0.821754 0.783113
+         Proposed SFTNN      Europe (cluster-calibrated, Europe & Africa) 1159       0.30 0.693535  0.682485   0.567294 0.850325 0.680556 0.821754 0.783113
+         Proposed SFTNN                                     Latin America  105       0.50      NaN  0.752381   0.714286 0.526316 0.606061 0.818146 0.773806
+         Proposed SFTNN                 Latin America (region-calibrated)  105       0.55 0.711864  0.771429   0.791667 0.500000 0.612903 0.818146 0.773806
+         Proposed SFTNN      Latin America (cluster-calibrated, Americas)  105       0.49 0.798138  0.733333   0.666667 0.526316 0.588235 0.818146 0.773806
+         Proposed SFTNN                                     North America 3589       0.50      NaN  0.756757   0.761375 0.805428 0.782782 0.841072 0.867153
+         Proposed SFTNN                 North America (region-calibrated) 3589       0.49 0.800000  0.755085   0.753063 0.818228 0.784294 0.841072 0.867153
+         Proposed SFTNN      North America (cluster-calibrated, Americas) 3589       0.49 0.798138  0.755085   0.753063 0.818228 0.784294 0.841072 0.867153
+         Proposed SFTNN                                        South Asia  111       0.50      NaN  0.765766   0.700000 0.552632 0.617647 0.833093 0.765041
+         Proposed SFTNN                    South Asia (region-calibrated)  111       0.46 0.615385  0.765766   0.676471 0.605263 0.638889 0.833093 0.765041
+         Proposed SFTNN     South Asia (cluster-calibrated, Asia-Pacific)  111       0.42 0.682353  0.774775   0.675676 0.657895 0.666667 0.833093 0.765041
+         Proposed SFTNN                                    Southeast Asia   76       0.50      NaN  0.631579   0.555556 0.625000 0.588235 0.718750 0.712424
+         Proposed SFTNN                Southeast Asia (region-calibrated)   76       0.49 0.608696  0.631579   0.552632 0.656250 0.600000 0.718750 0.712424
+         Proposed SFTNN Southeast Asia (cluster-calibrated, Asia-Pacific)   76       0.42 0.682353  0.618421   0.534884 0.718750 0.613333 0.718750 0.712424
+
+Saved: results_exp18/region_threshold_calibration.csv
+=== Experiment 18 RESUME finished Mon Oct 12 10:28:10 MPST 2026 ===

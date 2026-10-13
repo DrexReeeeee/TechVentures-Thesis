@@ -1,0 +1,234 @@
+=== Experiment 18 (P1 with gentler weight_power=0.25) full run started Mon Oct 12 00:12:27 MPST 2026 ===
+--- 02_train_mlp_exp17.py (weight_power=0.25) ---
+[I 2026-10-12 00:12:31,058] A new study created in memory with name: no-name-73429f50-edfd-44b3-a0e2-fe9279709a8e
+[I 2026-10-12 00:12:44,252] Trial 0 finished with value: 0.7510444417509918 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 2}. Best is trial 0 with value: 0.7510444417509918.
+[I 2026-10-12 00:12:49,260] Trial 1 finished with value: 0.7252286643705855 and parameters: {'lr': 0.00026587543983272726, 'dropout': 0.3, 'weight_decay': 1e-05, 'hidden_dim': 32, 'n_layers': 3}. Best is trial 0 with value: 0.7510444417509918.
+[I 2026-10-12 00:13:05,313] Trial 2 finished with value: 0.7511146095556959 and parameters: {'lr': 0.00025081156860452336, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 3}. Best is trial 2 with value: 0.7511146095556959.
+[I 2026-10-12 00:13:17,355] Trial 3 finished with value: 0.7621502060378005 and parameters: {'lr': 0.0007591104805282694, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2}. Best is trial 3 with value: 0.7621502060378005.
+[I 2026-10-12 00:13:26,962] Trial 4 finished with value: 0.7576234116920494 and parameters: {'lr': 0.007568292060167619, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 1}. Best is trial 3 with value: 0.7621502060378005.
+[I 2026-10-12 00:13:37,581] Trial 5 finished with value: 0.7630546236931965 and parameters: {'lr': 0.001217284708112243, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2}. Best is trial 5 with value: 0.7630546236931965.
+[I 2026-10-12 00:13:49,919] Trial 6 finished with value: 0.7528561255344778 and parameters: {'lr': 0.0005211124595788264, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 1}. Best is trial 5 with value: 0.7630546236931965.
+[I 2026-10-12 00:13:59,324] Trial 7 finished with value: 0.7566246722728186 and parameters: {'lr': 0.0026698666742744613, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 1}. Best is trial 5 with value: 0.7630546236931965.
+[I 2026-10-12 00:14:11,095] Trial 8 finished with value: 0.7654001271843045 and parameters: {'lr': 0.006533305220227739, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2}. Best is trial 8 with value: 0.7654001271843045.
+[I 2026-10-12 00:14:25,800] Trial 9 finished with value: 0.7473595145561335 and parameters: {'lr': 0.00023612399244412623, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 1}. Best is trial 8 with value: 0.7654001271843045.
+[I 2026-10-12 00:14:37,278] Trial 10 finished with value: 0.7626314537992697 and parameters: {'lr': 0.008710859097239143, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 32, 'n_layers': 2}. Best is trial 8 with value: 0.7654001271843045.
+[I 2026-10-12 00:14:48,123] Trial 11 finished with value: 0.7627674710905956 and parameters: {'lr': 0.0023114592660006, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2}. Best is trial 8 with value: 0.7654001271843045.
+[I 2026-10-12 00:14:59,244] Trial 12 finished with value: 0.7634313892069478 and parameters: {'lr': 0.0025107957960733723, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2}. Best is trial 8 with value: 0.7654001271843045.
+[I 2026-10-12 00:15:09,953] Trial 13 finished with value: 0.7624722048870273 and parameters: {'lr': 0.004024829357495328, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2}. Best is trial 8 with value: 0.7654001271843045.
+[I 2026-10-12 00:15:21,035] Trial 14 finished with value: 0.7665472237018004 and parameters: {'lr': 0.0041815947648389026, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2}. Best is trial 14 with value: 0.7665472237018004.
+[I 2026-10-12 00:15:41,674] Trial 15 finished with value: 0.7710576198916337 and parameters: {'lr': 0.005048413906787871, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2}. Best is trial 15 with value: 0.7710576198916337.
+[I 2026-10-12 00:16:07,080] Trial 16 finished with value: 0.7812625848852766 and parameters: {'lr': 0.004168043620362357, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3}. Best is trial 16 with value: 0.7812625848852766.
+[I 2026-10-12 00:16:32,283] Trial 17 finished with value: 0.7799586652337746 and parameters: {'lr': 0.0011788179241699786, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3}. Best is trial 16 with value: 0.7812625848852766.
+[I 2026-10-12 00:16:58,035] Trial 18 finished with value: 0.7827336300026255 and parameters: {'lr': 0.00148075982536105, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3}. Best is trial 18 with value: 0.7827336300026255.
+[I 2026-10-12 00:17:17,920] Trial 19 finished with value: 0.7727821727039912 and parameters: {'lr': 0.0016990398573475593, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3}. Best is trial 18 with value: 0.7827336300026255.
+Experiment 17 region weights (train split, power=0.25):
+  Africa           n=   106  weight=2.937
+  East Asia        n=  1086  weight=1.642
+  Europe           n=  5342  weight=1.102
+  Latin America    n=   532  weight=1.962
+  North America    n= 16799  weight=0.828
+  South Asia       n=   566  weight=1.932
+  Southeast Asia   n=   335  weight=2.203
+
+Best val composite score: 0.7827
+Best params: {'lr': 0.00148075982536105, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 3}
+  epoch 00  score=0.7119  (auc=0.8004 pr_auc=0.8152 f1=0.6905 macro_recall=0.3690)
+  epoch 01  score=0.7310  (auc=0.8272 pr_auc=0.8353 f1=0.7033 macro_recall=0.3792)
+  epoch 02  score=0.7447  (auc=0.8282 pr_auc=0.8399 f1=0.7326 macro_recall=0.4113)
+  epoch 03  score=0.7371  (auc=0.8237 pr_auc=0.8370 f1=0.7130 macro_recall=0.4090)
+  epoch 04  score=0.7403  (auc=0.8303 pr_auc=0.8421 f1=0.7216 macro_recall=0.3918)
+  epoch 05  score=0.7396  (auc=0.8323 pr_auc=0.8431 f1=0.7165 macro_recall=0.3893)
+  epoch 06  score=0.7565  (auc=0.8324 pr_auc=0.8442 f1=0.7421 macro_recall=0.4572)
+  epoch 07  score=0.7595  (auc=0.8350 pr_auc=0.8454 f1=0.7433 macro_recall=0.4669)
+  epoch 08  score=0.7590  (auc=0.8372 pr_auc=0.8463 f1=0.7463 macro_recall=0.4525)
+  epoch 09  score=0.7590  (auc=0.8378 pr_auc=0.8475 f1=0.7406 macro_recall=0.4587)
+  epoch 10  score=0.7600  (auc=0.8374 pr_auc=0.8490 f1=0.7424 macro_recall=0.4603)
+  epoch 11  score=0.7646  (auc=0.8374 pr_auc=0.8476 f1=0.7490 macro_recall=0.4823)
+  epoch 12  score=0.7602  (auc=0.8394 pr_auc=0.8496 f1=0.7421 macro_recall=0.4563)
+  epoch 13  score=0.7686  (auc=0.8401 pr_auc=0.8500 f1=0.7501 macro_recall=0.4970)
+  epoch 14  score=0.7604  (auc=0.8406 pr_auc=0.8508 f1=0.7427 macro_recall=0.4521)
+  epoch 15  score=0.7652  (auc=0.8419 pr_auc=0.8514 f1=0.7467 macro_recall=0.4732)
+  epoch 16  score=0.7722  (auc=0.8450 pr_auc=0.8536 f1=0.7528 macro_recall=0.4992)
+  epoch 17  score=0.7664  (auc=0.8433 pr_auc=0.8518 f1=0.7439 macro_recall=0.4821)
+  epoch 18  score=0.7713  (auc=0.8433 pr_auc=0.8519 f1=0.7498 macro_recall=0.5045)
+  epoch 19  score=0.7703  (auc=0.8466 pr_auc=0.8537 f1=0.7455 macro_recall=0.4947)
+  epoch 20  score=0.7665  (auc=0.8450 pr_auc=0.8534 f1=0.7451 macro_recall=0.4744)
+  epoch 21  score=0.7735  (auc=0.8487 pr_auc=0.8565 f1=0.7531 macro_recall=0.4935)
+  epoch 22  score=0.7827  (auc=0.8447 pr_auc=0.8525 f1=0.7620 macro_recall=0.5565)
+  epoch 23  score=0.7693  (auc=0.8476 pr_auc=0.8555 f1=0.7490 macro_recall=0.4765)
+  epoch 24  score=0.7661  (auc=0.8481 pr_auc=0.8540 f1=0.7423 macro_recall=0.4680)
+  epoch 25  score=0.7785  (auc=0.8472 pr_auc=0.8551 f1=0.7553 macro_recall=0.5295)
+  epoch 26  score=0.7698  (auc=0.8483 pr_auc=0.8550 f1=0.7450 macro_recall=0.4864)
+  epoch 27  score=0.7763  (auc=0.8461 pr_auc=0.8534 f1=0.7541 macro_recall=0.5224)
+
+Saved trained MLP to artifacts_exp18/mlp_model.pt
+--- 03_train_xgboost_exp17.py (weight_power=0.25) ---
+[I 2026-10-12 00:17:48,325] A new study created in memory with name: no-name-960e974d-4ed4-488e-b502-043139d8d86f
+[I 2026-10-12 00:17:49,388] Trial 0 finished with value: 0.7757447793598776 and parameters: {'max_depth': 6, 'learning_rate': 0.030405325392865647, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 0 with value: 0.7757447793598776.
+[I 2026-10-12 00:17:49,509] Trial 1 finished with value: 0.5013341971389129 and parameters: {'max_depth': 6, 'learning_rate': 0.0033572967053517922, 'n_estimators': 600, 'subsample': 0.7}. Best is trial 0 with value: 0.7757447793598776.
+[I 2026-10-12 00:17:50,985] Trial 2 finished with value: 0.7626925394774661 and parameters: {'max_depth': 4, 'learning_rate': 0.008082071885709252, 'n_estimators': 400, 'subsample': 0.85}. Best is trial 0 with value: 0.7757447793598776.
+[I 2026-10-12 00:17:51,433] Trial 3 finished with value: 0.7772343290447448 and parameters: {'max_depth': 4, 'learning_rate': 0.22413234378101138, 'n_estimators': 200, 'subsample': 0.85}. Best is trial 3 with value: 0.7772343290447448.
+[I 2026-10-12 00:17:51,757] Trial 4 finished with value: 0.7777740708731442 and parameters: {'max_depth': 6, 'learning_rate': 0.1788532743297921, 'n_estimators': 400, 'subsample': 0.85}. Best is trial 4 with value: 0.7777740708731442.
+[I 2026-10-12 00:17:52,070] Trial 5 finished with value: 0.7750839251542393 and parameters: {'max_depth': 4, 'learning_rate': 0.16466293382966793, 'n_estimators': 400, 'subsample': 1.0}. Best is trial 4 with value: 0.7777740708731442.
+[I 2026-10-12 00:17:55,329] Trial 6 finished with value: 0.7789018811165003 and parameters: {'max_depth': 8, 'learning_rate': 0.0076510536667541975, 'n_estimators': 400, 'subsample': 1.0}. Best is trial 6 with value: 0.7789018811165003.
+[I 2026-10-12 00:17:55,791] Trial 7 finished with value: 0.7761403302458635 and parameters: {'max_depth': 4, 'learning_rate': 0.10471209213501693, 'n_estimators': 600, 'subsample': 0.85}. Best is trial 6 with value: 0.7789018811165003.
+[I 2026-10-12 00:17:55,904] Trial 8 finished with value: 0.48757804682380734 and parameters: {'max_depth': 4, 'learning_rate': 0.0014369502768990666, 'n_estimators': 600, 'subsample': 0.85}. Best is trial 6 with value: 0.7789018811165003.
+[I 2026-10-12 00:17:57,730] Trial 9 finished with value: 0.7822230767973666 and parameters: {'max_depth': 8, 'learning_rate': 0.024566974547738343, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 9 with value: 0.7822230767973666.
+[I 2026-10-12 00:17:58,621] Trial 10 finished with value: 0.7817644080228275 and parameters: {'max_depth': 8, 'learning_rate': 0.03874305312635714, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 9 with value: 0.7822230767973666.
+[I 2026-10-12 00:17:59,447] Trial 11 finished with value: 0.7804541048498399 and parameters: {'max_depth': 8, 'learning_rate': 0.03432723873841514, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 9 with value: 0.7822230767973666.
+[I 2026-10-12 00:18:00,288] Trial 12 finished with value: 0.7804965386652447 and parameters: {'max_depth': 8, 'learning_rate': 0.03685474646454054, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 9 with value: 0.7822230767973666.
+[I 2026-10-12 00:18:01,524] Trial 13 finished with value: 0.7790572520253634 and parameters: {'max_depth': 8, 'learning_rate': 0.015893544555499576, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 9 with value: 0.7822230767973666.
+[I 2026-10-12 00:18:02,193] Trial 14 finished with value: 0.7832532002617852 and parameters: {'max_depth': 8, 'learning_rate': 0.07970813993595927, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 14 with value: 0.7832532002617852.
+[I 2026-10-12 00:18:02,680] Trial 15 finished with value: 0.7818068999383723 and parameters: {'max_depth': 8, 'learning_rate': 0.09099052372690622, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 14 with value: 0.7832532002617852.
+[I 2026-10-12 00:18:03,374] Trial 16 finished with value: 0.7811565313069659 and parameters: {'max_depth': 8, 'learning_rate': 0.07342232892396496, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 14 with value: 0.7832532002617852.
+[I 2026-10-12 00:18:05,154] Trial 17 finished with value: 0.7791631413332928 and parameters: {'max_depth': 8, 'learning_rate': 0.013518025223372135, 'n_estimators': 200, 'subsample': 1.0}. Best is trial 14 with value: 0.7832532002617852.
+[I 2026-10-12 00:18:05,691] Trial 18 finished with value: 0.7810290521924245 and parameters: {'max_depth': 8, 'learning_rate': 0.06415140004639204, 'n_estimators': 200, 'subsample': 0.7}. Best is trial 14 with value: 0.7832532002617852.
+[I 2026-10-12 00:18:07,197] Trial 19 finished with value: 0.7804242021635409 and parameters: {'max_depth': 8, 'learning_rate': 0.017551170308425304, 'n_estimators': 600, 'subsample': 0.7}. Best is trial 14 with value: 0.7832532002617852.
+Experiment 17 region weights (train split, power=0.25):
+  Africa           n=   106  weight=2.937
+  East Asia        n=  1086  weight=1.642
+  Europe           n=  5342  weight=1.102
+  Latin America    n=   532  weight=1.962
+  North America    n= 16799  weight=0.828
+  South Asia       n=   566  weight=1.932
+  Southeast Asia   n=   335  weight=2.203
+
+Best val composite score: 0.7833
+Best params: {'max_depth': 8, 'learning_rate': 0.07970813993595927, 'n_estimators': 200, 'subsample': 0.7}
+Saved trained XGBoost model to artifacts_exp18/xgboost_model.json
+--- 04_train_tabnet_exp17.py (weight_power=0.25) ---
+[I 2026-10-12 00:18:12,178] A new study created in memory with name: no-name-4761ddee-d3a9-434c-96b7-212201a99569
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:18:45,802] Trial 0 finished with value: 0.7755335333438235 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:19:34,484] Trial 1 finished with value: 0.747631738559206 and parameters: {'n_d_n_a': 24, 'n_steps': 3, 'gamma': 1.5}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:20:51,384] Trial 2 finished with value: 0.7310703820376124 and parameters: {'n_d_n_a': 24, 'n_steps': 7, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:21:22,681] Trial 3 finished with value: 0.7755335333438235 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:22:41,211] Trial 4 finished with value: 0.7310703820376124 and parameters: {'n_d_n_a': 24, 'n_steps': 7, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:25:22,403] Trial 5 finished with value: 0.7607431001683623 and parameters: {'n_d_n_a': 8, 'n_steps': 7, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:26:24,427] Trial 6 finished with value: 0.7566784052715063 and parameters: {'n_d_n_a': 16, 'n_steps': 7, 'gamma': 1.5}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:27:37,250] Trial 7 finished with value: 0.7585737482184937 and parameters: {'n_d_n_a': 24, 'n_steps': 5, 'gamma': 1.0}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:28:29,605] Trial 8 finished with value: 0.7360169050565376 and parameters: {'n_d_n_a': 16, 'n_steps': 5, 'gamma': 1.5}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:31:12,393] Trial 9 finished with value: 0.7607431001683623 and parameters: {'n_d_n_a': 8, 'n_steps': 7, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:31:56,074] Trial 10 finished with value: 0.7705229654710107 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.0}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:32:30,923] Trial 11 finished with value: 0.7755335333438235 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 00:33:04,389] Trial 12 finished with value: 0.7755335333438235 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:06:13,077] Trial 13 finished with value: 0.7755335333438235 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:07:04,963] Trial 14 finished with value: 0.7755335333438235 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:08:01,645] Trial 15 finished with value: 0.7705229654710107 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.0}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:08:58,586] Trial 16 finished with value: 0.7547040818959697 and parameters: {'n_d_n_a': 8, 'n_steps': 3, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:10:34,400] Trial 17 finished with value: 0.7569855778477692 and parameters: {'n_d_n_a': 16, 'n_steps': 5, 'gamma': 1.3}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:11:38,506] Trial 18 finished with value: 0.7587425519143145 and parameters: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.5}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+[I 2026-10-12 06:12:42,696] Trial 19 finished with value: 0.7525171057542613 and parameters: {'n_d_n_a': 8, 'n_steps': 3, 'gamma': 1.0}. Best is trial 0 with value: 0.7755335333438235.
+C:\Users\Nacu\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytorch_tabnet\callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+Experiment 17 region weights (train split, power=0.25):
+  Africa           n=   106  weight=2.937
+  East Asia        n=  1086  weight=1.642
+  Europe           n=  5342  weight=1.102
+  Latin America    n=   532  weight=1.962
+  North America    n= 16799  weight=0.828
+  South Asia       n=   566  weight=1.932
+  Southeast Asia   n=   335  weight=2.203
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+
+Early stopping occurred at epoch 29 with best_epoch = 24 and best_val_0_auc = 0.83971
+
+Early stopping occurred at epoch 23 with best_epoch = 18 and best_val_0_auc = 0.8118
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+
+Early stopping occurred at epoch 23 with best_epoch = 18 and best_val_0_auc = 0.8118
+
+Early stopping occurred at epoch 54 with best_epoch = 49 and best_val_0_auc = 0.83592
+
+Early stopping occurred at epoch 18 with best_epoch = 13 and best_val_0_auc = 0.80859
+
+Early stopping occurred at epoch 25 with best_epoch = 20 and best_val_0_auc = 0.83679
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.82241
+
+Early stopping occurred at epoch 54 with best_epoch = 49 and best_val_0_auc = 0.83592
+
+Early stopping occurred at epoch 26 with best_epoch = 21 and best_val_0_auc = 0.84419
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+
+Early stopping occurred at epoch 26 with best_epoch = 21 and best_val_0_auc = 0.84419
+
+Early stopping occurred at epoch 28 with best_epoch = 23 and best_val_0_auc = 0.84178
+
+Early stopping occurred at epoch 24 with best_epoch = 19 and best_val_0_auc = 0.83446
+
+Early stopping occurred at epoch 26 with best_epoch = 21 and best_val_0_auc = 0.8369
+
+Early stopping occurred at epoch 29 with best_epoch = 24 and best_val_0_auc = 0.84216
+
+Best val composite score: 0.7755
+Best params: {'n_d_n_a': 16, 'n_steps': 3, 'gamma': 1.3}
+
+Early stopping occurred at epoch 20 with best_epoch = 15 and best_val_0_auc = 0.84383
+Successfully saved model at artifacts_exp18/tabnet_model.zip
+Saved trained TabNet model to artifacts_exp18/tabnet_model.zip
+--- 05_train_sftnn_exp17.py (weight_power=0.25) ---
+[I 2026-10-12 06:13:38,276] A new study created in memory with name: no-name-9b67f4d5-c6f9-480a-a722-17fcb2ac1fe2
+[I 2026-10-12 06:14:11,958] Trial 0 finished with value: 0.7570392936092961 and parameters: {'lr': 0.0005611516415334506, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 2.03664420268309, 'cluster_shrink_lambda': 2.0492680115417348}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:21:11,629] Trial 1 finished with value: 0.7505036361461526 and parameters: {'lr': 0.0004059611610484307, 'dropout': 0.1, 'weight_decay': 1e-05, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 10.769622478263129, 'cluster_shrink_lambda': 1.948567125127257}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:22:59,613] Trial 2 finished with value: 0.7447226617126452 and parameters: {'lr': 0.00013492834268013249, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 3.3852267834519774, 'cluster_shrink_lambda': 7.648565112369945}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:23:48,768] Trial 3 finished with value: 0.7540701530715015 and parameters: {'lr': 0.0012399967836846098, 'dropout': 0.2, 'weight_decay': 1e-05, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 25.58586885593424, 'cluster_shrink_lambda': 4.037506188440754}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:26:20,960] Trial 4 finished with value: 0.7560241594529796 and parameters: {'lr': 0.0003646439558980723, 'dropout': 0.3, 'weight_decay': 0.0001, 'hidden_dim': 64, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 4.064644058668375, 'cluster_shrink_lambda': 1.5734685129393668}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:26:56,880] Trial 5 finished with value: 0.7555860341632827 and parameters: {'lr': 0.005323617594751502, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 8, 'shrink_lambda': 20.41033406525705, 'cluster_shrink_lambda': 6.901506581791921}. Best is trial 0 with value: 0.7570392936092961.
+[I 2026-10-12 09:28:12,355] Trial 6 finished with value: 0.7830052902702171 and parameters: {'lr': 0.0011103647313054626, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 3.106554858581908, 'cluster_shrink_lambda': 1.8789279685460507}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:28:55,897] Trial 7 finished with value: 0.7524402713793785 and parameters: {'lr': 0.007234279845665418, 'dropout': 0.3, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 16, 'shrink_lambda': 24.534801599183357, 'cluster_shrink_lambda': 28.99715852166588}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:29:43,444] Trial 8 finished with value: 0.7440155993977499 and parameters: {'lr': 0.00010325337616482048, 'dropout': 0.1, 'weight_decay': 0.001, 'hidden_dim': 128, 'n_layers': 2, 'embed_dim': 4, 'shrink_lambda': 6.995363653959079, 'cluster_shrink_lambda': 3.2447648098898547}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:30:21,122] Trial 9 finished with value: 0.7448302294939868 and parameters: {'lr': 0.00037126241790405324, 'dropout': 0.2, 'weight_decay': 0.001, 'hidden_dim': 64, 'n_layers': 3, 'embed_dim': 16, 'shrink_lambda': 2.5336058850767755, 'cluster_shrink_lambda': 17.26703355444434}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:31:45,002] Trial 10 finished with value: 0.782194321394096 and parameters: {'lr': 0.002185362633116951, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0629065830612703, 'cluster_shrink_lambda': 1.0657016278742406}. Best is trial 6 with value: 0.7830052902702171.
+[I 2026-10-12 09:33:17,350] Trial 11 finished with value: 0.7941528917017466 and parameters: {'lr': 0.0023660620781758134, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.0755483741778042, 'cluster_shrink_lambda': 1.044224584290679}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:34:30,293] Trial 12 finished with value: 0.7821326942878334 and parameters: {'lr': 0.0023976227274240727, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.084520880139058, 'cluster_shrink_lambda': 1.1757380011162268}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:35:42,339] Trial 13 finished with value: 0.7806447093473092 and parameters: {'lr': 0.0012001629444458144, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 1.6943066963865112, 'cluster_shrink_lambda': 2.990172674995498}. Best is trial 11 with value: 0.7941528917017466.
+[I 2026-10-12 09:36:16,818] Trial 14 finished with value: 0.7683330612351673 and parameters: {'lr': 0.0031509778883824944, 'dropout': 0.1, 'weight_decay': 0.0001, 'hidden_dim': 128, 'n_layers': 3, 'embed_dim': 4, 'shrink_lambda': 5.607265594584775, 'cluster_shrink_lambda': 1.006663593142578}. Best is trial 11 with value: 0.7941528917017466.

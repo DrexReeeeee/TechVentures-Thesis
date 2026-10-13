@@ -1,0 +1,11 @@
+{
+  "lr": 0.0016040058750412035,
+  "dropout": 0.1,
+  "weight_decay": 1e-05,
+  "hidden_dim": 128,
+  "n_layers": 2,
+  "embed_dim": 16,
+  "shrink_lambda": 10.009584850550398,
+  "cluster_shrink_lambda": 10.35183983687276,
+  "cluster_evidence_k": 11391.770459258934
+}

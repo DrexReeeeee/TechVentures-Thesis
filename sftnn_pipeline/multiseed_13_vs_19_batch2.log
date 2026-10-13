@@ -1,0 +1,108 @@
+=== multiseed_check_13_vs_19.py (extra 5 seeds) started Mon Oct 12 12:24:30 MPST 2026 ===
+
+============================================================
+SEED 999
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7395 Recall=0.7246 ROC-AUC=0.8194 PR-AUC=0.8324
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6389 PR-AUC=0.5806
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7720 PR-AUC=0.7483
+    South Asia      F1=0.6154 Recall=0.5263 ROC-AUC=0.7942 PR-AUC=0.7359
+    Latin America   F1=0.4828 Recall=0.3684 ROC-AUC=0.7840 PR-AUC=0.7257
+  training Exp19-config ...
+    AGGREGATE       F1=0.7406 Recall=0.7345 ROC-AUC=0.8174 PR-AUC=0.8308
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6019 PR-AUC=0.5574
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7848 PR-AUC=0.7655
+    South Asia      F1=0.6567 Recall=0.5789 ROC-AUC=0.7934 PR-AUC=0.7388
+    Latin America   F1=0.5714 Recall=0.4737 ROC-AUC=0.7722 PR-AUC=0.7192
+
+============================================================
+SEED 55
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7516 Recall=0.7307 ROC-AUC=0.8380 PR-AUC=0.8454
+    Africa          F1=0.7273 Recall=0.6667 ROC-AUC=0.8519 PR-AUC=0.8050
+    Southeast Asia  F1=0.6452 Recall=0.6250 ROC-AUC=0.7372 PR-AUC=0.7290
+    South Asia      F1=0.6061 Recall=0.5263 ROC-AUC=0.8349 PR-AUC=0.7630
+    Latin America   F1=0.6269 Recall=0.5526 ROC-AUC=0.8346 PR-AUC=0.7960
+  training Exp19-config ...
+    AGGREGATE       F1=0.7358 Recall=0.7197 ROC-AUC=0.8176 PR-AUC=0.8300
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.6389 PR-AUC=0.5806
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7734 PR-AUC=0.7713
+    South Asia      F1=0.5970 Recall=0.5263 ROC-AUC=0.7985 PR-AUC=0.7378
+    Latin America   F1=0.5333 Recall=0.4211 ROC-AUC=0.7871 PR-AUC=0.7289
+
+============================================================
+SEED 314
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7511 Recall=0.7452 ROC-AUC=0.8324 PR-AUC=0.8430
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.9074 PR-AUC=0.7867
+    Southeast Asia  F1=0.6562 Recall=0.6562 ROC-AUC=0.7493 PR-AUC=0.7466
+    South Asia      F1=0.6087 Recall=0.5526 ROC-AUC=0.8237 PR-AUC=0.7551
+    Latin America   F1=0.6032 Recall=0.5000 ROC-AUC=0.7836 PR-AUC=0.7410
+  training Exp19-config ...
+    AGGREGATE       F1=0.7466 Recall=0.7311 ROC-AUC=0.8296 PR-AUC=0.8415
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8796 PR-AUC=0.7437
+    Southeast Asia  F1=0.6557 Recall=0.6250 ROC-AUC=0.7678 PR-AUC=0.7598
+    South Asia      F1=0.6154 Recall=0.5263 ROC-AUC=0.8053 PR-AUC=0.7383
+    Latin America   F1=0.6269 Recall=0.5526 ROC-AUC=0.7502 PR-AUC=0.7132
+
+============================================================
+SEED 2718
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7427 Recall=0.7421 ROC-AUC=0.8240 PR-AUC=0.8348
+    Africa          F1=0.4000 Recall=0.3333 ROC-AUC=0.7222 PR-AUC=0.5678
+    Southeast Asia  F1=0.6441 Recall=0.5938 ROC-AUC=0.7749 PR-AUC=0.7746
+    South Asia      F1=0.6000 Recall=0.5526 ROC-AUC=0.8053 PR-AUC=0.7296
+    Latin America   F1=0.5846 Recall=0.5000 ROC-AUC=0.7742 PR-AUC=0.7282
+  training Exp19-config ...
+    AGGREGATE       F1=0.7405 Recall=0.7178 ROC-AUC=0.8252 PR-AUC=0.8349
+    Africa          F1=0.4444 Recall=0.3333 ROC-AUC=0.5833 PR-AUC=0.5847
+    Southeast Asia  F1=0.6774 Recall=0.6562 ROC-AUC=0.7550 PR-AUC=0.7570
+    South Asia      F1=0.6111 Recall=0.5789 ROC-AUC=0.7924 PR-AUC=0.7167
+    Latin America   F1=0.5806 Recall=0.4737 ROC-AUC=0.7706 PR-AUC=0.7210
+
+============================================================
+SEED 31
+============================================================
+  training Exp13-config ...
+    AGGREGATE       F1=0.7486 Recall=0.7379 ROC-AUC=0.8351 PR-AUC=0.8422
+    Africa          F1=0.6000 Recall=0.5000 ROC-AUC=0.8611 PR-AUC=0.8079
+    Southeast Asia  F1=0.6154 Recall=0.6250 ROC-AUC=0.7443 PR-AUC=0.7357
+    South Asia      F1=0.6061 Recall=0.5263 ROC-AUC=0.8291 PR-AUC=0.7557
+    Latin America   F1=0.6129 Recall=0.5000 ROC-AUC=0.8052 PR-AUC=0.7698
+  training Exp19-config ...
+    AGGREGATE       F1=0.7221 Recall=0.6730 ROC-AUC=0.8145 PR-AUC=0.8283
+    Africa          F1=0.2500 Recall=0.1667 ROC-AUC=0.6759 PR-AUC=0.5429
+    Southeast Asia  F1=0.5965 Recall=0.5312 ROC-AUC=0.7798 PR-AUC=0.7533
+    South Asia      F1=0.5938 Recall=0.5000 ROC-AUC=0.7985 PR-AUC=0.7390
+    Latin America   F1=0.5172 Recall=0.3947 ROC-AUC=0.7549 PR-AUC=0.7038
+
+======================================================================
+SUMMARY: mean +/- std across 5 seeds (seed=42 excluded -- new seeds only)
+======================================================================
+
+--- AGGREGATE ---
+  Exp13-config    F1=0.7467+/-0.0054  Recall=0.7361+/-0.0084  ROC-AUC=0.8298+/-0.0078  PR-AUC=0.8396+/-0.0056
+  Exp19-config    F1=0.7371+/-0.0092  Recall=0.7152+/-0.0247  ROC-AUC=0.8209+/-0.0063  PR-AUC=0.8331+/-0.0053
+
+--- Africa ---
+  Exp13-config    F1=0.5543+/-0.1323  Recall=0.4667+/-0.1394  ROC-AUC=0.7963+/-0.1117  PR-AUC=0.7096+/-0.1240
+  Exp19-config    F1=0.4367+/-0.1242  Recall=0.3333+/-0.1179  ROC-AUC=0.6759+/-0.1193  PR-AUC=0.6018+/-0.0811
+
+--- Southeast Asia ---
+  Exp13-config    F1=0.6410+/-0.0152  Recall=0.6188+/-0.0261  ROC-AUC=0.7555+/-0.0169  PR-AUC=0.7468+/-0.0174
+  Exp19-config    F1=0.6569+/-0.0350  Recall=0.6250+/-0.0541  ROC-AUC=0.7722+/-0.0116  PR-AUC=0.7614+/-0.0071
+
+--- South Asia ---
+  Exp13-config    F1=0.6072+/-0.0056  Recall=0.5368+/-0.0144  ROC-AUC=0.8174+/-0.0171  PR-AUC=0.7479+/-0.0143
+  Exp19-config    F1=0.6148+/-0.0252  Recall=0.5421+/-0.0353  ROC-AUC=0.7976+/-0.0052  PR-AUC=0.7341+/-0.0098
+
+--- Latin America ---
+  Exp13-config    F1=0.5821+/-0.0576  Recall=0.4842+/-0.0686  ROC-AUC=0.7963+/-0.0243  PR-AUC=0.7521+/-0.0302
+  Exp19-config    F1=0.5659+/-0.0430  Recall=0.4632+/-0.0606  ROC-AUC=0.7670+/-0.0148  PR-AUC=0.7172+/-0.0094
+
+Saved: multiseed_13_vs_19_raw2.csv
+=== finished Mon Oct 12 12:27:07 MPST 2026 ===
