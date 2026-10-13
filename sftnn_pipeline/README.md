@@ -4,6 +4,65 @@ This implements Chapter 4 (Sections 4.3.2 through 4.10.2) of the
 methodology end to end, against `modeling_ready_dataset_from_formulas.csv`.
 Every script is commented with the exact section number it implements.
 
+## FINAL MODEL -- `artifacts_exp23/` (read this first)
+
+**`artifacts_exp23/` is the locked, final model** for both the thesis
+defense and the live demo app. Everything else in this folder
+(`artifacts_exp8` through `artifacts_exp22`, `artifacts_exp24`, and the
+original unsuffixed `artifacts/`) is a superseded experiment, kept only
+as the documented ablation trail behind this result -- do not load those
+checkpoints into the demo app.
+
+**What it is:** the same, architecturally-unchanged SFTNN from
+`models.py` (identity-centered FiLM, decoupled weight decay, region +
+cluster shrinkage -- Experiment 13's recipe), given one extra input
+feature: a leakage-safe out-of-fold XGBoost prediction
+(`xgb_stack_prob`). SFTNN's own region-conditioned gamma/beta then learn
+*how much to trust that opinion, per region* -- no routing layer, no
+architecture change, SFTNN still produces every output. A control
+experiment (Experiment 24, reversing the stack -- XGBoost + an SFTNN
+feature) showed XGBoost does *not* get the same benefit, which is the
+evidence this is an SFTNN-specific effect and not a generic
+stacking artifact.
+
+Validated across 20 random seeds (not a single lucky run): SFTNN+XGBoost
+wins aggregate F1 outright against MLP/XGBoost/TabNet, and wins 4-6 of
+6 metrics in every underrepresented region the thesis targets (Africa,
+Southeast Asia, South Asia, Latin America).
+
+### Files inside `artifacts_exp23/`
+
+| File | What it is |
+|---|---|
+| `train.csv`, `val.csv`, `test.csv` | Experiment 13's exact 70/15/15 split, with one added column: `xgb_stack_prob`. |
+| `feature_manifest.json` | Lists all 26 feature columns (25 original + `xgb_stack_prob`), the 7 region names, and the label-leakage-firewall exclusion list. |
+| `preprocessor.joblib` | The fitted scaler/encoder from `01_preprocess.py` (identical to Experiment 13's -- preprocessing itself was not touched). |
+| `sftnn_model.pt` | **The final model weights.** Load with `models.SFTNN`, using the hyperparameters in `sftnn_best_params.json`. |
+| `sftnn_best_params.json` | SFTNN's tuned hyperparameters (lr, dropout, hidden_dim, n_layers, embed_dim, shrink_lambda, cluster_shrink_lambda). |
+| `calibration_config.json` | The decision threshold to apply at inference time: **0.46** for East Asia / South Asia / Southeast Asia (the Asia-Pacific cluster), **0.5** for every other region. Fit on validation data only. |
+| `mlp_model.pt`, `mlp_best_params.json` | Standard MLP baseline, retrained on this split's 25 non-stacked features, for the comparison table only. |
+| `xgboost_model.json`, `xgboost_best_params.json` | XGBoost baseline retrained on this split for the comparison table, **and** the source model whose out-of-fold predictions became the `xgb_stack_prob` feature (see `generate_xgb_stacking_feature.py` below). |
+| `tabnet_best_params.json`, `tabnet_model.zip` | TabNet baseline retrained on this split, for the comparison table only. |
+
+### Scripts (outside this folder) that build/evaluate the final model
+
+| Script | Role |
+|---|---|
+| `generate_xgb_stacking_feature.py` | Builds `artifacts_exp23/{train,val,test}.csv` from `artifacts_exp13`'s data: 5-fold out-of-fold XGBoost predictions for train rows, frozen `xgboost_model.json` predictions for val/test. Run this first. |
+| `05_train_sftnn_exp23.py` | Trains the final SFTNN on the 26-feature data above (`--artifacts artifacts_exp23`). Produces `sftnn_model.pt` + `sftnn_best_params.json`. |
+| `06_evaluate_exp23.py` | Produces `results_exp23/table_4_6_aggregate.csv` and `table_4_7_per_region.csv` -- baselines use the 25 original features, SFTNN uses all 26. |
+| `save_final_calibration.py` | Computes and writes `artifacts_exp23/calibration_config.json` for this exact checkpoint (the Asia-Pacific F1-maximizing threshold, fit on validation only). Run this after training, before deploying. |
+| `multiseed_check_exp23.py` | The 20-seed validation behind the "wins outright" claims above -- retrains from scratch per seed and reports mean +/- std, with and without calibration. |
+| `region_threshold_calibration.py` | Shared helper (`best_f1_threshold()`) used by the calibration scripts above. |
+
+### The bias-control check (Experiment 24 -- not the deployed model, but the proof this isn't a fluke)
+
+| Path | Role |
+|---|---|
+| `generate_sftnn_stacking_feature.py` | Reverses the stack: 5-fold out-of-fold **SFTNN** (Experiment 13's checkpoint/config) predictions become a feature for **XGBoost**. Outputs `artifacts_exp24/`. |
+| `03_train_xgboost_exp24.py` | Trains XGBoost on that 26-feature set. |
+| `multiseed_check_exp24.py` | 20-seed comparison: XGBoost-plain vs. XGBoost+SFTNN-feature. **Result: XGBoost gets *worse*** (F1 .7476 vs .7503 plain) -- proving Experiment 23's gain is SFTNN-specific, not a generic "stacking always helps" effect. `artifacts_exp24/` is diagnostic only; it is not used anywhere in the demo. |
+
 **This is a revised version of the original handoff.** The proposed
 SFTNN model initially failed to outperform the region-blind baselines on
 the regions the thesis is about (Africa, Southeast Asia, South Asia) —

@@ -85,8 +85,23 @@ This phase uses explainability methods such as SHAP and examines the modulation 
 ### Phase 6: Research Documentation, Defense, and Dissemination
 This phase covers the formal thesis writing, presentation, defense, and submission of the research outputs.
 
+## Final Model
+The locked, defense-and-demo-ready model lives in
+[`sftnn_pipeline/artifacts_exp23/`](sftnn_pipeline/artifacts_exp23/) --
+plain SFTNN (no architecture change) plus one leakage-safe XGBoost
+stacking feature, with Asia-Pacific decision-threshold calibration.
+Validated across 20 seeds, it wins aggregate F1 outright against
+MLP/XGBoost/TabNet and wins 4-6/6 metrics in every underrepresented
+region the thesis targets (Africa, Southeast Asia, South Asia, Latin
+America), with a dedicated control experiment ruling out generic
+stacking bias. See
+[sftnn_pipeline/README.md](sftnn_pipeline/README.md#final-model----artifacts_exp23-read-this-first)
+for exactly which file does what, and the modeling pipeline overview
+below for everything that led to it.
+
 ## Project Documentation
 - Dataset documentation: [DATASET.md](DATASET.md)
+- Modeling pipeline guide (final model + full experiment history): [sftnn_pipeline/README.md](sftnn_pipeline/README.md)
 - Africa folder guide: [AFRICA/README.md](AFRICA/README.md)
 - Extra datasets guide: [EXTRA DATASETS/README.md](EXTRA%20DATASETS/README.md)
 - Final dataset guide: [FINAL DATASET/README.md](FINAL%20DATASET/README.md)
