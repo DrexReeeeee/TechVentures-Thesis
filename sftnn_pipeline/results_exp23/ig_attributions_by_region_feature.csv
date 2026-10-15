@@ -1,0 +1,183 @@
+Region,Feature,mean_abs_attribution,mean_signed_attribution,std_abs_attribution
+Africa,funding_total_usd_clean_log1p,0.049215544,-0.022446698,0.04621932
+Africa,capital_velocity_log1p,0.024898514,0.016825227,0.020001315
+Africa,funding_round_A_usd_log1p,0.0060876473,0.0060876473,0.029195331
+Africa,funding_round_B_usd_log1p,0.02000186,0.02000186,0.06852059
+Africa,funding_round_C_usd_log1p,0.00683615,0.00683615,0.032785024
+Africa,funding_round_D_usd_log1p,0.0,0.0,0.0
+Africa,funding_round_E_usd_log1p,0.0,0.0,0.0
+Africa,funding_round_F_usd_log1p,0.0,0.0,0.0
+Africa,funding_round_G_usd_log1p,0.0,0.0,0.0
+Africa,funding_round_H_usd_log1p,0.0,0.0,0.0
+Africa,funding_seed_usd_log1p,0.020041175,-0.014440273,0.029289288
+Africa,funding_equity_crowdfunding_usd_log1p,0.0,0.0,0.0
+Africa,funding_undisclosed_usd_log1p,0.0,0.0,0.0
+Africa,funding_convertible_note_usd_log1p,0.0,0.0,0.0
+Africa,funding_debt_financing_usd_log1p,0.0,0.0,0.0
+Africa,funding_angel_usd_log1p,0.0,0.0,0.0
+Africa,funding_grant_usd_log1p,0.0,0.0,0.0
+Africa,funding_private_equity_usd_log1p,0.0,0.0,0.0
+Africa,funding_post_ipo_equity_usd_log1p,0.0,0.0,0.0
+Africa,funding_post_ipo_debt_usd_log1p,0.0,0.0,0.0
+Africa,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+Africa,funding_product_crowdfunding_usd_log1p,0.0,0.0,0.0
+Africa,funding_venture_unclassified_usd_log1p,0.018955762,-0.018955762,0.0538332
+Africa,industry_target_enc,0.029203407,0.028604684,0.02075304
+Africa,funding_total_usd_disclosed,0.08133135,-0.08133135,0.06671699
+Africa,xgb_stack_prob,0.26135868,0.26135868,0.25272083
+East Asia,funding_total_usd_clean_log1p,0.05509567,0.0026816884,0.053020604
+East Asia,capital_velocity_log1p,0.029105399,0.015489689,0.03604698
+East Asia,funding_round_A_usd_log1p,0.01828034,-0.0029697618,0.056680165
+East Asia,funding_round_B_usd_log1p,0.03253789,0.03253789,0.09302449
+East Asia,funding_round_C_usd_log1p,0.011868,0.011868,0.054586664
+East Asia,funding_round_D_usd_log1p,0.00146271,0.00146271,0.014440015
+East Asia,funding_round_E_usd_log1p,0.0,0.0,0.0
+East Asia,funding_round_F_usd_log1p,0.0,0.0,0.0
+East Asia,funding_round_G_usd_log1p,0.0,0.0,0.0
+East Asia,funding_round_H_usd_log1p,0.0,0.0,0.0
+East Asia,funding_seed_usd_log1p,0.010692616,-0.0013856485,0.034488622
+East Asia,funding_equity_crowdfunding_usd_log1p,0.0005645405,0.0005645405,0.008800315
+East Asia,funding_undisclosed_usd_log1p,0.010246165,0.010246165,0.056810707
+East Asia,funding_convertible_note_usd_log1p,0.00093832903,0.00093832903,0.014627061
+East Asia,funding_debt_financing_usd_log1p,0.0013810059,0.00044462952,0.011913203
+East Asia,funding_angel_usd_log1p,0.0061083715,0.0051552607,0.029633688
+East Asia,funding_grant_usd_log1p,0.003497612,0.0032264788,0.023406787
+East Asia,funding_private_equity_usd_log1p,0.00021912412,-0.00021912412,0.0025495447
+East Asia,funding_post_ipo_equity_usd_log1p,0.010275243,0.010275243,0.07991565
+East Asia,funding_post_ipo_debt_usd_log1p,0.0,0.0,0.0
+East Asia,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+East Asia,funding_product_crowdfunding_usd_log1p,5.5888973e-05,5.5888973e-05,0.00087122334
+East Asia,funding_venture_unclassified_usd_log1p,0.03387866,-0.016272897,0.09628162
+East Asia,industry_target_enc,0.026911668,0.026245978,0.01959912
+East Asia,funding_total_usd_disclosed,0.09885733,-0.09885733,0.060991284
+East Asia,xgb_stack_prob,0.3726465,0.3726465,0.26777107
+Europe,funding_total_usd_clean_log1p,0.041057818,-0.00425672,0.046174716
+Europe,capital_velocity_log1p,0.02268588,0.0107699325,0.03219226
+Europe,funding_round_A_usd_log1p,0.01071291,-0.0011481863,0.045437362
+Europe,funding_round_B_usd_log1p,0.024059542,0.024059542,0.0813018
+Europe,funding_round_C_usd_log1p,0.0063245143,0.0063245143,0.03709932
+Europe,funding_round_D_usd_log1p,0.0019550757,0.0019550757,0.023340274
+Europe,funding_round_E_usd_log1p,0.001369661,0.001369661,0.019533372
+Europe,funding_round_F_usd_log1p,0.0,0.0,0.0
+Europe,funding_round_G_usd_log1p,0.00016020391,-0.00016020391,0.0054516443
+Europe,funding_round_H_usd_log1p,0.0,0.0,0.0
+Europe,funding_seed_usd_log1p,0.02315345,-0.00021569854,0.050010845
+Europe,funding_equity_crowdfunding_usd_log1p,0.0010074938,0.0010000612,0.01273123
+Europe,funding_undisclosed_usd_log1p,0.0057570185,0.0057570185,0.04022281
+Europe,funding_convertible_note_usd_log1p,0.0011313946,0.0011313946,0.014570097
+Europe,funding_debt_financing_usd_log1p,0.0013580566,0.0005750003,0.013480055
+Europe,funding_angel_usd_log1p,0.008023506,0.0067492095,0.031193217
+Europe,funding_grant_usd_log1p,0.0022647372,0.0019398624,0.01816135
+Europe,funding_private_equity_usd_log1p,0.0018954776,0.0005967126,0.015681116
+Europe,funding_post_ipo_equity_usd_log1p,0.001288451,0.001288451,0.025353625
+Europe,funding_post_ipo_debt_usd_log1p,0.0,0.0,0.0
+Europe,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+Europe,funding_product_crowdfunding_usd_log1p,0.00054583815,0.00039074378,0.0065811053
+Europe,funding_venture_unclassified_usd_log1p,0.031396724,-0.007934842,0.08691595
+Europe,industry_target_enc,0.027947983,0.027712157,0.018626682
+Europe,funding_total_usd_disclosed,0.10407413,-0.10407413,0.06285353
+Europe,xgb_stack_prob,0.37542346,0.37542346,0.2763777
+Latin America,funding_total_usd_clean_log1p,0.031354472,-0.00613675,0.041065335
+Latin America,capital_velocity_log1p,0.017624889,-0.0040777633,0.014070229
+Latin America,funding_round_A_usd_log1p,0.0032846604,0.0011656848,0.016344018
+Latin America,funding_round_B_usd_log1p,0.0073214117,0.0073214117,0.043717545
+Latin America,funding_round_C_usd_log1p,0.0068613067,0.0068613067,0.035925884
+Latin America,funding_round_D_usd_log1p,0.0,0.0,0.0
+Latin America,funding_round_E_usd_log1p,0.0,0.0,0.0
+Latin America,funding_round_F_usd_log1p,0.0,0.0,0.0
+Latin America,funding_round_G_usd_log1p,0.0,0.0,0.0
+Latin America,funding_round_H_usd_log1p,0.0,0.0,0.0
+Latin America,funding_seed_usd_log1p,0.03221469,-0.012659085,0.047260813
+Latin America,funding_equity_crowdfunding_usd_log1p,0.0,0.0,0.0
+Latin America,funding_undisclosed_usd_log1p,0.0,0.0,0.0
+Latin America,funding_convertible_note_usd_log1p,0.0,0.0,0.0
+Latin America,funding_debt_financing_usd_log1p,0.00092070526,0.00092070526,0.009389383
+Latin America,funding_angel_usd_log1p,0.009347879,0.007281451,0.03469303
+Latin America,funding_grant_usd_log1p,0.0018069062,0.0017207272,0.017988583
+Latin America,funding_private_equity_usd_log1p,0.0010272914,-0.0010272914,0.00718589
+Latin America,funding_post_ipo_equity_usd_log1p,0.0,0.0,0.0
+Latin America,funding_post_ipo_debt_usd_log1p,0.0,0.0,0.0
+Latin America,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+Latin America,funding_product_crowdfunding_usd_log1p,0.00040474182,-0.00040474182,0.0041275714
+Latin America,funding_venture_unclassified_usd_log1p,0.009011889,-0.0036523282,0.04413999
+Latin America,industry_target_enc,0.024497436,0.02435144,0.014310889
+Latin America,funding_total_usd_disclosed,0.11177868,-0.11177868,0.06809072
+Latin America,xgb_stack_prob,0.36515602,0.36515602,0.3078177
+North America,funding_total_usd_clean_log1p,0.04420684,0.0062741386,0.043728527
+North America,capital_velocity_log1p,0.02544545,0.011547607,0.03085727
+North America,funding_round_A_usd_log1p,0.018313888,-0.0030367898,0.06316499
+North America,funding_round_B_usd_log1p,0.037402824,0.037402824,0.09955228
+North America,funding_round_C_usd_log1p,0.014011711,0.014011711,0.05209339
+North America,funding_round_D_usd_log1p,0.00770096,0.007692347,0.042814385
+North America,funding_round_E_usd_log1p,0.0026872186,0.0026872186,0.02541262
+North America,funding_round_F_usd_log1p,0.00048836606,0.00030955515,0.010473509
+North America,funding_round_G_usd_log1p,0.00021143975,-0.00021143975,0.01266559
+North America,funding_round_H_usd_log1p,0.0,0.0,0.0
+North America,funding_seed_usd_log1p,0.021514462,0.003853595,0.049485646
+North America,funding_equity_crowdfunding_usd_log1p,0.0008990989,0.00089025137,0.012424889
+North America,funding_undisclosed_usd_log1p,0.0020288893,0.001956436,0.023485549
+North America,funding_convertible_note_usd_log1p,0.0018543528,0.001845182,0.01916182
+North America,funding_debt_financing_usd_log1p,0.011605389,0.007937127,0.037709597
+North America,funding_angel_usd_log1p,0.0049805073,0.004688469,0.02623618
+North America,funding_grant_usd_log1p,0.0018941223,0.0013461605,0.016628107
+North America,funding_private_equity_usd_log1p,0.0038177483,0.0020211446,0.028329933
+North America,funding_post_ipo_equity_usd_log1p,0.0037929828,0.0037929828,0.046272118
+North America,funding_post_ipo_debt_usd_log1p,0.00050577865,0.00050577865,0.01265286
+North America,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+North America,funding_product_crowdfunding_usd_log1p,0.00046844548,0.0002756491,0.008608006
+North America,funding_venture_unclassified_usd_log1p,0.055245195,-0.0044428497,0.113567546
+North America,industry_target_enc,0.028618095,0.028228907,0.023101171
+North America,funding_total_usd_disclosed,0.09927593,-0.09927593,0.05919103
+North America,xgb_stack_prob,0.43614307,0.43614307,0.2931476
+South Asia,funding_total_usd_clean_log1p,0.05413947,-0.014166044,0.05846601
+South Asia,capital_velocity_log1p,0.024745483,0.010780602,0.018578073
+South Asia,funding_round_A_usd_log1p,0.008014789,0.0024520187,0.032426037
+South Asia,funding_round_B_usd_log1p,0.016206825,0.016206825,0.06282049
+South Asia,funding_round_C_usd_log1p,0.011888617,0.011888617,0.053676847
+South Asia,funding_round_D_usd_log1p,0.0035359429,0.0035359429,0.025764031
+South Asia,funding_round_E_usd_log1p,0.0018753218,0.0018753218,0.01384479
+South Asia,funding_round_F_usd_log1p,0.0006078173,0.0006078173,0.0063748313
+South Asia,funding_round_G_usd_log1p,0.0007019477,0.0007019477,0.0073620863
+South Asia,funding_round_H_usd_log1p,0.0023625407,0.0023625407,0.024778519
+South Asia,funding_seed_usd_log1p,0.01209284,-0.005974188,0.028399017
+South Asia,funding_equity_crowdfunding_usd_log1p,0.0,0.0,0.0
+South Asia,funding_undisclosed_usd_log1p,0.004997424,0.004997424,0.03709512
+South Asia,funding_convertible_note_usd_log1p,0.0,0.0,0.0
+South Asia,funding_debt_financing_usd_log1p,0.0039081722,0.003267088,0.026707215
+South Asia,funding_angel_usd_log1p,0.0048049926,0.0048049926,0.023166725
+South Asia,funding_grant_usd_log1p,0.0,0.0,0.0
+South Asia,funding_private_equity_usd_log1p,0.0021475158,0.0019829646,0.021669766
+South Asia,funding_post_ipo_equity_usd_log1p,0.0,0.0,0.0
+South Asia,funding_post_ipo_debt_usd_log1p,0.0,0.0,0.0
+South Asia,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+South Asia,funding_product_crowdfunding_usd_log1p,0.0,0.0,0.0
+South Asia,funding_venture_unclassified_usd_log1p,0.018961456,-0.011752846,0.07469008
+South Asia,industry_target_enc,0.027141318,0.026910175,0.014704159
+South Asia,funding_total_usd_disclosed,0.09189748,-0.09189748,0.06813415
+South Asia,xgb_stack_prob,0.29494184,0.29494184,0.23942047
+Southeast Asia,funding_total_usd_clean_log1p,0.03968322,0.0059766443,0.050186988
+Southeast Asia,capital_velocity_log1p,0.022157274,0.0077945213,0.020046191
+Southeast Asia,funding_round_A_usd_log1p,0.015121716,0.0021498161,0.063970216
+Southeast Asia,funding_round_B_usd_log1p,0.038957573,0.038957573,0.10605337
+Southeast Asia,funding_round_C_usd_log1p,0.0074441214,0.0074441214,0.03675087
+Southeast Asia,funding_round_D_usd_log1p,0.0044227615,0.0044227615,0.03134872
+Southeast Asia,funding_round_E_usd_log1p,0.0029837824,0.0029837824,0.025840322
+Southeast Asia,funding_round_F_usd_log1p,0.0009815228,0.0009815228,0.00850024
+Southeast Asia,funding_round_G_usd_log1p,0.004131339,-0.004131339,0.03577846
+Southeast Asia,funding_round_H_usd_log1p,0.010180307,0.010180307,0.088164106
+Southeast Asia,funding_seed_usd_log1p,0.017526187,-0.003238149,0.03619162
+Southeast Asia,funding_equity_crowdfunding_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_undisclosed_usd_log1p,0.0055563715,0.0055563715,0.037263144
+Southeast Asia,funding_convertible_note_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_debt_financing_usd_log1p,0.0027222277,-0.00038343316,0.01672651
+Southeast Asia,funding_angel_usd_log1p,0.008874744,0.0042265463,0.032686107
+Southeast Asia,funding_grant_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_private_equity_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_post_ipo_equity_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_post_ipo_debt_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_secondary_market_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_product_crowdfunding_usd_log1p,0.0,0.0,0.0
+Southeast Asia,funding_venture_unclassified_usd_log1p,0.02742462,-0.0097998725,0.092710726
+Southeast Asia,industry_target_enc,0.027528016,0.027404988,0.017896421
+Southeast Asia,funding_total_usd_disclosed,0.118475184,-0.118475184,0.06964609
+Southeast Asia,xgb_stack_prob,0.4133622,0.4133622,0.27728224
