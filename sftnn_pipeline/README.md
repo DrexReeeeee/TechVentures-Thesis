@@ -54,6 +54,7 @@ Southeast Asia, South Asia, Latin America).
 | `save_final_calibration.py` | Computes and writes `artifacts_exp23/calibration_config.json` for this exact checkpoint (the Asia-Pacific F1-maximizing threshold, fit on validation only). Run this after training, before deploying. |
 | `multiseed_check_exp23.py` | The 20-seed validation behind the "wins outright" claims above -- retrains from scratch per seed and reports mean +/- std, with and without calibration. |
 | `region_threshold_calibration.py` | Shared helper (`best_f1_threshold()`) used by the calibration scripts above. |
+| `07_integrated_gradients_exp23.py` | Captum Integrated Gradients attribution on the final model (region-by-region, since SFTNN's `region_id` input isn't attributable). Outputs `results_exp23/ig_attributions_by_region_feature.csv`, `ig_validity_checks.csv` (completeness-axiom checks), and `ig_xgb_stack_prob_vs_baselines.png`. Finding: `xgb_stack_prob` is the single most-attributed feature of 26 in every region, 3.2-4.4x the next-highest. Requires `pip install captum` (already in `requirements.txt`). |
 
 ### The bias-control check (Experiment 24 -- not the deployed model, but the proof this isn't a fluke)
 
